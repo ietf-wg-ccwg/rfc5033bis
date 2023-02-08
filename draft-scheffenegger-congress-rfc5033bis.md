@@ -3,6 +3,7 @@ title: "Specifying New Congestion Control Algorithms"
 abbrev: "New CC Algorithms"
 docname: draft-scheffenegger-congress-rfc5033bis-latest
 category: bcp
+stream: IETF
 obsoletes: 5033
 
 ipr: trust200902
@@ -38,7 +39,7 @@ normative:
 
 informative:
 
-FJ03:
+  FJ03:
     title: Random Early Detection Gateways for Congestion Avoidance
     seriesinfo: IEEE/ACM Transactions on Networking, V.1 N.4
     date: 1993-8
@@ -46,14 +47,14 @@ FJ03:
     - ins: S. Floyd
     - ins: V. Jacobson
 
-Metrics:
+  Metrics:
     title: Metrics for the Evaluation of Congestion Control Mechanisms
     seriesinfo: Work in Progress
     date: 2007-7
     author:
     - ins: S. Floyd
 
-Tools:
+  Tools:
     title: Tools for the Evaluation of Simulation and Testbed Scenarios
     seriesinfo: Work in Progress
     date: 2007-7
@@ -105,7 +106,7 @@ rounded set of information to consider.
    of their proposals for publication in the RFC series to allow others
    to concretely understand and investigate the wealth of proposals in
    this space.
-   
+
 
 # Document Status
 
@@ -125,7 +126,7 @@ rounded set of information to consider.
    environments.  The second class can also include algorithms where the
    IETF does not yet have sufficient understanding to decide if the
    algorithm is or is not safe for deployment on the Internet.
-   
+
    Each alternate congestion control algorithm published is required to
    include a statement in the abstract indicating whether or not the
    proposal is considered safe for use on the Internet.  Each alternate
@@ -178,15 +179,17 @@ rounded set of information to consider.
    fall outside the scope of these guidelines are certainly possible;
    these guidelines should not be considered as an all-encompassing
    check-list.
-   
-    0: Differences with Congestion Control Principles {{!RFC2914}}
 
-    Proposed congestion control mechanisms should include a clear
+0
+: Differences with Congestion Control Principles {{!RFC2914}}
+
+: Proposed congestion control mechanisms should include a clear
 explanation of the deviations from {{!RFC2914}}.
 
-    1. Impact on Standard TCP, SCTP {{!RFC2960}}, and DCCP {{!RFC4340}}.
-    
-    Proposed congestion control mechanisms should be evaluated when
+1
+: Impact on Standard TCP, SCTP {{!RFC2960}}, and DCCP {{!RFC4340}}.
+
+: Proposed congestion control mechanisms should be evaluated when
 competing with standard IETF congestion control {{!RFC2581}},
 {{!RFC2960}}, {{!RFC4340}}.  Alternate congestion controllers that have a
 significantly negative impact on traffic using standard
@@ -194,7 +197,7 @@ congestion control may be suspect and this aspect should be part
 of the community's decision making with regards to the
 suitability of the alternate congestion control mechanism.
 
-    We note that this bullet is not a requirement for strict TCP-
+: We note that this bullet is not a requirement for strict TCP-
 friendliness as a prerequisite for an alternate congestion
 control mechanism to advance to Experimental.  As an example,
 HighSpeed TCP is a congestion control mechanism that is
@@ -202,15 +205,16 @@ Experimental, but that is not TCP-friendly in all environments.
 We also note that this guideline does not constrain the fairness
 offered for non-best-effort traffic.
 
-    As an example from an Experimental RFC, fairness with standard
+: As an example from an Experimental RFC, fairness with standard
 TCP is discussed in Sections 4 and 6 of {{?RFC3649}} (HighSpeed TCP)
 and using spare capacity is discussed in Sections 6, 11.1, and 12
 of {{?RFC3649}}.
 
 
-    2. Difficult Environments.
-    
-    The proposed algorithms should be assessed in difficult
+2
+: Difficult Environments.
+
+: The proposed algorithms should be assessed in difficult
 environments such as paths containing wireless links.
 Characteristics of wireless environments are discussed in
 {{?RFC3819}} and in Section 16 of {{Tools}}.  Other difficult
@@ -224,7 +228,7 @@ minimum goal for experimental mechanisms proposed for widespread
 deployment in the Internet should be that they do not perform
 significantly worse than TCP in these environments.
 
-While it is impossible to enumerate all the possible "difficult
+: While it is impossible to enumerate all the possible "difficult
 environments", we note that the IETF has previously grappled with
 paths with long delays {{?RFC2488}}, high delay bandwidth products
 {{?RFC3649}}, high packet corruption rates {{?RFC3155}}, packet
@@ -232,11 +236,12 @@ reordering {{?RFC4653}}, and significantly slow links {{?RFC3150}}.
 Aspects of alternate congestion control that impact networks with
 these characteristics should be detailed.
 
-As an example from an Experimental RFC, performance in difficult
+: As an example from an Experimental RFC, performance in difficult
 environments is discussed in Sections 6, 9.2, and 10.2 of
 {{?RFC4782}} (Quick-Start).
 
-    3. Investigating a Range of Environments.
+3
+: Investigating a Range of Environments.
 
 
 Similar to the last criteria, proposed alternate congestion
@@ -274,9 +279,9 @@ The alternate congestion control mechanism should either stop
        requirement is crucial to protect the network in times of extreme
        congestion.
 
-       If "full backoff" is used, this bullet does not require that the
-       full backoff mechanism must be identical to that of TCP
-       {{?RFC2988}}.  As an example, this bullet does not preclude full
+: If "full backoff" is used, this bullet does not require that the
+full backoff mechanism must be identical to that of TCP
+{{?RFC2988}}.  As an example, this bullet does not preclude full
        backoff mechanisms that would give flows with different round-
        trip times comparable bandwidth during backoff.
 
