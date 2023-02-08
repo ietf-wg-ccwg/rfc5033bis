@@ -19,13 +19,15 @@ author:
  -
     ins: S. Floyd
     name: Sally Floyd
-    organization: ICIR (ICSI Center for Internet Research)
+    organization: ICSI Center for Internet Research
+    abbrev: ICIR / ICSI
     email: floyd@icir.org
     uri: http://www.icir.org/floyd
  -
     ins: M. Allman
     name: Mark Allman
     organization: ICSI Center for Internet Research
+    abbrev: ICIR / ICSI
     email: mallman@icir.org
     uri: http://www.icir.org/mallman
  -
