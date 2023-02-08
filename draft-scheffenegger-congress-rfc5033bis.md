@@ -1,7 +1,7 @@
 ---
 title: "Specifying New Congestion Control Algorithms"
 abbrev: "New CC Algorithms"
-docname: draft-scheffenegger-congress-rfc5033bis
+docname: draft-scheffenegger-congress-rfc5033bis-latest
 category: bcp
 obsoletes: 5033
 
