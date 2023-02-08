@@ -213,7 +213,7 @@ of {{?RFC3649}}.
     The proposed algorithms should be assessed in difficult
 environments such as paths containing wireless links.
 Characteristics of wireless environments are discussed in
-{{?RFC3819}} and in Section 16 of {{?Tools}}.  Other difficult
+{{?RFC3819}} and in Section 16 of {{Tools}}.  Other difficult
 environments can include those with multipath routing within a
 connection.  We note that there is still much to be desired in
 terms of the performance of TCP in some of these difficult
@@ -311,7 +311,7 @@ The alternate congestion control mechanism should either stop
        as sudden congestion, a routing change, or a mobility event.
        Routing changes, link disconnections, intermittent link
        connectivity, and mobility are discussed in more detail in
-       Section 17 of {{?Tools}}.
+       Section 17 of {{Tools}}.
 
        As an example from an Experimental RFC, response to transient
        events is discussed in Section&nbsp;9.2 of {{?RFC4782}} (Quick-Start).
