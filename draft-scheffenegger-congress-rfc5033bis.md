@@ -246,7 +246,7 @@ bandwidths, round-trip times, levels of traffic on the reverse
 path, and levels of statistical multiplexing at the congested
 link.  Similarly, proposals should be investigated for robust
 performance with different queueing mechanisms in the routers,
-especially Random Early Detection (RED) {{?FJ03}} and Drop-Tail.
+especially Random Early Detection (RED) {{FJ03}} and Drop-Tail.
 This evaluation is often not included in the internet-draft
 itself, but in related papers cited in the draft.
 
