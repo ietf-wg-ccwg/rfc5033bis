@@ -27,8 +27,6 @@ author:
     organization: ICSI Center for Internet Research
     email: mallman@icir.org
     uri: http://www.icir.org/mallman
-
-editor:
  -
     ins: R. Scheffenegger
     name: Richard Scheffenegger
@@ -54,7 +52,7 @@ Metrics:
     date: 2007-7
     author:
     - ins: S. Floyd
-    
+
 Tools:
     title: Tools for the Evaluation of Simulation and Testbed Scenarios
     seriesinfo: Work in Progress
@@ -62,7 +60,7 @@ Tools:
     author:
     - ins: S. Floyd
     - ins: E. Kohler
-    
+
 --- abstract
 
 The IETF's standard congestion control schemes have been widely shown
@@ -225,45 +223,46 @@ with non-IP queues at layer-two, IP tunnels, and the like.  A
 minimum goal for experimental mechanisms proposed for widespread
 deployment in the Internet should be that they do not perform
 significantly worse than TCP in these environments.
-	
-	While it is impossible to enumerate all the possible "difficult
-	environments", we note that the IETF has previously grappled with
-	paths with long delays {{?RFC2488}}, high delay bandwidth products
-	{{?RFC3649}}, high packet corruption rates {{?RFC3155}}, packet
-	reordering {{?RFC4653}}, and significantly slow links {{?RFC3150}}.
-	Aspects of alternate congestion control that impact networks with
-	these characteristics should be detailed.
 
-	As an example from an Experimental RFC, performance in difficult
-	environments is discussed in Sections 6, 9.2, and 10.2 of
-	{{?RFC4782}} (Quick-Start).
+While it is impossible to enumerate all the possible "difficult
+environments", we note that the IETF has previously grappled with
+paths with long delays {{?RFC2488}}, high delay bandwidth products
+{{?RFC3649}}, high packet corruption rates {{?RFC3155}}, packet
+reordering {{?RFC4653}}, and significantly slow links {{?RFC3150}}.
+Aspects of alternate congestion control that impact networks with
+these characteristics should be detailed.
+
+As an example from an Experimental RFC, performance in difficult
+environments is discussed in Sections 6, 9.2, and 10.2 of
+{{?RFC4782}} (Quick-Start).
 
     3. Investigating a Range of Environments.
 
-	Similar to the last criteria, proposed alternate congestion
-	controllers should be assessed in a range of environments.  For
-	instance, proposals should be investigated across a range of
-	bandwidths, round-trip times, levels of traffic on the reverse
-	path, and levels of statistical multiplexing at the congested
-	link.  Similarly, proposals should be investigated for robust
-	performance with different queueing mechanisms in the routers,
-	especially Random Early Detection (RED) {{?FJ03}} and Drop-Tail.
-	This evaluation is often not included in the internet-draft
-	itself, but in related papers cited in the draft.
 
-	A particularly important aspect of evaluating a proposal for
-	standardization is in understanding where the algorithm breaks
-	down.  Therefore, particular attention should be paid to
-	characterizing the areas where the proposed mechanism does not
-	perform well.
+Similar to the last criteria, proposed alternate congestion
+controllers should be assessed in a range of environments.  For
+instance, proposals should be investigated across a range of
+bandwidths, round-trip times, levels of traffic on the reverse
+path, and levels of statistical multiplexing at the congested
+link.  Similarly, proposals should be investigated for robust
+performance with different queueing mechanisms in the routers,
+especially Random Early Detection (RED) {{?FJ03}} and Drop-Tail.
+This evaluation is often not included in the internet-draft
+itself, but in related papers cited in the draft.
 
-	As an example from an Experimental RFC, performance in a range of
-	environments is discussed in Section&nbsp;12 of {{?RFC3649}} (HighSpeed
-	TCP) and Section&nbsp;9.7 of {{?RFC4782}} (Quick-Start).
-	
+A particularly important aspect of evaluating a proposal for
+standardization is in understanding where the algorithm breaks
+down.  Therefore, particular attention should be paid to
+characterizing the areas where the proposed mechanism does not
+perform well.
+
+As an example from an Experimental RFC, performance in a range of
+environments is discussed in Section&nbsp;12 of {{?RFC3649}} (HighSpeed
+TCP) and Section&nbsp;9.7 of {{?RFC4782}} (Quick-Start).
+
     4. Protection Against Congestion Collaps
-	
-	The alternate congestion control mechanism should either stop
+
+The alternate congestion control mechanism should either stop
        sending when the packet drop rate exceeds some threshold
        {{?RFC3714}}, or should include some notion of "full backoff".  For
        "full backoff", at some point the algorithm would reduce the
