@@ -109,7 +109,6 @@ of their proposals for publication in the RFC series to allow others
 to concretely understand and investigate the wealth of proposals in
 this space.
 
-
 # Document Status
 
 Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
@@ -380,7 +379,6 @@ examine any potential security issues that may arise.
 # IANA Considerations
 
 This document has no IANA actions.
-
 
 --- back
 
