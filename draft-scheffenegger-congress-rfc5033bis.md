@@ -17,6 +17,12 @@ pi: [toc, sortrefs, symrefs]
 
 author:
  -
+    ins: R. Scheffenegger
+    name: Richard Scheffenegger
+    organization: NetApp, Inc.
+    email: srichard@netapp.com
+    role: editor
+ -
     ins: S. Floyd
     name: Sally Floyd
     organization: ICSI Center for Internet Research
@@ -30,12 +36,6 @@ author:
     abbrev: ICIR / ICSI
     email: mallman@icir.org
     uri: http://www.icir.org/mallman
- -
-    ins: R. Scheffenegger
-    name: Richard Scheffenegger
-    organization: NetApp, Inc.
-    email: srichard@netapp.com
-    role: editor
 
 normative:
 
