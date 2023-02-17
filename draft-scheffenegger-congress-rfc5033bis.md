@@ -96,14 +96,17 @@ a proposal is appropriate for publication in the RFC series.
 The guidelines in this document are intended to be consistent with
 the congestion control principles from {{!RFC2914}} of preventing
 congestion collapse, considering fairness, and optimizing the flow's
-own performance in terms of throughput, delay, and loss.  {{!RFC2914}}
+own performance in terms of throughput, delay, and loss.
+{{!RFC2914}}
 also discusses the goal of avoiding a congestion control "arms race"
 among competing transport protocols.
 
 This document does not give hard-and-fast requirements for an
-appropriate congestion control scheme.  Rather, the document provides
+appropriate congestion control scheme.
+Rather, the document provides
 a set of criteria that should be considered and weighed by the IETF
-in the context of each proposal.  The high-order criteria for any new
+in the context of each proposal.
+The high-order criteria for any new
 proposal is that a serious scientific study of the pros and cons of
 the proposal needs to have been done such that the IETF has a well-
 rounded set of information to consider.
@@ -118,26 +121,33 @@ this space.
 Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
 control algorithms are expected to be published as "Experimental"
 RFCs until such time that the community better understands the
-solution space.  Traditionally, the meaning of "Experimental" status
-has varied in its use and interpretation.  As part of this document
+solution space.
+Traditionally, the meaning of "Experimental" status
+has varied in its use and interpretation.
+As part of this document
 we define two classes of congestion control proposals that can be
-published with the "Experimental" status.  The first class includes
+published with the "Experimental" status.
+The first class includes
 algorithms that are judged to be safe to deploy for best-effort
 traffic in the global Internet and further investigated in that
-environment.  The second class includes algorithms that, while
+environment.
+The second class includes algorithms that, while
 promising, are not deemed safe enough for widespread deployment as
 best-effort traffic on the Internet, but are being specified to
 facilitate investigations in simulation, testbeds, or controlled
-environments.  The second class can also include algorithms where the
+environments.
+The second class can also include algorithms where the
 IETF does not yet have sufficient understanding to decide if the
 algorithm is or is not safe for deployment on the Internet.
 
 Each alternate congestion control algorithm published is required to
 include a statement in the abstract indicating whether or not the
-proposal is considered safe for use on the Internet.  Each alternate
+proposal is considered safe for use on the Internet.
+Each alternate
 congestion control algorithm published is also required to include a
 statement in the abstract describing environments where the protocol
-is not recommended for deployment.  There may be environments where
+is not recommended for deployment.
+There may be environments where
 the protocol is deemed *safe* for use, but still is not *recommended*
 for use because it does not perform well for the user.
 
