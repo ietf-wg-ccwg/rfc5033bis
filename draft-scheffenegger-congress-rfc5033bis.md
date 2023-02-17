@@ -58,6 +58,7 @@ informative:
 
   Tools:
     title: Tools for the Evaluation of Simulation and Testbed Scenarios
+    target: "https://datatracker.ietf.org/doc/draft-irtf-tmrg-tools"
     seriesinfo: Work in Progress
     date: 2007-7
     author:
@@ -67,8 +68,10 @@ informative:
 --- abstract
 
 The IETF's standard congestion control schemes have been widely shown
-to be inadequate for various environments (e.g., high-speed
-networks).
+to be inadequate for various environments (e.g., high-speed networks,
+wireless technologies such as 3GPP and WiFi, long distance satellite
+links) and also in conflict with the needed, more isochronous,
+behaviors of VoIP, gaming, and videoconferencing traffic.
 Recent research has yielded many alternate congestion
 control schemes that significantly differ from the IETF's congestion
 control principles.
@@ -405,4 +408,24 @@ Colin Perkins, Pekka Savola, members of TSVWG, and participants at
 the TCP Workshop at Microsoft Research for feedback and
 contributions.  This document also draws from {{Metrics}}.
 
+These individuals suggested improvements to this document:
 
+<ul spacing="compact">
+<li><t><contact fullname="Dave Taht"/></t></li>
+
+</ul>
+
+# Evolution of RFC5033bis
+{:numbered="false"}
+
+## Since draft-scheffenegger-congress-rfc5033bis-00
+{:numbered="false"}
+
+- Include updated text suggested by Dave Taht
+- Include section to track updates between revisions
+
+## Since RFC5033
+{:numbered="false"}
+
+- converted to Markdown and xml2rfc v3
+- various formatting changes
