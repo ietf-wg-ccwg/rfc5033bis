@@ -68,14 +68,18 @@ informative:
 
 The IETF's standard congestion control schemes have been widely shown
 to be inadequate for various environments (e.g., high-speed
-networks).  Recent research has yielded many alternate congestion
+networks).
+Recent research has yielded many alternate congestion
 control schemes that significantly differ from the IETF's congestion
-control principles.  Using these new congestion control schemes in
+control principles.
+Using these new congestion control schemes in
 the global Internet has possible ramifications to both the traffic
 using the new congestion control and to traffic using the currently
-standardized congestion control.  Therefore, the IETF must proceed
+standardized congestion control.
+Therefore, the IETF must proceed
 with caution when dealing with alternate congestion control
-proposals.  The goal of this document is to provide guidance for
+proposals.
+The goal of this document is to provide guidance for
 considering alternate congestion control algorithms within the IETF.
 
 --- middle
