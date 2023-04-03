@@ -49,13 +49,6 @@ informative:
     - ins: S. Floyd
     - ins: V. Jacobson
 
-  Metrics:
-    title: Metrics for the Evaluation of Congestion Control Mechanisms
-    seriesinfo: Work in Progress
-    date: 2007-7
-    author:
-    - ins: S. Floyd
-
   Tools:
     title: Tools for the Evaluation of Simulation and Testbed Scenarios
     target: "https://datatracker.ietf.org/doc/draft-irtf-tmrg-tools"
@@ -406,7 +399,7 @@ Discussions with Lars Eggert and Aaron Falk seeded this document.
 Thanks to Bob Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye,
 Colin Perkins, Pekka Savola, members of TSVWG, and participants at
 the TCP Workshop at Microsoft Research for feedback and
-contributions.  This document also draws from {{Metrics}}.
+contributions.  This document also draws from {{?RFC5166}}.
 
 These individuals suggested improvements to this document:
 
@@ -423,6 +416,7 @@ These individuals suggested improvements to this document:
 
 - Include updated text suggested by Dave Taht
 - Include section to track updates between revisions
+- Update references
 
 ## Since RFC5033
 {:numbered="false"}
