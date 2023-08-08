@@ -17,25 +17,17 @@ pi: [toc, sortrefs, symrefs]
 
 author:
  -
-    ins: R. Scheffenegger
-    name: Richard Scheffenegger
-    organization: NetApp, Inc.
-    email: srichard@netapp.com
+    ins: M. Duke
+    name: Martin Duke
+    organization: Google LLC
+    email: martin.h.duke@gmail.com
     role: editor
  -
-    ins: S. Floyd
-    name: Sally Floyd
-    organization: ICSI Center for Internet Research
-    abbrev: ICIR / ICSI
-    email: floyd@icir.org
-    uri: http://www.icir.org/floyd
- -
-    ins: M. Allman
-    name: Mark Allman
-    organization: ICSI Center for Internet Research
-    abbrev: ICIR / ICSI
-    email: mallman@icir.org
-    uri: http://www.icir.org/mallman
+    ins: G. Fairhurst
+    name: Godred Fairhurst
+    organization: University of Aberdeen
+    email: gorry@erg.abdn.ac.uk
+    role: editor
 
 normative:
 
@@ -395,11 +387,16 @@ This document has no IANA actions.
 # Acknowledgments
 {:numbered="false"}
 
-Discussions with Lars Eggert and Aaron Falk seeded this document.
-Thanks to Bob Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye,
+Sally Floyd and Mark Allman were the authors of this document's predecessor,
+RFC5033, which served the community well for over a decade.
+
+Thanks to Richard Scheffenegger for helping to get this revision process started.
+
+Discussions with Lars Eggert and Aaron Falk seeded the original RFC5033.
+Bob Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye,
 Colin Perkins, Pekka Savola, members of TSVWG, and participants at
-the TCP Workshop at Microsoft Research for feedback and
-contributions.  This document also draws from {{?RFC5166}}.
+the TCP Workshop at Microsoft Research all provided feedback and
+contributions to that document.  It also drew from {{?RFC5166}}.
 
 These individuals suggested improvements to this document:
 
@@ -414,6 +411,7 @@ These individuals suggested improvements to this document:
 ## Since draft-scheffenegger-congress-rfc5033bis-00
 {:numbered="false"}
 
+- Updated authorship and acknowledgements.
 - Include updated text suggested by Dave Taht
 - Include section to track updates between revisions
 - Update references
