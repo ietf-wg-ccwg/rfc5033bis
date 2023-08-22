@@ -299,8 +299,8 @@ trip times comparable bandwidth during backoff.
 : Protection Against Bufferbloat
 
 : The alternate congestion control mechanism should reduce its sending
-rate if the round trip time (RTT) significantly increases. Exactly how the algorithm
-reduces its sending rate is algorithm specific.
+rate if the round trip time (RTT) significantly increases. Exactly how
+the algorithm reduces its sending rate is algorithm specific.
 
 : Bufferbloat {{Bufferbloat}} refers to the building of long queues in
 the network. Many network routers are configured with very large buffers.
