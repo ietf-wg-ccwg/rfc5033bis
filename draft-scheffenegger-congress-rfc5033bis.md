@@ -58,7 +58,6 @@ informative:
       name: Jim Gettys
     date: 2018-2-10
     seriesinfo: IETF Blog
-   
 
 --- abstract
 
