@@ -33,6 +33,24 @@ normative:
 
 informative:
 
+  BBR-draft: I-D.cardwell-iccrg-bbr-congestion-control
+
+  HRX08:
+    title: "CUBIC: a new TCP-friendly high-speed TCP variant"
+    seriesinfo: ACM SIGOPS Operating Systems Review, vol. 42, no. 5, pp. 64-74
+    date: 2008-07
+    target: https://doi.org/10.1145/1400097.1400105
+    author:
+      -
+        ins: S. Ha
+        name: Sangtae Ha
+      -
+        ins: I. Rhee
+        name: Injong Rhee
+      -
+        ins: L. Xu
+        name: Lisong Xu
+
   FJ03:
     title: Random Early Detection Gateways for Congestion Avoidance
     seriesinfo: IEEE/ACM Transactions on Networking, V.1 N.4
@@ -79,7 +97,38 @@ suggested congestion control algorithms that significantly differ
 from the general congestion control principles outlined in {{!RFC2914}}.
 The guidance is intended to be useful to authors proposing alternate
 congestion control and for the IETF community when evaluating whether
-a proposal is appropriate for publication in the RFC series.
+a proposal is appropriate for publication in the RFC series and for
+deployment in the Internet.
+
+This document updates the similarly titled {{!RFC5033}} that was
+published in 2007. Since then, multiple congestion control algorithms
+were developed outside of the IETF, including at least two that saw
+large scale deployment: Cubic {{HRX08}} and BBR {{BBR-draft}}.
+
+Cubic was documented in a research publication in 2007 {{HRX08}},
+and then adopted as the default congestion control algorithm for
+the TCP implementation in Linux. It was already used in a significant
+fraction of TCP connections over the Internet before being documented
+in an informational Internet Draft in 2015, being published as an
+informational RFC in 2017 {{?RFC8312}} and then as a proposed
+standard in 2023 {{?RFC9438}}.
+
+BBR is developed as an internal research project by Google,
+with the first implementation contributed to Linux kernel 4.19 in 2016.
+It was described in an IRTF draft in 2018, and that draft is
+regularly updated to document the evolving versions of the algorithm
+{{BBR-draft}}. BBR is widely used for Google services using either
+TCP or QUIC {{?RFC9000}}, and is also largely deployed outside of
+Google.
+
+We cannot say now whether the original authors of {{?RFC5033}}
+expected that developers would be somehow waiting for IETF review
+before widely deploying a congestion control algorithm over the
+Internet, but the examples of Cubic and BBR teaches us that
+deployment of new algorithms is not in fact gated by publication
+of the algorithm as an RFC. Nevertheless, guidelines are
+important, if only to remind potential inventors and developers of
+the multiple facets of the congestion control problem.
 
 The guidelines in this document are intended to be consistent with
 the congestion control principles from {{!RFC2914}} of preventing
@@ -92,12 +141,14 @@ among competing transport protocols.
 This document does not give hard-and-fast requirements for an
 appropriate congestion control scheme.
 Rather, the document provides
-a set of criteria that should be considered and weighed by the IETF
+a set of criteria that should be considered and weighed by the
+developers of congestion control algorithms and by the IETF
 in the context of each proposal.
 The high-order criteria for any new
 proposal is that a serious scientific study of the pros and cons of
-the proposal needs to have been done such that the IETF has a well-
-rounded set of information to consider.
+the proposal needs to have been done before a proposal is
+considered for publication by the IETF or before it is deployed at
+large scale.
 
 After initial studies, we encourage authors to write a specification
 of their proposals for publication in the RFC series to allow others
