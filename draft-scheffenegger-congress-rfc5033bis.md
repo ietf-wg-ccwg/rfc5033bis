@@ -50,6 +50,16 @@ informative:
     - ins: S. Floyd
     - ins: E. Kohler
 
+  Bufferbloat:
+    title: The Blind Men and the Elephant
+    target: https://www.ietf.org/blog/blind-men-and-elephant/
+    author:
+      ins: J. Gettys
+      name: Jim Gettys
+    date: 2018-2-10
+    seriesinfo: IETF Blog
+   
+
 --- abstract
 
 The IETF's standard congestion control schemes have been widely shown
@@ -265,7 +275,7 @@ environments is discussed in Section&nbsp;12 of {{?RFC3649}} (HighSpeed
 TCP) and Section&nbsp;9.7 of {{?RFC4782}} (Quick-Start).
 
 (4)
-: Protection Against Congestion Collaps
+: Protection Against Congestion Collapse
 
 : The alternate congestion control mechanism should either stop
 sending when the packet drop rate exceeds some threshold
@@ -286,13 +296,35 @@ backoff mechanisms that would give flows with different round-
 trip times comparable bandwidth during backoff.
 
 (5)
+: Protection Against Bufferbloat
+
+: The alternate congestion control mechanism should reduce its sending
+rate if the round trip time (RTT) significantly increases. Exactly how the algorithm
+reduces its sending rate is algorithm specific.
+
+: Bufferbloat {{Bufferbloat}} refers to the building of long queues in
+the network. Many network routers are configured with very large buffers.
+If congestion starts happening, classic TCP congestion control algorithms
+{{!RFC5681}} will continue sending at a high rate until the buffer fills
+up completely and packet losses occur. Every connection going through
+that bottleneck will experience high latency.
+This is particularly bad for highly interactive applications like games,
+but it also affects routine web browsing and video playing.
+
+: This problem became apparent in the last decade and was not discussed in
+the Congestion Control Principles published in September 2002 {{!RFC2914}}.
+The classic congestion control algorithm {{!RFC5681}} and the widely deployed
+Cubic algorithm {{?RFC9438}} do not address it, but newly designed congestion
+control algorithms have the opportunity to improve the state of the art.
+
+(6)
 : Fairness within the Alternate Congestion Control Algorithm.
 
 : In environments with multiple competing flows all using the same
 alternate congestion control algorithm, the proposal should
 explore how bandwidth is shared among the competing flows.
 
-(6)
+(7)
 : Performance with Misbehaving Nodes and Outside Attackers.
 
 : The proposal should explore how the alternate congestion control
@@ -311,7 +343,7 @@ between misbehaving routers; misbehaving middleboxes; and the
 potential use of Quick-Start to attack routers or to tie up
 available Quick-Start bandwidth.
 
-(7)
+(8)
 : Responses to Sudden or Transient Events.
 
 : The proposal should consider how the alternate congestion control
@@ -324,7 +356,7 @@ Section 17 of {{Tools}}.
 : As an example from an Experimental RFC, response to transient
 events is discussed in Section&nbsp;9.2 of {{?RFC4782}} (Quick-Start).
 
-(8)
+(9)
 : Incremental Deployment.
 
 : The proposal should discuss whether the alternate congestion
