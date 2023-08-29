@@ -294,35 +294,36 @@ explore how bandwidth is shared among the competing flows.
 (*)
 : Utilising More than one Path.
 
-: An IETF transport is not tied to a specific Internet path. 
-The set of routers forming the path can and do change with time, 
-this will also cause the properties of the path to change with respect to time. 
-Congestion control needs to be designed to take into account 
+: An IETF transport is not tied to a specific Internet path.
+The set of routers forming the path can and do change with time,
+this will also cause the properties of the path to change with respect to time.
+Congestion control needs to be designed to take into account
 these changes in the path characteristics.
-
-: Some transports permit more than one path to be differentiated and used by 
+Some transports permit more than one path to be differentiated and used by
 a single connection at the sender. These are called multipath transport protocols.  
-A multipath sender can schedule which packets travel on which of its active paths.  
-This enables a tradeoff in timeliness and reliability. 
-It can be used for various purposes, including rapid fail-over one path to 
-another when the original path is no longer viable, or switching the traffic from 
-one path to another when this is expected to improve performance 
-(latency, throughput, reliability, cost).  
-A design independently needs to track the congestion state of each path, 
-and needs to demonstrate independent congestion control for each path being used.  
+A multipath sender can schedule which packets travel on which of its active paths.
+This enables a tradeoff in timeliness and reliability.
 
-: Concurrent multipath scheduling allows a transport protocol to simultaneously 
-use multiple flows to aggregate the capacity of multiple paths. 
-Concurrent path usage can have additional implications: 
-Since the Internet provides no guarantee that different paths 
+One use is to provide fail-over from one path to
+another when the original path is no longer viable or to switch the traffic from
+one path to another when this is expected to improve performance
+(latency, throughput, reliability, cost).
+A design independently needs to track the congestion state of each path,
+and needs to demonstrate independent congestion control for each path being used.
+
+: Anothe use is for concurrent multipath scheduling. 
+This allows a transport protocol to simultaneously
+use multiple flows to aggregate the capacity of multiple paths.
+Concurrent path usage can have additional implications:
+Since the Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint,
-a design needs to be evaluated to check it does not 
+a design needs to be evaluated to check it does not
 inappropriately compete with other flows (including single path connections)
-that share a common bottleneck 
+that share a common bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit).
-At the time of writing there are no IETF standards for concurrent 
-multipath usage in the general Internet. 
+At the time of writing there are no IETF standards for concurrent
+multipath usage in the general Internet.
 
 (6)
 : Performance with Misbehaving Nodes and Outside Attackers.
