@@ -311,14 +311,13 @@ one path to another when this is expected to improve performance
 A design independently needs to track the congestion state of each path,
 and needs to demonstrate independent congestion control for each path being used.
 
-: Anothe use is for concurrent multipath scheduling. 
-This allows a transport protocol to simultaneously
-use multiple flows to aggregate the capacity of multiple paths.
-Concurrent path usage can have additional implications:
+:  A concurrent transport protocol simultaneously
+schedules multiple flows to aggregate the capacity of multiple paths.
+This introduces additional implications:
 Since the Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint,
-a design needs to be evaluated to check it does not
-inappropriately compete with other flows (including single path connections)
+a design needs to be evaluated potential
+harm to other flows(including single path connections)
 that share a common bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit).
