@@ -257,7 +257,8 @@ competing with standard IETF congestion control {{!RFC5681}},
 congestion controllers that have a significantly negative impact on
 traffic using standard congestion control may be suspect and this aspect should
 be part of the community's decision making with regards to the suitability of
-the alternate congestion control mechanism.
+the alternate congestion control mechanism. The community should also consider
+any other non-standard congestion controls shown to be widely deployed,
 
 : We note that this bullet is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for an alternate congestion
