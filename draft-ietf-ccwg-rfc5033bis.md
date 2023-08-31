@@ -248,23 +248,25 @@ check-list.
 explanation of the deviations from {{!RFC2914}}.
 
 (1)
-: Impact on Standard TCP, SCTP {{!RFC2960}}, and DCCP {{!RFC4340}}.
+: Impact on existing deployments of TCP {{!RFC9293}}, SCTP {{!RFC9260}},
+DCCP {{!RFC4340}}, and QUIC {{!RFC9000}}.
 
 : Proposed congestion control mechanisms should be evaluated when
-competing with standard IETF congestion control {{!RFC2581}},
-{{!RFC2960}}, {{!RFC4340}}.  Alternate congestion controllers that have a
-significantly negative impact on traffic using standard
-congestion control may be suspect and this aspect should be part
-of the community's decision making with regards to the
-suitability of the alternate congestion control mechanism.
+competing with standard IETF congestion control {{!RFC5681}},
+{{!RFC9260}}, {{!RFC4340}}, {{!RFC9002}}, {{!RFC9438}}.  Alternate
+congestion controllers that have a significantly negative impact on
+traffic using standard congestion control may be suspect and this aspect should
+be part of the community's decision making with regards to the suitability of
+the alternate congestion control mechanism.
 
-: We note that this bullet is not a requirement for strict TCP-
+: We note that this bullet is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for an alternate congestion
 control mechanism to advance to Experimental.  As an example,
 HighSpeed TCP is a congestion control mechanism that is
 Experimental, but that is not TCP-friendly in all environments.
 We also note that this guideline does not constrain the fairness
-offered for non-best-effort traffic.
+offered for non-best-effort traffic. Existing major deployments should not
+suffer severe performance degradation when a new algorithm is deployed.
 
 : As an example from an Experimental RFC, fairness with standard
 TCP is discussed in Sections 4 and 6 of {{?RFC3649}} (HighSpeed TCP)
