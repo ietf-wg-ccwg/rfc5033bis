@@ -458,7 +458,7 @@ This document does not represent a change to any aspect of the TCP/IP
 protocol suite and therefore does not directly impact Internet
 security.  The implementation of various facets of the Internet's
 current congestion control algorithms do have security implications
-(e.g., as outlined in {{!RFC2581}}).  Alternate congestion control
+(e.g., as outlined in {{!RFC5681}}).  Alternate congestion control
 schemes should be mindful of such pitfalls, as well, and should
 examine any potential security issues that may arise.
 
@@ -501,6 +501,7 @@ These individuals suggested improvements to this document:
 - Added criterion for bufferbloat
 - Mentioned Cubic and BBR as motivation
 - Include section to track updates between revisions
+- Added QUIC, other congestion control standards
 - Update references
 
 ## Since RFC5033
