@@ -1,7 +1,7 @@
 ---
 title: "Specifying New Congestion Control Algorithms"
 abbrev: "New CC Algorithms"
-docname: draft-scheffenegger-congress-rfc5033bis-latest
+docname: draft-ietf-ccwg-rfc5033bis-latest
 category: bcp
 stream: IETF
 obsoletes: 5033
@@ -493,8 +493,11 @@ These individuals suggested improvements to this document:
 ## Since draft-scheffenegger-congress-rfc5033bis-00
 {:numbered="false"}
 
+- Renamed file to reflect WG adpotion
 - Updated authorship and acknowledgements.
 - Include updated text suggested by Dave Taht
+- Added criterion for bufferbloat
+- Mentioned Cubic and BBR as motivation
 - Include section to track updates between revisions
 - Update references
 
