@@ -272,13 +272,23 @@ and using spare capacity is discussed in Sections 6, 11.1, and 12
 of {{?RFC3649}}.
 
 (2)
+: Wireless links
+
+: While the early internet was dominated by wired links, the properties
+of wireless links have become extremely important to internet performance.
+In particular, congestion controllers should be evaluated in situations
+where some packet losses are due to radio effects, rather than router
+queue drops; the bandwidth varies over time due to changing link conditions;
+and media access delays and link-layer retransmission lead to increased jitter
+in round-trip times. See {{?RFC3819} and Section 16 of {{Tools}} for further
+disucssion of wireless properties.
+
+(3)
 : Difficult Environments.
 
 : The proposed algorithms should be assessed in difficult
-environments such as paths containing wireless links.
-Characteristics of wireless environments are discussed in
-{{?RFC3819}} and in Section 16 of {{Tools}}.  Other difficult
-environments can include those with multipath routing within a
+environments 
+such as those with multipath routing within a
 connection.  We note that there is still much to be desired in
 terms of the performance of TCP in some of these difficult
 environments.  For congestion control mechanisms with explicit
@@ -300,7 +310,7 @@ these characteristics should be detailed.
 environments is discussed in Sections 6, 9.2, and 10.2 of
 {{?RFC4782}} (Quick-Start).
 
-(3)
+(4)
 : Investigating a Range of Environments.
 
 : Similar to the last criteria, proposed alternate congestion
@@ -324,7 +334,7 @@ perform well.
 environments is discussed in Section&nbsp;12 of {{?RFC3649}} (HighSpeed
 TCP) and Section&nbsp;9.7 of {{?RFC4782}} (Quick-Start).
 
-(4)
+(5)
 : Protection Against Congestion Collapse
 
 : The alternate congestion control mechanism should either stop
@@ -345,7 +355,7 @@ full backoff mechanism must be identical to that of TCP
 backoff mechanisms that would give flows with different round-
 trip times comparable bandwidth during backoff.
 
-(5)
+(6)
 : Protection Against Bufferbloat
 
 : The alternate congestion control mechanism should reduce its sending
@@ -367,14 +377,14 @@ The classic congestion control algorithm {{!RFC5681}} and the widely deployed
 Cubic algorithm {{?RFC9438}} do not address it, but newly designed congestion
 control algorithms have the opportunity to improve the state of the art.
 
-(6)
+(7)
 : Fairness within the Alternate Congestion Control Algorithm.
 
 : In environments with multiple competing flows all using the same
 alternate congestion control algorithm, the proposal should
 explore how bandwidth is shared among the competing flows.
 
-(7)
+(8)
 : Performance with Misbehaving Nodes and Outside Attackers.
 
 : The proposal should explore how the alternate congestion control
@@ -393,7 +403,7 @@ between misbehaving routers; misbehaving middleboxes; and the
 potential use of Quick-Start to attack routers or to tie up
 available Quick-Start bandwidth.
 
-(8)
+(9)
 : Responses to Sudden or Transient Events.
 
 : The proposal should consider how the alternate congestion control
@@ -406,7 +416,7 @@ Section 17 of {{Tools}}.
 : As an example from an Experimental RFC, response to transient
 events is discussed in Section&nbsp;9.2 of {{?RFC4782}} (Quick-Start).
 
-(9)
+(10)
 : Incremental Deployment.
 
 : The proposal should discuss whether the alternate congestion
@@ -439,12 +449,13 @@ the global Internet.
 
 The minimum requirements for approval for widespread deployment in
 the global Internet include the following guidelines on: (1)
-assessing the impact on standard congestion control, (3)
+assessing the impact on standard congestion control, (2) performance in
+wireless environments, (4)
 investigation of the proposed mechanism in a range of environments,
-(4) protection against congestion collapse, and (8) discussing
+(5) protection against congestion collapse, and (10) discussing
 whether the mechanism allows for incremental deployment.
 
-For other guidelines, i.e., (2), (5), (6), and (7), the author must
+For other guidelines, the author must
 perform the suggested evaluations and provide recommended analysis.
 Evidence that the proposed mechanism has significantly more problems
 than those of TCP should be a cause for concern in approval for
@@ -497,6 +508,7 @@ These individuals suggested improvements to this document:
 - Updated authorship and acknowledgements.
 - Include updated text suggested by Dave Taht
 - Added criterion for bufferbloat
+- Added wireless environments
 - Mentioned Cubic and BBR as motivation
 - Include section to track updates between revisions
 - Update references
