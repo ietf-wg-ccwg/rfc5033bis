@@ -110,8 +110,21 @@ a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.
 
 This document updates the similarly titled {{!RFC5033}} that was
-published in 2007. Since then, multiple congestion control algorithms
-were developed outside of the IETF, including at least two that saw
+published in 2007. This describes a Best Current Practice to evaluate 
+new congestion control algorithms as Experimental or Proposed Standard RFCs.
+In 2007, TCP was the dominant consumer of this work, and proposals 
+were typically discussed in research groups, for example the 
+Internet Congestion Control Research Group (ICCRG).
+Since RFC 5033 was published, many conditions have changed. 
+Congestion control algorithm proponents now often have the opportunity to test
+and deploy at scale without IETF review. The set of protocols using these
+algorithms has spread beyond TCP and SCTP to include DCCP, QUIC, and beyond.
+There is also more interest in specialized use cases such as data centers and
+real-time protocols. Finally, the community has gained much more experienc
+with indications of congestion beyond packet loss.
+
+Since 2007, multiple congestion control algorithms
+were developed within and utside of the IETF, including at least two that saw
 large scale deployment: Cubic {{HRX08}} and BBR {{BBR-draft}}.
 
 Cubic was documented in a research publication in 2007 {{HRX08}},
