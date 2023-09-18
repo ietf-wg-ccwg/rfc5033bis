@@ -110,8 +110,8 @@ a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.
 
 This document updates the similarly titled {{!RFC5033}} that was
-published in 2007 as a Best Current Practice to evaluate new 
-congestion control algorithms as Experimental or Proposed Standard RFCs. 
+published in 2007 as a Best Current Practice to evaluate new
+congestion control algorithms as Experimental or Proposed Standard RFCs.
 
 In 2007, TCP was the dominant consumer of this work, and proposals were
 typically discussed in research groups, for example the
