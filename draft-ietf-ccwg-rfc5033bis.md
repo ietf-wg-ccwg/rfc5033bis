@@ -287,9 +287,7 @@ discussion of wireless properties.
 : Difficult Environments.
 
 : The proposed algorithms should be assessed in difficult
-environments 
-such as those with multipath routing within a
-connection.  We note that there is still much to be desired in
+environments.  We note that there is still much to be desired in
 terms of the performance of TCP in some of these difficult
 environments.  For congestion control mechanisms with explicit
 feedback from routers, difficult environments can include paths
