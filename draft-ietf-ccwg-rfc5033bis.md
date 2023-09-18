@@ -274,8 +274,8 @@ of {{?RFC3649}}.
 (2)
 : Wireless links
 
-: While the early internet was dominated by wired links, the properties
-of wireless links have become extremely important to internet performance.
+: While the early Internet was dominated by wired links, the properties
+of wireless links have become extremely important to Internet performance.
 In particular, congestion controllers should be evaluated in situations
 where some packet losses are due to radio effects, rather than router
 queue drops; the bandwidth varies over time due to changing link conditions;
