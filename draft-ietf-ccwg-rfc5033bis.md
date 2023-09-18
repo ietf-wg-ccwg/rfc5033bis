@@ -278,7 +278,7 @@ of {{?RFC3649}}.
 of wireless links have become extremely important to Internet performance.
 In particular, congestion controllers should be evaluated in situations
 where some packet losses are due to radio effects, rather than router
-queue drops; the bandwidth varies over time due to changing link conditions;
+queue drops; the link capacity varies over time due to changing link conditions;
 and media access delays and link-layer retransmission lead to increased jitter
 in round-trip times. See {{?RFC3819} and Section 16 of {{Tools}} for further
 discussion of wireless properties.
@@ -316,7 +316,7 @@ environments is discussed in Sections 6, 9.2, and 10.2 of
 : Similar to the last criteria, proposed alternate congestion
 controllers should be assessed in a range of environments.  For
 instance, proposals should be investigated across a range of
-bandwidths, round-trip times, levels of traffic on the reverse
+capacities, round-trip times, levels of traffic on the reverse
 path, and levels of statistical multiplexing at the congested
 link.  Similarly, proposals should be investigated for robust
 performance with different queueing mechanisms in the routers,
@@ -353,7 +353,7 @@ congestion.
 full backoff mechanism must be identical to that of TCP
 {{?RFC2988}}.  As an example, this bullet does not preclude full
 backoff mechanisms that would give flows with different round-
-trip times comparable bandwidth during backoff.
+trip times comparable caapcity during backoff.
 
 (6)
 : Protection Against Bufferbloat
@@ -382,7 +382,7 @@ control algorithms have the opportunity to improve the state of the art.
 
 : In environments with multiple competing flows all using the same
 alternate congestion control algorithm, the proposal should
-explore how bandwidth is shared among the competing flows.
+explore how the capacity is shared among the competing flows.
 
 (8)
 : Performance with Misbehaving Nodes and Outside Attackers.
