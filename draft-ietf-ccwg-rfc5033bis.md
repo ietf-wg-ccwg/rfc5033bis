@@ -119,7 +119,7 @@ Internet Congestion Control Research Group (ICCRG).
 
 Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP and SCTP to include DCCP, QUIC, and beyond. 
+TCP and SCTP to include DCCP, QUIC, and beyond.
 Some congestion control algorithm proponents now have the opportunity
 to test and deploy at scale without IETF review.
 There is more interest in specialized use cases such as data centers and
