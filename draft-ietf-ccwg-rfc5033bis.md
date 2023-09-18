@@ -250,7 +250,7 @@ explanation of the deviations from {{!RFC2914}}.
 (1)
 : Impact on Standard TCP, SCTP {{!RFC2960}}, and DCCP {{!RFC4340}}.
 
-: Proposed congestion control mechanisms should be evaluated when
+: Evaluation of proposed congestion control mechanisms should include test cases
 competing with standard IETF congestion control {{!RFC2581}},
 {{!RFC2960}}, {{!RFC4340}}.  Alternate congestion controllers that have a
 significantly negative impact on traffic using standard
