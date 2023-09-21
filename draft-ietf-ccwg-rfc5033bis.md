@@ -280,7 +280,7 @@ In particular, congestion controllers should be evaluated in situations
 where some packet losses are due to radio effects, rather than router
 queue drops; the bandwidth varies over time due to changing link conditions;
 and media access delays and link-layer retransmission lead to increased jitter
-in round-trip times. See {{?RFC3819} and Section 16 of {{Tools}} for further
+in round-trip times. See {{?RFC3819}} and Section 16 of {{Tools}} for further
 discussion of wireless properties.
 
 (3)
