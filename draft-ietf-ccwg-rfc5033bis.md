@@ -8,7 +8,7 @@ obsoletes: 5033
 
 ipr: trust200902
 area: General
-workgroup: TODO Working Group
+workgroup: CCWG
 keyword: Internet-Draft
 
 stand_alone: yes
@@ -28,6 +28,12 @@ author:
     organization: University of Aberdeen
     email: gorry@erg.abdn.ac.uk
     role: editor
+contributor:
+ -
+    ins: C. Huitema
+    name: Christian Huitema
+    organization: Private Octopus, Inc.
+    email: huitema@huitema.net
 
 normative:
 
@@ -506,3 +512,4 @@ These individuals suggested improvements to this document:
 
 - converted to Markdown and xml2rfc v3
 - various formatting changes
+
