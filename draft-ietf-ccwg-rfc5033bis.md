@@ -250,7 +250,7 @@ explanation of the deviations from {{!RFC2914}}.
 (1)
 : Impact on Standard TCP, SCTP {{!RFC2960}}, and DCCP {{!RFC4340}}.
 
-: Proposed congestion control mechanisms should be evaluated when
+: Evaluation of proposed congestion control mechanisms should include test cases
 competing with standard IETF congestion control {{!RFC2581}},
 {{!RFC2960}}, {{!RFC4340}}.  Alternate congestion controllers that have a
 significantly negative impact on traffic using standard
@@ -274,11 +274,11 @@ of {{?RFC3649}}.
 (2)
 : Wireless links
 
-: While the early internet was dominated by wired links, the properties
-of wireless links have become extremely important to internet performance.
+: While the early Internet was dominated by wired links, the properties
+of wireless links have become extremely important to Internet performance.
 In particular, congestion controllers should be evaluated in situations
 where some packet losses are due to radio effects, rather than router
-queue drops; the bandwidth varies over time due to changing link conditions;
+queue drops; the link capacity varies over time due to changing link conditions;
 and media access delays and link-layer retransmission lead to increased jitter
 in round-trip times. See {{?RFC3819}} and Section 16 of {{Tools}} for further
 discussion of wireless properties.
@@ -287,9 +287,7 @@ discussion of wireless properties.
 : Difficult Environments.
 
 : The proposed algorithms should be assessed in difficult
-environments 
-such as those with multipath routing within a
-connection.  We note that there is still much to be desired in
+environments.  We note that there is still much to be desired in
 terms of the performance of TCP in some of these difficult
 environments.  For congestion control mechanisms with explicit
 feedback from routers, difficult environments can include paths
@@ -316,7 +314,7 @@ environments is discussed in Sections 6, 9.2, and 10.2 of
 : Similar to the last criteria, proposed alternate congestion
 controllers should be assessed in a range of environments.  For
 instance, proposals should be investigated across a range of
-bandwidths, round-trip times, levels of traffic on the reverse
+capacities, round-trip times, levels of traffic on the reverse
 path, and levels of statistical multiplexing at the congested
 link.  Similarly, proposals should be investigated for robust
 performance with different queueing mechanisms in the routers,
@@ -353,7 +351,7 @@ congestion.
 full backoff mechanism must be identical to that of TCP
 {{?RFC2988}}.  As an example, this bullet does not preclude full
 backoff mechanisms that would give flows with different round-
-trip times comparable bandwidth during backoff.
+trip times comparable caapcity during backoff.
 
 (6)
 : Protection Against Bufferbloat
@@ -382,7 +380,7 @@ control algorithms have the opportunity to improve the state of the art.
 
 : In environments with multiple competing flows all using the same
 alternate congestion control algorithm, the proposal should
-explore how bandwidth is shared among the competing flows.
+explore how the capacity is shared among the competing flows.
 
 (8)
 : Performance with Misbehaving Nodes and Outside Attackers.
