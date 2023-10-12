@@ -311,17 +311,17 @@ one path to another when this is expected to improve performance
 A design independently needs to track the congestion state of each path,
 and needs to demonstrate independent congestion control for each path being used.
 
-:  A concurrent transport protocol simultaneously
+A concurrent transport protocol simultaneously
 schedules multiple flows to aggregate the capacity of multiple paths.
 This introduces additional implications:
-Since the Internet provides no guarantee that different paths
+The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint,
-a design needs to be evaluated potential
-harm to other flows(including single path connections)
+therefore a design needs to evaluate the potential
+harm to other flows (including single path connections)
 that share a common bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit).
-At the time of writing there are no IETF standards for concurrent
+At the time of writing, there are no IETF standards for concurrent
 multipath usage in the general Internet.
 
 (6)
