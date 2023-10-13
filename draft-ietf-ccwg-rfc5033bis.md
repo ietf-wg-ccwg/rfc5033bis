@@ -281,15 +281,15 @@ congestion controllers that have a significantly negative impact on
 traffic using standard congestion control may be suspect and this aspect should
 be part of the community's decision making with regards to the suitability of
 the alternate congestion control mechanism. The community should also consider
-any other non-standard congestion controls shown to be widely deployed,
+other non-standard congestion controls known to be widely deployed,
 
 : We note that this bullet is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for an alternate congestion
 control mechanism to advance to Experimental.  As an example,
 HighSpeed TCP is a congestion control mechanism that is
 Experimental, but that is not TCP-friendly in all environments.
-Existing major deployments should not
-suffer severe performance degradation when a new algorithm is deployed.
+When a new algorithm is deployed, the existing major deployments need to be
+considered to avoid severe performance degradation.
 We also note that this guideline does not constrain the interaction with
 non-best-effort traffic.
 
