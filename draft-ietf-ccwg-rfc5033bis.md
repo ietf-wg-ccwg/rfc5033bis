@@ -271,23 +271,27 @@ check-list.
 explanation of the deviations from {{!RFC2914}}.
 
 (1)
-: Impact on Standard TCP, SCTP {{!RFC2960}}, and DCCP {{!RFC4340}}.
+: Impact on existing deployments of TCP {{!RFC9293}}, SCTP {{!RFC9260}},
+DCCP {{!RFC4340}}, and QUIC {{!RFC9000}}.
 
-: Evaluation of proposed congestion control mechanisms should include test cases
-competing with standard IETF congestion control {{!RFC2581}},
-{{!RFC2960}}, {{!RFC4340}}.  Alternate congestion controllers that have a
-significantly negative impact on traffic using standard
-congestion control may be suspect and this aspect should be part
-of the community's decision making with regards to the
-suitability of the alternate congestion control mechanism.
+: Proposed congestion control mechanisms should be evaluated when
+competing with standard IETF congestion control {{!RFC5681}},
+{{!RFC9260}}, {{!RFC4340}}, {{!RFC9002}}, {{!RFC9438}}.  Alternate
+congestion controllers that have a significantly negative impact on
+traffic using standard congestion control may be suspect and this aspect should
+be part of the community's decision making with regards to the suitability of
+the alternate congestion control mechanism. The community should also consider
+other non-standard congestion controls known to be widely deployed,
 
-: We note that this bullet is not a requirement for strict TCP-
+: We note that this bullet is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for an alternate congestion
 control mechanism to advance to Experimental.  As an example,
 HighSpeed TCP is a congestion control mechanism that is
 Experimental, but that is not TCP-friendly in all environments.
-We also note that this guideline does not constrain the fairness
-offered for non-best-effort traffic.
+When a new algorithm is deployed, the existing major deployments need to be
+considered to avoid severe performance degradation.
+We also note that this guideline does not constrain the interaction with
+non-best-effort traffic.
 
 : As an example from an Experimental RFC, fairness with standard
 TCP is discussed in Sections 4 and 6 of {{?RFC3649}} (HighSpeed TCP)
@@ -488,7 +492,7 @@ This document does not represent a change to any aspect of the TCP/IP
 protocol suite and therefore does not directly impact Internet
 security.  The implementation of various facets of the Internet's
 current congestion control algorithms do have security implications
-(e.g., as outlined in {{!RFC2581}}).  Alternate congestion control
+(e.g., as outlined in {{!RFC5681}}).  Alternate congestion control
 schemes should be mindful of such pitfalls, as well, and should
 examine any potential security issues that may arise.
 
@@ -532,6 +536,7 @@ These individuals suggested improvements to this document:
 - Added wireless environments
 - Mentioned Cubic and BBR as motivation
 - Include section to track updates between revisions
+- Added QUIC, other congestion control standards
 - Update references
 
 ## Since RFC5033
