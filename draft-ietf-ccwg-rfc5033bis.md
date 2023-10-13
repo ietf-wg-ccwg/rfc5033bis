@@ -527,6 +527,13 @@ These individuals suggested improvements to this document:
 # Evolution of RFC5033bis
 {:numbered="false"}
 
+## Since draft-ietf-ccwg-rfc5033bis-00
+
+- Added QUIC, other congestion control standards
+- Added wireless environments
+- Aligned motivation for this work with the CCWG charter
+- Refined discussion of QuickStart
+
 ## Since draft-scheffenegger-congress-rfc5033bis-00
 {:numbered="false"}
 
@@ -534,10 +541,8 @@ These individuals suggested improvements to this document:
 - Updated authorship and acknowledgements.
 - Include updated text suggested by Dave Taht
 - Added criterion for bufferbloat
-- Added wireless environments
 - Mentioned Cubic and BBR as motivation
 - Include section to track updates between revisions
-- Added QUIC, other congestion control standards
 - Update references
 
 ## Since RFC5033
