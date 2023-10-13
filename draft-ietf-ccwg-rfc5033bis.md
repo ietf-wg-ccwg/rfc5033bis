@@ -229,12 +229,13 @@ contrast, the Quick-Start document {{?RFC4782}} includes a paragraph in
 the abstract stating the mechanism is only being proposed for
 controlled environments.  The abstract specifies environments where
 the Quick-Start request could give false positives (and therefore
-would be unsafe to deploy).  The abstract also specifies environments
+would be unsafe for incremental deployment where some routers
+forward, but do not process the option).  The abstract also specifies environments
 where packets containing the Quick-Start request could be dropped in
 the network; in such an environment, Quick-Start would not be unsafe
-to deploy, but deployment would still not be recommended because it
-could cause unnecessary delays for the connections attempting to use
-Quick-Start.
+to deploy, but deployment would not be recommended because it
+could lead to unnecessary delays for the connections attempting to use
+Quick-Start. The Quick-Start method is discussed as an example in {{?RFC9049}}.
 
 For authors of alternate congestion control schemes who are not ready
 to bring their congestion control mechanisms to the IETF for
@@ -242,10 +243,10 @@ standardization (either as Experimental or as Proposed Standard), one
 possibility would be to submit an internet-draft that documents the
 alternate congestion control mechanism for the benefit of the IETF
 and IRTF communities.  This is particularly encouraged in order to
-get algorithm specifications widely disseminated to facilitate
-further research.  Such an internet-draft could be submitted to be
+ensure algorithm specifications are widely disseminated to facilitate
+further research.  Such an internet-draft could also be
 considered as an Informational RFC, as a first step in the process
-towards standardization.  Such a document would also be expected to
+towards standardization.  Such a document would be expected to
 carry an explicit warning against using the scheme in the global
 Internet.
 
