@@ -411,6 +411,52 @@ alternate congestion control algorithm, the proposal should
 explore how the capacity is shared among the competing flows.
 
 (8)
+: Test for the effect of path changes
+
+An IETF transport is not tied to a specific Internet path.
+The set of routers forming a path can and do change with time,
+this will also cause the properties of the path to change with respect to time.
+New CCs MUST evaluate the impact of changes in the path, and be robust
+to changes in path characteristics on the interval of common Internet re-routing intervals.
+
+(9)
+: Utilising More than one Path.
+
+: Multipath transport protocols permit more than one path to be differentiated and used by
+a single connection at the sender.
+A multipath sender can schedule which packets travel on which of its active paths.
+This enables a tradeoff in timeliness and reliability.
+
+One use is to provide fail-over from one path to
+another when the original path is no longer viable or to switch the traffic from
+one path to another when this is expected to improve performance
+(latency, throughput, reliability, cost).
+Designs need to independently track the congestion state of each path,
+and need to demonstrate independent congestion control for each path being used.
+New multipath CCs that implement path fail-over MUST evaluate the harm resulting
+from a change in the path, and show that this does not result in flow starvation.
+Synchronisation of failover (e.g., where multiple flows change their path on similar
+timeframes) can also contribute to harm and/or reduce fairness,
+these effects also ought to be evaluated.
+
+: A concurrent multipath transport protocol simultaneously
+schedules flows to aggregate the capacity across multiple paths.
+The Internet provides no guarantee that different paths
+(e.g., using different endpoint addresses) are disjoint.
+This has additional implications:
+New CCs MUST evaluate the potential
+harm to other flows when the multiple paths share a common
+congested bottleneck
+(or share resources that are coupled between different paths,
+such as an overall capacity limit), and SHOULD consider
+the fairness with other flows. Synchronisation of CC mechanisms
+(e.g., where multiple flows change their behaviour on similar
+timeframes) can also contribute to harm and/or reduce fairness,
+these effects also ought to be evaluated.
+At the time of writing, there are no IETF standards for concurrent
+multipath congestion control in the general Internet.
+
+(10)
 : Performance with Misbehaving Nodes and Outside Attackers.
 
 : The proposal should explore how the alternate congestion control
@@ -429,7 +475,7 @@ between misbehaving routers; misbehaving middleboxes; and the
 potential use of Quick-Start to attack routers or to tie up
 available Quick-Start bandwidth.
 
-(9)
+(11)
 : Responses to Sudden or Transient Events.
 
 : The proposal should consider how the alternate congestion control
@@ -442,7 +488,7 @@ Section 17 of {{Tools}}.
 : As an example from an Experimental RFC, response to transient
 events is discussed in Section&nbsp;9.2 of {{?RFC4782}} (Quick-Start).
 
-(10)
+(12)
 : Incremental Deployment.
 
 : The proposal should discuss whether the alternate congestion
@@ -478,7 +524,7 @@ the global Internet include the following guidelines on: (1)
 assessing the impact on standard congestion control, (2) performance in
 wireless environments, (4)
 investigation of the proposed mechanism in a range of environments,
-(5) protection against congestion collapse, and (10) discussing
+(5) protection against congestion collapse, and (12) discussing
 whether the mechanism allows for incremental deployment.
 
 For other guidelines, the author must
