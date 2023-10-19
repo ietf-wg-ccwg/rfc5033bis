@@ -292,14 +292,17 @@ alternate congestion control algorithm, the proposal should
 explore how bandwidth is shared among the competing flows.
 
 (*)
+: Test for the effect of path changes
+
+An IETF transport is not tied to a specific Internet path.
+The set of routers forming a path can and do change with time,
+this will also cause the properties of the path to change with respect to time.
+New CCs MUST evaluate the impact of changes in the path, and be robust
+to changes in path characteristics on the interval of common Internet re-routing intervals.
+
 : Utilising More than one Path.
 
-: An IETF transport is not tied to a specific Internet path.
-The set of routers forming the path can and do change with time,
-this will also cause the properties of the path to change with respect to time.
-Congestion control needs to be designed to take into account
-these changes in the path characteristics.
-Some transports permit more than one path to be differentiated and used by
+: Some transports permit more than one path to be differentiated and used by
 a single connection at the sender. These are called multipath transport protocols.  
 A multipath sender can schedule which packets travel on which of its active paths.
 This enables a tradeoff in timeliness and reliability.
@@ -308,21 +311,30 @@ One use is to provide fail-over from one path to
 another when the original path is no longer viable or to switch the traffic from
 one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
-A design independently needs to track the congestion state of each path,
+Designs need to independently needs to track the congestion state of each path,
 and needs to demonstrate independent congestion control for each path being used.
+New multipath CCs that implement path fail-over MUST evaluate the harm resulting 
+from a change in the path, and show that this does not result in flow starvation.
+Synchronisation of failover (e.g., where multiple flows change their path on similar
+timeframes) can also contribute to harm and/or reduce fairness,
+these effects also ought to be evaluated.
 
-A concurrent transport protocol simultaneously
+: A concurrent transport protocol simultaneously
 schedules multiple flows to aggregate the capacity of multiple paths.
 This introduces additional implications:
+At the time of writing, there are no IETF standards for concurrent
+multipath congestion control in the general Internet.
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint,
-therefore a design needs to evaluate the potential
+therefore designs needs to evaluate the potential
 harm to other flows (including single path connections)
 that share a common bottleneck
 (or share resources that are coupled between different paths,
-such as an overall capacity limit).
-At the time of writing, there are no IETF standards for concurrent
-multipath congestion control in the general Internet.
+such as an overall capacity limit), and SHOULD consider
+the fairness with other flows. Synchronisation of CC mechanisms
+(e.g., where multiple flows change their behaviour on similar
+timeframes) can also contribute to harm and/or reduce fairness,
+these effects also ought to be evaluated.
 
 (6)
 : Performance with Misbehaving Nodes and Outside Attackers.
