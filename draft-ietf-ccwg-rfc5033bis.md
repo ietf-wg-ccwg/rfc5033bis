@@ -441,12 +441,10 @@ these effects also ought to be evaluated.
 
 : A concurrent transport protocol simultaneously
 schedules multiple flows to aggregate the capacity of multiple paths.
-This introduces additional implications:
-At the time of writing, there are no IETF standards for concurrent
-multipath congestion control in the general Internet.
+This has additional implications:
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
-Therefor evlautions need to evaluate the potential
+Therefor evaluations need to evaluate the potential
 harm to other flows  when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
@@ -454,8 +452,10 @@ such as an overall capacity limit), and SHOULD consider
 the fairness with other flows. Synchronisation of CC mechanisms
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
-these effects also ought to be evaluated. The evaluation alos ought to
+these effects also ought to be evaluated. The evaluation also ought to
 consider the possibility that the multiple paths share a common congested segment.
+At the time of writing, there are no IETF standards for concurrent
+multipath congestion control in the general Internet.
 
 (10)
 : Performance with Misbehaving Nodes and Outside Attackers.
