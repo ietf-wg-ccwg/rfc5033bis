@@ -423,7 +423,7 @@ to changes in path characteristics on the interval of common Internet re-routing
 : Utilising More than one Path.
 
 : Some transports permit more than one path to be differentiated and used by
-a single connection at the sender. These are called multipath transport protocols.  
+a single connection at the sender. These are called multipath transport protocols.
 A multipath sender can schedule which packets travel on which of its active paths.
 This enables a tradeoff in timeliness and reliability.
 
@@ -433,7 +433,7 @@ one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
 Designs need to independently needs to track the congestion state of each path,
 and needs to demonstrate independent congestion control for each path being used.
-New multipath CCs that implement path fail-over MUST evaluate the harm resulting 
+New multipath CCs that implement path fail-over MUST evaluate the harm resulting
 from a change in the path, and show that this does not result in flow starvation.
 Synchronisation of failover (e.g., where multiple flows change their path on similar
 timeframes) can also contribute to harm and/or reduce fairness,
@@ -447,7 +447,7 @@ multipath congestion control in the general Internet.
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
 Therefor evlautions need to evaluate the potential
-harm to other flows  when the multiple paths share a common 
+harm to other flows  when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
