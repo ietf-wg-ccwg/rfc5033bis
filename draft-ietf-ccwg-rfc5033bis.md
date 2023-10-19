@@ -573,6 +573,11 @@ These individuals suggested improvements to this document:
 # Evolution of RFC5033bis
 {:numbered="false"}
 
+## Since draft-ietf-ccwg-rfc5033bis-01
+{:numbered="false"}
+
+- Added discussion of multipath transports
+
 ## Since draft-ietf-ccwg-rfc5033bis-00
 {:numbered="false"}
 
