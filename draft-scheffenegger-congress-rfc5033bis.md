@@ -322,7 +322,7 @@ that share a common bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit).
 At the time of writing, there are no IETF standards for concurrent
-multipath usage in the general Internet.
+multipath congestion control in the general Internet.
 
 (6)
 : Performance with Misbehaving Nodes and Outside Attackers.
