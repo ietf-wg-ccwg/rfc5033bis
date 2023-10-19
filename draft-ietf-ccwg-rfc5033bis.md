@@ -422,8 +422,8 @@ to changes in path characteristics on the interval of common Internet re-routing
 (9)
 : Utilising More than one Path.
 
-: Some transports permit more than one path to be differentiated and used by
-a single connection at the sender. These are called multipath transport protocols.
+: Multipath transport protocols permit more than one path to be differentiated and used by
+a single connection at the sender.
 A multipath sender can schedule which packets travel on which of its active paths.
 This enables a tradeoff in timeliness and reliability.
 
@@ -431,29 +431,28 @@ One use is to provide fail-over from one path to
 another when the original path is no longer viable or to switch the traffic from
 one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
-Designs need to independently needs to track the congestion state of each path,
-and needs to demonstrate independent congestion control for each path being used.
+Designs need to independently track the congestion state of each path,
+and need to demonstrate independent congestion control for each path being used.
 New multipath CCs that implement path fail-over MUST evaluate the harm resulting
 from a change in the path, and show that this does not result in flow starvation.
 Synchronisation of failover (e.g., where multiple flows change their path on similar
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
 
-: A concurrent transport protocol simultaneously
-schedules multiple flows to aggregate the capacity of multiple paths.
-This has additional implications:
+: A concurrent multipath transport protocol simultaneously
+schedules flows to aggregate the capacity across multiple paths.
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
-Therefor evaluations need to evaluate the potential
-harm to other flows  when the multiple paths share a common
+This has additional implications:
+New CCs MUST evaluate the potential
+harm to other flows when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
 the fairness with other flows. Synchronisation of CC mechanisms
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
-these effects also ought to be evaluated. The evaluation also ought to
-consider the possibility that the multiple paths share a common congested segment.
+these effects also ought to be evaluated.
 At the time of writing, there are no IETF standards for concurrent
 multipath congestion control in the general Internet.
 
