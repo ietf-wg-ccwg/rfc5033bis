@@ -289,26 +289,27 @@ algorithm-specific.  However, as discussed in {{!RFC2914}}, this
 requirement is crucial to protect the network in times of extreme
 congestion.
 
-If "full backoff" is used, this bullet does not require that the
+If the result of full backoff is used, this test does not require that the
 full backoff mechanism must be identical to that of TCP
 {{?RFC2988}}.  As an example, this bullet does not preclude full
 backoff mechanisms that would give flows with different round-
-trip times comparable caapcity during backoff.
+trip times comparable capacity during backoff.
 
 ### Protection Against Bufferbloat
 
 The alternate congestion control mechanism should reduce its sending
 rate if the round trip time (RTT) significantly increases. Exactly how
-the algorithm reduces its sending rate is algorithm specific.
+the algorithm reduces its sending rate is algorithm specific, but see
+{{!RFC8961}} and {{!RFC8085}} for requirements.
 
 Bufferbloat {{Bufferbloat}} refers to the building of long queues in
 the network. Many network routers are configured with very large buffers.
 If congestion starts happening, classic TCP congestion control algorithms
 {{!RFC5681}} will continue sending at a high rate until the buffer fills
 up completely and packet losses occur. Every connection going through
-that bottleneck will experience high latency.
-This is particularly bad for highly interactive applications like games,
-but it also affects routine web browsing and video playing.
+that bottleneck will experience high latency.  This adds unwanted latency that
+impacts highly interactive applications like games, but it also affects routine
+web browsing and video playing.
 
 This problem became apparent in the last decade and was not discussed in
 the Congestion Control Principles published in September 2002 {{!RFC2914}}.
@@ -318,7 +319,7 @@ control algorithms have the opportunity to improve the state of the art.
 
 ### Fairness within the Alternate Congestion Control Algorithm.
 
-In environments with multiple competing flows all using the same
+When multiple competing flows all using the same
 alternate congestion control algorithm, the proposal should
 explore how the capacity is shared among the competing flows.
 
@@ -372,7 +373,7 @@ allowances for the poor documentation / open source availability of these)
 
 ### Differences with Congestion Control Principles
 
-Proposed congestion control mechanisms should include a clear
+Proposed congestion control mechanisms SHOULD include a clear
 explanation of the deviations from {{!RFC2914}}.
 
 ### Incremental Deployment.
@@ -451,13 +452,13 @@ properties of operation in these scenarios, as they are statistically small.
 
 ## Satellite
 
-Satellite links often have long delays {{?RFC2488}} and high delay bandwidth
-products{{?RFC3649}}.
+Satellite links often have delays longer than typical for wired paths
+{{?RFC2488}} and high delay bandwidth products{{?RFC3649}}.
 
 ## Misbehaving Nodes
 
 The proposal should explore how the alternate congestion control
-mechanism performs with misbehaving senders, receivers, or
+mechanism performs with non-compliant senders, receivers, or
 routers.  In addition, the proposal should explore how the
 alternate congestion control mechanism performs with outside
 attackers.  This can be particularly important for congestion
@@ -471,7 +472,6 @@ discussion of misbehaving senders and receivers; collusion
 between misbehaving routers; misbehaving middleboxes; and the
 potential use of Quick-Start to attack routers or to tie up
 available Quick-Start bandwidth.
-(TODO: Write this sectoin)
 
 ## Tunnel Behavior
 
