@@ -439,7 +439,7 @@ discussion of wireless properties.
 # Special Cases {#special-cases}
 
 The criteria in {{evaluation-criteria}} will be evaluated in the
-following scenarios, unless the proposal specifically presents its use in a
+following scenarios, unless the proposal specifically excludes its use in a
 scenario. The community MAY allow a proposal to progress even if the criteria
 indicate an unsatisfactory result for these scenarios.
 
@@ -453,7 +453,7 @@ properties of operation in these scenarios, as they are statistically small.
 ## Satellite
 
 Satellite links often have delays longer than typical for wired paths
-{{?RFC2488}} and high delay bandwidth products{{?RFC3649}}.
+{{?RFC2488}} and high delay bandwidth products {{?RFC3649}}.
 
 ## Misbehaving Nodes
 
