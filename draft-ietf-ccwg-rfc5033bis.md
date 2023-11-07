@@ -15,6 +15,12 @@ stand_alone: yes
 smart_quotes: no
 pi: [toc, sortrefs, symrefs]
 
+venue:
+  group: Congestion Control Working Group (ccwg)
+  mail: ccwg@ietf.org
+  github: ietf-wg-ccwg/rfc5033bis
+
+
 author:
  -
     ins: M. Duke
