@@ -18,7 +18,7 @@ pi: [toc, sortrefs, symrefs]
 venue:
   group: Congestion Control Working Group (ccwg)
   mail: ccwg@ietf.org
-  github: ietf-wg-ccwg/rfc5033bis
+  github: mattmathis/rfc5033bis
 
 
 author:
