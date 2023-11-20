@@ -114,7 +114,7 @@ considering alternate congestion control algorithms within the IETF.
 # Introduction
 
 This document provides guidelines for the IETF to use when evaluating
-suggested congestion control algorithms that significantly differ
+suggested congestion control algorithms that differ
 from the general congestion control principles outlined in {{!RFC2914}}.
 The guidance is intended to be useful to authors proposing alternate
 congestion control and for the IETF community when evaluating whether
@@ -134,7 +134,8 @@ The set of protocols using these algorithms has spread beyond
 TCP and SCTP to include DCCP, QUIC, and beyond.
 Some congestion control algorithm proponents now have the opportunity
 to test and deploy at scale without IETF review.
-There is more interest in specialized use cases such as data centers and
+There is more interest in specialized use cases such as data centers, and in
+support for a variety of upper layer protocols/applications, e.g.,
 real-time protocols.
 Finally, the community has gained much more experience with indications
 of congestion beyond packet loss.
@@ -201,6 +202,7 @@ RFCs until such time that the community better understands the
 solution space.
 Traditionally, the meaning of "Experimental" status
 has varied in its use and interpretation.
+
 As part of this document
 we define two classes of congestion control proposals that can be
 published with the "Experimental" status.
@@ -209,7 +211,7 @@ algorithms that are judged to be safe to deploy for best-effort
 traffic in the global Internet and further investigated in that
 environment.
 The second class includes algorithms that, while
-promising, are not deemed safe enough for widespread deployment as
+promising, are not yet deemed safe enough for widespread deployment as
 best-effort traffic on the Internet, but are being specified to
 facilitate investigations in simulation, testbeds, or controlled
 environments.
@@ -224,8 +226,8 @@ Each alternate
 congestion control algorithm published is also required to include a
 statement in the abstract describing environments where the protocol
 is not recommended for deployment.
-There may be environments where
-the protocol is deemed *safe* for use, but still is not *recommended*
+There can be environments where
+the protocol is deemed *safe* for use, but it is still is not *recommended*
 for use because it does not perform well for the user.
 
 As examples of such statements, {{?RFC3649}} specifying HighSpeed TCP
@@ -251,7 +253,7 @@ alternate congestion control mechanism for the benefit of the IETF
 and IRTF communities.  This is particularly encouraged in order to
 ensure algorithm specifications are widely disseminated to facilitate
 further research.  Such an internet-draft could also be
-considered as an Informational RFC, as a first step in the process
+considered for publication as an Informational RFC, as a first step in the process
 towards standardization.  Such a document would be expected to
 carry an explicit warning against using the scheme in the global
 Internet.
