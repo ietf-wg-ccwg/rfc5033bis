@@ -542,9 +542,10 @@ that path can vary, with similar impacts on congestion control
 Multipath transport protocols permit more than one path to be differentiated and used by
 a single connection at the sender.
 A multipath sender can schedule which packets travel on which of its active paths.
-This enables a tradeoff in timeliness and reliability.
+This enables a tradeoff in timeliness and reliability. There are various ways that
+multipath techniques can be used,
 
-One use is to provide fail-over from one path to
+One example use is to provide fail-over from one path to
 another when the original path is no longer viable or to switch the traffic from
 one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
@@ -556,7 +557,7 @@ Synchronisation of failover (e.g., where multiple flows change their path on sim
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
 
- A concurrent multipath transport protocol simultaneously
+Another example use is concurrent multipath, where the transport protocol simultaneously
 schedules flows to aggregate the capacity across multiple paths.
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
