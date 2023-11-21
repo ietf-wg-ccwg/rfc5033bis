@@ -356,14 +356,14 @@ explore how the capacity is shared among the competing flows.
 Capacity fairness can be important when a small number of similar
 flows compete to fill a bottleneck. It can however also not be useful:
 for example when comparing flows seek to send at different rates or
-when some of the flows do not last sufficiently long to approach 
+when some of the flows do not last sufficiently long to approach
 asymptotic behavior.
 
 In other contexts, and when differing congestion control
-alogithms are used, it can be valuable to understand whether 
-an alternate congestion control algorithm can induce more 
+alogithms are used, it can be valuable to understand whether
+an alternate congestion control algorithm can induce more
 harm to sharing flows than existing
-defined methods. The measure of harm is not restricted to the equality 
+defined methods. The measure of harm is not restricted to the equality
 of capacity, but ought also to consider metrics such as the
 latency introduced, increase in packet loss. This evaluation must
 assess the potential to cause starvation, including assurance that
