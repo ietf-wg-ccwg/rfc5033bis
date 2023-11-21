@@ -316,13 +316,13 @@ sending rate to one packet per round-trip time and then
 exponentially backoff the time between single packet
 transmissions if congestion persists.  Exactly when either "full
 backoff" or a pause in sending comes into play will be
-algorithm-specific.  However, as discussed in {{!RFC2914}}, this
+algorithm-specific.  However, as discussed in {{!RFC2914}} and {{!RFC8961}}, this
 requirement is crucial to protect the network in times of extreme
 congestion.
 
 If the result of full backoff is used, this test does not require that the
 full backoff mechanism must be identical to that of TCP
-{{?RFC2988}}.  As an example, this bullet does not preclude full
+{{?RFC2988}} {{!RFC8961}}.  As an example, this does not preclude full
 backoff mechanisms that would give flows with different round-
 trip times comparable capacity during backoff.
 
