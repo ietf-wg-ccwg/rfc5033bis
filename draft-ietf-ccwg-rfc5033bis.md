@@ -353,6 +353,16 @@ control algorithms have the opportunity to improve the state of the art.
 When multiple competing flows all using the same
 alternate congestion control algorithm, the proposal should
 explore how the capacity is shared among the competing flows.
+This form of fairness can be important when a small number of similar
+flows compete to fill a bottleneck. It can howvever also not be useful,
+specifically when comparing flows seek to send at different rates.
+
+In other contexts, and when different congestion control
+alogithms are used it can be valuable to understand whether 
+capacity sharing results in more harm to other flows than existing
+defined methods. A measure of harm is not restricted to the equality 
+of capacity, but ought also to consider metrciss suchas the
+latency intoduced and potential for starvation.
 
 ### Short Flows
 
@@ -562,11 +572,11 @@ The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
 This has additional implications:
 New CCs MUST evaluate the potential
-harm to other flows when the multiple paths share a common
+harm toimpact on other flows when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
-the fairness with other flows. Synchronisation of CC mechanisms
+the potential for harm to other flows. Synchronisation of CC mechanisms
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
