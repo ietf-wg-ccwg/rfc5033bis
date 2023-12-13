@@ -401,8 +401,8 @@ more strict latency bounds.
 
 {{?RFC8868}} provides suggestions for real-time congestion control design and
 {{?RFC8867}} suggests test cases. {{?RFC9392}} descfibees some considerations
-for this RTP Control Protocol (RTCP) This document does not change the normative
-status of those docuements.
+for the RTP Control Protocol (RTCP). This document does not change the
+informational status of those RFCs.
 
 New proposals SHOULD consider coexistence with widely deployed real-time
 congestion controls. Regrettably, at the time of writing, many algorithms with
