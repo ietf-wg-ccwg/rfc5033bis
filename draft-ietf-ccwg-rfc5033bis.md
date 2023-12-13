@@ -358,7 +358,18 @@ explore how the capacity is shared among the competing flows.
 
 ### Short Flows
 
-(TODO: Discuss short and long flows)
+A great deal of congestion control analysis concerns the steady-state behavior
+of long flows. However, many internet flows are relatively short-lived. If they
+never experience a packet loss, they remain in the "slow start" mode of
+operation {{?RFC5681}} that features exponential congestion window growth.
+
+For decades, most proposals kept slow-start unchanged and innovated only in the
+post-loss phase of congestion control. However, more recent work (like Hystart++
+{{?RFC9406}}) has sought to mitigate the poor latency effects of unfettered
+exponential window growth.
+
+Proposals will consider how new and short-lived flows affect long-lived flows,
+and vice versa.
 
 ## Mixed Algorithm Behavior
 
@@ -615,6 +626,11 @@ These individuals suggested improvements to this document:
 
 # Evolution of RFC5033bis
 {:numbered="false"}
+
+## Since draft-ietf-ccwg-rfc5033bis-02
+{:numbered="false"}
+
+- Added discussion of short flows
 
 ## Since draft-ietf-ccwg-rfc5033bis-01
 {:numbered="false"}
