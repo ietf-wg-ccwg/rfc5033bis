@@ -15,6 +15,12 @@ stand_alone: yes
 smart_quotes: no
 pi: [toc, sortrefs, symrefs]
 
+venue:
+  group: Congestion Control Working Group (ccwg)
+  mail: ccwg@ietf.org
+  github: ietf-wg-ccwg/rfc5033bis
+
+
 author:
  -
     ins: M. Duke
@@ -108,7 +114,7 @@ considering alternate congestion control algorithms within the IETF.
 # Introduction
 
 This document provides guidelines for the IETF to use when evaluating
-suggested congestion control algorithms that significantly differ
+suggested congestion control algorithms that differ
 from the general congestion control principles outlined in {{!RFC2914}}.
 The guidance is intended to be useful to authors proposing alternate
 congestion control and for the IETF community when evaluating whether
@@ -128,7 +134,8 @@ The set of protocols using these algorithms has spread beyond
 TCP and SCTP to include DCCP, QUIC, and beyond.
 Some congestion control algorithm proponents now have the opportunity
 to test and deploy at scale without IETF review.
-There is more interest in specialized use cases such as data centers and
+There is more interest in specialized use cases such as data centers, and in
+support for a variety of upper layer protocols/applications, e.g.,
 real-time protocols.
 Finally, the community has gained much more experience with indications
 of congestion beyond packet loss.
@@ -195,6 +202,7 @@ RFCs until such time that the community better understands the
 solution space.
 Traditionally, the meaning of "Experimental" status
 has varied in its use and interpretation.
+
 As part of this document
 we define two classes of congestion control proposals that can be
 published with the "Experimental" status.
@@ -203,7 +211,7 @@ algorithms that are judged to be safe to deploy for best-effort
 traffic in the global Internet and further investigated in that
 environment.
 The second class includes algorithms that, while
-promising, are not deemed safe enough for widespread deployment as
+promising, are not yet deemed safe enough for widespread deployment as
 best-effort traffic on the Internet, but are being specified to
 facilitate investigations in simulation, testbeds, or controlled
 environments.
@@ -218,8 +226,8 @@ Each alternate
 congestion control algorithm published is also required to include a
 statement in the abstract describing environments where the protocol
 is not recommended for deployment.
-There may be environments where
-the protocol is deemed *safe* for use, but still is not *recommended*
+There can be environments where
+the protocol is deemed *safe* for use, but it is still is not *recommended*
 for use because it does not perform well for the user.
 
 As examples of such statements, {{?RFC3649}} specifying HighSpeed TCP
@@ -245,7 +253,7 @@ alternate congestion control mechanism for the benefit of the IETF
 and IRTF communities.  This is particularly encouraged in order to
 ensure algorithm specifications are widely disseminated to facilitate
 further research.  Such an internet-draft could also be
-considered as an Informational RFC, as a first step in the process
+considered for publication as an Informational RFC, as a first step in the process
 towards standardization.  Such a document would be expected to
 carry an explicit warning against using the scheme in the global
 Internet.
@@ -276,7 +284,32 @@ flows using that algorithm share a bottleneck link, with no other algorithms
 operating.
 
 ### Protection Against Congestion Collapse
+The alternate congestion control mechanism should not cause increased
+overhead under adverse network conditions.
 
+This criteria can be evaluated by counting the total bytes (data and headers)
+arriving at the receiver when delivering a
+fixed workload over varying network conditions.
+The total delivered bytes should remain constant,
+independent of network conditions over the entire
+operating range for the protocol.
+For general transport protocols such as TCP
+this means over any path in the Internet.
+
+There are known exceptions to this guideline,
+for example spurious Retransmission
+Timeouts {{?RFC8298}}{{?RFC7765}} and TCP loss Probe {{?RFC8985}}.
+These algorithms can substantially improve application performance
+in certain environments at the cost of additional network overhead
+due to spurious retransmissions.
+
+Alternate congestion control mechanisms should be carefully
+evaluated for exceptions.
+That evaluation should appropriately reflect on any the inherent trade-offs.
+
+This criteria can also be applied protocol layers above transport.
+
+### Implement full backoff
 The alternate congestion control mechanism should either stop
 sending when the packet drop rate exceeds some threshold
 {{?RFC3714}}, or should include some notion of "full backoff".  For
@@ -285,13 +318,13 @@ sending rate to one packet per round-trip time and then
 exponentially backoff the time between single packet
 transmissions if congestion persists.  Exactly when either "full
 backoff" or a pause in sending comes into play will be
-algorithm-specific.  However, as discussed in {{!RFC2914}}, this
+algorithm-specific.  However, as discussed in {{!RFC2914}} and {{!RFC8961}}, this
 requirement is crucial to protect the network in times of extreme
 congestion.
 
 If the result of full backoff is used, this test does not require that the
 full backoff mechanism must be identical to that of TCP
-{{?RFC2988}}.  As an example, this bullet does not preclude full
+{{?RFC2988}} {{!RFC8961}}.  As an example, this does not preclude full
 backoff mechanisms that would give flows with different round-
 trip times comparable capacity during backoff.
 
@@ -511,9 +544,10 @@ that path can vary, with similar impacts on congestion control
 Multipath transport protocols permit more than one path to be differentiated and used by
 a single connection at the sender.
 A multipath sender can schedule which packets travel on which of its active paths.
-This enables a tradeoff in timeliness and reliability.
+This enables a tradeoff in timeliness and reliability. There are various ways that
+multipath techniques can be used,
 
-One use is to provide fail-over from one path to
+One example use is to provide fail-over from one path to
 another when the original path is no longer viable or to switch the traffic from
 one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
@@ -525,7 +559,7 @@ Synchronisation of failover (e.g., where multiple flows change their path on sim
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
 
- A concurrent multipath transport protocol simultaneously
+Another example use is concurrent multipath, where the transport protocol simultaneously
 schedules flows to aggregate the capacity across multiple paths.
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
