@@ -395,7 +395,7 @@ discussed in Sections 6, 11.1, and 12 of {{?RFC3649}}.
 
 ### Real-Time Protocols
 
-General-purpose protocols coexist in the internet with real-time congestion 
+General-purpose protocols coexist in the internet with real-time congestion
 control protocols, which in general have finite throughput requirements and
 more strict latency bounds.
 
@@ -416,7 +416,7 @@ extent they are not, experiments can be conducted where possible.
 Note that in many deployments, real-time traffic is directed into distinct
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
 which substantially reduces the interplay between algorithms. However, proposals
-cannot assume that this is always the case. 
+cannot assume that this is always the case.
 
 ### Short and Long Flows
 
