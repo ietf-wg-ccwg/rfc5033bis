@@ -631,7 +631,7 @@ These individuals suggested improvements to this document:
 # Evolution of RFC5033bis
 {:numbered="false"}
 
-## Since draft-ietf-ccwg-rfc5033bis-01
+## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
 
 - Added discussion of real-time protocols
