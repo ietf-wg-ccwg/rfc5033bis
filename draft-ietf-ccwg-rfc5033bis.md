@@ -400,7 +400,8 @@ control protocols, which in general have finite throughput requirements and
 more strict latency bounds.
 
 {{?RFC8868}} provides suggestions for real-time congestion control design and
-{{?RFC8867}} suggests test cases. This document does not change the normative
+{{?RFC8867}} suggests test cases. {{?RFC9392}} descfibees some considerations
+for this RTP Control Protocol (RTCP) This document does not change the normative
 status of those docuements.
 
 New proposals SHOULD consider coexistence with widely deployed real-time
