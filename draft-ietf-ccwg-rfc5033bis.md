@@ -395,8 +395,22 @@ discussed in Sections 6, 11.1, and 12 of {{?RFC3649}}.
 
 ### Real-Time Protocols
 
-(TODO: Clarify that real time congestion controls are included, with
-allowances for the poor documentation / open source availability of these)
+General-purpose protocols coexist in the internet with real-time congestion 
+control protocols, which in general have finite throughput requirements and
+more strict latency bounds.
+
+{{?RFC8868}} provides suggestions for real-time congestion control design and
+{{?RFC8867}} suggests test cases. This document does not change the normative
+status of those docuements.
+
+New proposals SHOULD consider coexistence with widely deployed real-time
+congestion controls. Regrettably, at the time of writing, many algorithms with
+detailed public specifications are not widely deployed, while many widely
+deployed real-time congestion controls have incomplete public specifications.
+
+To the extent behavior of widely deployed algorithms is understood, proposals
+can analyze and simulate the their interaction with those algorithms. To the
+extent they are not, experiments can be conducted where possible.
 
 ### Short and Long Flows
 
@@ -615,6 +629,11 @@ These individuals suggested improvements to this document:
 
 # Evolution of RFC5033bis
 {:numbered="false"}
+
+## Since draft-ietf-ccwg-rfc5033bis-01
+{:numbered="false"}
+
+- Added discussion of real-time protocols
 
 ## Since draft-ietf-ccwg-rfc5033bis-01
 {:numbered="false"}
