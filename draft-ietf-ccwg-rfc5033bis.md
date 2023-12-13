@@ -282,32 +282,7 @@ flows using that algorithm share a bottleneck link, with no other algorithms
 operating.
 
 ### Protection Against Congestion Collapse
-The alternate congestion control mechanism should not cause increased
-overhead under adverse network conditions.
 
-This criteria can be evaluated by counting the total bytes (data and headers)
-arriving at the receiver when delivering a
-fixed workload over varying network conditions.
-The total delivered bytes should remain constant,
-independent of network conditions over the entire
-operating range for the protocol.
-For general transport protocols such as TCP
-this means over any path in the Internet.
-
-There are known exceptions to this guideline,
-for example spurious Retransmission
-Timeouts {{?RFC8298}}{{?RFC7765}} and TCP loss Probe {{?RFC8985}}.
-These algorithms can substantially improve application performance
-in certain environments at the cost of additional network overhead
-due to spurious retransmissions.
-
-Alternate congestion control mechanisms should be carefully
-evaluated for exceptions.
-That evaluation should appropriately reflect on any the inherent trade-offs.
-
-This criteria can also be applied protocol layers above transport.
-
-### Implement full backoff
 The alternate congestion control mechanism should either stop
 sending when the packet drop rate exceeds some threshold
 {{?RFC3714}}, or should include some notion of "full backoff".  For
