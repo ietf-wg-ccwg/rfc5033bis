@@ -374,7 +374,7 @@ allowances for the poor documentation / open source availability of these)
 ### Differences with Congestion Control Principles
 
 Proposed congestion control mechanisms SHOULD include a clear
-explanation of the deviations from {{!RFC2914}}.
+explanation of the deviations from {{!RFC2914}} and {{!RFC7141}}.
 
 ### Incremental Deployment.
 
