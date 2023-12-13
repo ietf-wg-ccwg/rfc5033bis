@@ -413,6 +413,11 @@ To the extent behavior of widely deployed algorithms is understood, proposals
 can analyze and simulate the their interaction with those algorithms. To the
 extent they are not, experiments can be conducted where possible.
 
+Note that in many deployments, real-time traffic is directed into distinct
+queues via Differentiated Services Code Points (DSCP) or other mechanisms,
+which substantially reduces the interplay between algorithms. However, proposals
+cannot assume that this is always the case. 
+
 ### Short and Long Flows
 
 (TODO: Discuss short and long flows)
