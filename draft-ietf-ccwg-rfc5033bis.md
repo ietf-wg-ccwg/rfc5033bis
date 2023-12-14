@@ -473,7 +473,7 @@ discussion of wireless properties.
 
 Congestion control performance is affected by the queue discipline applied at
 the bottleneck link. The default queue discipline that MUST be evaluated is
-drop-tail, First In First Out (FIFO). See {{aqm}} for evaulation of other queue
+drop-tail, First In First Out (FIFO). See {{aqm}} for evaluation of other queue
 disciplines.
 
 # Special Cases {#special-cases}
