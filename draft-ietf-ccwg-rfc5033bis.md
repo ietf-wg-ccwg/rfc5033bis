@@ -415,7 +415,7 @@ extent they are not, experiments can be conducted where possible.
 
 Note that in many deployments, real-time traffic is directed into distinct
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
-which substantially reduces the interplay between algorithms. However, proposals
+which substantially reduces the interplay with other traffic. However, proposals
 cannot assume that this is always the case.
 
 ### Short and Long Flows
