@@ -485,7 +485,7 @@ The "Internet of Things" (IoT) is a broad concept, but for congestion control
 purposes it is often associated with unique characteristics.
 
 IoT nodes might be more constrained in power, CPU, or other parameters than
-conventional internet hosts. This might place limits on the complexity of any
+conventional Internet hosts. This might place limits on the complexity of any
 given algorithm. These power and radio constraints might make the volume of
 control packets in a given algorithm a key evaluation metric.
 
@@ -494,7 +494,7 @@ therefore have weaker latency constraints because they do not relate to a user
 experience.
 
 Extremely low-power links can lead to very low throughput and a low bandwidth-
-delay product, well below the standard operating range of most internet flows.
+delay product, well below the standard operating range of most Internet flows.
 
 ## Satellite
 
