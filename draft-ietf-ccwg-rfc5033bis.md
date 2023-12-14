@@ -396,8 +396,9 @@ discussed in Sections 6, 11.1, and 12 of {{?RFC3649}}.
 ### Real-Time Protocols
 
 General-purpose protocols coexist in the Internet with real-time congestion
-control protocols, which in general have finite throughput requirements and
-more strict latency bounds.
+control protocols, which in general have finite throughput requirements (i.e.
+they do not seek to utilize all available capacity) and more strict latency
+bounds.
 
 {{?RFC8868}} provides suggestions for real-time congestion control design and
 {{?RFC8867}} suggests test cases. {{?RFC9392}} describes some considerations
