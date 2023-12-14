@@ -395,12 +395,12 @@ discussed in Sections 6, 11.1, and 12 of {{?RFC3649}}.
 
 ### Real-Time Protocols
 
-General-purpose protocols coexist in the internet with real-time congestion
+General-purpose protocols coexist in the Internet with real-time congestion
 control protocols, which in general have finite throughput requirements and
 more strict latency bounds.
 
 {{?RFC8868}} provides suggestions for real-time congestion control design and
-{{?RFC8867}} suggests test cases. {{?RFC9392}} descfibees some considerations
+{{?RFC8867}} suggests test cases. {{?RFC9392}} describes some considerations
 for the RTP Control Protocol (RTCP). This document does not change the
 informational status of those RFCs.
 
@@ -409,7 +409,7 @@ congestion controls. Regrettably, at the time of writing, many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion controls have incomplete public specifications.
 
-To the extent behavior of widely deployed algorithms is understood, proposals
+To the extent that behavior of widely deployed algorithms is understood, proposals
 can analyze and simulate the their interaction with those algorithms. To the
 extent they are not, experiments can be conducted where possible.
 
