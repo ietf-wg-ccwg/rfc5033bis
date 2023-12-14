@@ -489,6 +489,13 @@ and media access delays and link-layer retransmission lead to increased jitter
 in round-trip times. See {{?RFC3819}} and Section 16 of {{Tools}} for further
 discussion of wireless properties.
 
+## Tail-drop queues
+
+Congestion control performance is affected by the queue discipline applied at
+the bottleneck link. The default queue discipline that MUST be evaluated is
+drop-tail, First In First Out (FIFO). See {{aqm}} for evaluation of other queue
+disciplines.
+
 # Special Cases {#special-cases}
 
 The criteria in {{evaluation-criteria}} will be evaluated in the
@@ -498,6 +505,21 @@ indicate an unsatisfactory result for these scenarios.
 
 In general, measurements from internet-scale deployments will not expose the
 properties of operation in these scenarios, as they are statistically small.
+
+## Active Queue Management (AQM) {#aqm}
+
+Proposals SHOULD be evaluated under a variety of bottleneck queue disciplines.
+At a minimum, a proposal should reason about an algorithm's response to various
+AQMs. Simulation or empirical results are, of course, valuable.
+
+Note that evaluation of AQM techniques -- as opposed to their impact on specific
+congestion control proposals -- is out of scope of this document. {{?RFC7567}}
+describes design considerations for AQMs.
+
+Among the AQM techniques that might have an impact on a congestion control
+algorithm are FQ-CoDel {{?RFC8290}}; Proportional Integral Controller Enhanced
+(PIE) {{?RFC8033}}; and Low Latency, Low Loss, and Scalable Throughput (L4S)
+{{?RFC9332}}.
 
 ## Internet of Things
 
@@ -640,6 +662,8 @@ These individuals suggested improvements to this document:
 {:numbered="false"}
 
 - Added discussion of real-time protocols
+- Added discussion of AQM response
+- Editorial changes
 
 ## Since draft-ietf-ccwg-rfc5033bis-01
 {:numbered="false"}
