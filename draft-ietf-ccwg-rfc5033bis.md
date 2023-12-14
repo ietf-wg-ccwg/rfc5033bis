@@ -197,8 +197,8 @@ this space.
 This document is meant to reduce the barriers to entry for new congestion
 control work. As such, proponents should not interpret these criteria as a
 checklist of requirements before approaching the IETF. Instead, proponents
-are encouraged to have thought about most of these issues beforehand, and have
-the willingness to do the work implied below.
+are encouraged to think about these issues beforehand, and have the willingness
+to do the work implied by the rest of this document.
 
 # Document Status
 
