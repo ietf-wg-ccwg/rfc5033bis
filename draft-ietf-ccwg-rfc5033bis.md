@@ -344,11 +344,6 @@ of long flows. However, many internet flows are relatively short-lived. If they
 never experience a packet loss, they remain in the "slow start" mode of
 operation {{?RFC5681}} that features exponential congestion window growth.
 
-For decades, most proposals kept slow-start unchanged and innovated only in the
-post-loss phase of congestion control. However, more recent work (like Hystart++
-{{?RFC9406}}) has sought to mitigate the poor latency effects of unfettered
-exponential window growth.
-
 Proposals will consider how new and short-lived flows affect long-lived flows,
 and vice versa.
 
