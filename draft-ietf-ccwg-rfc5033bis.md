@@ -194,6 +194,12 @@ of their proposals for publication in the RFC series to allow others
 to concretely understand and investigate the wealth of proposals in
 this space.
 
+This document is meant to reduce the barriers to entry for new congestion
+control work. As such, proponents should not interpret these criteria as a
+checklist of requirements before approaching the IETF. Instead, proponents
+are encouraged to think about these issues beforehand, and have the willingness
+to do the work implied by the rest of this document.
+
 # Document Status
 
 Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
@@ -284,32 +290,7 @@ flows using that algorithm share a bottleneck link, with no other algorithms
 operating.
 
 ### Protection Against Congestion Collapse
-The alternate congestion control mechanism should not cause increased
-overhead under adverse network conditions.
 
-This criteria can be evaluated by counting the total bytes (data and headers)
-arriving at the receiver when delivering a
-fixed workload over varying network conditions.
-The total delivered bytes should remain constant,
-independent of network conditions over the entire
-operating range for the protocol.
-For general transport protocols such as TCP
-this means over any path in the Internet.
-
-There are known exceptions to this guideline,
-for example spurious Retransmission
-Timeouts {{?RFC8298}}{{?RFC7765}} and TCP loss Probe {{?RFC8985}}.
-These algorithms can substantially improve application performance
-in certain environments at the cost of additional network overhead
-due to spurious retransmissions.
-
-Alternate congestion control mechanisms should be carefully
-evaluated for exceptions.
-That evaluation should appropriately reflect on any the inherent trade-offs.
-
-This criteria can also be applied protocol layers above transport.
-
-### Implement full backoff
 The alternate congestion control mechanism should either stop
 sending when the packet drop rate exceeds some threshold
 {{?RFC3714}}, or should include some notion of "full backoff".  For
@@ -402,8 +383,10 @@ bounds.
 
 {{?RFC8868}} provides suggestions for real-time congestion control design and
 {{?RFC8867}} suggests test cases. {{?RFC9392}} describes some considerations
-for the RTP Control Protocol (RTCP). This document does not change the
-informational status of those RFCs.
+for the RTP Control Protocol (RTCP). In particular, feedback for real-time
+flows can be less frequent than the acknowledgements provided by reliable
+transports. This document does not change the informational status of those
+RFCs.
 
 New proposals SHOULD consider coexistence with widely deployed real-time
 congestion controls. Regrettably, at the time of writing, many algorithms with
@@ -428,7 +411,7 @@ cannot assume that this is always the case.
 ### Differences with Congestion Control Principles
 
 Proposed congestion control mechanisms SHOULD include a clear
-explanation of the deviations from {{!RFC2914}}.
+explanation of the deviations from {{!RFC2914}} and {{!RFC7141}}.
 
 ### Incremental Deployment.
 
@@ -524,7 +507,20 @@ algorithm are FQ-CoDel {{?RFC8290}}; Proportional Integral Controller Enhanced
 
 ## Internet of Things
 
-(TODO: Write this section)
+The "Internet of Things" (IoT) is a broad concept, but for congestion control
+purposes it is often associated with unique characteristics.
+
+IoT nodes might be more constrained in power, CPU, or other parameters than
+conventional Internet hosts. This might place limits on the complexity of any
+given algorithm. These power and radio constraints might make the volume of
+control packets in a given algorithm a key evaluation metric.
+
+Furthermore, many IoT applications do not a have a human in the loop, and
+therefore have weaker latency constraints because they do not relate to a user
+experience.
+
+Extremely low-power links can lead to very low throughput and a low bandwidth-
+delay product, well below the standard operating range of most Internet flows.
 
 ## Satellite
 
@@ -663,6 +659,7 @@ These individuals suggested improvements to this document:
 {:numbered="false"}
 
 - Added discussion of real-time protocols
+- Added IoT section
 - Added discussion of AQM response
 - Editorial changes
 
