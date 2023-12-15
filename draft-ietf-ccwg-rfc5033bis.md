@@ -194,6 +194,12 @@ of their proposals for publication in the RFC series to allow others
 to concretely understand and investigate the wealth of proposals in
 this space.
 
+This document is meant to reduce the barriers to entry for new congestion
+control work. As such, proponents should not interpret these criteria as a
+checklist of requirements before approaching the IETF. Instead, proponents
+are encouraged to think about these issues beforehand, and have the willingness
+to do the work implied by the rest of this document.
+
 # Document Status
 
 Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
