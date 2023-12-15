@@ -509,7 +509,20 @@ algorithm are FQ-CoDel {{?RFC8290}}; Proportional Integral Controller Enhanced
 
 ## Internet of Things
 
-(TODO: Write this section)
+The "Internet of Things" (IoT) is a broad concept, but for congestion control
+purposes it is often associated with unique characteristics.
+
+IoT nodes might be more constrained in power, CPU, or other parameters than
+conventional Internet hosts. This might place limits on the complexity of any
+given algorithm. These power and radio constraints might make the volume of
+control packets in a given algorithm a key evaluation metric.
+
+Furthermore, many IoT applications do not a have a human in the loop, and
+therefore have weaker latency constraints because they do not relate to a user
+experience.
+
+Extremely low-power links can lead to very low throughput and a low bandwidth-
+delay product, well below the standard operating range of most Internet flows.
 
 ## Satellite
 
@@ -647,6 +660,7 @@ These individuals suggested improvements to this document:
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
 
+- Added IoT section
 - Added discussion of AQM response
 - Editorial changes
 
