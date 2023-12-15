@@ -580,7 +580,7 @@ The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
 This has additional implications:
 New CCs MUST evaluate the potential
-harm toimpact on other flows when the multiple paths share a common
+harm to other flows when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
