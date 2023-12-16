@@ -339,7 +339,13 @@ explore how the capacity is shared among the competing flows.
 
 ### Short Flows
 
-(TODO: Discuss short and long flows)
+A great deal of congestion control analysis concerns the steady-state behavior
+of long flows. However, many internet flows are relatively short-lived. If they
+never experience a packet loss, they remain in the "slow start" mode of
+operation {{?RFC5681}} that features exponential congestion window growth.
+
+Proposals will consider how new and short-lived flows affect long-lived flows,
+and vice versa.
 
 ## Mixed Algorithm Behavior
 
@@ -635,6 +641,7 @@ These individuals suggested improvements to this document:
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
 
+- Added discussion of short flows
 - Added IoT section
 - Added discussion of AQM response
 - Editorial changes
