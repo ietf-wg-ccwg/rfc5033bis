@@ -570,14 +570,15 @@ events is discussed in Section&nbsp;9.2 of {{?RFC4782}} (Quick-Start).
 
 ### Sudden changes in Path
 
-An IETF transport is not tied to a specific Internet path.
-The set of routers forming a path can and do change with time,
-this will also cause the properties of the path to change with respect to time.
+An IETF transport is not tied to a specific Internet path or type of path.
+The set of routers that form a path can and do change with time,
+this will cause the properties of the path to change with respect to time.
 New CCs MUST evaluate the impact of changes in the path, and be robust
 to changes in path characteristics on the interval of common Internet re-routing intervals.
 
-Event when the routers constituting a path does not change, the properties of
-that path can vary, with similar impacts on congestion control
+Even when the set of routers constituting a path does not change, the properties of
+that path can vary with time (e.g., due to a change of link capacity, relative priority, or a change
+in the rate of other traffic sharing a bottleneck), with similar impacts on congestion control.
 
 ## Multipath
 
