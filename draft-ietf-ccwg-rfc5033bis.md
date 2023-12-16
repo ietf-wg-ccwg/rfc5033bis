@@ -359,10 +359,10 @@ for example when comparing flows seek to send at different rates or
 when some of the flows do not last sufficiently long to approach
 asymptotic behavior.
 
-### Preventing Starvation of other Flows.
+### Avoiding Starvation of other Flows.
 
 In contexts where differing congestion control
-algorithms are used, it ia important to understand whether
+algorithms are used, it is important to understand whether
 an alternate congestion control algorithm can induce more
 harm to sharing flows than existing
 defined methods. The measure of harm is not restricted to the equality
