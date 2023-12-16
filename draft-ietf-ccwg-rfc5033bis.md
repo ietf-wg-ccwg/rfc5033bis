@@ -333,9 +333,27 @@ control algorithms have the opportunity to improve the state of the art.
 
 ### Fairness within the Alternate Congestion Control Algorithm.
 
-When multiple competing flows all using the same
+When multiple competing flows all use the same
 alternate congestion control algorithm, the proposal should
 explore how the capacity is shared among the competing flows.
+Capacity fairness can be important when a small number of similar
+flows compete to fill a bottleneck. It can however also not be useful:
+for example when comparing flows seek to send at different rates or
+when some of the flows do not last sufficiently long to approach
+asymptotic behavior.
+
+### Avoiding Starvation of other Flows.
+
+In contexts where differing congestion control
+algorithms are used, it is important to understand whether
+an alternate congestion control algorithm can induce more
+harm to sharing flows than existing
+defined methods. The measure of harm is not restricted to the equality
+of capacity, but ought also to consider metrics such as the
+latency introduced, or an increase in packet loss. This evaluation must
+assess the potential to cause starvation, including assurance that
+a loss of all feedback (e.g., detected by expiry of a retransmission time out)
+results in backoff.
 
 ### Short Flows
 
@@ -591,7 +609,7 @@ harm to other flows when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
-the fairness with other flows. Synchronisation of CC mechanisms
+the potential for harm to other flows. Synchronisation of CC mechanisms
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
