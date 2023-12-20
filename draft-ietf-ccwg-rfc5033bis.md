@@ -333,13 +333,37 @@ control algorithms have the opportunity to improve the state of the art.
 
 ### Fairness within the Alternate Congestion Control Algorithm.
 
-When multiple competing flows all using the same
+When multiple competing flows all use the same
 alternate congestion control algorithm, the proposal should
 explore how the capacity is shared among the competing flows.
+Capacity fairness can be important when a small number of similar
+flows compete to fill a bottleneck. It can however also not be useful:
+for example when comparing flows seek to send at different rates or
+when some of the flows do not last sufficiently long to approach
+asymptotic behavior.
+
+### Avoiding Starvation of other Flows.
+
+In contexts where differing congestion control
+algorithms are used, it is important to understand whether
+an alternate congestion control algorithm can induce more
+harm to sharing flows than existing
+defined methods. The measure of harm is not restricted to the equality
+of capacity, but ought also to consider metrics such as the
+latency introduced, or an increase in packet loss. This evaluation must
+assess the potential to cause starvation, including assurance that
+a loss of all feedback (e.g., detected by expiry of a retransmission time out)
+results in backoff.
 
 ### Short Flows
 
-(TODO: Discuss short and long flows)
+A great deal of congestion control analysis concerns the steady-state behavior
+of long flows. However, many internet flows are relatively short-lived. If they
+never experience a packet loss, they remain in the "slow start" mode of
+operation {{?RFC5681}} that features exponential congestion window growth.
+
+Proposals will consider how new and short-lived flows affect long-lived flows,
+and vice versa.
 
 ## Mixed Algorithm Behavior
 
@@ -569,14 +593,15 @@ events is discussed in Section&nbsp;9.2 of {{?RFC4782}} (Quick-Start).
 
 ### Sudden changes in Path
 
-An IETF transport is not tied to a specific Internet path.
-The set of routers forming a path can and do change with time,
-this will also cause the properties of the path to change with respect to time.
+An IETF transport is not tied to a specific Internet path or type of path.
+The set of routers that form a path can and do change with time,
+this will cause the properties of the path to change with respect to time.
 New CCs MUST evaluate the impact of changes in the path, and be robust
 to changes in path characteristics on the interval of common Internet re-routing intervals.
 
-Event when the routers constituting a path does not change, the properties of
-that path can vary, with similar impacts on congestion control
+Even when the set of routers constituting a path does not change, the properties of
+that path can vary with time (e.g., due to a change of link capacity, relative priority, or a change
+in the rate of other traffic sharing a bottleneck), with similar impacts on congestion control.
 
 ## Multipath
 
@@ -608,7 +633,7 @@ harm to other flows when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
-the fairness with other flows. Synchronisation of CC mechanisms
+the potential for harm to other flows. Synchronisation of CC mechanisms
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
@@ -659,6 +684,7 @@ These individuals suggested improvements to this document:
 {:numbered="false"}
 
 - Added discussion of real-time protocols
+- Added discussion of short flows
 - Added IoT section
 - Added discussion of AQM response
 - Editorial changes
