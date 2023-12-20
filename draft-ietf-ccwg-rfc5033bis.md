@@ -400,8 +400,31 @@ discussed in Sections 6, 11.1, and 12 of {{?RFC3649}}.
 
 ### Real-Time Protocols
 
-(TODO: Clarify that real time congestion controls are included, with
-allowances for the poor documentation / open source availability of these)
+General-purpose protocols coexist in the Internet with real-time congestion
+control protocols, which in general have finite throughput requirements (i.e.
+they do not seek to utilize all available capacity) and more strict latency
+bounds.
+
+{{?RFC8868}} provides suggestions for real-time congestion control design and
+{{?RFC8867}} suggests test cases. {{?RFC9392}} describes some considerations
+for the RTP Control Protocol (RTCP). In particular, feedback for real-time
+flows can be less frequent than the acknowledgements provided by reliable
+transports. This document does not change the informational status of those
+RFCs.
+
+New proposals SHOULD consider coexistence with widely deployed real-time
+congestion controls. Regrettably, at the time of writing, many algorithms with
+detailed public specifications are not widely deployed, while many widely
+deployed real-time congestion controls have incomplete public specifications.
+
+To the extent that behavior of widely deployed algorithms is understood, proposals
+can analyze and simulate the their interaction with those algorithms. To the
+extent they are not, experiments can be conducted where possible.
+
+Note that in many deployments, real-time traffic is directed into distinct
+queues via Differentiated Services Code Points (DSCP) or other mechanisms,
+which substantially reduces the interplay with other traffic. However, proposals
+cannot assume that this is always the case.
 
 ### Short and Long Flows
 
@@ -660,6 +683,7 @@ These individuals suggested improvements to this document:
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
 
+- Added discussion of real-time protocols
 - Added discussion of short flows
 - Added IoT section
 - Added discussion of AQM response
