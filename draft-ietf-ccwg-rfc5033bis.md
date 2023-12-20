@@ -529,6 +529,14 @@ algorithm are FQ-CoDel {{?RFC8290}}; Proportional Integral Controller Enhanced
 (PIE) {{?RFC8033}}; and Low Latency, Low Loss, and Scalable Throughput (L4S)
 {{?RFC9332}}.
 
+Congestion control algorithms that set one of the two Explicit Congestion Transport (ECT)
+codepoints in the IP header can gain the benefits of receiving Explicit Congestion Notifictaion (ECN)
+Congestion Experienced (CE) signals from an on-path AQM {{?RFC8087}}.
+Use of ECN {{?RFC3168},{{?RFC9332}} results in requirements for
+the congestion control algorithm to react when it receives a packet with an ECN-CE marking.
+This reaction needs to be evaluated to confirm that the algorithm conforms with the
+requirements of the ECT codepoint that was used.
+
 ## Internet of Things
 
 The "Internet of Things" (IoT) is a broad concept, but for congestion control
