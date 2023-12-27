@@ -189,6 +189,10 @@ the proposal needs to have been done before a proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.
 
+Multicast congestion controls are a considerably less mature field of study
+and are not in scope for this document. However {{?RFC8085}} provides
+guidelines for multicast congestion control over UDP.
+
 After initial studies, we encourage authors to write a specification
 of their proposals for publication in the RFC series to allow others
 to concretely understand and investigate the wealth of proposals in
@@ -694,6 +698,7 @@ These individuals suggested improvements to this document:
 - Added discussion of real-time protocols
 - Added discussion of short flows
 - Added IoT section
+- Added discussion of multicast
 - Added discussion of AQM response
 - Editorial changes
 
