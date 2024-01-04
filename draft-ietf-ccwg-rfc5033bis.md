@@ -551,7 +551,8 @@ control packets in a given algorithm a key evaluation metric.
 
 Furthermore, many IoT applications do not a have a human in the loop, and
 therefore have weaker latency constraints because they do not relate to a user
-experience. 
+experience, but still need to share the path with other flows with different
+constraints.
 
 Extremely low-power links can lead to very low throughput and a low bandwidth-
 delay product, well below the standard operating range of most Internet flows.
