@@ -464,7 +464,8 @@ discussed in Sections 10.3 and 10.4 of {{?RFC4782}} (Quick-Start).
 # General Use {#general-use}
 
 The criteria in {{evaluation-criteria}} will be evaluated in the
-following scenarios. Unless an alternate congestion control
+following scenarios.
+Unless an alternate congestion control
 proposal is explicitly forbidden on the
 public internet, the community MUST find that it meets the criteria
 in these scenarios for the proposal to progress.
