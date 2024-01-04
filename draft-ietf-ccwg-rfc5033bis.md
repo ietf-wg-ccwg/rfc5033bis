@@ -143,8 +143,8 @@ of congestion beyond packet loss.
 Section 4 of the UDP Usage Guidelines {{RFC8085}} provide
 additional guidelines for multicast and broadcast usage of UDP.
 The evaluation considerations described in the present document could be
-applicable to these congestion control algorithms, but this is not 
-the intended scope of this document.
+applicable to these congestion control algorithms, but this is not
+the intended scope of this BCP.
 
 Multiple congestion control algorithms
 have been developed outside of the IETF, including at least two that saw
