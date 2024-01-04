@@ -537,6 +537,28 @@ the congestion control algorithm to react when it receives a packet with an ECN-
 This reaction needs to be evaluated to confirm that the algorithm conforms with the
 requirements of the ECT codepoint that was used.
 
+## Paths with Varying Delay {#delay}
+
+An Internet Path can include simple links, where the minimum delay is the propagation delay,
+and any additional delay can be attributed to link buffering. This cannot be assumed.
+An internet Path can also include complex subnetworks where the minimum delay changes over
+various time scales, resulting in a non-stationary minimum delay.
+
+This occurs when a subnet changes the forwarding path to optimise capacity, resilience, etc.
+It could also arise when a subnet uses a capacity management method where the available
+resource is periodically distributed among the active nodes and where a node might then
+have to buffer data until an assigned transmission opportunity or when the physical path
+changes (e.g., when the length of a wireless path changes, or the physical layer changes
+its mode of operation).
+Variation also arises when a higher priority diffserv traffic classic prompts the
+transmission by a lower class. In these cases, the delay varies as a function of
+external factors and attempting to infer congestion from an increase in the delay
+results in reduced throughput. The Jitter from variation over short timescales
+might not be distinguishable similar from other effects.
+
+Proposals SHOULD be evaluated to ensure their operation is robust
+when there is a significant change in the minimum delay.
+
 ## Internet of Things
 
 The "Internet of Things" (IoT) is a broad concept, but for congestion control
