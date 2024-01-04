@@ -558,7 +558,8 @@ delay product, well below the standard operating range of most Internet flows.
 ## Satellite
 
 Satellite links often have delays longer than typical for wired paths
-{{?RFC2488}} and high delay bandwidth products {{?RFC3649}}. Many systems
+{{?RFC2488}} and high delay bandwidth products {{?RFC3649}}.
+Many systems
 use dynamic capacity assignment that can result in variation of the delay
 and the capacity over timescales of the order of the path RTT.
 
