@@ -140,11 +140,10 @@ real-time protocols.
 Finally, the community has gained much more experience with indications
 of congestion beyond packet loss.
 
-Section 4 of the UDP Usage Guidelines {{RFC8085}} provide
+Multicast congestion controls are a considerably less mature field of study
+and are not in scope for this document.
+However, Section 4 of the UDP Usage Guidelines {{RFC8085}} provide
 additional guidelines for multicast and broadcast usage of UDP.
-The evaluation considerations described in the present document could be
-applicable to these congestion control algorithms, but this is not
-the intended scope of this BCP.
 
 Multiple congestion control algorithms
 have been developed outside of the IETF, including at least two that saw
