@@ -137,7 +137,7 @@ The set of protocols using these algorithms has spread beyond
 TCP and SCTP to include DCCP, QUIC, and beyond.
 Some congestion control algorithm proponents now have the opportunity
 to test and deploy at scale without IETF review.
-There is more interest in specialized use cases such as data centers, and in
+There is more interest in specialized use cases, such as data centers, and in
 support for a variety of upper layer protocols/applications, e.g.,
 real-time protocols.
 Finally, the community has gained much more experience with indications
@@ -153,10 +153,10 @@ have been developed outside of the IETF, including at least two that saw
 large scale deployment: Cubic {{HRX08}} and BBR {{BBR-draft}}.
 
 Cubic was documented in a research publication in 2007 {{HRX08}},
-and then adopted as the default congestion control algorithm for
+and was then adopted as the default congestion control algorithm for
 the TCP implementation in Linux. It was already used in a significant
 fraction of TCP connections over the Internet before being documented
-in an informational Internet Draft in 2015, being published as an
+in an informational Internet Draft in 2015, published as an
 informational RFC in 2017 {{?RFC8312}} and then as a proposed
 standard in 2023 {{?RFC9438}}.
 
@@ -177,7 +177,7 @@ of the algorithm as an RFC. Nevertheless, guidelines are
 important, if only to remind potential inventors and developers of
 the multiple facets of the congestion control problem.
 
-The guidelines in this document are intended to be consistent with
+The evaluation guidelines in this document are intended to be consistent with
 the congestion control principles from {{!RFC2914}} of preventing
 congestion collapse, considering fairness, and optimizing the flow's
 own performance in terms of throughput, delay, and loss.
@@ -191,6 +191,7 @@ Rather, the document provides
 a set of criteria that should be considered and weighed by the
 developers of congestion control algorithms and by the IETF
 in the context of each proposal.
+
 The high-order criteria for any new congestion control
 is that a serious scientific study of the pros and cons needs to have been done before a proposal is
 considered for publication by the IETF or before it is deployed at
@@ -205,13 +206,13 @@ This document is meant to reduce the barriers to entry for new congestion
 control work. As such, proponents should not interpret these criteria as a
 checklist of requirements before approaching the IETF. Instead, proponents
 are encouraged to think about these issues beforehand, and have the willingness
-to do the work implied by the rest of this document.
+to do the work implied by the remainder of this document.
 
 # Document Status
 
 Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
 control algorithms are expected to be published as "Experimental"
-RFCs until such time that the community better understands the
+RFCs, until such time that the community better understands the
 solution space.
 Traditionally, the meaning of "Experimental" status
 has varied in its use and interpretation.
@@ -251,7 +252,7 @@ the abstract stating the mechanism is only being proposed for
 controlled environments.  The abstract specifies environments where
 the Quick-Start request could give false positives (and therefore
 would be unsafe for incremental deployment where some routers
-forward, but do not process the option).  The abstract also specifies environments
+forward, but do not process the option). The abstract also specifies environments
 where packets containing the Quick-Start request could be dropped in
 the network; in such an environment, Quick-Start would not be unsafe
 to deploy, but deployment would not be recommended because it
@@ -326,9 +327,9 @@ the algorithm reduces its sending rate is algorithm specific, but see
 Bufferbloat {{Bufferbloat}} refers to the building of long queues in
 the network. Many network routers are configured with very large buffers.
 If congestion starts happening, classic TCP congestion control algorithms
-{{!RFC5681}} will continue sending at a high rate until the buffer fills
-up completely and packet losses occur. Every connection going through
-that bottleneck will experience high latency.  This adds unwanted latency that
+{{!RFC5681}} will continue sending at a high rate until a FIFO buffer fills
+up completely and packet losses then occur. Every connection going through
+that bottleneck will experience increased latency.  This adds unwanted latency that
 impacts highly interactive applications like games, but it also affects routine
 web browsing and video playing.
 
