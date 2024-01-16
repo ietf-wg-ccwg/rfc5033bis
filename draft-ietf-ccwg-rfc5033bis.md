@@ -122,12 +122,11 @@ This document updates the similarly titled {{!RFC5033}} that was
 published in 2007 as a Best Current Practice to evaluate new
 congestion control algorithms as Experimental or Proposed Standard RFCs.
 
-There have been proposals to extend or update the standard 
-IETF congestion control schemes to improve operation in
-various environments (e.g., high-speed networks,
-wireless technologies such as 3GPP and WiFi, long distance satellite
-links) and to avoid conflict with the needs of the more isochronous,
-behaviors of VoIP, gaming, and videoconferencing traffic.
+The IETF's standard congestion control schemes have been shown to have 
+performance challenges in various environments
+(e.g., high-speed networks, cellular and WiFi wireless technologies,
+long distance satellite links)
+and also for specific traffic workloads (VoIP, gaming, and videoconferencing).
 
 In 2007, TCP was the dominant consumer of this work, and proposals were
 typically discussed in research groups, for example the
@@ -716,11 +715,17 @@ These individuals suggested improvements to this document:
 
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
+- Adding improved first sentence of abstract and intro.
+- Editorial changes
+
+## Since draft-ietf-ccwg-rfc5033bis-02
+{:numbered="false"}
 
 - Added discussion of real-time protocols
 - Added discussion of short flows
 - Added IoT section
 - Added discussion of AQM response
+- Adding improved first sentence of abstract and intro.
 - Editorial changes
 
 ## Since draft-ietf-ccwg-rfc5033bis-01
