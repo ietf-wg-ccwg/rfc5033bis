@@ -91,11 +91,8 @@ informative:
 
 --- abstract
 
-The IETF's standard congestion control schemes have been widely shown
-to be inadequate for various environments (e.g., high-speed networks,
-wireless technologies such as 3GPP and WiFi, long distance satellite
-links) and also in conflict with the needed, more isochronous,
-behaviors of VoIP, gaming, and videoconferencing traffic.
+There have been proposals to extend or update the standard 
+IETF congestion control schemes.
 Recent research has yielded many alternate congestion
 control schemes that significantly differ from the IETF's congestion
 control principles.
@@ -124,6 +121,13 @@ deployment in the Internet.
 This document updates the similarly titled {{!RFC5033}} that was
 published in 2007 as a Best Current Practice to evaluate new
 congestion control algorithms as Experimental or Proposed Standard RFCs.
+
+There have been proposals to extend or update the standard 
+IETF congestion control schemes to improve operation in
+various environments (e.g., high-speed networks,
+wireless technologies such as 3GPP and WiFi, long distance satellite
+links) and to avoid conflict with the needs of the more isochronous,
+behaviors of VoIP, gaming, and videoconferencing traffic.
 
 In 2007, TCP was the dominant consumer of this work, and proposals were
 typically discussed in research groups, for example the
