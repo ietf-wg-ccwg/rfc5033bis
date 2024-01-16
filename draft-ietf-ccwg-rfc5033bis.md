@@ -715,11 +715,6 @@ These individuals suggested improvements to this document:
 
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
-- Adding improved first sentence of abstract and intro.
-- Editorial changes
-
-## Since draft-ietf-ccwg-rfc5033bis-02
-{:numbered="false"}
 
 - Added discussion of real-time protocols
 - Added discussion of short flows
