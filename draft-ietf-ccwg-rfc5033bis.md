@@ -700,6 +700,7 @@ These individuals suggested improvements to this document:
 - Added discussion of short flows
 - Added IoT section
 - Added discussion of AQM response
+- Added Multicast, noting out of scope
 - Editorial changes
 
 ## Since draft-ietf-ccwg-rfc5033bis-01
