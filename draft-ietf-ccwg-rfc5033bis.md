@@ -429,7 +429,7 @@ cannot assume that this is always the case.
 ### Short and Long Flows
 
 The effect on short-lived and long-lived flows using other common congestion
-controls MUST be evaluated, as in {{short-flows}}. 
+controls MUST be evaluated, as in {{short-flows}}.
 
 ## Other Criteria
 
