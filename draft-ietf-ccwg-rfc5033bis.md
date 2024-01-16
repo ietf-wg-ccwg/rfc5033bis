@@ -726,6 +726,7 @@ These individuals suggested improvements to this document:
 - Added IoT section
 - Added discussion of AQM response
 - Adding improved first sentence of abstract and intro.
+- Added section on Multicast, noting this is out of scope
 - Editorial changes
 
 ## Since draft-ietf-ccwg-rfc5033bis-01
