@@ -91,7 +91,7 @@ informative:
 
 --- abstract
 
-There have been proposals to extend or update the standard 
+There have been proposals to extend or update the standard
 IETF congestion control schemes.
 Recent research has yielded many alternate congestion
 control schemes that significantly differ from the IETF's congestion
