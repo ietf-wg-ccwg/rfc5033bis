@@ -363,7 +363,7 @@ assess the potential to cause starvation, including assurance that
 a loss of all feedback (e.g., detected by expiry of a retransmission time out)
 results in backoff.
 
-### Short Flows
+### Short Flows {#short-flows}
 
 A great deal of congestion control analysis concerns the steady-state behavior
 of long flows. However, many internet flows are relatively short-lived. If they
@@ -436,7 +436,8 @@ cannot assume that this is always the case.
 
 ### Short and Long Flows
 
-(TODO: Discuss short and long flows)
+The effect on short-lived and long-lived flows using other common congestion
+controls MUST be evaluated, as in {{short-flows}}.
 
 ## Other Criteria
 
