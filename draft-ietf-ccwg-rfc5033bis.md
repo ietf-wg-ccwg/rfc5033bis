@@ -209,7 +209,7 @@ to do the work implied by the rest of this document.
 
 # Document Status
 
-Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congest[[ion
+Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
 control algorithms are expected to be published as "Experimental"
 RFCs until such time that the community better understands the
 solution space.
