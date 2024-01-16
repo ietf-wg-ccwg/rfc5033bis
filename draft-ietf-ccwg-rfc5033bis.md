@@ -344,12 +344,12 @@ When multiple competing flows all use the same
 alternate congestion control algorithm, the proposal should
 explore how the capacity is shared among the competing flows.
 Capacity fairness can be important when a small number of similar
-flows compete to fill a bottleneck. It can however also not be useful:
-for example when comparing flows seek to send at different rates or
+flows compete to fill a bottleneck. It can however also not be useful,
+for example, when comparing flows that seek to send at different rates or
 when some of the flows do not last sufficiently long to approach
 asymptotic behavior.
 
-### Avoiding Starvation of other Flows.
+### Avoiding Starvation of Flows sharing a bottleneck.
 
 In contexts where differing congestion control
 algorithms are used, it is important to understand whether
@@ -357,7 +357,7 @@ an alternate congestion control algorithm can induce more
 harm to sharing flows than existing
 defined methods. The measure of harm is not restricted to the equality
 of capacity, but ought also to consider metrics such as the
-latency introduced, or an increase in packet loss. This evaluation must
+latency introduced, or an increase in packet loss. An evaluation must
 assess the potential to cause starvation, including assurance that
 a loss of all feedback (e.g., detected by expiry of a retransmission time out)
 results in backoff.
@@ -366,8 +366,8 @@ results in backoff.
 
 A great deal of congestion control analysis concerns the steady-state behavior
 of long flows. However, many internet flows are relatively short-lived. If they
-never experience a packet loss, they remain in the "slow start" mode of
-operation {{?RFC5681}} that features exponential congestion window growth.
+never experience a packet loss, a short-lived flow remains in the "slow start" mode of
+operation {{?RFC5681}}, e.g., that features exponential congestion window growth.
 
 Proposals will consider how new and short-lived flows affect long-lived flows,
 and vice versa.
