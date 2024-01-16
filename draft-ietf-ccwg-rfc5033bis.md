@@ -182,7 +182,7 @@ appropriate congestion control scheme.
 Rather, the document provides
 a set of criteria that should be considered and weighed by the
 developers of congestion control algorithms and by the IETF
-in the context of each .
+in the context of each proposal.
 The high-order criteria for any new congestion control
 is that a serious scientific study of the pros and cons needs to have been done before a proposal is
 considered for publication by the IETF or before it is deployed at
