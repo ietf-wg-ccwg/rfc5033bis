@@ -191,9 +191,8 @@ Rather, the document provides
 a set of criteria that should be considered and weighed by the
 developers of congestion control algorithms and by the IETF
 in the context of each proposal.
-The high-order criteria for any new
-proposal is that a serious scientific study of the pros and cons of
-the proposal needs to have been done before a proposal is
+The high-order criteria for any new congestion control
+is that a serious scientific study of the pros and cons needs to have been done before a proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.
 
@@ -473,7 +472,9 @@ discussed in Sections 10.3 and 10.4 of {{?RFC4782}} (Quick-Start).
 # General Use {#general-use}
 
 The criteria in {{evaluation-criteria}} will be evaluated in the
-following scenarios. Unless a proposal is explicitly forbidden on the
+following scenarios.
+Unless a congestion control
+proposal is explicitly forbidden on the
 public internet, the community MUST find that it meets the criteria
 in these scenarios for the proposal to progress.
 
@@ -581,7 +582,8 @@ control packets in a given algorithm a key evaluation metric.
 
 Furthermore, many IoT applications do not a have a human in the loop, and
 therefore have weaker latency constraints because they do not relate to a user
-experience.
+experience, but still need to share the path with other flows with different
+constraints.
 
 Extremely low-power links can lead to very low throughput and a low bandwidth-
 delay product, well below the standard operating range of most Internet flows.
@@ -590,6 +592,9 @@ delay product, well below the standard operating range of most Internet flows.
 
 Satellite links often have delays longer than typical for wired paths
 {{?RFC2488}} and high delay bandwidth products {{?RFC3649}}.
+Many systems
+use dynamic capacity assignment that can result in variation of the delay
+and the capacity over timescales of the order of the path RTT.
 
 ## Misbehaving Nodes
 
