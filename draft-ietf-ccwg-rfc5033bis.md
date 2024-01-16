@@ -526,8 +526,9 @@ properties of operation in these scenarios, as they are statistically small.
 ## Active Queue Management (AQM) {#aqm}
 
 Proposals SHOULD be evaluated under a variety of bottleneck queue disciplines.
+The effect of an AQM discipline can be hard to detect by Internet evaluation.
 At a minimum, a proposal should reason about an algorithm's response to various
-AQMs. Simulation or empirical results are, of course, valuable.
+AQM disciplines. Simulation or empirical results are, of course, valuable.
 
 Note that evaluation of AQM techniques -- as opposed to their impact on specific
 congestion control proposals -- is out of scope of this document. {{?RFC7567}}
