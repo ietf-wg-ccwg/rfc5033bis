@@ -122,7 +122,7 @@ This document updates the similarly titled {{!RFC5033}} that was
 published in 2007 as a Best Current Practice to evaluate new
 congestion control algorithms as Experimental or Proposed Standard RFCs.
 
-The IETF's standard congestion control schemes have been shown to have 
+The IETF's standard congestion control schemes have been shown to have
 performance challenges in various environments
 (e.g., high-speed networks, cellular and WiFi wireless technologies,
 long distance satellite links)
