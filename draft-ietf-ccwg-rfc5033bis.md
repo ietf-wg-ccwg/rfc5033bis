@@ -222,7 +222,7 @@ best-effort traffic on the Internet, but are being specified to
 facilitate investigations in simulation, testbeds, or controlled
 environments.
 The second class can also include algorithms where the
-IETF does not yet have sufficient understanding to decide if the
+IETF does not yet have sufficient understanding to decide whether the
 algorithm is or is not safe for deployment on the Internet.
 
 Each alternate congestion control algorithm published is required to
@@ -297,7 +297,7 @@ sending when the packet drop rate exceeds some threshold
 "full backoff", at some point the algorithm would reduce the
 sending rate to one packet per round-trip time and then
 exponentially backoff the time between single packet
-transmissions if congestion persists.  Exactly when either "full
+transmissions if the congestion persists.  Exactly when either "full
 backoff" or a pause in sending comes into play will be
 algorithm-specific.  However, as discussed in {{!RFC2914}} and {{!RFC8961}}, this
 requirement is crucial to protect the network in times of extreme
