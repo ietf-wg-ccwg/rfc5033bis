@@ -143,6 +143,11 @@ real-time protocols.
 Finally, the community has gained much more experience with indications
 of congestion beyond packet loss.
 
+Multicast congestion controls are a considerably less mature field of study
+and are not in scope for this document.
+However, Section 4 of the UDP Usage Guidelines {{RFC8085}} provide
+additional guidelines for multicast and broadcast usage of UDP.
+
 Multiple congestion control algorithms
 have been developed outside of the IETF, including at least two that saw
 large scale deployment: Cubic {{HRX08}} and BBR {{BBR-draft}}.
