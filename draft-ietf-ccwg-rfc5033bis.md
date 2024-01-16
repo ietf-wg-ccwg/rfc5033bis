@@ -118,7 +118,7 @@ congestion control and for the IETF community when evaluating whether
 a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.
 
-This document updates the similarly titled {{!RFC5033}} that was
+This document obsoletes the similarly titled {{?RFC5033}} that was
 published in 2007 as a Best Current Practice to evaluate new
 congestion control algorithms as Experimental or Proposed Standard RFCs.
 
@@ -165,13 +165,13 @@ with the first implementation contributed to Linux kernel 4.19 in 2016.
 It was described in an IRTF draft in 2018, and that draft is
 regularly updated to document the evolving versions of the algorithm
 {{BBR-draft}}. BBR is widely used for Google services using either
-TCP or QUIC {{?RFC9000}}, and is also largely deployed outside of
+TCP or QUIC {{?RFC9000}}, and is also widely deployed outside of
 Google.
 
 We cannot say now whether the original authors of {{?RFC5033}}
 expected that developers would be somehow waiting for IETF review
 before widely deploying a congestion control algorithm over the
-Internet, but the examples of Cubic and BBR teaches us that
+Internet, but the examples of Cubic and BBR teach us that
 deployment of new algorithms is not in fact gated by publication
 of the algorithm as an RFC. Nevertheless, guidelines are
 important, if only to remind potential inventors and developers of
@@ -192,7 +192,7 @@ a set of criteria that should be considered and weighed by the
 developers of congestion control algorithms and by the IETF
 in the context of each proposal.
 The high-order criteria for any new congestion control
-is that a serious scientific study of the pros and cons needs to have been done before a proposal is
+is that a serious scientific study of the pros and cons occurs when a proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.
 
@@ -209,7 +209,7 @@ to do the work implied by the rest of this document.
 
 # Document Status
 
-Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
+Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congest[[ion
 control algorithms are expected to be published as "Experimental"
 RFCs until such time that the community better understands the
 solution space.
