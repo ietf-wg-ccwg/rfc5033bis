@@ -209,6 +209,12 @@ to do the work implied by the rest of this document.
 
 # Document Status
 
+This document applies to congestion controls that seek Experimental or
+Standards Track status. Evaluation of both cases involves the same questions,
+but with different expectations for both the answers and the degree of
+certainty it the answers.
+
+
 Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
 control algorithms are expected to be published as "Experimental"
 RFCs until such time that the community better understands the
@@ -292,7 +298,7 @@ domains (see {{general-use}} and {{special-cases}}).
 
 ## Single Algorithm Behavior
 
-The following criteria evaluate the proposed algorithm when one or more
+S
 flows using that algorithm share a bottleneck link, with no other algorithms
 operating.
 
@@ -732,6 +738,7 @@ These individuals suggested improvements to this document:
 - Added discussion of short flows
 - Added IoT section
 - Added discussion of AQM response
+- Rewrote the "Document Status" section
 - Adding improved first sentence of abstract and intro.
 - Added section on Multicast, noting this is out of scope
 - Editorial changes
