@@ -488,13 +488,12 @@ the results from that deployment are often useful for answering these questions.
 
 ## Wired Networks
 
-(TODO: Describe properties of wired networks.)
-
-Proposals should be investigated for robust performance with different
-queueing mechanisms in the routers,
-especially Random Early Detection (RED) {{FJ03}} and Drop-Tail.
-This evaluation is often not included in the internet-draft
-itself, but in related papers cited in the draft.
+Wired networks are characterized by extremely low rates of packet loss except
+for those due to queue drops. They tend to have stable aggregate bandwidth,
+usually higher than other types of links, and low non-queueing delay. As the
+properties are relatively simple, wired links are typically used as a
+"baseline" case even if they are not always the bottleneck link in the modern
+Internet.
 
 ## Wireless networks
 
@@ -730,6 +729,7 @@ These individuals suggested improvements to this document:
 
 - Added discussion of real-time protocols
 - Added discussion of short flows
+- Listed properties of wired networks
 - Added IoT section
 - Added discussion of AQM response
 - Adding improved first sentence of abstract and intro.
