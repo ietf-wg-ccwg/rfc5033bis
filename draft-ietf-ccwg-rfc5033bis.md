@@ -225,7 +225,7 @@ forbidden from use in the general internet would, of course, seek real-world
 data for those environments instead.
 
 Experimental specifications SHOULD NOT be deployed as a default, and SHOULD only
-deploy in situations where they are being actively measured, and where it is 
+deploy in situations where they are being actively measured, and where it is
 possible to deactivate if there are scenes of pathological behavior.
 
 Each alternate congestion control algorithm published is required to include a
