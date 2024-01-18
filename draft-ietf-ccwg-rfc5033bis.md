@@ -91,13 +91,13 @@ informative:
 
 --- abstract
 
-New or modified congestion control schemes in the global Internet have possible
-ramifications to both the traffic using the new congestion control and to
-traffic using a standardized congestion control. Therefore, the IETF must
-proceed with caution when evaluating alternate congestion control proposals.
+Introducing new or modified congestion controllers in the global Internet have
+possible ramifications to both the traffic using the new congestion controller
+and to traffic using a standardized congestion controller. Therefore, the IETF
+must proceed with caution when evaluating alternate congestion control proposals.
 The goal of this document is to provide guidance for considering standardization
-of alternate congestion control algorithms at the IETF. It replaces RFC5033 to
-reflect changes in the congestion control landscape.
+of alternate congestion controllers at the IETF. It replaces RFC5033 to reflect
+changes in the congestion control landscape.
 
 --- middle
 
