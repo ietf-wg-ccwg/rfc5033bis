@@ -209,31 +209,33 @@ to do the work implied by the rest of this document.
 
 # Document Status
 
-This document applies to congestion controls that seek Experimental or
+This document applies to congestion controllers that seek Experimental or
 Standards Track status. Evaluation of both cases involves the same questions,
 but with different expectations for both the answers and the degree of
 certainty it the answers.
 
-Congestion controls without experience of internet-scale deployment SHOULD seek
-Experimental status until real-world data is able to answer the questions in
-{{general-use}}. Congestion controls with a record of measured internet-scale
-deployment MAY directly seek the standards track if the community believes it is
-safe, and the design is stable.
+Congestion controllers without experience of internet-scale deployment SHOULD
+seek Experimental status until real-world data is able to answer the questions
+in {{general-use}}. Congestion controllers with a record of measured internet-
+scale deployment MAY directly seek the standards track if the community believes
+it is safe, and the design is stable, guided by the considerations in
+{{general-use}}. The existence of this data does not waive the other
+considerations in this document.
 
 Algorithms that are designed for special environments (e.g., data centers) and
 forbidden from use in the general internet would, of course, seek real-world
 data for those environments instead.
 
-Experimental specifications SHOULD NOT be deployed as a default, and SHOULD only
-deploy in situations where they are being actively measured, and where it is
-possible to deactivate if there are scenes of pathological behavior.
+Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
+only be deployed in situations where they are being actively measured, and where
+it is possible to deactivate if there are signs of pathological behavior.
 
-Each alternate congestion control algorithm published is required to include a
+Each alternate congestion controller published is required to include a
 statement in the abstract indicating whether or not there is IETF consensus that
 the proposal is considered safe for use on the Internet. Each alternate
-congestion control algorithm published is also required to include a statement
-in the abstract describing environments where the protocol is not recommended
-for deployment. There can be environments where the protocol is deemed *safe*
+congestion controller published is also required to include a statement in the
+abstract describing environments where the protocol is not recommended
+for deployment. There can be environments where the controller is deemed *safe*
 for use, but it is still is not *recommended* for use because it does not
  perform well for the user.
 
@@ -252,10 +254,13 @@ to deploy, but deployment would not be recommended because it
 could lead to unnecessary delays for the connections attempting to use
 Quick-Start. The Quick-Start method is discussed as an example in {{?RFC9049}}.
 
-Though out of scope of this document, congestion control proponents may also
+Though out of scope of this document, congestion controller proponents may also
 seek publication of an Informational or Experimental RFC via the Internet
 Research Task Force (IRTF). In general, these proposals are expected to be less
-mature than ones that follow the procedures in this document.
+mature than ones that follow the procedures in this document. Documentation of
+deployed congestion controllers that cannot be changed by IETF or IRTF review
+are invited to publish as an Informational RFC via the Independent Stream Editor
+(ISE).
 
 # Evaluation Criteria {#evaluation-criteria}
 
