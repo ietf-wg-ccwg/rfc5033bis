@@ -118,7 +118,7 @@ congestion control and for the IETF community when evaluating whether
 a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.
 
-This document updates the similarly titled {{!RFC5033}} that was
+This document obsoletes the similarly titled {{?RFC5033}} that was
 published in 2007 as a Best Current Practice to evaluate new
 congestion control algorithms as Experimental or Proposed Standard RFCs.
 
@@ -137,7 +137,7 @@ The set of protocols using these algorithms has spread beyond
 TCP and SCTP to include DCCP, QUIC, and beyond.
 Some congestion control algorithm proponents now have the opportunity
 to test and deploy at scale without IETF review.
-There is more interest in specialized use cases such as data centers, and in
+There is more interest in specialized use cases, such as data centers, and in
 support for a variety of upper layer protocols/applications, e.g.,
 real-time protocols.
 Finally, the community has gained much more experience with indications
@@ -153,10 +153,10 @@ have been developed outside of the IETF, including at least two that saw
 large scale deployment: Cubic {{HRX08}} and BBR {{BBR-draft}}.
 
 Cubic was documented in a research publication in 2007 {{HRX08}},
-and then adopted as the default congestion control algorithm for
+and was then adopted as the default congestion control algorithm for
 the TCP implementation in Linux. It was already used in a significant
 fraction of TCP connections over the Internet before being documented
-in an informational Internet Draft in 2015, being published as an
+in an informational Internet Draft in 2015, published as an
 informational RFC in 2017 {{?RFC8312}} and then as a proposed
 standard in 2023 {{?RFC9438}}.
 
@@ -165,19 +165,19 @@ with the first implementation contributed to Linux kernel 4.19 in 2016.
 It was described in an IRTF draft in 2018, and that draft is
 regularly updated to document the evolving versions of the algorithm
 {{BBR-draft}}. BBR is widely used for Google services using either
-TCP or QUIC {{?RFC9000}}, and is also largely deployed outside of
+TCP or QUIC {{?RFC9000}}, and is also widely deployed outside of
 Google.
 
 We cannot say now whether the original authors of {{?RFC5033}}
 expected that developers would be somehow waiting for IETF review
 before widely deploying a congestion control algorithm over the
-Internet, but the examples of Cubic and BBR teaches us that
+Internet, but the examples of Cubic and BBR teach us that
 deployment of new algorithms is not in fact gated by publication
 of the algorithm as an RFC. Nevertheless, guidelines are
 important, if only to remind potential inventors and developers of
 the multiple facets of the congestion control problem.
 
-The guidelines in this document are intended to be consistent with
+The evaluation guidelines in this document are intended to be consistent with
 the congestion control principles from {{!RFC2914}} of preventing
 congestion collapse, considering fairness, and optimizing the flow's
 own performance in terms of throughput, delay, and loss.
@@ -191,8 +191,9 @@ Rather, the document provides
 a set of criteria that should be considered and weighed by the
 developers of congestion control algorithms and by the IETF
 in the context of each proposal.
+
 The high-order criteria for any new congestion control
-is that a serious scientific study of the pros and cons needs to have been done before a proposal is
+is that a serious scientific study of the pros and cons occurs when a proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.
 
@@ -205,7 +206,7 @@ This document is meant to reduce the barriers to entry for new congestion
 control work. As such, proponents should not interpret these criteria as a
 checklist of requirements before approaching the IETF. Instead, proponents
 are encouraged to think about these issues beforehand, and have the willingness
-to do the work implied by the rest of this document.
+to do the work implied by the remainder of this document.
 
 # Document Status
 
@@ -237,7 +238,7 @@ congestion controller published is also required to include a statement in the
 abstract describing environments where the protocol is not recommended
 for deployment. There can be environments where the controller is deemed *safe*
 for use, but it is still is not *recommended* for use because it does not
- perform well for the user.
+perform well for the user.
 
 As examples of such statements, {{?RFC3649}} specifying HighSpeed TCP
 includes a statement in the abstract stating that the proposal is
@@ -247,7 +248,7 @@ the abstract stating the mechanism is only being proposed for
 controlled environments.  The abstract specifies environments where
 the Quick-Start request could give false positives (and therefore
 would be unsafe for incremental deployment where some routers
-forward, but do not process the option).  The abstract also specifies environments
+forward, but do not process the option). The abstract also specifies environments
 where packets containing the Quick-Start request could be dropped in
 the network; in such an environment, Quick-Start would not be unsafe
 to deploy, but deployment would not be recommended because it
@@ -311,9 +312,9 @@ the algorithm reduces its sending rate is algorithm specific, but see
 Bufferbloat {{Bufferbloat}} refers to the building of long queues in
 the network. Many network routers are configured with very large buffers.
 If congestion starts happening, classic TCP congestion control algorithms
-{{!RFC5681}} will continue sending at a high rate until the buffer fills
-up completely and packet losses occur. Every connection going through
-that bottleneck will experience high latency.  This adds unwanted latency that
+{{!RFC5681}} will continue sending at a high rate until a First-In First-Out
+(FIFO) buffer completely fills and packet losses then occur. Every connection pasing through
+that bottleneck will then experience increased latency.  This adds unwanted latency that
 impacts highly interactive applications like games, but it also affects routine
 web browsing and video playing.
 
@@ -473,13 +474,12 @@ the results from that deployment are often useful for answering these questions.
 
 ## Wired Networks
 
-(TODO: Describe properties of wired networks.)
-
-Proposals should be investigated for robust performance with different
-queueing mechanisms in the routers,
-especially Random Early Detection (RED) {{FJ03}} and Drop-Tail.
-This evaluation is often not included in the internet-draft
-itself, but in related papers cited in the draft.
+Wired networks are characterized by extremely low rates of packet loss except
+for those due to queue drops. They tend to have stable aggregate bandwidth,
+usually higher than other types of links, and low non-queueing delay. Because
+the properties are relatively simple, wired links are typically used as a
+"baseline" case even if they are not always the bottleneck link in the modern
+Internet.
 
 ## Wireless networks
 
@@ -496,7 +496,7 @@ discussion of wireless properties.
 
 Congestion control performance is affected by the queue discipline applied at
 the bottleneck link. The default queue discipline that MUST be evaluated is
-drop-tail, First In First Out (FIFO). See {{aqm}} for evaluation of other queue
+drop-tail, (using a FIFO buffer). See {{aqm}} for evaluation of other queue
 disciplines.
 
 # Special Cases {#special-cases}
@@ -715,6 +715,7 @@ These individuals suggested improvements to this document:
 
 - Added discussion of real-time protocols
 - Added discussion of short flows
+- Listed properties of wired networks
 - Added IoT section
 - Added discussion of AQM response
 - Rewrote the "Document Status" section
