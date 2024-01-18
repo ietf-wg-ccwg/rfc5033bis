@@ -327,9 +327,9 @@ the algorithm reduces its sending rate is algorithm specific, but see
 Bufferbloat {{Bufferbloat}} refers to the building of long queues in
 the network. Many network routers are configured with very large buffers.
 If congestion starts happening, classic TCP congestion control algorithms
-{{!RFC5681}} will continue sending at a high rate until a FIFO buffer fills
-up completely and packet losses then occur. Every connection going through
-that bottleneck will experience increased latency.  This adds unwanted latency that
+{{!RFC5681}} will continue sending at a high rate until a First-In First-Out
+(FIFO) buffer completely fills and packet losses then occur. Every connection pasing through
+that bottleneck will then experience increased latency.  This adds unwanted latency that
 impacts highly interactive applications like games, but it also affects routine
 web browsing and video playing.
 
@@ -512,7 +512,7 @@ discussion of wireless properties.
 
 Congestion control performance is affected by the queue discipline applied at
 the bottleneck link. The default queue discipline that MUST be evaluated is
-drop-tail, First In First Out (FIFO). See {{aqm}} for evaluation of other queue
+drop-tail, (using a FIFO buffer). See {{aqm}} for evaluation of other queue
 disciplines.
 
 # Special Cases {#special-cases}
