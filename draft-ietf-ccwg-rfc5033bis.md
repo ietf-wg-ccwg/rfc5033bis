@@ -490,8 +490,8 @@ the results from that deployment are often useful for answering these questions.
 
 Wired networks are characterized by extremely low rates of packet loss except
 for those due to queue drops. They tend to have stable aggregate bandwidth,
-usually higher than other types of links, and low non-queueing delay. As the
-properties are relatively simple, wired links are typically used as a
+usually higher than other types of links, and low non-queueing delay. Because
+the properties are relatively simple, wired links are typically used as a
 "baseline" case even if they are not always the bottleneck link in the modern
 Internet.
 
