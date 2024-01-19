@@ -203,39 +203,35 @@ to do the work implied by the remainder of this document.
 
 # Document Status
 
-Following the lead of HighSpeed TCP {{?RFC3649}}, alternate congestion
-control algorithms are expected to be published as "Experimental"
-RFCs, until such time that the community better understands the
-solution space.
-Traditionally, the meaning of "Experimental" status
-has varied in its use and interpretation.
+This document applies to congestion controllers that seek Experimental or
+Standards Track status. Evaluation of both cases involves the same questions,
+but with different expectations for both the answers and the degree of
+certainty it the answers.
 
-As part of this document
-we define two classes of congestion control proposals that can be
-published with the "Experimental" status.
-The first class includes
-algorithms that are judged to be safe to deploy for best-effort
-traffic in the global Internet and further investigated in that
-environment.
-The second class includes algorithms that, while
-promising, are not yet deemed safe enough for widespread deployment as
-best-effort traffic on the Internet, but are being specified to
-facilitate investigations in simulation, testbeds, or controlled
-environments.
-The second class can also include algorithms where the
-IETF does not yet have sufficient understanding to decide whether the
-algorithm is or is not safe for deployment on the Internet.
+Congestion controllers without experience of internet-scale deployment SHOULD
+seek Experimental status until real-world data is able to answer the questions
+in {{general-use}}. Congestion controllers with a record of measured internet-
+scale deployment MAY directly seek the standards track if the community believes
+it is safe, and the design is stable, guided by the considerations in
+{{general-use}}. The existence of this data does not waive the other
+considerations in this document.
 
-Each alternate congestion control algorithm published is required to
-include a statement in the abstract indicating whether or not the
-proposal is considered safe for use on the Internet.
-Each alternate
-congestion control algorithm published is also required to include a
-statement in the abstract describing environments where the protocol
-is not recommended for deployment.
-There can be environments where
-the protocol is deemed *safe* for use, but it is still is not *recommended*
-for use because it does not perform well for the user.
+Algorithms that are designed for special environments (e.g., data centers) and
+forbidden from use in the general internet would, of course, seek real-world
+data for those environments instead.
+
+Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
+only be deployed in situations where they are being actively measured, and where
+it is possible to deactivate if there are signs of pathological behavior.
+
+Each alternate congestion controller published is required to include a
+statement in the abstract indicating whether or not there is IETF consensus that
+the proposal is considered safe for use on the Internet. Each alternate
+congestion controller published is also required to include a statement in the
+abstract describing environments where the protocol is not recommended
+for deployment. There can be environments where the controller is deemed *safe*
+for use, but it is still is not *recommended* for use because it does not
+perform well for the user.
 
 As examples of such statements, {{?RFC3649}} specifying HighSpeed TCP
 includes a statement in the abstract stating that the proposal is
@@ -252,24 +248,13 @@ to deploy, but deployment would not be recommended because it
 could lead to unnecessary delays for the connections attempting to use
 Quick-Start. The Quick-Start method is discussed as an example in {{?RFC9049}}.
 
-For authors of alternate congestion control schemes who are not ready
-to bring their congestion control mechanisms to the IETF for
-standardization (either as Experimental or as Proposed Standard), one
-possibility would be to submit an internet-draft that documents the
-alternate congestion control mechanism for the benefit of the IETF
-and IRTF communities.  This is particularly encouraged in order to
-ensure algorithm specifications are widely disseminated to facilitate
-further research.  Such an internet-draft could also be
-considered for publication as an Informational RFC, as a first step in the process
-towards standardization.  Such a document would be expected to
-carry an explicit warning against using the scheme in the global
-Internet.
-
-Note: we are not changing the RFC publication process for non-IETF
-produced documents (e.g., those from the IRTF or Independent
-Submissions via the RFC-Editor).  However, we would hope the
-guidelines in this document inform the IESG as they consider whether
-to add a note to such documents.
+Though out of scope of this document, congestion controller proponents may also
+seek publication of an Informational or Experimental RFC via the Internet
+Research Task Force (IRTF). In general, these proposals are expected to be less
+mature than ones that follow the procedures in this document. Documentation of
+deployed congestion controllers that cannot be changed by IETF or IRTF review
+are invited to publish as an Informational RFC via the Independent Stream Editor
+(ISE).
 
 # Evaluation Criteria {#evaluation-criteria}
 
@@ -286,8 +271,8 @@ domains (see {{general-use}} and {{special-cases}}).
 
 ## Single Algorithm Behavior
 
-The following criteria evaluate the proposed algorithm when one or more
-flows using that algorithm share a bottleneck link, with no other algorithms
+The following criteria evaluate the proposed algorithm when one or more flows
+using that algorithm share a bottleneck link, with no other algorithms
 operating.
 
 ### Protection Against Congestion Collapse
@@ -726,6 +711,7 @@ These individuals suggested improvements to this document:
 - Listed properties of wired networks
 - Added IoT section
 - Added discussion of AQM response
+- Rewrote the "Document Status" section
 - Adding improved first sentence of abstract and intro.
 - Added section on Multicast, noting this is out of scope
 - Editorial changes
