@@ -632,7 +632,7 @@ to changes in path characteristics on the interval of common Internet re-routing
 
 Even when the set of routers constituting a path does not change, the properties of
 that path can vary with time (e.g., due to a change of link capacity, relative priority, or a change
-in the rate of other traffic sharing a bottleneck), with a potential impact on the 
+in the rate of other traffic sharing a bottleneck), with a potential impact on the
 operation of a congestion control algorithm.
 
 ## Multipath Transport
