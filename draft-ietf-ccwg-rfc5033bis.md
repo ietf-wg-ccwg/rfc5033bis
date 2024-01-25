@@ -209,16 +209,16 @@ Standards Track status. Evaluation of both cases involves the same questions,
 but with different expectations for both the answers and the degree of
 certainty it the answers.
 
-Congestion control algorithms without experience of internet-scale deployment SHOULD
+Congestion control algorithms without experience of Internet-scale deployment SHOULD
 seek Experimental status until real-world data is able to answer the questions
-in {{general-use}}. Congestion control algorithms with a record of measured internet-
+in {{general-use}}. Congestion control algorithms with a record of measured Internet-
 scale deployment MAY directly seek the Standards Track if the community believes
 it is safe, and the design is stable, guided by the considerations in
 {{general-use}}. The existence of this data does not waive the other
 considerations in this document.
 
 Algorithms that are designed for special environments (e.g., data centers) and
-forbidden from use in the general internet would, of course, seek real-world
+forbidden from use in the Internet would, of course, seek real-world
 data for those environments instead.
 
 Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
@@ -346,7 +346,7 @@ results in backoff.
 ### Short Flows {#short-flows}
 
 A great deal of congestion control analysis concerns the steady-state behavior
-of long flows. However, many internet flows are relatively short-lived. If they
+of long flows. However, many Internet flows are relatively short-lived. If they
 never experience a packet loss, a short-lived flow remains in the "slow start" mode of
 operation {{?RFC5681}}, e.g., that features exponential congestion window growth.
 
@@ -456,14 +456,14 @@ discussed in Sections 10.3 and 10.4 of {{?RFC4782}} (Quick-Start).
 
 The criteria in {{evaluation-criteria}} will be evaluated in the
 following scenarios.
-Unless a proposed congestion control algorithm 
+Unless a proposed congestion control algorithm
 explicitly forbids use on the
-public internet, the community MUST find that it meets the criteria
+public Internet, the community MUST find that it meets the criteria
 in these scenarios for the proposal to progress.
 
 The evaluation in each scenario should occur over a representative range of
 bandwidths, delays, and queue depths. Of course, the set of parameters
-representative of the public internet will change over time.
+representative of the public Internet will change over time.
 
 These criteria are intended to capture a statistically dominant set of Internet
 conditions. In the case that a proposed algorithm has been tested at Internet scale,
@@ -510,7 +510,7 @@ following scenarios, unless the proposal specifically excludes its use in a
 scenario. The community MAY allow a proposal to progress even if the criteria
 indicate an unsatisfactory result for these scenarios.
 
-In general, measurements from internet-scale deployments will not expose the
+In general, measurements from Internet-scale deployments will not expose the
 properties of operation in these scenarios, as they are statistically small.
 
 ## Active Queue Management (AQM) {#aqm}
@@ -541,7 +541,7 @@ describes design considerations for AQMs.
 
 An Internet Path can include simple links, where the minimum delay is the propagation delay,
 and any additional delay can be attributed to link buffering. This cannot be assumed.
-An internet Path can also include complex subnetworks where the minimum delay changes over
+An Internet Path can also include complex subnetworks where the minimum delay changes over
 various time scales, resulting in a non-stationary minimum delay.
 
 This occurs when a subnet changes the forwarding path to optimise capacity, resilience, etc.
