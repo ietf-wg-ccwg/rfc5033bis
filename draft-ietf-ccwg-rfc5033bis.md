@@ -644,7 +644,7 @@ Multipath transport protocols permit more than one path to be differentiated and
 a single connection at the sender.
 A multipath sender can schedule which packets travel on which of its active paths.
 This enables a tradeoff in timeliness and reliability. There are various ways that
-multipath techniques can be used.c
+multipath techniques can be used.
 
 One example use is to provide fail-over from one path to
 another when the original path is no longer viable or to switch the traffic from
