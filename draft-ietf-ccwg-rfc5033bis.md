@@ -580,6 +580,8 @@ delay product, well below the standard operating range of most Internet flows.
 
 ## Paths with High Delay
 
+A proposal ought not to presume that all general Internet paths have a low
+delay.
 Some paths include links that contibute much more delay than for a typical Internet path.
 Satellite links often have delays longer than typical for wired paths
 {{?RFC2488}} and high delay bandwidth products {{?RFC3649}}.
@@ -608,7 +610,8 @@ available Quick-Start bandwidth.
 
 ## Extreme Packet Reordering
 
-{{?RFC4653}} discusses the effect of extreme packet reordering.
+A proposal ought not to presume that all general Internet paths reliably deliver
+packets in order. {{?RFC4653}} discusses the effect of extreme packet reordering.
 
 ## Transient Events
 
@@ -680,8 +683,9 @@ security.  The implementation of various facets of the Internet's
 current congestion control algorithms do have security implications
 (e.g., as outlined in {{!RFC5681}}).
 
-Proposed congestion control
-algorithms MUST be mindful of pitfalls, and should
+The IETF process that results in publication needs to
+ensure that these security implications are considreed.
+Proposals therefore ought to be mindful of pitfalls, and should
 examine any potential security issues that may arise.
 
 # IANA Considerations
