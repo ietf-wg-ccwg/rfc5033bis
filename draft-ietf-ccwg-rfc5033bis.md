@@ -556,7 +556,7 @@ external factors and attempting to infer congestion from an increase in the dela
 results in reduced throughput. The jitter from variation over short timescales
 might not be distinguishable similar from other effects.
 
-Congetsion control proposals SHOULD be evaluated to ensure their operation is robust
+Congestion control proposals SHOULD be evaluated to ensure their operation is robust
 when there is a significant change in the minimum delay.
 
 ## Internet of Things
