@@ -1,4 +1,4 @@
----
+ste---
 title: "Specifying New Congestion Control Algorithms"
 abbrev: "New CC Algorithms"
 docname: draft-ietf-ccwg-rfc5033bis-latest
@@ -218,8 +218,8 @@ it is safe, and the design is stable, guided by the considerations in
 considerations in this document.
 
 Algorithms that are designed for special environments (e.g., data centers) and
-forbidden from use in the Internet would, of course, seek real-world
-data for those environments instead.
+forbidden from use in the Internet would, of course, instead seek real-world
+data for those environments.
 
 Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
 only be deployed in situations where they are being actively measured, and where
@@ -445,7 +445,7 @@ is intended only for specific environments (and not the
 global Internet), the proposal should consider how this intention
 is to be realised.  The community will have to address the
 question of whether the scope can be enforced by stating
-a ste of restrictions or whether additional protocol mechanisms are
+the restrictions or whether additional protocol mechanisms are
 required to enforce this scoping.  The answer will necessarily
 depend on the change that is being proposed.
 
