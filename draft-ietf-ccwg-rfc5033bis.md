@@ -169,6 +169,7 @@ deployment of new algorithms is not in fact gated by publication
 of the algorithm as an RFC.
 
 Nevertheless, specifying congestion control algorithms has a number of advantages:
+
 - A specification can help implementers, operators, and other interested
   parties to develop a shared understanding of how the algorithm works and how
   it is expected to behave in various different scenarios or configurations.
