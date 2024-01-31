@@ -520,7 +520,7 @@ The effect of an AQM discipline can be hard to detect by Internet evaluation.
 At a minimum, a proposal should reason about an algorithm's response to various
 AQM disciplines. Simulation or empirical results are, of course, valuable.
 
-Among the AQM techniques that might have an impact on a  proposed congestion control
+Among the AQM techniques that might have an impact on a proposed congestion control
 algorithm are FQ-CoDel {{?RFC8290}}; Proportional Integral Controller Enhanced
 (PIE) {{?RFC8033}}; and Low Latency, Low Loss, and Scalable Throughput (L4S)
 {{?RFC9332}}.
