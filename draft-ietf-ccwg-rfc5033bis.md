@@ -437,7 +437,7 @@ the current Internet, it would be helpful for a proposal to
 discuss what is known (if anything) about the correct operation
 of the mechanisms with some of the equipment that can be installed in the
 current Internet, e.g., routers, transparent proxies, WAN
-optimizers, intrusion detection syms, home routers, and the
+optimizers, intrusion detection systems, home routers, and the
 like.
 
 As a similar concern, if the proposal
