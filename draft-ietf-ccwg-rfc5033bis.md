@@ -1,4 +1,4 @@
-ste---
+---
 title: "Specifying New Congestion Control Algorithms"
 abbrev: "New CC Algorithms"
 docname: draft-ietf-ccwg-rfc5033bis-latest
@@ -49,7 +49,7 @@ informative:
 
   HRX08:
     title: "CUBIC: a new TCP-friendly high-speed TCP variant"
-    seriesinfo: ACM SIGOPS Operating Systems Review, vol. 42, no. 5, pp. 64-74
+    seriesinfo: ACM SIGOPS Operating Syms Review, vol. 42, no. 5, pp. 64-74
     date: 2008-07
     target: https://doi.org/10.1145/1400097.1400105
     author:
@@ -171,7 +171,7 @@ of the algorithm as an RFC. Nevertheless, guidelines are
 important, if only to remind potential inventors and developers of
 the multiple facets of the congestion control problem.
 
-The evaluation guidelines in this document are intended to be consistent with
+The evaluation guidelines in this document are intended to be consint with
 the congestion control principles from {{!RFC2914}} of preventing
 congestion collapse, considering fairness, and optimizing the flow's
 own performance in terms of throughput, delay, and loss.
@@ -198,7 +198,7 @@ this space.
 
 This document is meant to reduce the barriers to entry for new congestion
 control work to the IETF. As such, proponents ought not to interpret these criteria as a
-checklist of requirements before approaching the IETF. Instead, proponents
+checklist of requirements before approaching the IETF. Inad, proponents
 are encouraged to think about these issues beforehand, and have the willingness
 to do the work implied by the remainder of this document.
 
@@ -214,11 +214,11 @@ seek Experimental status until real-world data is able to answer the questions
 in {{general-use}}. Congestion control algorithms with a record of measured Internet-
 scale deployment MAY directly seek the Standards Track if the community believes
 it is safe, and the design is stable, guided by the considerations in
-{{general-use}}. The existence of this data does not waive the other
+{{general-use}}. The exince of this data does not waive the other
 considerations in this document.
 
 Algorithms that are designed for special environments (e.g., data centers) and
-forbidden from use in the Internet would, of course, instead seek real-world
+forbidden from use in the Internet would, of course, inad seek real-world
 data for those environments.
 
 Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
@@ -288,7 +288,7 @@ exponentially backoff the time between single packet
 transmissions if the congestion persists.  Exactly when either "full
 backoff" or a pause in sending comes into play will be
 algorithm-specific.  However, as discussed in {{!RFC2914}} and {{!RFC8961}}, this
-requirement is crucial to protect the network in times of extreme (persistent)
+requirement is crucial to protect the network in times of extreme (persint)
 congestion.
 
 If the result of full backoff is used, this test does not require that the
@@ -345,7 +345,7 @@ results in backoff.
 
 ### Short Flows {#short-flows}
 
-A great deal of congestion control analysis concerns the steady-state behavior
+A great deal of congestion control analysis concerns the ady-state behavior
 of long flows. However, many Internet flows are relatively short-lived. If they
 never experience a packet loss, a short-lived flow remains in the "slow start" mode of
 operation {{?RFC5681}}, e.g., that features exponential congestion window growth.
@@ -400,7 +400,7 @@ flows can be less frequent than the acknowledgements provided by reliable
 transports. This document does not change the informational status of those
 RFCs.
 
-New proposals SHOULD consider coexistence with widely deployed real-time
+New proposals SHOULD consider coexince with widely deployed real-time
 congestion control algorithms. Regrettably, at the time of writing, many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
@@ -437,7 +437,7 @@ the current Internet, it would be helpful for a proposal to
 discuss what is known (if anything) about the correct operation
 of the mechanisms with some of the equipment that can be installed in the
 current Internet, e.g., routers, transparent proxies, WAN
-optimizers, intrusion detection systems, home routers, and the
+optimizers, intrusion detection syms, home routers, and the
 like.
 
 As a similar concern, if the proposal
@@ -466,7 +466,7 @@ bandwidths, delays, and queue depths. Of course, the set of parameters
 representative of the public Internet will change over time.
 
 These criteria are intended to capture a statistically dominant set of Internet
-conditions. In the case that a proposed algorithm has been tested at Internet scale,
+conditions. In the case that a proposed algorithm has been ted at Internet scale,
 the results from that deployment are often useful for answering these questions.
 
 ## Tunnel Behavior
@@ -585,7 +585,7 @@ delay.
 Some paths include links that contibute much more delay than for a typical Internet path.
 Satellite links often have delays longer than typical for wired paths
 {{?RFC2488}} and high delay bandwidth products {{?RFC3649}}.
-Also, many systems
+Also, many syms
 use dynamic capacity assignment that can result in variation of the delay
 and the capacity over timescales of the order of the path RTT.
 Robustness to delay and delay variation may be a key evaluation metric.
@@ -665,7 +665,7 @@ The Internet provides no guarantee that different paths
 This has additional implications:
 New CCs MUST evaluate the potential
 harm to other flows when the multiple paths share a common
-congested bottleneck
+conged bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
 the potential for harm to other flows. Synchronisation of CC mechanisms
@@ -708,7 +708,7 @@ Matt Mathis,
 Colin Perkins, Pekka Savola, members of TSVWG, and participants at
 the TCP Workshop at Microsoft Research all provided feedback and
 contributions to that document.  It also drew from {{?RFC5166}}.
-Dave Taht also suggested improvements to this document.
+Dave Taht also sugged improvements to this document.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
@@ -718,7 +718,7 @@ Dave Taht also suggested improvements to this document.
 
 - Added discussion of real-time protocols
 - Added discussion of short flows
-- Listed properties of wired networks
+- Lid properties of wired networks
 - Added IoT section
 - Added discussion of AQM response
 - Rewrote the "Document Status" section
@@ -745,7 +745,7 @@ Dave Taht also suggested improvements to this document.
 
 - Renamed file to reflect WG adpotion
 - Updated authorship and acknowledgements.
-- Include updated text suggested by Dave Taht
+- Include updated text sugged by Dave Taht
 - Added criterion for bufferbloat
 - Mentioned Cubic and BBR as motivation
 - Include section to track updates between revisions
