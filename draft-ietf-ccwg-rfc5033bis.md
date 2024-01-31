@@ -49,7 +49,7 @@ informative:
 
   HRX08:
     title: "CUBIC: a new TCP-friendly high-speed TCP variant"
-    seriesinfo: ACM SIGOPS Operating Syms Review, vol. 42, no. 5, pp. 64-74
+    seriesinfo: ACM SIGOPS Operating Systems Review, vol. 42, no. 5, pp. 64-74
     date: 2008-07
     target: https://doi.org/10.1145/1400097.1400105
     author:
@@ -171,7 +171,7 @@ of the algorithm as an RFC. Nevertheless, guidelines are
 important, if only to remind potential inventors and developers of
 the multiple facets of the congestion control problem.
 
-The evaluation guidelines in this document are intended to be consint with
+The evaluation guidelines in this document are intended to be consistent with
 the congestion control principles from {{!RFC2914}} of preventing
 congestion collapse, considering fairness, and optimizing the flow's
 own performance in terms of throughput, delay, and loss.
@@ -198,7 +198,7 @@ this space.
 
 This document is meant to reduce the barriers to entry for new congestion
 control work to the IETF. As such, proponents ought not to interpret these criteria as a
-checklist of requirements before approaching the IETF. Inad, proponents
+checklist of requirements before approaching the IETF. Instead, proponents
 are encouraged to think about these issues beforehand, and have the willingness
 to do the work implied by the remainder of this document.
 
@@ -275,7 +275,7 @@ domains (see {{general-use}} and {{special-cases}}).
 
 The following criteria evaluate the proposal when one or more flows
 using that algorithm share a bottleneck link (i.e. with no flows
-using a diffing congestion controi algorithm).
+using a differing congestion controi algorithm).
 
 ### Protection Against Congestion Collapse
 
@@ -288,7 +288,7 @@ exponentially backoff the time between single packet
 transmissions if the congestion persists.  Exactly when either "full
 backoff" or a pause in sending comes into play will be
 algorithm-specific.  However, as discussed in {{!RFC2914}} and {{!RFC8961}}, this
-requirement is crucial to protect the network in times of extreme (persint)
+requirement is crucial to protect the network in times of extreme (persistent)
 congestion.
 
 If the result of full backoff is used, this test does not require that the
@@ -345,7 +345,7 @@ results in backoff.
 
 ### Short Flows {#short-flows}
 
-A great deal of congestion control analysis concerns the ady-state behavior
+A great deal of congestion control analysis concerns the steady-state behavior
 of long flows. However, many Internet flows are relatively short-lived. If they
 never experience a packet loss, a short-lived flow remains in the "slow start" mode of
 operation {{?RFC5681}}, e.g., that features exponential congestion window growth.
@@ -400,7 +400,7 @@ flows can be less frequent than the acknowledgements provided by reliable
 transports. This document does not change the informational status of those
 RFCs.
 
-New proposals SHOULD consider coexince with widely deployed real-time
+New proposals SHOULD consider coexistence with widely deployed real-time
 congestion control algorithms. Regrettably, at the time of writing, many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
