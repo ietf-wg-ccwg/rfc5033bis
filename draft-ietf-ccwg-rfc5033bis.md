@@ -708,7 +708,8 @@ Matt Mathis,
 Colin Perkins, Pekka Savola, members of TSVWG, and participants at
 the TCP Workshop at Microsoft Research all provided feedback and
 contributions to that document.  It also drew from {{?RFC5166}}.
-Dave Taht also suggested improvements to this document.
+
+The editors would like to thanks to Reese Enghardt and Dave Taht for suggesting improvements to this document.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
