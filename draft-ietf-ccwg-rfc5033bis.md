@@ -684,7 +684,7 @@ current congestion control algorithms do have security implications
 (e.g., as outlined in {{!RFC5681}}).
 
 The IETF process that results in publication needs to
-ensure that these security implications are considreed.
+ensure that these security implications are considered.
 Proposals therefore ought to be mindful of pitfalls, and should
 examine any potential security issues that may arise.
 
