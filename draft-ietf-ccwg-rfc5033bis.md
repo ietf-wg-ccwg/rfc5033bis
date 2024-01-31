@@ -745,7 +745,7 @@ Dave Taht also suggested improvements to this document.
 
 - Renamed file to reflect WG adpotion
 - Updated authorship and acknowledgements.
-- Include updated text sugged by Dave Taht
+- Include updated text suggested by Dave Taht
 - Added criterion for bufferbloat
 - Mentioned Cubic and BBR as motivation
 - Include section to track updates between revisions
