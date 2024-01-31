@@ -214,7 +214,7 @@ seek Experimental status until real-world data is able to answer the questions
 in {{general-use}}. Congestion control algorithms with a record of measured Internet-
 scale deployment MAY directly seek the Standards Track if the community believes
 it is safe, and the design is stable, guided by the considerations in
-{{general-use}}. The exince of this data does not waive the other
+{{general-use}}. The existence of this data does not waive the other
 considerations in this document.
 
 Algorithms that are designed for special environments (e.g., data centers) and
