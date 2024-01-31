@@ -717,13 +717,14 @@ RFC5033, which served the community well for over a decade.
 
 Thanks to Richard Scheffenegger for helping to get this revision process started.
 
+The editors would like to thanks to Neal Cardwell, Reese Enghardt and Dave Taht
+for suggesting improvements to this document.
+
 Discussions with Lars Eggert and Aaron Falk seeded the original RFC5033.
 Bob Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye,
 Colin Perkins, Pekka Savola, members of TSVWG, and participants at
 the TCP Workshop at Microsoft Research all provided feedback and
 contributions to that document.  It also drew from {{?RFC5166}}.
-
-The editors would like to thanks to Reese Enghardt and Dave Taht for suggesting improvements to this document.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
