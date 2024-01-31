@@ -218,7 +218,7 @@ it is safe, and the design is stable, guided by the considerations in
 considerations in this document.
 
 Algorithms that are designed for special environments (e.g., data centers) and
-forbidden from use in the Internet would, of course, inad seek real-world
+forbidden from use in the Internet would, of course, instead seek real-world
 data for those environments.
 
 Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
