@@ -585,7 +585,7 @@ delay.
 Some paths include links that contibute much more delay than for a typical Internet path.
 Satellite links often have delays longer than typical for wired paths
 {{?RFC2488}} and high delay bandwidth products {{?RFC3649}}.
-Also, many syms
+Also, many systems
 use dynamic capacity assignment that can result in variation of the delay
 and the capacity over timescales of the order of the path RTT.
 Robustness to delay and delay variation may be a key evaluation metric.
