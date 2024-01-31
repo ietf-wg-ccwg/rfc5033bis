@@ -374,7 +374,7 @@ other non-standard congestion control algorithms that are known to be widely dep
 
 We note that this guideline is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for an alternate congestion
-control mechanism to advance to Experimental status.  As an example,
+control mechanism to advance to Experimental or Standards Track status.  As an example,
 HighSpeed TCP is a congestion control mechanism specified as
 Experimental, that is not TCP-friendly in all environments.
 When a new algorithm is deployed, the existing major deployments need to be
