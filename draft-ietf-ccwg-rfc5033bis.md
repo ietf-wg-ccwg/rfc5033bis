@@ -166,9 +166,24 @@ expected that developers would be somehow waiting for IETF review
 before widely deploying a congestion control algorithm over the
 Internet, but the examples of Cubic and BBR teach us that
 deployment of new algorithms is not in fact gated by publication
-of the algorithm as an RFC. Nevertheless, guidelines are
-important, if only to remind potential inventors and developers of
-the multiple facets of the congestion control problem.
+of the algorithm as an RFC.
+
+Nevertheless, specifying congestion control algorithms has a number of advantages:
+
+- A specification can help implementers, operators, and other interested
+  parties to develop a shared understanding of how the algorithm works and how
+  it is expected to behave in various different scenarios or configurations.
+- A specification can help potential contributors understand the algorithm,
+  which can make it easier for them to suggest improvements and/or identify
+  limitations. Further, the specification can help multiple contributors align
+  on a consensus change to the algorithm.
+- A specification that is accessible to anyone circumvents the issue that some
+  implementors may be unable to read open source reference implementations due
+  to the constraints of some open source licenses.
+
+Beyond helping develop specific algorithm proposals, guidelines can also serve
+as a reminder to potential inventors and developers of the multiple facets of
+the congestion control problem.
 
 The evaluation guidelines in this document are intended to be consistent with
 the congestion control principles from {{!RFC2914}} of preventing
