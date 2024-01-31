@@ -708,7 +708,7 @@ Matt Mathis,
 Colin Perkins, Pekka Savola, members of TSVWG, and participants at
 the TCP Workshop at Microsoft Research all provided feedback and
 contributions to that document.  It also drew from {{?RFC5166}}.
-Dave Taht also sugged improvements to this document.
+Dave Taht also suggested improvements to this document.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
@@ -718,7 +718,7 @@ Dave Taht also sugged improvements to this document.
 
 - Added discussion of real-time protocols
 - Added discussion of short flows
-- Lid properties of wired networks
+- Listed properties of wired networks
 - Added IoT section
 - Added discussion of AQM response
 - Rewrote the "Document Status" section
