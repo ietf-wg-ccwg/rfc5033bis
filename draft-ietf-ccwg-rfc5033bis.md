@@ -534,7 +534,7 @@ This reaction needs to be evaluated to confirm that the algorithm conforms with 
 requirements of the ECT codepoint that was used.
 
 Note that evaluation of AQM techniques -- as opposed to their impact on specific
-proposals -- is out of scope of this document. {{?RFC7567}}
+congestion control proposals -- is out of scope of this document. {{?RFC7567}}
 describes design considerations for AQMs.
 
 ## Paths with Varying Delay {#delay}
