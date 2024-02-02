@@ -12,7 +12,7 @@
 ]>
 
 
-<rfc ipr="trust200902" docName="draft-ietf-ccwg-rfc5033bis-02" category="bcp" consensus="true" submissionType="IETF" obsoletes="5033" tocInclude="true" sortRefs="true" symRefs="true">
+<rfc ipr="trust200902" docName="draft-ietf-ccwg-rfc5033bis-03" category="bcp" consensus="true" submissionType="IETF" obsoletes="5033" tocInclude="true" sortRefs="true" symRefs="true">
   <front>
     <title abbrev="New CC Algorithms">Specifying New Congestion Control Algorithms</title>
 
@@ -29,7 +29,7 @@
       </address>
     </author>
 
-    <date year="2023" month="October" day="23"/>
+    <date year="2024" month="February" day="02"/>
 
     <area>General</area>
     <workgroup>CCWG</workgroup>
@@ -38,30 +38,33 @@
     <abstract>
 
 
-<?line 86?>
+<?line 92?>
 
-<t>The IETF's standard congestion control schemes have been widely shown
-to be inadequate for various environments (e.g., high-speed networks,
-wireless technologies such as 3GPP and WiFi, long distance satellite
-links) and also in conflict with the needed, more isochronous,
-behaviors of VoIP, gaming, and videoconferencing traffic.
-Recent research has yielded many alternate congestion
-control schemes that significantly differ from the IETF's congestion
-control principles.
-Using these new congestion control schemes in
-the global Internet has possible ramifications to both the traffic
-using the new congestion control and to traffic using the currently
-standardized congestion control.
-Therefore, the IETF must proceed
-with caution when dealing with alternate congestion control
-proposals.
-The goal of this document is to provide guidance for
-considering alternate congestion control algorithms within the IETF.</t>
+<t>Introducing new or modified congestion controller algorithms in the global Internet have
+possible ramifications to both the traffic using the new method
+and to traffic using a standardized congestion control algorithm. Therefore, the IETF
+must proceed with caution when evaluating proposals for alternate congestion control.
+The goal of this document is to provide guidance for considering standardization
+of an alternate congestion control algorithm at the IETF. It replaces RFC5033 to reflect
+changes in the congestion control landscape.</t>
 
 
 
     </abstract>
 
+    <note title="About This Document" removeInRFC="true">
+      <t>
+        Status information for this document may be found at <eref target="https://datatracker.ietf.org/doc/draft-ietf-ccwg-rfc5033bis/"/>.
+      </t>
+      <t>
+        Discussion of this document takes place on the
+        Congestion Control Working Group (ccwg) Working Group mailing list (<eref target="mailto:ccwg@ietf.org"/>),
+        which is archived at <eref target="https://mailarchive.ietf.org/arch/browse/ccwg/"/>.
+        Subscribe at <eref target="https://www.ietf.org/mailman/listinfo/ccwg/"/>.
+      </t>
+      <t>Source for this draft and an issue tracker can be found at
+        <eref target="https://github.com/ietf-wg-ccwg/rfc5033bis"/>.</t>
+    </note>
 
 
   </front>
@@ -69,21 +72,27 @@ considering alternate congestion control algorithms within the IETF.</t>
   <middle>
 
 
-<?line 106?>
+<?line 102?>
 
 <section anchor="introduction"><name>Introduction</name>
 
 <t>This document provides guidelines for the IETF to use when evaluating
-suggested congestion control algorithms that significantly differ
+a proposed congestion control algorithm that differ
 from the general congestion control principles outlined in <xref target="RFC2914"/>.
 The guidance is intended to be useful to authors proposing alternate
-congestion control and for the IETF community when evaluating whether
+congestion control algorithms and for the IETF community when evaluating whether
 a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.</t>
 
-<t>This document updates the similarly titled <xref target="RFC5033"/> that was
-published in 2007 as a Best Current Practice to evaluate new
+<t>This document obsoletes the similarly titled <xref target="RFC5033"/> that was
+published in 2007 as a Best Current Practice to evaluate alternate
 congestion control algorithms as Experimental or Proposed Standard RFCs.</t>
+
+<t>The IETF's standard congestion control algorithms have been shown to have
+performance challenges in various environments
+(e.g., high-speed networks, cellular and WiFi wireless technologies,
+long distance satellite links)
+and also for specific traffic workloads (VoIP, gaming, and videoconferencing).</t>
 
 <t>In 2007, TCP was the dominant consumer of this work, and proposals were
 typically discussed in research groups, for example the
@@ -92,23 +101,30 @@ Internet Congestion Control Research Group (ICCRG).</t>
 <t>Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
 TCP and SCTP to include DCCP, QUIC, and beyond.
-Some congestion control algorithm proponents now have the opportunity
+Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
-There is more interest in specialized use cases such as data centers and
+There is more interest in specialized use cases, such as data centers, and in
+support for a variety of upper layer protocols/applications, e.g.,
 real-time protocols.
 Finally, the community has gained much more experience with indications
 of congestion beyond packet loss.</t>
 
-<t>Multiple congestion control algorithms
+<t>Multicast congestion control is a considerably less mature field of study
+and are not in scope for this document.
+However, Section 4 of the UDP Usage Guidelines <xref target="RFC8085"/> provide
+additional guidelines for multicast and broadcast usage of UDP.</t>
+
+<t>Congestion control algorithms
 have been developed outside of the IETF, including at least two that saw
-large scale deployment: Cubic <xref target="HRX08"/> and BBR <xref target="BBR-draft"/>.</t>
+large scale deployment: Cubic <xref target="HRX08"/>
+and Bottleneck Bandwidth and Round-trip propagation time (BBR) <xref target="BBR-draft"/>.</t>
 
 <t>Cubic was documented in a research publication in 2007 <xref target="HRX08"/>,
-and then adopted as the default congestion control algorithm for
+and was then adopted as the default congestion control algorithm for
 the TCP implementation in Linux. It was already used in a significant
 fraction of TCP connections over the Internet before being documented
-in an informational Internet Draft in 2015, being published as an
-informational RFC in 2017 <xref target="RFC8312"/> and then as a proposed
+in an Informational Internet Draft in 2015, published as an
+Informational RFC in 2017 <xref target="RFC8312"/> and then as a proposed
 standard in 2023 <xref target="RFC9438"/>.</t>
 
 <t>BBR is developed as an internal research project by Google,
@@ -116,19 +132,36 @@ with the first implementation contributed to Linux kernel 4.19 in 2016.
 It was described in an IRTF draft in 2018, and that draft is
 regularly updated to document the evolving versions of the algorithm
 <xref target="BBR-draft"/>. BBR is widely used for Google services using either
-TCP or QUIC <xref target="RFC9000"/>, and is also largely deployed outside of
+TCP or QUIC <xref target="RFC9000"/>, and is also widely deployed outside of
 Google.</t>
 
 <t>We cannot say now whether the original authors of <xref target="RFC5033"/>
 expected that developers would be somehow waiting for IETF review
-before widely deploying a congestion control algorithm over the
-Internet, but the examples of Cubic and BBR teaches us that
+before widely deploying a new congestion control algorithm over the
+Internet, but the examples of Cubic and BBR teach us that
 deployment of new algorithms is not in fact gated by publication
-of the algorithm as an RFC. Nevertheless, guidelines are
-important, if only to remind potential inventors and developers of
-the multiple facets of the congestion control problem.</t>
+of the algorithm as an RFC.</t>
 
-<t>The guidelines in this document are intended to be consistent with
+<t>Nevertheless, specifying congestion control algorithms has a number of advantages:</t>
+
+<t><list style="symbols">
+  <t>A specification can help implementers, operators, and other interested
+parties to develop a shared understanding of how the algorithm works and how
+it is expected to behave in various different scenarios or configurations.</t>
+  <t>A specification can help potential contributors understand the algorithm,
+which can make it easier for them to suggest improvements and/or identify
+limitations. Further, the specification can help multiple contributors align
+on a consensus change to the algorithm.</t>
+  <t>A specification that is accessible to anyone circumvents the issue that some
+implementors may be unable to read open source reference implementations due
+to the constraints of some open source licenses.</t>
+</list></t>
+
+<t>Beyond helping develop specific algorithm proposals, guidelines can also serve
+as a reminder to potential inventors and developers of the multiple facets of
+the congestion control problem.</t>
+
+<t>The evaluation guidelines in this document are intended to be consistent with
 the congestion control principles from <xref target="RFC2914"/> of preventing
 congestion collapse, considering fairness, and optimizing the flow's
 own performance in terms of throughput, delay, and loss.
@@ -137,14 +170,14 @@ also discusses the goal of avoiding a congestion control "arms race"
 among competing transport protocols.</t>
 
 <t>This document does not give hard-and-fast requirements for an
-appropriate congestion control scheme.
+appropriate congestion control algorithm.
 Rather, the document provides
 a set of criteria that should be considered and weighed by the
-developers of congestion control algorithms and by the IETF
-in the context of each proposal.
-The high-order criteria for any new
-proposal is that a serious scientific study of the pros and cons of
-the proposal needs to have been done before a proposal is
+developers of alternative algorithms and by the IETF
+in the context of each proposal.</t>
+
+<t>The high-order criteria for any proposal
+is a serious scientific study of the pros and cons occurs when a proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.</t>
 
@@ -153,41 +186,44 @@ of their proposals for publication in the RFC series to allow others
 to concretely understand and investigate the wealth of proposals in
 this space.</t>
 
+<t>This document is meant to reduce the barriers to entry for new congestion
+control work to the IETF. As such, proponents ought not to interpret these criteria as a
+checklist of requirements before approaching the IETF. Instead, proponents
+are encouraged to think about these issues beforehand, and have the willingness
+to do the work implied by the remainder of this document.</t>
+
 </section>
 <section anchor="document-status"><name>Document Status</name>
 
-<t>Following the lead of HighSpeed TCP <xref target="RFC3649"/>, alternate congestion
-control algorithms are expected to be published as "Experimental"
-RFCs until such time that the community better understands the
-solution space.
-Traditionally, the meaning of "Experimental" status
-has varied in its use and interpretation.
-As part of this document
-we define two classes of congestion control proposals that can be
-published with the "Experimental" status.
-The first class includes
-algorithms that are judged to be safe to deploy for best-effort
-traffic in the global Internet and further investigated in that
-environment.
-The second class includes algorithms that, while
-promising, are not deemed safe enough for widespread deployment as
-best-effort traffic on the Internet, but are being specified to
-facilitate investigations in simulation, testbeds, or controlled
-environments.
-The second class can also include algorithms where the
-IETF does not yet have sufficient understanding to decide if the
-algorithm is or is not safe for deployment on the Internet.</t>
+<t>This document applies to proposals that seek Experimental or
+Standards Track status. Evaluation of both cases involves the same questions,
+but with different expectations for both the answers and the degree of
+certainty it the answers.</t>
 
-<t>Each alternate congestion control algorithm published is required to
-include a statement in the abstract indicating whether or not the
-proposal is considered safe for use on the Internet.
-Each alternate
-congestion control algorithm published is also required to include a
-statement in the abstract describing environments where the protocol
-is not recommended for deployment.
-There may be environments where
-the protocol is deemed <em>safe</em> for use, but still is not <em>recommended</em>
-for use because it does not perform well for the user.</t>
+<t>Congestion control algorithms without experience of Internet-scale deployment SHOULD
+seek Experimental status until real-world data is able to answer the questions
+in <xref target="general-use"/>. Congestion control algorithms with a record of measured Internet-
+scale deployment MAY directly seek the Standards Track if the community believes
+it is safe, and the design is stable, guided by the considerations in
+<xref target="general-use"/>. The existence of this data does not waive the other
+considerations in this document.</t>
+
+<t>Algorithms that are designed for special environments (e.g., data centers) and
+forbidden from use in the Internet would, of course, instead seek real-world
+data for those environments.</t>
+
+<t>Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
+only be deployed in situations where they are being actively measured, and where
+it is possible to deactivate if there are signs of pathological behavior.</t>
+
+<t>Each published alternate congestion control algorithm is REQUIRED to include a
+statement in the abstract indicating whether or not there is IETF consensus that
+the proposal is considered safe for use on the Internet. Each published algorithm
+is also required to include a statement in the
+abstract describing environments where the protocol is not recommended
+for deployment. There can be environments where the controller is deemed <em>safe</em>
+for use, but it is still is not <em>recommended</em> for use because it does not
+perform well for the user.</t>
 
 <t>As examples of such statements, <xref target="RFC3649"/> specifying HighSpeed TCP
 includes a statement in the abstract stating that the proposal is
@@ -197,31 +233,21 @@ the abstract stating the mechanism is only being proposed for
 controlled environments.  The abstract specifies environments where
 the Quick-Start request could give false positives (and therefore
 would be unsafe for incremental deployment where some routers
-forward, but do not process the option).  The abstract also specifies environments
+forward, but do not process the option). The abstract also specifies environments
 where packets containing the Quick-Start request could be dropped in
 the network; in such an environment, Quick-Start would not be unsafe
 to deploy, but deployment would not be recommended because it
 could lead to unnecessary delays for the connections attempting to use
 Quick-Start. The Quick-Start method is discussed as an example in <xref target="RFC9049"/>.</t>
 
-<t>For authors of alternate congestion control schemes who are not ready
-to bring their congestion control mechanisms to the IETF for
-standardization (either as Experimental or as Proposed Standard), one
-possibility would be to submit an internet-draft that documents the
-alternate congestion control mechanism for the benefit of the IETF
-and IRTF communities.  This is particularly encouraged in order to
-ensure algorithm specifications are widely disseminated to facilitate
-further research.  Such an internet-draft could also be
-considered as an Informational RFC, as a first step in the process
-towards standardization.  Such a document would be expected to
-carry an explicit warning against using the scheme in the global
-Internet.</t>
-
-<t>Note: we are not changing the RFC publication process for non-IETF
-produced documents (e.g., those from the IRTF or Independent
-Submissions via the RFC-Editor).  However, we would hope the
-guidelines in this document inform the IESG as they consider whether
-to add a note to such documents.</t>
+<t>Though out of scope of this document, a proponent of a new
+algorithm could alternatively
+seek publication as an Informational or Experimental RFC via the Internet
+Research Task Force (IRTF). In general, these proposals are expected to be less
+mature than ones that follow the procedures in this document. Documentation of
+deployed congestion control algorithms that cannot be changed by IETF or IRTF review
+are invited to publish as an Informational RFC via the Independent Stream Editor
+(ISE).</t>
 
 </section>
 <section anchor="evaluation-criteria"><name>Evaluation Criteria</name>
@@ -239,91 +265,116 @@ domains (see <xref target="general-use"/> and <xref target="special-cases"/>).</
 
 <section anchor="single-algorithm-behavior"><name>Single Algorithm Behavior</name>
 
-<t>The following criteria evaluate the proposed algorithm when one or more
-flows using that algorithm share a bottleneck link, with no other algorithms
-operating.</t>
+<t>The following criteria evaluate the proposal when one or more flows
+using that algorithm share a bottleneck link (i.e. with no flows
+using a differing congestion controi algorithm).</t>
 
 <section anchor="protection-against-congestion-collapse"><name>Protection Against Congestion Collapse</name>
 
-<t>The alternate congestion control mechanism should either stop
+<t>The alternate congestion control algorithm should either stop
 sending when the packet drop rate exceeds some threshold
 <xref target="RFC3714"/>, or should include some notion of "full backoff".  For
 "full backoff", at some point the algorithm would reduce the
 sending rate to one packet per round-trip time and then
 exponentially backoff the time between single packet
-transmissions if congestion persists.  Exactly when either "full
+transmissions if the congestion persists.  Exactly when either "full
 backoff" or a pause in sending comes into play will be
-algorithm-specific.  However, as discussed in <xref target="RFC2914"/>, this
-requirement is crucial to protect the network in times of extreme
+algorithm-specific.  However, as discussed in <xref target="RFC2914"/> and <xref target="RFC8961"/>, this
+requirement is crucial to protect the network in times of extreme (persistent)
 congestion.</t>
 
 <t>If the result of full backoff is used, this test does not require that the
 full backoff mechanism must be identical to that of TCP
-<xref target="RFC2988"/>.  As an example, this bullet does not preclude full
+<xref target="RFC2988"/> <xref target="RFC8961"/>.  As an example, this does not preclude full
 backoff mechanisms that would give flows with different round-
 trip times comparable capacity during backoff.</t>
 
 </section>
 <section anchor="protection-against-bufferbloat"><name>Protection Against Bufferbloat</name>
 
-<t>The alternate congestion control mechanism should reduce its sending
+<t>The alternate congestion control algorithm should reduce its sending
 rate if the round trip time (RTT) significantly increases. Exactly how
-the algorithm reduces its sending rate is algorithm specific, but see
+the algorithm reduces its sending rate is algorithm-specific, but see
 <xref target="RFC8961"/> and <xref target="RFC8085"/> for requirements.</t>
 
 <t>Bufferbloat <xref target="Bufferbloat"/> refers to the building of long queues in
 the network. Many network routers are configured with very large buffers.
-If congestion starts happening, classic TCP congestion control algorithms
-<xref target="RFC5681"/> will continue sending at a high rate until the buffer fills
-up completely and packet losses occur. Every connection going through
-that bottleneck will experience high latency.  This adds unwanted latency that
+If congestion is detected, classic TCP congestion control algorithms
+<xref target="RFC5681"/> will continue sending at a high rate until a First-In First-Out
+(FIFO) buffer completely fills and packet losses then occur. Every connection pasing through
+that bottleneck will then experience increased latency.  This adds unwanted latency that
 impacts highly interactive applications like games, but it also affects routine
 web browsing and video playing.</t>
 
 <t>This problem became apparent in the last decade and was not discussed in
 the Congestion Control Principles published in September 2002 <xref target="RFC2914"/>.
 The classic congestion control algorithm <xref target="RFC5681"/> and the widely deployed
-Cubic algorithm <xref target="RFC9438"/> do not address it, but newly designed congestion
-control algorithms have the opportunity to improve the state of the art.</t>
+Cubic algorithm <xref target="RFC9438"/> do not address it, but a newly designed
+algorithm has the opportunity to improve the state of the art.</t>
 
 </section>
 <section anchor="fairness-within-the-alternate-congestion-control-algorithm"><name>Fairness within the Alternate Congestion Control Algorithm.</name>
 
-<t>When multiple competing flows all using the same
+<t>When multiple competing flows all use the same
 alternate congestion control algorithm, the proposal should
-explore how the capacity is shared among the competing flows.</t>
+explore how the capacity is shared among the competing flows.
+Capacity fairness can be important when a small number of similar
+flows compete to fill a bottleneck. It can however also not be useful,
+for example, when comparing flows that seek to send at different rates or
+when some of the flows do not last sufficiently long to approach
+asymptotic behavior.</t>
+
+</section>
+<section anchor="avoiding-starvation-of-flows-sharing-a-bottleneck"><name>Avoiding Starvation of Flows sharing a bottleneck.</name>
+
+<t>In contexts where differing congestion control
+algorithms are used, it is important to understand whether
+a proposal can induce more
+harm to sharing flows than for the existing
+defined methods. The measure of harm is not restricted to the equality
+of capacity, but ought also to consider metrics such as the
+latency introduced, or an increase in packet loss. An evaluation must
+assess the potential to cause starvation, including assurance that
+a loss of all feedback (e.g., detected by expiry of a retransmission time out)
+results in backoff.</t>
 
 </section>
 <section anchor="short-flows"><name>Short Flows</name>
 
-<t>(TODO: Discuss short and long flows)</t>
+<t>A great deal of congestion control analysis concerns the steady-state behavior
+of long flows. However, many Internet flows are relatively short-lived. If they
+never experience a packet loss, a short-lived flow remains in the "slow start" mode of
+operation <xref target="RFC5681"/>, e.g., that features exponential congestion window growth.</t>
+
+<t>A proposals for a new congestion control algorithm MUST consider how new and short-lived flows affect long-lived flows,
+and vice versa.</t>
 
 </section>
 </section>
 <section anchor="mixed-algorithm-behavior"><name>Mixed Algorithm Behavior</name>
 
 <t>These criteria evaluate the interaction of the proposal with commonly deployed
-congestion controls.</t>
+congestion control algorithms.</t>
 
 <section anchor="existing-general-purpose-transports"><name>Existing General-Purpose Transports</name>
 
 <t>Evaluate the impact on TCP <xref target="RFC9293"/>, SCTP <xref target="RFC9260"/>, DCCP <xref target="RFC4340"/>,
 and QUIC <xref target="RFC9000"/>.</t>
 
-<t>Proposed congestion control mechanisms should be evaluated when
+<t>A proposed congestion control algorithm SHOULD be evaluated when
 competing with standard IETF congestion control <xref target="RFC5681"/>,
-<xref target="RFC9260"/>, <xref target="RFC4340"/>, <xref target="RFC9002"/>, <xref target="RFC9438"/>.  Alternate
-congestion controllers that have a significantly negative impact on
-traffic using standard congestion control may be suspect and this aspect should
+<xref target="RFC9260"/>, <xref target="RFC4340"/>, <xref target="RFC9002"/>, <xref target="RFC9438"/>.  A proposal
+that has a significantly negative impact on
+traffic using standard congestion control might be suspect and this aspect should
 be part of the community's decision making with regards to the suitability of
-the alternate congestion control mechanism. The community should also consider
-other non-standard congestion controls known to be widely deployed,</t>
+the proposed congestion control algorithm. The community should also consider
+other non-standard congestion control algorithms that are known to be widely deployed,</t>
 
-<t>We note that this bullet is not a requirement for strict Reno- or Cubic-
+<t>We note that this guideline is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for an alternate congestion
-control mechanism to advance to Experimental.  As an example,
-HighSpeed TCP is a congestion control mechanism that is
-Experimental, but that is not TCP-friendly in all environments.
+control mechanism to advance to Experimental or Standards Track status.  As an example,
+HighSpeed TCP is a congestion control mechanism specified as
+Experimental, that is not TCP-friendly in all environments.
 When a new algorithm is deployed, the existing major deployments need to be
 considered to avoid severe performance degradation.
 We also note that this guideline does not constrain the interaction with
@@ -336,13 +387,39 @@ discussed in Sections 6, 11.1, and 12 of <xref target="RFC3649"/>.</t>
 </section>
 <section anchor="real-time-protocols"><name>Real-Time Protocols</name>
 
-<t>(TODO: Clarify that real time congestion controls are included, with
-allowances for the poor documentation / open source availability of these)</t>
+<t>General-purpose protocols need to coexist in the Internet with real-time congestion
+control algorithms, which, in general, have finite throughput requirements (i.e.
+do not seek to utilize all available capacity) and more strict latency
+bounds.</t>
+
+<t><xref target="RFC8868"/> provides suggestions for real-time congestion control design and
+<xref target="RFC8867"/> suggests test cases. <xref target="RFC9392"/> describes some considerations
+for the RTP Control Protocol (RTCP). In particular, feedback for real-time
+flows can be less frequent than the acknowledgements provided by reliable
+transports. This document does not change the informational status of those
+RFCs.</t>
+
+<t>New proposals SHOULD consider coexistence with widely deployed real-time
+congestion control algorithms. Regrettably, at the time of writing, many algorithms with
+detailed public specifications are not widely deployed, while many widely
+deployed real-time congestion control algorithms have incomplete public specifications.
+It is hoped this situation will change.</t>
+
+<t>To the extent that behavior of widely deployed algorithms is understood, proposals
+can analyze and simulate their interaction with those algorithms. To the
+extent they are not, experiments can be conducted where possible.</t>
+
+<t>Note that in many deployments, real-time traffic is directed into distinct
+queues via Differentiated Services Code Points (DSCP) or other mechanisms,
+which substantially reduces the interplay with other traffic. However, a proposal
+targeting Internet use
+MUST NOT assume that all paths support specific mechanisms.</t>
 
 </section>
 <section anchor="short-and-long-flows"><name>Short and Long Flows</name>
 
-<t>(TODO: Discuss short and long flows)</t>
+<t>The effect on short-lived and long-lived flows using other common congestion
+control algorithms MUST be evaluated, as in <xref target="short-flows"/>.</t>
 
 </section>
 </section>
@@ -350,30 +427,30 @@ allowances for the poor documentation / open source availability of these)</t>
 
 <section anchor="differences-with-congestion-control-principles"><name>Differences with Congestion Control Principles</name>
 
-<t>Proposed congestion control mechanisms SHOULD include a clear
-explanation of the deviations from <xref target="RFC2914"/>.</t>
+<t>Proposed congestion control algorithms SHOULD include a clear
+explanation of any deviations from <xref target="RFC2914"/> and <xref target="RFC7141"/>.</t>
 
 </section>
-<section anchor="incremental-deployment"><name>Incremental Deployment.</name>
+<section anchor="incremental-deployment"><name>Incremental Deployment</name>
 
-<t>The proposal should discuss whether the alternate congestion
-control mechanism allows for incremental deployment in the
+<t>The proposal ought to discuss whether the proposal
+allows for incremental deployment in the
 targeted environment.  For a mechanism targeted for deployment in
-the current Internet, it would be helpful for the proposal to
+the current Internet, it would be helpful for a proposal to
 discuss what is known (if anything) about the correct operation
-of the mechanism with some of the equipment installed in the
+of the mechanisms with some of the equipment that can be installed in the
 current Internet, e.g., routers, transparent proxies, WAN
 optimizers, intrusion detection systems, home routers, and the
 like.</t>
 
-<t>As a similar concern, if the alternate congestion control
-mechanism is intended only for specific environments (and not the
+<t>As a similar concern, if the proposal
+is intended only for specific environments (and not the
 global Internet), the proposal should consider how this intention
-is to be carried out.  The community will have to address the
-question of whether the scope can be enforced by simply stating
+is to be realised.  The community will have to address the
+question of whether the scope can be enforced by stating
 the restrictions or whether additional protocol mechanisms are
-required to enforce the scoping.  The answer will necessarily
-depend on the change being proposed.</t>
+required to enforce this scoping.  The answer will necessarily
+depend on the change that is being proposed.</t>
 
 <t>As an example from an Experimental RFC, deployment issues are
 discussed in Sections 10.3 and 10.4 of <xref target="RFC4782"/> (Quick-Start).</t>
@@ -384,34 +461,51 @@ discussed in Sections 10.3 and 10.4 of <xref target="RFC4782"/> (Quick-Start).</
 <section anchor="general-use"><name>General Use</name>
 
 <t>The criteria in <xref target="evaluation-criteria"/> will be evaluated in the
-following scenarios. Unless a proposal is explicitly forbidden on the
-public internet, the community MUST find that it meets the criteria
+following scenarios.
+Unless a proposed congestion control algorithm
+explicitly forbids use on the
+public Internet, the community MUST find that it meets the criteria
 in these scenarios for the proposal to progress.</t>
 
 <t>The evaluation in each scenario should occur over a representative range of
 bandwidths, delays, and queue depths. Of course, the set of parameters
-representative of the public internet will change over time.</t>
+representative of the public Internet will change over time.</t>
 
-<t>These criteria are meant to capture a statistically dominant set of internet
-conditions. In the case that the algorithm has been tested at internet scale,
+<t>These criteria are intended to capture a statistically dominant set of Internet
+conditions. In the case that a proposed algorithm has been ted at Internet scale,
 the results from that deployment are often useful for answering these questions.</t>
 
-<section anchor="wired-networks"><name>Wired Networks</name>
+<section anchor="tunnel-behavior"><name>Tunnel Behavior</name>
 
-<t>(TODO: Describe properties of wired networks.)</t>
-
-<t>Proposals should be investigated for robust performance with different
-queueing mechanisms in the routers,
-especially Random Early Detection (RED) <xref target="FJ03"/> and Drop-Tail.
-This evaluation is often not included in the internet-draft
-itself, but in related papers cited in the draft.</t>
+<t>When a proposal relies on explicit signals from the path, proposals
+MUST consider the effect of
+traffic passing through a tunnel, where routers may not be aware of the
+flow.</t>
 
 </section>
-<section anchor="wireless-networks"><name>Wireless networks</name>
+<section anchor="paths-with-tail-drop-queues"><name>Paths with Tail-drop Queues</name>
+
+<t>The performance of a congestion control algorithm is affected by the queue discipline applied at
+the bottleneck link. The drop-tail queue discipline (using a FIFO buffer) MUST be evaluated.
+See <xref target="aqm"/> for evaluation of other queue
+disciplines.</t>
+
+</section>
+<section anchor="wired-paths"><name>Wired Paths</name>
+
+<t>Wired networks are usually characterized by extremely low rates of packet loss except
+for those due to queue drops. They tend to have stable aggregate bandwidth,
+usually higher than other types of links, and low non-queueing delay. Because
+the properties are relatively simple, wired links are typically used as a
+"baseline" case even if they are not always the bottleneck link in the modern
+Internet.</t>
+
+</section>
+<section anchor="wireless-paths"><name>Wireless Paths</name>
 
 <t>While the early Internet was dominated by wired links, the properties
 of wireless links have become extremely important to Internet performance.
-In particular, congestion controllers should be evaluated in situations
+In particular, a proposal should be evaluated in situations
 where some packet losses are due to radio effects, rather than router
 queue drops; the link capacity varies over time due to changing link conditions;
 and media access delays and link-layer retransmission lead to increased jitter
@@ -427,28 +521,98 @@ following scenarios, unless the proposal specifically excludes its use in a
 scenario. The community MAY allow a proposal to progress even if the criteria
 indicate an unsatisfactory result for these scenarios.</t>
 
-<t>In general, measurements from internet-scale deployments will not expose the
+<t>In general, measurements from Internet-scale deployments will not expose the
 properties of operation in these scenarios, as they are statistically small.</t>
 
-<section anchor="internet-of-things"><name>Internet of Things</name>
+<section anchor="aqm"><name>Active Queue Management (AQM)</name>
 
-<t>(TODO: Write this section)</t>
+<t>Proposals SHOULD be evaluated under a variety of bottleneck queue disciplines.
+The effect of an AQM discipline can be hard to detect by Internet evaluation.
+At a minimum, a proposal should reason about an algorithm's response to various
+AQM disciplines. Simulation or empirical results are, of course, valuable.</t>
+
+<t>Among the AQM techniques that might have an impact on a proposed congestion control
+algorithm are FQ-CoDel <xref target="RFC8290"/>; Proportional Integral Controller Enhanced
+(PIE) <xref target="RFC8033"/>; and Low Latency, Low Loss, and Scalable Throughput (L4S)
+<xref target="RFC9332"/>.</t>
+
+<t>Congestion control proposals that set one of the two Explicit Congestion Transport (ECT)
+codepoints in the IP header can gain the benefits of receiving Explicit Congestion Notifictaion (ECN)
+Congestion Experienced (CE) signals from an on-path AQM <xref target="RFC8087"/>.
+Use of ECN <xref target="RFC3168"/>,<xref target="RFC9332"/> results in requirements for
+the congestion control algorithm to react when it receives a packet with an ECN-CE marking.
+This reaction needs to be evaluated to confirm that the algorithm conforms with the
+requirements of the ECT codepoint that was used.</t>
+
+<t>Note that evaluation of AQM techniques -- as opposed to their impact on specific
+congestion control proposals -- is out of scope of this document. <xref target="RFC7567"/>
+describes design considerations for AQMs.</t>
 
 </section>
-<section anchor="satellite"><name>Satellite</name>
+<section anchor="delay"><name>Paths with Varying Delay</name>
 
-<t>Satellite links often have delays longer than typical for wired paths
-<xref target="RFC2488"/> and high delay bandwidth products <xref target="RFC3649"/>.</t>
+<t>An Internet Path can include simple links, where the minimum delay is the propagation delay,
+and any additional delay can be attributed to link buffering. This cannot be assumed.
+An Internet Path can also include complex subnetworks where the minimum delay changes over
+various time scales, resulting in a non-stationary minimum delay.</t>
+
+<t>This occurs when a subnet changes the forwarding path to optimise capacity, resilience, etc.
+It could also arise when a subnet uses a capacity management method where the available
+resource is periodically distributed among the active nodes and where a node might then
+have to buffer data until an assigned transmission opportunity or when the physical path
+changes (e.g., when the length of a wireless path changes, or the physical layer changes
+its mode of operation).
+Variation also arises when a higher priority diffserv traffic classic prompts the
+transmission by a lower class. In these cases, the delay varies as a function of
+external factors and attempting to infer congestion from an increase in the delay
+results in reduced throughput. The jitter from variation over short timescales
+might not be distinguishable similar from other effects.</t>
+
+<t>Congestion control proposals SHOULD be evaluated to ensure their operation is robust
+when there is a significant change in the minimum delay.</t>
+
+</section>
+<section anchor="internet-of-things"><name>Internet of Things</name>
+
+<t>The "Internet of Things" (IoT) is a broad concept, but when evaluating
+a proposal,
+it is often associated with unique characteristics.</t>
+
+<t>IoT nodes might be more constrained in power, CPU, or other parameters than
+conventional Internet hosts. This might place limits on the complexity of any
+given algorithm. These power and radio constraints might make the volume of
+control packets in a given algorithm a key evaluation metric.</t>
+
+<t>Furthermore, many IoT applications do not a have a human in the loop, and
+therefore can have weaker latency constraints because they do not relate to a user
+experience, but still need to share the path with other flows with different
+constraints.</t>
+
+<t>Extremely low-power links can lead to very low throughput and a low bandwidth-
+delay product, well below the standard operating range of most Internet flows.</t>
+
+</section>
+<section anchor="paths-with-high-delay"><name>Paths with High Delay</name>
+
+<t>A proposal ought not to presume that all general Internet paths have a low
+delay.
+Some paths include links that contibute much more delay than for a typical Internet path.
+Satellite links often have delays longer than typical for wired paths
+<xref target="RFC2488"/> and high delay bandwidth products <xref target="RFC3649"/>.
+Also, many systems
+use dynamic capacity assignment that can result in variation of the delay
+and the capacity over timescales of the order of the path RTT.
+Robustness to delay and delay variation may be a key evaluation metric.</t>
 
 </section>
 <section anchor="misbehaving-nodes"><name>Misbehaving Nodes</name>
 
-<t>The proposal should explore how the alternate congestion control
-mechanism performs with non-compliant senders, receivers, or
-routers.  In addition, the proposal should explore how the
-alternate congestion control mechanism performs with outside
-attackers.  This can be particularly important for congestion
-control mechanisms that involve explicit feedback from routers
+<t>The proposal should explore how the congestion control
+proposal performs with non-compliant senders, receivers, or
+routers.  In addition, the proposal should explore how an
+alternate congestion control algorithm performs with outside
+attackers.  This can be particularly important for proposals
+that involve explicit feedback from routers
 along the path.</t>
 
 <t>As an example from an Experimental RFC, performance with
@@ -460,23 +624,17 @@ potential use of Quick-Start to attack routers or to tie up
 available Quick-Start bandwidth.</t>
 
 </section>
-<section anchor="tunnel-behavior"><name>Tunnel Behavior</name>
-
-<t>When the proposal relies on explicit signals from the path, the effect of
-traffic passing through the tunnel -- where routers may not be aware of the
-underlying flow -- MUST be considered.</t>
-
-</section>
 <section anchor="extreme-packet-reordering"><name>Extreme Packet Reordering</name>
 
-<t><xref target="RFC4653"/> discusses the effect of extreme packet reordering.</t>
+<t>A proposal ought not to presume that all general Internet paths reliably deliver
+packets in order. <xref target="RFC4653"/> discusses the effect of extreme packet reordering.</t>
 
 </section>
 <section anchor="transient-events"><name>Transient Events</name>
 
-<t>The proposal should consider how the alternate congestion control
-mechanism would perform in the presence of transient events such
-as sudden congestion, a routing change, or a mobility event.
+<t>The proposal SHOULD consider how the proposed congestion control
+algorithm would perform in the presence of transient events such
+as sudden onset of congestion, a routing change, or a mobility event.
 Routing changes, link disconnections, intermittent link
 connectivity, and mobility are discussed in more detail in
 Section 17 of <xref target="Tools"/>.</t>
@@ -484,27 +642,30 @@ Section 17 of <xref target="Tools"/>.</t>
 <t>As an example from an Experimental RFC, response to transient
 events is discussed in Section 9.2 of <xref target="RFC4782"/> (Quick-Start).</t>
 
-<section anchor="sudden-changes-in-path"><name>Sudden changes in Path</name>
+<section anchor="sudden-changes-in-the-path"><name>Sudden changes in the Path</name>
 
-<t>An IETF transport is not tied to a specific Internet path.
-The set of routers forming a path can and do change with time,
-this will also cause the properties of the path to change with respect to time.
+<t>An IETF transport is not tied to a specific Internet path or type of path.
+The set of routers that form a path can and do change with time,
+this will cause the properties of the path to change with respect to time.
 New CCs MUST evaluate the impact of changes in the path, and be robust
 to changes in path characteristics on the interval of common Internet re-routing intervals.</t>
 
-<t>Event when the routers constituting a path does not change, the properties of
-that path can vary, with similar impacts on congestion control</t>
+<t>Even when the set of routers constituting a path does not change, the properties of
+that path can vary with time (e.g., due to a change of link capacity, relative priority, or a change
+in the rate of other traffic sharing a bottleneck), with a potential impact on the
+operation of a congestion control algorithm.</t>
 
 </section>
 </section>
-<section anchor="multipath"><name>Multipath</name>
+<section anchor="multipath-transport"><name>Multipath Transport</name>
 
 <t>Multipath transport protocols permit more than one path to be differentiated and used by
 a single connection at the sender.
 A multipath sender can schedule which packets travel on which of its active paths.
-This enables a tradeoff in timeliness and reliability.</t>
+This enables a tradeoff in timeliness and reliability. There are various ways that
+multipath techniques can be used.</t>
 
-<t>One use is to provide fail-over from one path to
+<t>One example use is to provide fail-over from one path to
 another when the original path is no longer viable or to switch the traffic from
 one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
@@ -516,7 +677,7 @@ Synchronisation of failover (e.g., where multiple flows change their path on sim
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.</t>
 
-<t>A concurrent multipath transport protocol simultaneously
+<t>Another example use is concurrent multipath, where the transport protocol simultaneously
 schedules flows to aggregate the capacity across multiple paths.
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
@@ -526,7 +687,7 @@ harm to other flows when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
-the fairness with other flows. Synchronisation of CC mechanisms
+the potential for harm to other flows. Synchronisation of CC mechanisms
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
@@ -541,8 +702,11 @@ multipath congestion control in the general Internet.</t>
 protocol suite and therefore does not directly impact Internet
 security.  The implementation of various facets of the Internet's
 current congestion control algorithms do have security implications
-(e.g., as outlined in <xref target="RFC5681"/>).  Alternate congestion control
-schemes should be mindful of such pitfalls, as well, and should
+(e.g., as outlined in <xref target="RFC5681"/>).</t>
+
+<t>The IETF process that results in publication needs to
+ensure that these security implications are considered.
+Proposals therefore ought to be mindful of pitfalls, and should
 examine any potential security issues that may arise.</t>
 
 </section>
@@ -574,21 +738,6 @@ examine any potential security issues that may arise.</t>
   <seriesInfo name="BCP" value="41"/>
   <seriesInfo name="RFC" value="2914"/>
   <seriesInfo name="DOI" value="10.17487/RFC2914"/>
-</reference>
-
-<reference anchor="RFC5033">
-  <front>
-    <title>Specifying New Congestion Control Algorithms</title>
-    <author fullname="S. Floyd" initials="S." surname="Floyd"/>
-    <author fullname="M. Allman" initials="M." surname="Allman"/>
-    <date month="August" year="2007"/>
-    <abstract>
-      <t>The IETF's standard congestion control schemes have been widely shown to be inadequate for various environments (e.g., high-speed networks). Recent research has yielded many alternate congestion control schemes that significantly differ from the IETF's congestion control principles. Using these new congestion control schemes in the global Internet has possible ramifications to both the traffic using the new congestion control and to traffic using the currently standardized congestion control. Therefore, the IETF must proceed with caution when dealing with alternate congestion control proposals. The goal of this document is to provide guidance for considering alternate congestion control algorithms within the IETF. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</t>
-    </abstract>
-  </front>
-  <seriesInfo name="BCP" value="133"/>
-  <seriesInfo name="RFC" value="5033"/>
-  <seriesInfo name="DOI" value="10.17487/RFC5033"/>
 </reference>
 
 <reference anchor="RFC9438">
@@ -732,6 +881,21 @@ examine any potential security issues that may arise.</t>
   <seriesInfo name="DOI" value="10.17487/RFC9002"/>
 </reference>
 
+<reference anchor="RFC7141">
+  <front>
+    <title>Byte and Packet Congestion Notification</title>
+    <author fullname="B. Briscoe" initials="B." surname="Briscoe"/>
+    <author fullname="J. Manner" initials="J." surname="Manner"/>
+    <date month="February" year="2014"/>
+    <abstract>
+      <t>This document provides recommendations of best current practice for dropping or marking packets using any active queue management (AQM) algorithm, including Random Early Detection (RED), BLUE, Pre- Congestion Notification (PCN), and newer schemes such as CoDel (Controlled Delay) and PIE (Proportional Integral controller Enhanced). We give three strong recommendations: (1) packet size should be taken into account when transports detect and respond to congestion indications, (2) packet size should not be taken into account when network equipment creates congestion signals (marking, dropping), and therefore (3) in the specific case of RED, the byte- mode packet drop variant that drops fewer small packets should not be used. This memo updates RFC 2309 to deprecate deliberate preferential treatment of small packets in AQM algorithms.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="BCP" value="41"/>
+  <seriesInfo name="RFC" value="7141"/>
+  <seriesInfo name="DOI" value="10.17487/RFC7141"/>
+</reference>
+
 
 
 
@@ -840,6 +1004,21 @@ examine any potential security issues that may arise.</t>
 </reference>
 
 
+<reference anchor="RFC5033">
+  <front>
+    <title>Specifying New Congestion Control Algorithms</title>
+    <author fullname="S. Floyd" initials="S." surname="Floyd"/>
+    <author fullname="M. Allman" initials="M." surname="Allman"/>
+    <date month="August" year="2007"/>
+    <abstract>
+      <t>The IETF's standard congestion control schemes have been widely shown to be inadequate for various environments (e.g., high-speed networks). Recent research has yielded many alternate congestion control schemes that significantly differ from the IETF's congestion control principles. Using these new congestion control schemes in the global Internet has possible ramifications to both the traffic using the new congestion control and to traffic using the currently standardized congestion control. Therefore, the IETF must proceed with caution when dealing with alternate congestion control proposals. The goal of this document is to provide guidance for considering alternate congestion control algorithms within the IETF. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="BCP" value="133"/>
+  <seriesInfo name="RFC" value="5033"/>
+  <seriesInfo name="DOI" value="10.17487/RFC5033"/>
+</reference>
+
 <reference anchor="RFC8312">
   <front>
     <title>CUBIC for Fast Long-Distance Networks</title>
@@ -930,6 +1109,50 @@ examine any potential security issues that may arise.</t>
   <seriesInfo name="DOI" value="10.17487/RFC2988"/>
 </reference>
 
+<reference anchor="RFC8868">
+  <front>
+    <title>Evaluating Congestion Control for Interactive Real-Time Media</title>
+    <author fullname="V. Singh" initials="V." surname="Singh"/>
+    <author fullname="J. Ott" initials="J." surname="Ott"/>
+    <author fullname="S. Holmer" initials="S." surname="Holmer"/>
+    <date month="January" year="2021"/>
+    <abstract>
+      <t>The Real-Time Transport Protocol (RTP) is used to transmit media in telephony and video conferencing applications. This document describes the guidelines to evaluate new congestion control algorithms for interactive point-to-point real-time media.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8868"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8868"/>
+</reference>
+
+<reference anchor="RFC8867">
+  <front>
+    <title>Test Cases for Evaluating Congestion Control for Interactive Real-Time Media</title>
+    <author fullname="Z. Sarker" initials="Z." surname="Sarker"/>
+    <author fullname="V. Singh" initials="V." surname="Singh"/>
+    <author fullname="X. Zhu" initials="X." surname="Zhu"/>
+    <author fullname="M. Ramalho" initials="M." surname="Ramalho"/>
+    <date month="January" year="2021"/>
+    <abstract>
+      <t>The Real-time Transport Protocol (RTP) is used to transmit media in multimedia telephony applications. These applications are typically required to implement congestion control. This document describes the test cases to be used in the performance evaluation of such congestion control algorithms in a controlled environment.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8867"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8867"/>
+</reference>
+
+<reference anchor="RFC9392">
+  <front>
+    <title>Sending RTP Control Protocol (RTCP) Feedback for Congestion Control in Interactive Multimedia Conferences</title>
+    <author fullname="C. Perkins" initials="C." surname="Perkins"/>
+    <date month="April" year="2023"/>
+    <abstract>
+      <t>This memo discusses the rate at which congestion control feedback can be sent using the RTP Control Protocol (RTCP) and the suitability of RTCP for implementing congestion control for unicast multimedia applications.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="9392"/>
+  <seriesInfo name="DOI" value="10.17487/RFC9392"/>
+</reference>
+
 <reference anchor="RFC3819">
   <front>
     <title>Advice for Internet Subnetwork Designers</title>
@@ -950,6 +1173,102 @@ examine any potential security issues that may arise.</t>
   <seriesInfo name="BCP" value="89"/>
   <seriesInfo name="RFC" value="3819"/>
   <seriesInfo name="DOI" value="10.17487/RFC3819"/>
+</reference>
+
+<reference anchor="RFC8290">
+  <front>
+    <title>The Flow Queue CoDel Packet Scheduler and Active Queue Management Algorithm</title>
+    <author fullname="T. Hoeiland-Joergensen" initials="T." surname="Hoeiland-Joergensen"/>
+    <author fullname="P. McKenney" initials="P." surname="McKenney"/>
+    <author fullname="D. Taht" initials="D." surname="Taht"/>
+    <author fullname="J. Gettys" initials="J." surname="Gettys"/>
+    <author fullname="E. Dumazet" initials="E." surname="Dumazet"/>
+    <date month="January" year="2018"/>
+    <abstract>
+      <t>This memo presents the FQ-CoDel hybrid packet scheduler and Active Queue Management (AQM) algorithm, a powerful tool for fighting bufferbloat and reducing latency.</t>
+      <t>FQ-CoDel mixes packets from multiple flows and reduces the impact of head-of-line blocking from bursty traffic. It provides isolation for low-rate traffic such as DNS, web, and videoconferencing traffic. It improves utilisation across the networking fabric, especially for bidirectional traffic, by keeping queue lengths short, and it can be implemented in a memory- and CPU-efficient fashion across a wide range of hardware.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8290"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8290"/>
+</reference>
+
+<reference anchor="RFC8033">
+  <front>
+    <title>Proportional Integral Controller Enhanced (PIE): A Lightweight Control Scheme to Address the Bufferbloat Problem</title>
+    <author fullname="R. Pan" initials="R." surname="Pan"/>
+    <author fullname="P. Natarajan" initials="P." surname="Natarajan"/>
+    <author fullname="F. Baker" initials="F." surname="Baker"/>
+    <author fullname="G. White" initials="G." surname="White"/>
+    <date month="February" year="2017"/>
+    <abstract>
+      <t>Bufferbloat is a phenomenon in which excess buffers in the network cause high latency and latency variation. As more and more interactive applications (e.g., voice over IP, real-time video streaming, and financial transactions) run in the Internet, high latency and latency variation degrade application performance. There is a pressing need to design intelligent queue management schemes that can control latency and latency variation, and hence provide desirable quality of service to users.</t>
+      <t>This document presents a lightweight active queue management design called "PIE" (Proportional Integral controller Enhanced) that can effectively control the average queuing latency to a target value. Simulation results, theoretical analysis, and Linux testbed results have shown that PIE can ensure low latency and achieve high link utilization under various congestion situations. The design does not require per-packet timestamps, so it incurs very little overhead and is simple enough to implement in both hardware and software.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8033"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8033"/>
+</reference>
+
+<reference anchor="RFC9332">
+  <front>
+    <title>Dual-Queue Coupled Active Queue Management (AQM) for Low Latency, Low Loss, and Scalable Throughput (L4S)</title>
+    <author fullname="K. De Schepper" initials="K." surname="De Schepper"/>
+    <author fullname="B. Briscoe" initials="B." role="editor" surname="Briscoe"/>
+    <author fullname="G. White" initials="G." surname="White"/>
+    <date month="January" year="2023"/>
+    <abstract>
+      <t>This specification defines a framework for coupling the Active Queue Management (AQM) algorithms in two queues intended for flows with different responses to congestion. This provides a way for the Internet to transition from the scaling problems of standard TCP-Reno-friendly ('Classic') congestion controls to the family of 'Scalable' congestion controls. These are designed for consistently very low queuing latency, very low congestion loss, and scaling of per-flow throughput by using Explicit Congestion Notification (ECN) in a modified way. Until the Coupled Dual Queue (DualQ), these Scalable L4S congestion controls could only be deployed where a clean-slate environment could be arranged, such as in private data centres.</t>
+      <t>This specification first explains how a Coupled DualQ works. It then gives the normative requirements that are necessary for it to work well. All this is independent of which two AQMs are used, but pseudocode examples of specific AQMs are given in appendices.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="9332"/>
+  <seriesInfo name="DOI" value="10.17487/RFC9332"/>
+</reference>
+
+<reference anchor="RFC8087">
+  <front>
+    <title>The Benefits of Using Explicit Congestion Notification (ECN)</title>
+    <author fullname="G. Fairhurst" initials="G." surname="Fairhurst"/>
+    <author fullname="M. Welzl" initials="M." surname="Welzl"/>
+    <date month="March" year="2017"/>
+    <abstract>
+      <t>The goal of this document is to describe the potential benefits of applications using a transport that enables Explicit Congestion Notification (ECN). The document outlines the principal gains in terms of increased throughput, reduced delay, and other benefits when ECN is used over a network path that includes equipment that supports Congestion Experienced (CE) marking. It also discusses challenges for successful deployment of ECN. It does not propose new algorithms to use ECN nor does it describe the details of implementation of ECN in endpoint devices (Internet hosts), routers, or other network devices.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8087"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8087"/>
+</reference>
+
+<reference anchor="RFC3168">
+  <front>
+    <title>The Addition of Explicit Congestion Notification (ECN) to IP</title>
+    <author fullname="K. Ramakrishnan" initials="K." surname="Ramakrishnan"/>
+    <author fullname="S. Floyd" initials="S." surname="Floyd"/>
+    <author fullname="D. Black" initials="D." surname="Black"/>
+    <date month="September" year="2001"/>
+    <abstract>
+      <t>This memo specifies the incorporation of ECN (Explicit Congestion Notification) to TCP and IP, including ECN's use of two bits in the IP header. [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="3168"/>
+  <seriesInfo name="DOI" value="10.17487/RFC3168"/>
+</reference>
+
+<reference anchor="RFC7567">
+  <front>
+    <title>IETF Recommendations Regarding Active Queue Management</title>
+    <author fullname="F. Baker" initials="F." role="editor" surname="Baker"/>
+    <author fullname="G. Fairhurst" initials="G." role="editor" surname="Fairhurst"/>
+    <date month="July" year="2015"/>
+    <abstract>
+      <t>This memo presents recommendations to the Internet community concerning measures to improve and preserve Internet performance. It presents a strong recommendation for testing, standardization, and widespread deployment of active queue management (AQM) in network devices to improve the performance of today's Internet. It also urges a concerted effort of research, measurement, and ultimate deployment of AQM mechanisms to protect the Internet from flows that are not sufficiently responsive to congestion notification.</t>
+      <t>Based on 15 years of experience and new research, this document replaces the recommendations of RFC 2309.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="BCP" value="197"/>
+  <seriesInfo name="RFC" value="7567"/>
+  <seriesInfo name="DOI" value="10.17487/RFC7567"/>
 </reference>
 
 <reference anchor="RFC2488">
@@ -1004,7 +1323,7 @@ examine any potential security issues that may arise.</t>
     </references>
 
 
-<?line 559?>
+<?line 710?>
 
 <section numbered="false" anchor="acknowledgments"><name>Acknowledgments</name>
 
@@ -1013,25 +1332,33 @@ RFC5033, which served the community well for over a decade.</t>
 
 <t>Thanks to Richard Scheffenegger for helping to get this revision process started.</t>
 
+<t>The editors would like to thanks to Neal Cardwell, Reese Enghardt and Dave Taht
+for suggesting improvements to this document.</t>
+
 <t>Discussions with Lars Eggert and Aaron Falk seeded the original RFC5033.
 Bob Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye,
 Colin Perkins, Pekka Savola, members of TSVWG, and participants at
 the TCP Workshop at Microsoft Research all provided feedback and
 contributions to that document.  It also drew from <xref target="RFC5166"/>.</t>
 
-<t>These individuals suggested improvements to this document:</t>
-
-<ul spacing="compact">
-  <li>    <t>      <contact fullname="Dave Taht" />
-</t>
-</li>
-
-
-</ul>
-
 </section>
 <section numbered="false" anchor="evolution-of-rfc5033bis"><name>Evolution of RFC5033bis</name>
 
+<section numbered="false" anchor="since-draft-ietf-ccwg-rfc5033bis-02"><name>Since draft-ietf-ccwg-rfc5033bis-02</name>
+
+<t><list style="symbols">
+  <t>Added discussion of real-time protocols</t>
+  <t>Added discussion of short flows</t>
+  <t>Listed properties of wired networks</t>
+  <t>Added IoT section</t>
+  <t>Added discussion of AQM response</t>
+  <t>Rewrote the "Document Status" section</t>
+  <t>Adding improved first sentence of abstract and intro.</t>
+  <t>Added section on Multicast, noting this is out of scope</t>
+  <t>Editorial changes</t>
+</list></t>
+
+</section>
 <section numbered="false" anchor="since-draft-ietf-ccwg-rfc5033bis-01"><name>Since draft-ietf-ccwg-rfc5033bis-01</name>
 
 <t><list style="symbols">
@@ -1086,215 +1413,286 @@ contributions to that document.  It also drew from <xref target="RFC5166"/>.</t>
   </back>
 
 <!-- ##markdown-source:
-H4sIAAAAAAAAA8V9bXMbt5Lud/wKrFO1sU+RtGQ7jq3k5B5Fkh3l2rFXko93
-a+vW1pADkhMNZ3gGM6J5XP7vt5/uBgZDUYqzVVvrD5FEzgCNRr88/QJkPB6b
-tmhLd2QfXK7drJhvi2phf3Mbe1JXC+fboq7wa9vUpT0uF3VTtMuVf2Cy6bRx
-N/QaP3sy+C6vZ1W2ojHzJpu348K18/FstlmMm/nsu4OnT6eFH5dZS6ObGf2g
-F7dHdjpbG982Llsd2fOzq1emnvq6dPTUkcVLxhTr5si2TefbJwcHLw+emIye
-PrKvXeWarDSburleNHW3PiJ6Pr42125LH+U0WtW6pnLt+BTkGJolq/L/ysq6
-IhK3zhu/ypr2v/7R1TxZVZt1cWT/s61nI+vrhmiae/ptu8Iv/8+YrGuXdXNk
-7NhY+ldU9NLbiT3trh1/IGt/S2MWVf9p3SyyqvhnBo4S0XW9KJ198+aEv3Sr
-rCiP7IrfmSwnOb31twU+nMzqFT9CG0Cjurxo62Yw9euJfZUVzbJriJ/9/K/r
-vHH5zldDIj5UxY1rfNFubT23x1PX5M5VKUG0Nc32b65ZTLJpXk2y2aS7vk3N
-DPJRTLt2lysnE/tLV7Q0WELYybIpSK6yavDdkLL3TXFDkmHfzdp63RH3z6vZ
-JCVsKa/+TX9OaHuNqepmRQPcuCMSlmqe/GXtzz9fjFkcSR7Gp5NZ1uQbV5bj
-YjZrFmMS5vEsCvx4JgKP9365+PeDF0c8dVCUkw8/n58c2cxWJPpXJ+/H86Zw
-VV5u7bJYLMd+7Yjv9Lm9yRpaZvuA3/aOnvIg68gen7y1l+ev372/tO/WJLwt
-lO5y62kp3l64m8JtRvamLif22ZMRCeTEfjey6/XEPn82/v4ZD5cTe44sKcKL
-8cH3Ql7WLBwtb9m2a3/0+HFeFxPi6uPDg8nh4bPvHh8+OyC1+X6Cn4cH3/E7
-UZT531h/6u5d0u5l8SPZvMusWrSZ67/Yeed8Yi+Wzu28dV79TsxNv9l57c3E
-/nu389KbwuMl+py+ePXrwdPBLlyQDtcre5Y1xPdTMhMzNlWviS2bbOst7X5q
-wo5v6iLPqpm7tRfnZ2dnj7EhV01W+YyH8ZZe+c21MCm0NSP798mh/W2Scv7w
-5cun4xe3mDiOrHtV1ts8/ezvE/trNoNVq7Ciq7ou/WBJ/AkT3i6dPbvJyo7V
-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
-nCa6jPn/2c7C5O1iAAA=
+H4sIAAAAAAAAA8V9a3PbSLLl9/oVuO6IbWmCpCXb7VfHxo5alj2etbvdkty+
+GxsbN4pgkUQLBDgoQDLH4f++eTKzCgWIkj33xsbOh2lLAuqRlZXPk4npdGra
+oi3dy+zBxdblxXJXVKvsV3eTndbVyvm2qCv8s23qMjspV3VTtOuNf2DsfN64
+a3qNnz0d/G1R55Xd0JiLxi7baeHa5TTPb1bTZpn/dPT48bzw09K2NLrJ6T/0
+4u5lNs+3xreNs5uX2duzy9emnvu6dPTUywwvGVNsm5dZ23S+fXR09OLokbH0
+9MvsjatcY0tzUzdXq6buti9pPZ/emCu3o18taLSqdU3l2ukrLMfQLLZa/Ict
+64qWuHPe+I1t2v/4R1fzZFVttsXL7H+3dT7JfN3Qmpae/rXb4B//x5hrV3Xu
+pcmyMNttSn2itYCQb/BEdoDNH9ILG1uULzP89FcQZVY3KwxDZOvmLzOmE1EJ
+f3/Yk8oYY7t2XTc05ZQez7KiomW+n2WvuivHvxBqv6ddFFX/WxrdVsU/LVZG
+ZKrrVemyd+9O+Y9O1rLhd2br2YLe+usKv5zl9YYfoY3QqG5RtHUzmPrNLHtt
+i2bdNXSC/fxv6kXjFqM/DRfxsSquXeOLdpfVy+xk7pqFc1W6IGKGZvdX16xm
+dr6oZjafdVe3V5ODzsW8a8dUOZ1lf+uKlgZLFna6bgo6H1sN/jZc2YemuCZe
+zH7L23rb0Xm/rfJZurC1vPpX/e+MGMqYqm42NMA1sYMpqmXyU5b98sv5lC8A
+ceD01Sy3zeLGleW0yPNmNaXrM80j40xzYRy897fzfz96/pKnDlfz9OMvb09f
+Zjar6LJdnn6YLpvCVYtyl62L1Xrqt47oTr/Prm1D22wf8Nve0VMey3qZnZy+
+zy7evvntw0X225auSwvuvNh52orPzt114W4m2XVdzrInjyZ0BWbZT5Nsu51l
+T59Mnz3h4RZEnpcZXb3n06NnsjzbrBxtb922W//y4cNFXYClHx4fzY6Pn/z0
+8PjJEV3UZzP89/joJ34nsjL/b6r/1dO7oNOz8VdyeBe2WrXW9X8YvfN2lp2v
+nRu99bb6k4ib/mX02rtZ9u/d6KV3hcdL9Hv6w+u/Hz0enMI5SY16k53Zhuj+
+igRTzlf+DZHlxu58RqefioKT67pY2Cp3t87i7dnZ2UMcyGVjK295GJ/RK7+6
+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
+Kh6HAAA=
 
 -->
 

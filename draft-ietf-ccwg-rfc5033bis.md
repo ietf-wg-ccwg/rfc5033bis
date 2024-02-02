@@ -63,14 +63,6 @@ informative:
         ins: L. Xu
         name: Lisong Xu
 
-  FJ03:
-    title: Random Early Detection Gateways for Congestion Avoidance
-    seriesinfo: IEEE/ACM Transactions on Networking, V.1 N.4
-    date: 1993-8
-    author:
-    - ins: S. Floyd
-    - ins: V. Jacobson
-
   Tools:
     title: Tools for the Evaluation of Simulation and Testbed Scenarios
     target: "https://datatracker.ietf.org/doc/draft-irtf-tmrg-tools"
