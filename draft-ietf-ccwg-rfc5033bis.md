@@ -337,19 +337,6 @@ for example, when comparing flows that seek to send at different rates or
 when some of the flows do not last sufficiently long to approach
 asymptotic behavior.
 
-### Avoiding Starvation of Flows sharing a bottleneck.
-
-In contexts where differing congestion control
-algorithms are used, it is important to understand whether
-a proposal can induce more
-harm to sharing flows than for the existing
-defined methods. The measure of harm is not restricted to the equality
-of capacity, but ought also to consider metrics such as the
-latency introduced, or an increase in packet loss. An evaluation must
-assess the potential to cause starvation, including assurance that
-a loss of all feedback (e.g., detected by expiry of a retransmission time out)
-results in backoff.
-
 ### Short Flows {#short-flows}
 
 A great deal of congestion control analysis concerns the steady-state behavior
@@ -364,6 +351,17 @@ and vice versa.
 
 These criteria evaluate the interaction of the proposal with commonly deployed
 congestion control algorithms.
+
+In contexts where differing congestion control
+algorithms are used, it is important to understand whether
+a proposal can induce more
+harm to flows sharing a bottleneck  than for the existing
+defined methods. The measure of harm is not restricted to the equality
+of capacity, but ought also to consider metrics such as the
+latency introduced, or an increase in packet loss. An evaluation must
+assess the potential to cause starvation, including assurance that
+a loss of all feedback (e.g., detected by expiry of a retransmission time out)
+results in backoff.
 
 ### Existing General-Purpose Transports
 
