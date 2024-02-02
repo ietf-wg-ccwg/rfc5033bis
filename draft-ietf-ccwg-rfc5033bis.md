@@ -345,19 +345,6 @@ for example, when comparing flows that seek to send at different rates or
 when some of the flows do not last sufficiently long to approach
 asymptotic behavior.
 
-### Avoiding Starvation of Flows sharing a bottleneck.
-
-In contexts where differing congestion control
-algorithms are used, it is important to understand whether
-a proposal can induce more
-harm to sharing flows than for the existing
-defined methods. The measure of harm is not restricted to the equality
-of capacity, but ought also to consider metrics such as the
-latency introduced, or an increase in packet loss. An evaluation must
-assess the potential to cause starvation, including assurance that
-a loss of all feedback (e.g., detected by expiry of a retransmission time out)
-results in backoff.
-
 ### Short Flows {#short-flows}
 
 A great deal of congestion control analysis concerns the steady-state behavior
@@ -372,6 +359,17 @@ and vice versa.
 
 These criteria evaluate the interaction of the proposal with commonly deployed
 congestion control algorithms.
+
+In contexts where differing congestion control
+algorithms are used, it is important to understand whether
+a proposal can induce more
+harm to flows sharing a bottleneck  than for the existing
+defined methods. The measure of harm is not restricted to the equality
+of capacity, but ought also to consider metrics such as the
+latency introduced, or an increase in packet loss. An evaluation must
+assess the potential to cause starvation, including assurance that
+a loss of all feedback (e.g., detected by expiry of a retransmission time out)
+results in backoff.
 
 ### Existing General-Purpose Transports
 
@@ -717,13 +715,14 @@ RFC5033, which served the community well for over a decade.
 
 Thanks to Richard Scheffenegger for helping to get this revision process started.
 
+The editors would like to thanks to Neal Cardwell, Reese Enghardt and Dave Taht
+for suggesting improvements to this document.
+
 Discussions with Lars Eggert and Aaron Falk seeded the original RFC5033.
 Bob Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye,
 Colin Perkins, Pekka Savola, members of TSVWG, and participants at
 the TCP Workshop at Microsoft Research all provided feedback and
 contributions to that document.  It also drew from {{?RFC5166}}.
-
-The editors would like to thanks to Reese Enghardt and Dave Taht for suggesting improvements to this document.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
