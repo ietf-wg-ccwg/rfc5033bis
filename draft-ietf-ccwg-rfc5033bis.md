@@ -354,9 +354,9 @@ congestion control algorithms.
 
 In contexts where differing congestion control
 algorithms are used, it is important to understand whether
-a proposal can induce more
-harm to flows sharing a bottleneck  than for the existing
-defined methods. The measure of harm is not restricted to the equality
+a proposal could result in more
+harm than previously defined algorithms to flows sharing a common bottleneck.
+The measure of harm is not restricted to the equality
 of capacity, but ought also to consider metrics such as the
 latency introduced, or an increase in packet loss. An evaluation must
 assess the potential to cause starvation, including assurance that
