@@ -83,7 +83,7 @@ informative:
 
 --- abstract
 
-Introducing new or modified congestion controller algorithms in the global Internet have
+Introducing new or modified congestion controller algorithms in the global Internet has
 possible ramifications to both the traffic using the new method
 and to traffic using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
@@ -130,7 +130,7 @@ of congestion beyond packet loss.
 
 Multicast congestion control is a considerably less mature field of study
 and are not in scope for this document.
-However, Section 4 of the UDP Usage Guidelines {{RFC8085}} provide
+However, Section 4 of the UDP Usage Guidelines {{RFC8085}} provides
 additional guidelines for multicast and broadcast usage of UDP.
 
 Congestion control algorithms
@@ -180,7 +180,7 @@ the congestion control problem.
 
 The evaluation guidelines in this document are intended to be consistent with
 the congestion control principles from {{!RFC2914}} of preventing
-congestion collapse, considering fairness, and optimizing the flow's
+congestion collapse, considering fairness, and optimizing a flow's
 own performance in terms of throughput, delay, and loss.
 {{!RFC2914}}
 also discusses the goal of avoiding a congestion control "arms race"
@@ -193,8 +193,8 @@ a set of criteria that should be considered and weighed by the
 developers of alternative algorithms and by the IETF
 in the context of each proposal.
 
-The high-order criteria for any proposal
-is a serious scientific study of the pros and cons occurs when a proposal is
+The high-order criterion for any proposal
+is a serious scientific study of the pros and cons that occur when a proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.
 
@@ -214,12 +214,11 @@ to do the work implied by the remainder of this document.
 This document applies to proposals that seek Experimental or
 Standards Track status. Evaluation of both cases involves the same questions,
 but with different expectations for both the answers and the degree of
-certainty it the answers.
+certainty of the answers.
 
 Congestion control algorithms without experience of Internet-scale deployment SHOULD
 seek Experimental status until real-world data is able to answer the questions
-in {{general-use}}. Congestion control algorithms with a record of measured Internet-
-scale deployment MAY directly seek the Standards Track if the community believes
+in {{general-use}}. Congestion control algorithms with a record of measured Internet-scale deployment MAY directly seek the Standards Track if the community believes
 it is safe, and the design is stable, guided by the considerations in
 {{general-use}}. The existence of this data does not waive the other
 considerations in this document.
@@ -260,7 +259,7 @@ Though out of scope of this document, a proponent of a new
 algorithm could alternatively
 seek publication as an Informational or Experimental RFC via the Internet
 Research Task Force (IRTF). In general, these proposals are expected to be less
-mature than ones that follow the procedures in this document. Documentation of
+mature than ones that follow the procedures in this document. Authors documenting
 deployed congestion control algorithms that cannot be changed by IETF or IRTF review
 are invited to publish as an Informational RFC via the Independent Stream Editor
 (ISE).
@@ -282,7 +281,7 @@ domains (see {{general-use}} and {{special-cases}}).
 
 The following criteria evaluate the proposal when one or more flows
 using that algorithm share a bottleneck link (i.e. with no flows
-using a differing congestion controi algorithm).
+using a differing congestion control algorithm).
 
 ### Protection Against Congestion Collapse
 
@@ -301,8 +300,8 @@ congestion.
 If the result of full backoff is used, this test does not require that the
 full backoff mechanism must be identical to that of TCP
 {{?RFC2988}} {{!RFC8961}}.  As an example, this does not preclude full
-backoff mechanisms that would give flows with different round-
-trip times comparable capacity during backoff.
+backoff mechanisms that would give flows with different round-trip
+times comparable capacity during backoff.
 
 ### Protection Against Bufferbloat
 
@@ -326,7 +325,7 @@ The classic congestion control algorithm {{!RFC5681}} and the widely deployed
 Cubic algorithm {{?RFC9438}} do not address it, but a newly designed
 algorithm has the opportunity to improve the state of the art.
 
-### Fairness within the Alternate Congestion Control Algorithm.
+### Fairness within the Alternate Congestion Control Algorithm
 
 When multiple competing flows all use the same
 alternate congestion control algorithm, the proposal should
@@ -342,9 +341,9 @@ asymptotic behavior.
 A great deal of congestion control analysis concerns the steady-state behavior
 of long flows. However, many Internet flows are relatively short-lived. If they
 never experience a packet loss, a short-lived flow remains in the "slow start" mode of
-operation {{?RFC5681}}, e.g., that features exponential congestion window growth.
+operation {{?RFC5681}} that commonly features exponential congestion window growth.
 
-A proposals for a new congestion control algorithm MUST consider how new and short-lived flows affect long-lived flows,
+A proposal for a new congestion control algorithm MUST consider how new and short-lived flows affect long-lived flows,
 and vice versa.
 
 ## Mixed Algorithm Behavior
@@ -375,7 +374,7 @@ that has a significantly negative impact on
 traffic using standard congestion control might be suspect and this aspect should
 be part of the community's decision making with regards to the suitability of
 the proposed congestion control algorithm. The community should also consider
-other non-standard congestion control algorithms that are known to be widely deployed,
+other non-standard congestion control algorithms that are known to be widely deployed.
 
 We note that this guideline is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for an alternate congestion
@@ -418,7 +417,7 @@ extent they are not, experiments can be conducted where possible.
 Note that in many deployments, real-time traffic is directed into distinct
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
 which substantially reduces the interplay with other traffic. However, a proposal
-targeting Internet use
+targeting the Internet use
 MUST NOT assume that all paths support specific mechanisms.
 
 ### Short and Long Flows
@@ -471,7 +470,7 @@ bandwidths, delays, and queue depths. Of course, the set of parameters
 representative of the public Internet will change over time.
 
 These criteria are intended to capture a statistically dominant set of Internet
-conditions. In the case that a proposed algorithm has been ted at Internet scale,
+conditions. In the case that a proposed algorithm has been tested at Internet scale,
 the results from that deployment are often useful for answering these questions.
 
 ## Tunnel Behavior
@@ -531,7 +530,7 @@ algorithm are FQ-CoDel {{?RFC8290}}; Proportional Integral Controller Enhanced
 {{?RFC9332}}.
 
 Congestion control proposals that set one of the two Explicit Congestion Transport (ECT)
-codepoints in the IP header can gain the benefits of receiving Explicit Congestion Notifictaion (ECN)
+codepoints in the IP header can gain the benefits of receiving Explicit Congestion Notification (ECN)
 Congestion Experienced (CE) signals from an on-path AQM {{?RFC8087}}.
 Use of ECN {{?RFC3168}},{{?RFC9332}} results in requirements for
 the congestion control algorithm to react when it receives a packet with an ECN-CE marking.
@@ -635,7 +634,7 @@ events is discussed in Section&nbsp;9.2 of {{?RFC4782}} (Quick-Start).
 An IETF transport is not tied to a specific Internet path or type of path.
 The set of routers that form a path can and do change with time,
 this will cause the properties of the path to change with respect to time.
-New CCs MUST evaluate the impact of changes in the path, and be robust
+Authors of a proposed congestion control algorithm MUST evaluate the impact of changes in the path, and be robust
 to changes in path characteristics on the interval of common Internet re-routing intervals.
 
 Even when the set of routers constituting a path does not change, the properties of
@@ -657,7 +656,7 @@ one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
 Designs need to independently track the congestion state of each path,
 and need to demonstrate independent congestion control for each path being used.
-New multipath CCs that implement path fail-over MUST evaluate the harm resulting
+Authors of multipath congestion control proposals that implement path fail-over MUST evaluate the harm resulting
 from a change in the path, and show that this does not result in flow starvation.
 Synchronisation of failover (e.g., where multiple flows change their path on similar
 timeframes) can also contribute to harm and/or reduce fairness,
@@ -668,12 +667,12 @@ schedules flows to aggregate the capacity across multiple paths.
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
 This has additional implications:
-New CCs MUST evaluate the potential
+Authors of proposed congestion control algorithms MUST evaluate the potential
 harm to other flows when the multiple paths share a common
 congested bottleneck
 (or share resources that are coupled between different paths,
 such as an overall capacity limit), and SHOULD consider
-the potential for harm to other flows. Synchronisation of CC mechanisms
+the potential for harm to other flows. Synchronisation of congestion control mechanisms
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
