@@ -141,8 +141,13 @@ RTP Media Congestion Avoidance Techniques (RMCAT) and probably more.
 In 2007, TCP was the dominant consumer of this work, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
 The Datagream Congestrion Copntrol Protocol (DCCP)
+<<<<<<< HEAD
 was developed as a method for developing new congestion control algorithms for
 datagram traffic.
+=======
+was developed as a method for developing congestion control algorithms for
+datagram flows.
+>>>>>>> 248a691 (Try to fix build. Update draft-ietf-ccwg-rfc5033bis)
 
 Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
@@ -534,11 +539,16 @@ representative of the public Internet will change over time.
 
 These criteria are intended to capture a statistically dominant set of Internet
 <<<<<<< HEAD
+<<<<<<< HEAD
 conditions. In the case that a proposed congestion control algorithm
 has been tested at Internet scale,
 =======
 conditions. In the case that a proposed congestion control algorithm has been tested at Internet scale,
 >>>>>>> 860ccb4 (rebase)
+=======
+conditions. In the case that a proposed congestion control algorithm
+has been tested at Internet scale,
+>>>>>>> 248a691 (Try to fix build. Update draft-ietf-ccwg-rfc5033bis)
 the results from that deployment are often useful for answering these questions.
 
 ## Paths with Tail-drop Queues
@@ -553,10 +563,14 @@ disciplines.
 When a proposed congestion control algorithm relies on explicit signals from the path, the proposal
 MUST consider the effect of
 <<<<<<< HEAD
+<<<<<<< HEAD
 flow passing through a tunnel, where routers may not be aware of the
 =======
 traffic passing through a tunnel, where routers may not be aware of the
 >>>>>>> 860ccb4 (rebase)
+=======
+flow passing through a tunnel, where routers may not be aware of the
+>>>>>>> 248a691 (Try to fix build. Update draft-ietf-ccwg-rfc5033bis)
 flow.
 
 ## Wired Paths
@@ -829,9 +843,9 @@ contributions to that document.  It also drew from {{?RFC5166}}.
 {:numbered="false"}
 
 ## Since draft-ietf-ccwg-rfc5033bis-03
+{:numbered="false"}
 - Harmonised the "proposed congestion control algorithm"
 - addressed issues.
-- Added datacenter discussion
 
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
