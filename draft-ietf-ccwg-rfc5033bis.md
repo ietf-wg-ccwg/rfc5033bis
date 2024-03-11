@@ -86,8 +86,8 @@ Networks without effective AQM may again be vulnerable to congestion collapse.
 --- abstract
 
 Introducing new or modified congestion control algorithms in the global Internet has
-possible ramifications to both the traffic using the proposed congestion control algorithms
-and to traffic using a standardized congestion control algorithm. Therefore, the IETF
+possible ramifications to both the flows using the proposed congestion control algorithms
+and to flows using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
 The goal of this document is to provide guidance for considering standardization
 of an alternate congestion control algorithm at the IETF. It replaces RFC53 to reflect
@@ -113,13 +113,13 @@ The IETF's standard congestion control algorithms have been shown to have
 performance challenges in various environments
 (e.g., high-speed networks, cellular and WiFi wireless technologies,
 long distance satellite links)
-and also for specific traffic workloads (VoIP, gaming, and videoconferencing).
+and also flows carrrying specific workloads (VoIP, gaming, and videoconferencing).
 
 In 2007, TCP was the dominant consumer of this work, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
 The Datagream Congestrion Copntrol Protocol (DCCP)
 was developed as a method for developing congestion control algorithms for
-datagram traffic.
+datagram flows.
 
 Since RFC 53 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
@@ -233,7 +233,7 @@ Algorithms that are designed for special environments (e.g., data centers) and
 forbidden from use in the Internet would, of course, instead seek real-world
 data for those environments.
 
-Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
+Experimental specifications SHOULD NOT be deployed as a default and SHOULD
 only be deployed in situations where they are being actively measured, and where
 it is possible to deactivate if there are signs of pathological behavior.
 
@@ -349,7 +349,7 @@ asymptotic behavior.
 ### Short Flows {#short-flows}
 
 A great deal of congestion control analysis concerns the steady-state behavior
-of long flows. However, many Internet flows are relatively short-lived. If they
+of long flows. However, many Internet flows are relatively short-lived. If flows
 never experience a packet loss, a short-lived flow remains in the "slow start" mode of
 operation {{?RFC5681}} that commonly features exponential congestion window growth.
 
@@ -368,7 +368,7 @@ the proposed congestion control algorithm could result in more
 harm than previously defined algorithms to flows sharing a common bottleneck.
 The measure of harm is not restricted to the equality
 of capacity, but ought also to consider metrics such as the
-latency introduced, or an increase in packet loss. An evaluation must
+introduced latency, or an increase in packet loss. An evaluation must
 assess the potential to cause starvation, including assurance that
 a loss of all feedback (e.g., detected by expiry of a retransmission time out)
 results in backoff.
@@ -380,7 +380,7 @@ competing using standard IETF congestion controls, e.g. {{!RFC5681}},
 {{!RFC9002}}, {{!RFC9438}}.
 A proposed congestion control algorithm
 that has a significantly negative impact on
-traffic using standard congestion control might be suspect and this aspect should
+flows using standard congestion control might be suspect and this aspect should
 be part of the community's decision making with regards to the suitability of
 the proposed congestion control algorithm. The community should also consider
 other non-standard congestion control algorithms that are known to be widely deployed.
@@ -394,7 +394,7 @@ Experimental, that is not TCP-friendly in all environments.
 When a new congestion control algorithm is deployed, the existing major deployments need to be
 considered to avoid severe performance degradation.
 We also note that this guideline does not constrain the interaction with
-non-best-effort traffic.
+non-best-effort flows.
 
 As an example from an Experimental RFC, fairness with standard TCP is discussed
 in Sections 4 and 6 of {{?RFC3649}} (HighSpeed TCP) and using spare capacity is
@@ -425,11 +425,10 @@ a proposed congestion control algorithm
 can analyze and simulate their interaction with those algorithms. To the
 extent they are not, experiments can be conducted where possible.
 
-Note that in many deployments, real-time traffic is directed into distinct
+Note that in many deployments, real-time flows are directed into distinct
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
 which substantially reduces the interplay with other traffic. However, a proposal
 targeting general Internet use
-MUST NOT assume that all paths support specific mechanisms.
 
 ### Short and Long Flows
 
@@ -481,7 +480,8 @@ bandwidths, delays, and queue depths. Of course, the set of parameters
 representative of the public Internet will change over time.
 
 These criteria are intended to capture a statistically dominant set of Internet
-conditions. In the case that a proposed congestion control algorithm has been tested at Internet scale,
+conditions. In the case that a proposed congestion control algorithm
+has been tested at Internet scale,
 the results from that deployment are often useful for answering these questions.
 
 ## Paths with Tail-drop Queues
@@ -495,7 +495,7 @@ disciplines.
 
 When a proposed congestion control algorithm relies on explicit signals from the path, the proposal
 MUST consider the effect of
-traffic passing through a tunnel, where routers may not be aware of the
+flow passing through a tunnel, where routers may not be aware of the
 flow.
 
 ## Wired Paths
@@ -657,7 +657,7 @@ to changes in path characteristics on the interval of common Internet re-routing
 Even when the set of routers constituting a path does not change, the properties of
 that path can vary with time (e.g., due to a change of link capacity,
 relative priority, or a change
-in the rate of other traffic sharing a bottleneck), with a potential impact on the
+in the rate of other flows sharing a bottleneck), with a potential impact on the
 operation of a congestion control algorithm.
 
 ## Multipath Transport
@@ -736,9 +736,10 @@ contributions to that document.  It also drew from {{?RFC5166}}.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
-## Since draft-ietf-ccwg-rfc5033bis-02
+## Since draft-ietf-ccwg-rfc5033bis-03
 {:numbered="false"}
 - Harmonised the "proposed congestion control algorithm"
+- addressed issues.
 
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
