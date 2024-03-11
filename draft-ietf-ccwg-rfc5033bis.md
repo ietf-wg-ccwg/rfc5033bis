@@ -90,7 +90,7 @@ possible ramifications to both the traffic using the proposed congestion control
 and to traffic using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
 The goal of this document is to provide guidance for considering standardization
-of an alternate congestion control algorithm at the IETF. It replaces RFC5033 to reflect
+of an alternate congestion control algorithm at the IETF. It replaces RFC53 to reflect
 changes in the congestion control landscape.
 
 --- middle
@@ -105,7 +105,7 @@ congestion control algorithms and for the IETF community when evaluating whether
 a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.
 
-This document obsoletes the similarly titled {{?RFC5033}} that was
+This document obsoletes the similarly titled {{?RFC53}} that was
 published in 2007 as a Best Current Practice to evaluate alternate
 congestion control algorithms as Experimental or Proposed Standard RFCs.
 
@@ -121,7 +121,7 @@ The Datagream Congestrion Copntrol Protocol (DCCP)
 was developed as a method for developing congestion control algorithms for
 datagram traffic.
 
-Since RFC 5033 was published, many conditions have changed.
+Since RFC 53 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
 TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}},
 RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
@@ -721,7 +721,7 @@ This document has no IANA actions.
 {:numbered="false"}
 
 Sally Floyd and Mark Allman were the authors of this document's predecessor,
-RFC5033, which served the community well for over a decade.
+{{?RFC5033}}, which served the community well for over a decade.
 
 Thanks to Richard Scheffenegger for helping to get this revision process started.
 
