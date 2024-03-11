@@ -1,6 +1,6 @@
 ---
 title: "Specifying New Congestion Control Algorithms"
-abbrev: "New CC Algorithms"
+abbrev: "Proposing New CC Algorithms"
 docname: draft-ietf-ccwg-rfc5033bis
 category: bcp
 stream: IETF
@@ -85,8 +85,8 @@ Networks without effective AQM may again be vulnerable to congestion collapse.
 
 --- abstract
 
-Introducing new or modified congestion controller algorithms in the global Internet has
-possible ramifications to both the traffic using the new method
+Introducing new or modified congestion control algorithms in the global Internet has
+possible ramifications to both the traffic using the proposed congestion control algorithms
 and to traffic using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
 The goal of this document is to provide guidance for considering standardization
@@ -118,7 +118,7 @@ and also for specific traffic workloads (VoIP, gaming, and videoconferencing).
 In 2007, TCP was the dominant consumer of this work, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
 The Datagream Congestrion Copntrol Protocol (DCCP)
-was developed as a method for developing new congestion control algorithms for
+was developed as a method for developing congestion control algorithms for
 datagram traffic.
 
 Since RFC 5033 was published, many conditions have changed.
@@ -241,7 +241,8 @@ the proposed congestion control algorithm is considered safe for use on the Inte
 Each published algorithm
 is also required to include a statement in the
 abstract describing environments where the protocol is not recommended
-for deployment. There can be environments where the controller is deemed *safe*
+for deployment. There can be environments where the congestion control
+algorith is deemed *safe*
 for use, but it is still is not *recommended* for use because it does not
 perform well for the user.
 
@@ -329,7 +330,7 @@ web browsing and video playing.
 This problem became apparent in the last decade and was not discussed in
 the Congestion Control Principles published in September 2002 {{!RFC2914}}.
 The classic congestion control algorithm {{!RFC5681}} and the widely deployed
-Cubic algorithm {{?RFC9438}} do not address it, but a newly designed
+Cubic algorithm {{?RFC9438}} do not address it, but a new
 algorithm has the opportunity to improve the state of the art.
 
 ### Fairness within the Alternate Congestion Control Algorithm
@@ -350,7 +351,7 @@ of long flows. However, many Internet flows are relatively short-lived. If they
 never experience a packet loss, a short-lived flow remains in the "slow start" mode of
 operation {{?RFC5681}} that commonly features exponential congestion window growth.
 
-A proposed new congestion control algorithm MUST consider how new and short-lived flows affect long-lived flows,
+A proposed congestion control algorithm MUST consider how new and short-lived flows affect long-lived flows,
 and vice versa.
 
 ## Mixed Algorithm Behavior
@@ -387,7 +388,7 @@ friendliness as a prerequisite for an alternate congestion
 control mechanism to advance to Experimental or Standards Track status.  As an example,
 HighSpeed TCP is a congestion control mechanism specified as
 Experimental, that is not TCP-friendly in all environments.
-When a new algorithm is deployed, the existing major deployments need to be
+When a new congestion control algorithm is deployed, the existing major deployments need to be
 considered to avoid severe performance degradation.
 We also note that this guideline does not constrain the interaction with
 non-best-effort traffic.
@@ -410,7 +411,7 @@ flows can be less frequent than the acknowledgements provided by reliable
 transports. This document does not change the informational status of those
 RFCs.
 
-New proposed congestion control algorithms SHOULD consider coexistence with widely deployed real-time
+A proposed congestion control algorithms SHOULD consider coexistence with widely deployed real-time
 congestion control algorithms. Regrettably, at the time of writing, many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
@@ -666,7 +667,7 @@ one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
 Designs need to independently track the congestion state of each path,
 and need to demonstrate independent congestion control for each path being used.
-Authors of a proposed multipath congestion control algorithm that implements path fail-over MUST evaluate the harm resulting
+A proposed multipath congestion control algorithm that implements path fail-over MUST evaluate the harm resulting
 from a change in the path, and show that this does not result in flow starvation.
 Synchronisation of failover (e.g., where multiple flows change their path on similar
 timeframes) can also contribute to harm and/or reduce fairness,
