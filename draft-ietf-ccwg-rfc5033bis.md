@@ -1,7 +1,7 @@
 ---
 title: "Specifying New Congestion Control Algorithms"
 abbrev: "Proposing New CC Algorithms"
-docname: draft-ietf-ccwg-rfc5033bis
+docname: draft-ietf-ccwg-rfc5033bis-latest
 category: bcp
 stream: IETF
 obsoletes: 5033
@@ -123,7 +123,8 @@ datagram traffic.
 
 Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}}, RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
+TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}},
+RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
 Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
 There is more interest in specialized use cases, such as data centers, and in
@@ -222,7 +223,8 @@ certainty of the answers.
 
 Congestion control algorithms without experience of Internet-scale deployment SHOULD
 seek Experimental status until real-world data is able to answer the questions
-in {{general-use}}. Congestion control algorithms with a record of measured Internet-scale deployment MAY directly seek the Standards Track if the community believes
+in {{general-use}}. Congestion control algorithms with a record of measured
+Internet-scale deployment MAY directly seek the Standards Track if the community believes
 it is safe, and the design is stable, guided by the considerations in
 {{general-use}}. The existence of this data does not waive the other
 considerations in this document.
@@ -248,7 +250,7 @@ perform well for the user.
 
 As examples of such statements, {{?RFC3649}} specifying HighSpeed TCP
 includes a statement in the abstract stating that the proposed congestion control algorithm is
-Experimental, but may be deployed in the current Internet.  In
+Experimental, but may be deployed in the current Internet. In
 contrast, the Quick-Start document {{?RFC4782}} includes a paragraph in
 the abstract stating the mechanism is only being proposed for
 use in controlled environments.  The abstract specifies environments where
@@ -276,7 +278,7 @@ are invited to publish as an Informational RFC via the Independent Stream Editor
 As noted above, authors are expected to do a well-rounded evaluation
 of the pros and cons of congestion control algorithms that are brought to the IETF.
 The following
-are guidelines to help authors and the IETF community.  Concerns that
+are guidelines to help authors and the IETF community. Concerns that
 fall outside the scope of these guidelines are certainly possible;
 these guidelines should not be considered as an all-encompassing
 check-list.
@@ -295,7 +297,7 @@ using a differing congestion control algorithm).
 
 The alternate congestion control algorithm should either stop
 sending when the packet drop rate exceeds some threshold
-{{?RFC3714}}, or should include some notion of "full backoff".  For
+{{?RFC3714}}, or should include some notion of "full backoff". For
 "full backoff", at some point the algorithm would reduce the
 sending rate to one packet per round-trip time and then
 exponentially backoff the time between single packet
@@ -385,7 +387,8 @@ other non-standard congestion control algorithms that are known to be widely dep
 
 We note that this guideline is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for an alternate congestion
-control mechanism to advance to Experimental or Standards Track status.  As an example,
+control mechanism to advance to Experimental or Standards Track status.
+As an example,
 HighSpeed TCP is a congestion control mechanism specified as
 Experimental, that is not TCP-friendly in all environments.
 When a new congestion control algorithm is deployed, the existing major deployments need to be
@@ -518,8 +521,10 @@ discussion of wireless properties.
 # Special Cases {#special-cases}
 
 The criteria in {{evaluation-criteria}} will be evaluated in the
-following scenarios, unless the proposed congestion control algorithm specifically excludes its use in a
-scenario. For these specific use-cases, the community MAY allow a proposal to progress even if the criteria
+following scenarios, unless the proposed congestion control
+algorithm specifically excludes its use in a
+scenario. For these specific use-cases, the community
+MAY allow a proposal to progress even if the criteria
 indicate an unsatisfactory result for these scenarios.
 
 In general, measurements from Internet-scale deployments might not expose the
@@ -623,7 +628,8 @@ available Quick-Start bandwidth.
 
 ## Extreme Packet Reordering
 
-A proposed congestion control algorithm ought not to presume that all general Internet paths reliably deliver
+A proposed congestion control algorithm ought not to presume that all general
+Internet paths reliably deliver
 packets in order. {{?RFC4653}} discusses the effect of extreme packet reordering.
 
 ## Transient Events
@@ -649,7 +655,8 @@ MUST evaluate the impact of changes in the path, and be robust
 to changes in path characteristics on the interval of common Internet re-routing intervals.
 
 Even when the set of routers constituting a path does not change, the properties of
-that path can vary with time (e.g., due to a change of link capacity, relative priority, or a change
+that path can vary with time (e.g., due to a change of link capacity,
+relative priority, or a change
 in the rate of other traffic sharing a bottleneck), with a potential impact on the
 operation of a congestion control algorithm.
 
@@ -667,7 +674,8 @@ one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
 Designs need to independently track the congestion state of each path,
 and need to demonstrate independent congestion control for each path being used.
-A proposed multipath congestion control algorithm that implements path fail-over MUST evaluate the harm resulting
+A proposed multipath congestion control algorithm that
+implements path fail-over MUST evaluate the harm resulting
 from a change in the path, and show that this does not result in flow starvation.
 Synchronisation of failover (e.g., where multiple flows change their path on similar
 timeframes) can also contribute to harm and/or reduce fairness,
