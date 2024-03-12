@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-10T00:38:30.237367+00:00",
+  "timestamp": "2024-03-12T00:35:05.897696+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -5733,25 +5733,42 @@
       "id": "PR_kwDOI7aIXc5oK3Tz",
       "title": "PR to fix issues after WGLC (MW)",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/93",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Do not merge yet!",
       "createdAt": "2024-02-28T13:02:12Z",
-      "updatedAt": "2024-02-28T13:04:50Z",
+      "updatedAt": "2024-03-11T21:12:04Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "3600df9fee00d877c87f6cb23931765f955be4fd",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-16",
       "headRefOid": "d3d9e2569e1eca7c01423818158d2d8a57d5a855",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "closedAt": "2024-03-11T15:31:34Z",
+      "mergedAt": "2024-03-11T15:31:34Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "b93b97c1ca695b23adb072c350bcfb93cd5787ad"
+      },
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Michael originated the PR (via email), so \"yes\". He may have more comments, but I do not know of any.",
+          "createdAt": "2024-03-11T15:31:26Z",
+          "updatedAt": "2024-03-11T15:31:26Z"
+        },
+        {
+          "author": "theri",
+          "authorAssociation": "NONE",
+          "body": "> Michael originated the PR (via email), so \"yes\". He may have more comments, but I do not know of any.\r\n\r\nAh. Going back to Michael's email titled \"Review of RFC5033bis\" sent on 23. Feb, I see comments on whether to mention DCCP, a suggestion to link to a different reference for Bufferbloat, and a bit about Section 5 having potentially colliding MUSTs and MAYs. I didn't see any discussion of these comments, so that's why I asked.",
+          "createdAt": "2024-03-11T15:38:52Z",
+          "updatedAt": "2024-03-11T15:38:52Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOI7aIXc5xnp84",
@@ -5765,8 +5782,188 @@
           "createdAt": "2024-02-28T13:04:43Z",
           "updatedAt": "2024-02-28T13:04:43Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5y7T4H",
+          "commit": {
+            "abbreviatedOid": "d3d9e25"
+          },
+          "author": "theri",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "Thank you for these changes, they look good to me.\r\nDo you consider this PR to completely address all of Michael Welzl's comments?",
+          "createdAt": "2024-03-11T15:25:54Z",
+          "updatedAt": "2024-03-11T15:25:54Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5y_xMH",
+          "commit": {
+            "abbreviatedOid": "d3d9e25"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-11T21:12:04Z",
+          "updatedAt": "2024-03-11T21:12:04Z",
+          "comments": [
+            {
+              "originalPosition": 117,
+              "body": "This is not gramatically correct. \"use \" is  noun, not a verb.",
+              "createdAt": "2024-03-11T21:12:04Z",
+              "updatedAt": "2024-03-11T21:12:04Z"
+            }
+          ]
         }
       ]
+    },
+    {
+      "number": 94,
+      "id": "PR_kwDOI7aIXc5pSkOl",
+      "title": "PR based on MW review 2",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/94",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This will need a review pass",
+      "createdAt": "2024-03-11T18:59:08Z",
+      "updatedAt": "2024-03-11T22:50:37Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "b93b97c1ca695b23adb072c350bcfb93cd5787ad",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-17",
+      "headRefOid": "e503cad93c8f6327bfed2eaceae6fa9a27c4f900",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc5y_VUi",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Lots of typos and a few sentences I don't understand.",
+          "createdAt": "2024-03-11T20:36:25Z",
+          "updatedAt": "2024-03-11T20:57:28Z",
+          "comments": [
+            {
+              "originalPosition": 39,
+              "body": "```suggestion\r\nof an alternate congestion control algorithm at the IETF. It replaces RFC5033 to reflect\r\n```",
+              "createdAt": "2024-03-11T20:36:25Z",
+              "updatedAt": "2024-03-11T20:57:28Z"
+            },
+            {
+              "originalPosition": 48,
+              "body": "```suggestion\r\nThis document obsoletes the similarly titled {{?RFC5033}} that was\r\n```",
+              "createdAt": "2024-03-11T20:39:26Z",
+              "updatedAt": "2024-03-11T20:57:28Z"
+            },
+            {
+              "originalPosition": 64,
+              "body": "```suggestion\r\nThe Datagram Congestion Control Protocol (DCCP)\r\n```",
+              "createdAt": "2024-03-11T20:39:48Z",
+              "updatedAt": "2024-03-11T20:57:28Z"
+            },
+            {
+              "originalPosition": 69,
+              "body": "```suggestion\r\nSince RFC 5033 was published, many conditions have changed.\r\n```",
+              "createdAt": "2024-03-11T20:40:29Z",
+              "updatedAt": "2024-03-11T20:57:28Z"
+            },
+            {
+              "originalPosition": 66,
+              "body": "This DCCP sentence is weird and I'm not sure why it exists.",
+              "createdAt": "2024-03-11T20:52:18Z",
+              "updatedAt": "2024-03-11T20:57:28Z"
+            },
+            {
+              "originalPosition": 171,
+              "body": "these x???",
+              "createdAt": "2024-03-11T20:53:47Z",
+              "updatedAt": "2024-03-11T20:57:28Z"
+            },
+            {
+              "originalPosition": 409,
+              "body": "```suggestion\r\nThe proposed congestion control algorithm SHOULD be evaluated under a variety of bottleneck queue disciplines.\r\n```",
+              "createdAt": "2024-03-11T20:56:04Z",
+              "updatedAt": "2024-03-11T20:57:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zAIEp",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "It is good to normalize the references to \"proposed congestion control algorithm\".\r\nThere are some places were we still find \"alternate\" instead of \"proposed\" congestion control algorithms.\r\n\r\nAlso, the discussion of TCP vs DCCP vs SCTP vs QUIC vs RMCAT should be rephrased.\r\n",
+          "createdAt": "2024-03-11T21:40:40Z",
+          "updatedAt": "2024-03-11T22:50:37Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "I think the proposed wording tries to say that TCP, SCTP and DCCP were already defined when 5033 was published, with QUIC and RMCAT added later. But it does that in an awkward way, first with the sentence about DCCP in the previous paragraph, and then with this weird punctuation here. I am not a great master of the English language, but I think we want to say that:\r\n\r\n1) TCP was dominant then, but it was not the only transport, SCTP and DCCP were also defined.\r\n2) TCP is still important, SCTP and DCCP are still used, but the share of the traffic carried by QUIC is increasing, while RMCAT was developed to handle congestion avoidance for RTP media.",
+              "createdAt": "2024-03-11T21:40:40Z",
+              "updatedAt": "2024-03-11T22:50:37Z"
+            },
+            {
+              "originalPosition": 181,
+              "body": "\"proposed\" congestion control algorithms?",
+              "createdAt": "2024-03-11T21:42:41Z",
+              "updatedAt": "2024-03-11T22:50:37Z"
+            },
+            {
+              "originalPosition": 468,
+              "body": "Why \"alternate\" instead of \"proposed\"?",
+              "createdAt": "2024-03-11T22:44:39Z",
+              "updatedAt": "2024-03-11T22:50:37Z"
+            },
+            {
+              "originalPosition": 218,
+              "body": "Within the \"proposed\" Congestion Control Algorithm?",
+              "createdAt": "2024-03-11T22:46:58Z",
+              "updatedAt": "2024-03-11T22:50:37Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 95,
+      "id": "PR_kwDOI7aIXc5pTpLX",
+      "title": "Fix word error from recent PR",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/95",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-03-11T21:34:48Z",
+      "updatedAt": "2024-03-11T21:34:48Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "b93b97c1ca695b23adb072c350bcfb93cd5787ad",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "martinduke-patch-1",
+      "headRefOid": "bd29af24fc3df26c4b01fbb122101ff6f988a5aa",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
