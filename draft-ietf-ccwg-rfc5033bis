@@ -279,8 +279,7 @@ are invited to publish as an Informational RFC via the Independent Stream Editor
 
 As noted above, authors are expected to do a well-rounded evaluation
 of the pros and cons of congestion control algorithms that are brought to the IETF.
-The following
-are guidelines seek to help authors and the IETF community. Concerns that
+The following guidelines are designed to help authors and the IETF community. Concerns that
 fall outside the scope of these guidelines are certainly possible;
 these guidelines should not be considered as an all-encompassing
 check-list.
