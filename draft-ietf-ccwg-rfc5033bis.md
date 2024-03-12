@@ -417,7 +417,7 @@ extent they are not, experiments can be conducted where possible.
 Note that in many deployments, real-time traffic is directed into distinct
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
 which substantially reduces the interplay with other traffic. However, a proposal
-targeting the Internet use
+targeting general Internet use
 MUST NOT assume that all paths support specific mechanisms.
 
 ### Short and Long Flows
