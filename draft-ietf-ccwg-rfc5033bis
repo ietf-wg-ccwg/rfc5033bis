@@ -115,15 +115,17 @@ performance challenges in various environments
 long distance satellite links)
 and also flows carrrying specific workloads (VoIP, gaming, and videoconferencing).
 
-In 2007, TCP was the dominant consumer of this work, and proposals
+In 2007, TCP was the dominant consumer of this work, and proposals for changes
+to the congestion control algorithms
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
-The Datagram Congestion Control Protocol (DCCP)
-was developed as a method for developing congestion control algorithms for
-datagram flows.
+SCTP {{?RFC9260}} followed the congestion control algorithms specified for TCP.
+DCCP {{?RFC4340}}, provided support 
+for congestion control algorithms
+similar to TCP, but also other congestion control algorithms.
 
 Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}},
+TCP, SCTP, and DCCP, to include QUIC {{?RFC9000}},
 RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
 Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
