@@ -199,9 +199,9 @@ developers of alternative algorithms and by the IETF
 in the context of each proposal.
 
 The high-order criterion for advancing any proposal
-is a serious scientific study of the pros and cons that occur when the proposal is
-considered for publication by the IETF or before it is deployed at
-large scale.
+is a serious scientific study of the pros and cons of 
+the congestion control algorithm that is brought to the IETF and
+considered for publication by the IETF.
 
 After initial studies, we encourage authors to write a specification
 of their proposal for publication in the RFC series. This allows others
@@ -267,7 +267,7 @@ Though out of scope of this document, a proponent of a new
 algorithm could alternatively
 seek publication as an Informational or Experimental RFC via the Internet
 Research Task Force (IRTF).
-In general, these x are expected to be less
+In general, these algorithms are expected to be less
 mature than ones that follow the procedures in this document. Authors documenting
 deployed congestion control algorithms that cannot be changed by IETF or IRTF review
 are invited to publish as an Informational RFC via the Independent Stream Editor
@@ -278,7 +278,7 @@ are invited to publish as an Informational RFC via the Independent Stream Editor
 As noted above, authors are expected to do a well-rounded evaluation
 of the pros and cons of congestion control algorithms that are brought to the IETF.
 The following
-are guidelines to help authors and the IETF community. Concerns that
+are guidelines seek to help authors and the IETF community. Concerns that
 fall outside the scope of these guidelines are certainly possible;
 these guidelines should not be considered as an all-encompassing
 check-list.
@@ -289,7 +289,7 @@ domains (see {{general-use}} and {{special-cases}}).
 
 ## Single Algorithm Behavior
 
-The following criteria evaluate the congestion control algorithm when one or more flows
+The criteria in this section evaluate the congestion control algorithm when one or more flows
 using that algorithm share a bottleneck link (i.e. with no flows
 using a differing congestion control algorithm).
 
@@ -333,7 +333,7 @@ This problem became apparent in the last decade and was not discussed in
 the Congestion Control Principles published in September 2002 {{!RFC2914}}.
 The classic congestion control algorithm {{!RFC5681}} and the widely deployed
 Cubic algorithm {{?RFC9438}} do not address it, but a new
-algorithm has the opportunity to improve the state of the art.
+congestion control algorithm has the opportunity to improve the state of the art.
 
 ### Fairness within the Alternate Congestion Control Algorithm
 
