@@ -121,7 +121,7 @@ The Datagram Congestion Control Protocol (DCCP)
 was developed as a method for developing congestion control algorithms for
 datagram flows.
 
-Since RFC 53 was published, many conditions have changed.
+Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
 TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}},
 RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
