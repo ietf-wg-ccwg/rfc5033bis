@@ -90,7 +90,7 @@ possible ramifications to both the flows using the proposed congestion control a
 and to flows using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
 The goal of this document is to provide guidance for considering standardization
-of an alternate congestion control algorithm at the IETF. It replaces RFC5033 to reflect
+of a proposed congestion control algorithm at the IETF. It replaces RFC5033 to reflect
 changes in the congestion control landscape.
 
 --- middle
@@ -100,13 +100,13 @@ changes in the congestion control landscape.
 This document provides guidelines for the IETF to use when evaluating
 a proposed congestion control algorithm that differ
 from the general congestion control principles outlined in {{!RFC2914}}.
-The guidance is intended to be useful to authors proposing alternate
+The guidance is intended to be useful to authors proposing
 congestion control algorithms and for the IETF community when evaluating whether
 a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.
 
 This document obsoletes the similarly titled {{?RFC5033}} that was
-published in 2007 as a Best Current Practice to evaluate alternate
+published in 2007 as a Best Current Practice to evaluate proposed
 congestion control algorithms as Experimental or Proposed Standard RFCs.
 
 The IETF's standard congestion control algorithms have been shown to have
@@ -239,7 +239,7 @@ Experimental specifications SHOULD NOT be deployed as a default and SHOULD
 only be deployed in situations where they are being actively measured, and where
 it is possible to deactivate if there are signs of pathological behavior.
 
-Each published alternate congestion control algorithm is REQUIRED to include a
+Each published congestion control algorithm is REQUIRED to include a
 statement in the abstract indicating whether or not there is IETF consensus that
 the proposed congestion control algorithm is considered safe for use on the Internet.
 Each published algorithm
@@ -297,7 +297,7 @@ using a differing congestion control algorithm).
 
 ### Protection Against Congestion Collapse
 
-The alternate congestion control algorithm should either stop
+A congestion control algorithm should either stop
 sending when the packet drop rate exceeds some threshold
 {{?RFC3714}}, or should include some notion of "full backoff". For
 "full backoff", at some point the algorithm would reduce the
@@ -317,7 +317,7 @@ times comparable capacity during backoff.
 
 ### Protection Against Bufferbloat
 
-The alternate congestion control algorithm should reduce its sending
+A congestion control algorithm should reduce its sending
 rate if the round trip time (RTT) significantly increases. Exactly how
 the algorithm reduces its sending rate is algorithm-specific, but see
 {{!RFC8961}} and {{!RFC8085}} for requirements.
@@ -337,7 +337,7 @@ The classic congestion control algorithm {{!RFC5681}} and the widely deployed
 Cubic algorithm {{?RFC9438}} do not address it, but a new
 congestion control algorithm has the opportunity to improve the state of the art.
 
-### Fairness within the Alternate Congestion Control Algorithm
+### Fairness within the Proposed Congestion Control Algorithm
 
 When multiple competing flows all use the same
 proposed congestion control algorithm, the proposal should
@@ -388,7 +388,7 @@ the proposed congestion control algorithm. The community should also consider
 other non-standard congestion control algorithms that are known to be widely deployed.
 
 We note that this guideline is not a requirement for strict Reno- or Cubic-
-friendliness as a prerequisite for an alternate congestion
+friendliness as a prerequisite for a proposed congestion
 control mechanism to advance to Experimental or Standards Track status.
 As an example,
 HighSpeed TCP is a congestion control mechanism specified as
@@ -614,8 +614,8 @@ Robustness to delay and delay variation may be a key evaluation metric.
 
 A proposed congestion control algorithm should explore
 how the algorithm performs with non-compliant senders, receivers, or
-routers.  In addition, the proposal should explore how an
-alternate congestion control algorithm performs with outside
+routers.  In addition, the proposal should explore how a
+proposed congestion control algorithm performs with outside
 attackers.  This can be particularly important for proposed congestion control algorithms
 that involve explicit feedback from routers
 along the path.
