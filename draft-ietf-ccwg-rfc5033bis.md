@@ -105,7 +105,7 @@ congestion control algorithms and for the IETF community when evaluating whether
 a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.
 
-This document obsoletes the similarly titled {{?RFC53}} that was
+This document obsoletes the similarly titled {{?RFC5033}} that was
 published in 2007 as a Best Current Practice to evaluate alternate
 congestion control algorithms as Experimental or Proposed Standard RFCs.
 
