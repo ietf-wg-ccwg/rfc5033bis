@@ -533,7 +533,7 @@ ubiquitous as the General Use scenarios.
 
 ## Active Queue Management (AQM) {#aqm}
 
-proposed congestion control algorithm SHOULD be evaluated under a variety of bottleneck queue disciplines.
+The proposed congestion control algorithm SHOULD be evaluated under a variety of bottleneck queue disciplines.
 The effect of an AQM discipline can be hard to detect by Internet evaluation.
 At a minimum, a proposal should reason about an algorithm's response to various
 AQM disciplines. Simulation or empirical results are, of course, valuable.
