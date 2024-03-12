@@ -117,7 +117,7 @@ and also flows carrrying specific workloads (VoIP, gaming, and videoconferencing
 
 In 2007, TCP was the dominant consumer of this work, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
-The Datagream Congestrion Copntrol Protocol (DCCP)
+The Datagram Congestion Control Protocol (DCCP)
 was developed as a method for developing congestion control algorithms for
 datagram flows.
 
