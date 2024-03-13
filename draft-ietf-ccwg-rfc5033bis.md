@@ -125,8 +125,8 @@ similar to TCP, but also other congestion control algorithms.
 
 Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP, SCTP, and DCCP, to include QUIC {{?RFC9000}},
-RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
+TCP, SCTP and DCCP. This set now includes QUIC {{?RFC9000}},
+RTP Media Congestion Avoidance Techniques (RMCAT) and more.
 Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
 There is more interest in specialized use cases, such as data centers, and in
