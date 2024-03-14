@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-12T00:35:05.897696+00:00",
+  "timestamp": "2024-03-14T00:35:10.713781+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1504,13 +1504,54 @@
       "state": "OPEN",
       "author": "mwelzl",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "martinduke"
+      ],
       "labels": [],
       "body": "Hi,\r\n\r\nIn the \"Editor's copy\", there is a section 3.1.4. called \"Avoiding Starvation of Flows sharing a bottleneck.\"\r\n(side note: I suggest to update this title to \"Avoiding Starvation of Flows Sharing a Bottleneck\")\r\n\r\nThis section is also visible when I follow the link called: \"Compare Editor's Copy to Individual Draft\".\r\n\r\nHOWEVER: the section is *not* a part of the .md file ???\r\nHow strange? How can this happen?\r\n\r\nBTW, in terms of content, this section is useful to me, but perhaps not strictly necessary to include since section 3.1.1 exists.",
       "createdAt": "2024-02-23T09:27:20Z",
-      "updatedAt": "2024-02-23T09:27:20Z",
+      "updatedAt": "2024-03-12T14:06:03Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Yes, our editors' copy isn't building. I think we deleted this section because of 3.1.1, as you inferred.",
+          "createdAt": "2024-03-12T14:06:02Z",
+          "updatedAt": "2024-03-12T14:06:02Z"
+        }
+      ]
+    },
+    {
+      "number": 96,
+      "id": "I_kwDOI7aIXc6CAI1u",
+      "title": "Review inserted on behalf of M Welzl",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/96",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "1. General:\r\n\r\nIn some places, a new proposed congestion control algorithm that this document addresses is repeatedly called \"The alternate congestion control algorithm\".\r\nIn some places, it's repeatedly called \"A proposed congestion control algorithm\".\r\nIn some places, it's repeatedly called \"The proposal\u201d.\r\nIn some places, it\u2019s called \u201cNew CCs\u201d  (only in a few places - else the abbreviation CC isn\u2019t introduced).\r\n\r\nI think it would be good to unify this. My suggestion: mixing \u201cThe proposal\u201d and \u201cA proposed congestion control algorithm\u201d doesn\u2019t really matter, but \u201cThe alternative congestion control algorithm\u201d stands out - I would replace these occurrences with \u201cThe proposed congestion control algorithm\u201d, and replace \u201cNew CCs\u201d in the same way.\r\n\r\n2. Section 1 Intro:\r\nOLD:\r\nIn 2007, TCP was the dominant consumer of this work, and proposals were typically discussed in research groups, for example the Internet Congestion Control Research Group (ICCRG).\r\nNEW:\r\nIn 2007, TCP was the dominant consumer of this work, and proposals were typically discussed in the Internet Congestion Control Research Group (ICCRG).\r\nREASON:\r\nI don\u2019t remember seeing any other proposal being discussed in any other RG.\r\n- accepted\r\n\r\n***\r\n3. Since RFC 5033 was published, many conditions have changed.\r\nThe set of protocols using these algorithms has spread beyond\r\nTCP and SCTP to include DCCP, QUIC, and beyond.\r\n***\r\n\r\nThe DCCP RFCs pre-date RFC 5033, and so I find it a bit odd to see it mentioned in this context. On the other hand, the problem that this text is about is largely related to the deployment of cc. mechanisms without first getting an OK from the IETF, and so it fits to talk about QUIC which is mostly written in user space. Similarly, it would fit to talk about the RMCAT CC\u2019s, or LEDBAT - much more, it seems to me, than to talk about DCCP. So, I suggest to instead say the \u201cWebRTC protocol suite\u201d or something like that.\r\n\r\n4. Section 3.1.2:\r\n***\r\nBufferbloat [Bufferbloat] refers to the building of long queues in the network. \r\n***\r\nI think the [Bufferbloat] reference should be replaced with a \u201cproper\u201d one with longer-term archival value, instead of pointing at the IETF blog. E.g., this:\r\nhttps://ieeexplore.ieee.org/document/5755608 <https://ieeexplore.ieee.org/document/5755608>\r\nwhich is also freely available: https://queue.acm.org/detail.cfm?id=2071893 <https://queue.acm.org/detail.cfm?id=2071893>\r\n\r\n5. Section 3.2.1:\r\n***\r\nEvaluate the impact on TCP [RFC9293], SCTP [RFC9260], DCCP [RFC4340], and QUIC [RFC9000].\r\n***\r\nI would recommend to remove this. I find it odd: this is about the interaction between congestion control mechanisms, not transport protocols - why would there be a significant difference between running a mechanism against SCTP or TCP, for example? Indeed this is clarified in the next paragraph, which says: \"A proposed congestion control algorithm SHOULD be evaluated when competing with standard IETF congestion control [RFC5681], [RFC9260], [RFC4340], [RFC9002], [RFC9438].\u201d  - so why then list these protocols here?  (also: they seem strange to include as references in the sentence I mention here - instead, I would only cite RFC 5681 and RFC 9438).\r\nIt seems to me that listing the actual protocols expects a proponent of a new mechanism to carry out a huge amount of actually rather useless work.\r\n\r\nBesides, DCCP is an odd one in this list, because evaluating the impact \u201con it\u201d would mean to also evaluate against TFRC and TFRC-SP. Seriously, at this time and day? Is anyone using these controls, still, in any context?\r\n(technically, RMCAT controls and LEDBAT would make more sense IMO, but I think it\u2019s ok to skip them because they\u2019re all Experimental).\r\n\r\n6.\r\nI would swap section 4.1 on tunnel behavior with section 4.2 on paths with Tail-drop Queues, because the latter is the more common case. No big deal, but it\u2019s just a strange sequence IMO.\r\n\r\n7. Section 5.7.1:\r\n***\r\nNew CCs MUST evaluate the impact of changes in the path, and be robust\r\nto changes in path characteristics on the interval of common Internet re-routing intervals.\r\n***\r\nFirst, I don\u2019t think that the abbreviation \u201cCC\u201d has been used before. it is also later used in section 5.8 - I suggest to fix this, to be uniform.\r\n\r\n8. Issue:\r\n\r\nMore importantly though, the beginning of Section 5 says, about the whole section, that \u201cThe community MAY allow a proposal to progress even if the criteria indicate an unsatisfactory result for these scenarios.\u201d\r\nThis seems to collide with the \u201cMUST\u201d above.\r\n\r\n9. I have the same concern about the two MUSTs in section 5.8, \r\n10. and there, also, we have the use of \u201cCC\u201d.\r\n",
+      "createdAt": "2024-03-12T09:01:05Z",
+      "updatedAt": "2024-03-12T09:41:36Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "A PR attempts to resolve this, \r\n1. - Harmonised to \"proposed congestion control algorithm\"\r\n2. - New text accepted\r\n3. - Working towards this in the PR\r\n4. - Done\r\n5. - Updated, I agree protocols =/= CC algorithms.\r\n6. - Swapped\r\n7. - CC changed to be consistent\r\n8. - It ought not to collide, will revise text.\r\n10. - Updated the use of \u201cCC\u201d.\r\n\r\n---\r\nStill to-do:\r\n9. - review the two MUSTs in section 5.8, #94 ",
+          "createdAt": "2024-03-12T09:02:19Z",
+          "updatedAt": "2024-03-12T09:02:19Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The PR has updated the words CC.\r\nThe two MUSTs originate from current practice around the use of multipath in IETF specs, and seem to reflect what I thought was the case. ",
+          "createdAt": "2024-03-12T09:41:35Z",
+          "updatedAt": "2024-03-12T09:41:35Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -5830,13 +5871,13 @@
       "labels": [],
       "body": "This will need a review pass",
       "createdAt": "2024-03-11T18:59:08Z",
-      "updatedAt": "2024-03-11T22:50:37Z",
+      "updatedAt": "2024-03-13T17:23:12Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "b93b97c1ca695b23adb072c350bcfb93cd5787ad",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-17",
-      "headRefOid": "e503cad93c8f6327bfed2eaceae6fa9a27c4f900",
+      "headRefOid": "35251227a2520305da885c060ad6dcb480cdc176",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5936,6 +5977,166 @@
               "updatedAt": "2024-03-11T22:50:37Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zD5MR",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-12T08:32:54Z",
+          "updatedAt": "2024-03-12T08:32:54Z",
+          "comments": [
+            {
+              "originalPosition": 66,
+              "body": "This sentence was a place holder added to address the timing of DCCP, but I think the later work fixes the issue and I'll remove.",
+              "createdAt": "2024-03-12T08:32:54Z",
+              "updatedAt": "2024-03-12T08:32:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zEBK6",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-12T08:48:11Z",
+          "updatedAt": "2024-03-12T08:48:11Z",
+          "comments": [
+            {
+              "originalPosition": 218,
+              "body": "I'll propose: new congestion control algorithm",
+              "createdAt": "2024-03-12T08:48:11Z",
+              "updatedAt": "2024-03-12T08:48:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zEB8s",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-12T08:49:44Z",
+          "updatedAt": "2024-03-12T08:49:44Z",
+          "comments": [
+            {
+              "originalPosition": 171,
+              "body": "a place holder when I gave-up yesterday, removed now. /x/algorithms/",
+              "createdAt": "2024-03-12T08:49:44Z",
+              "updatedAt": "2024-03-12T08:49:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zEX-f",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-12T09:27:52Z",
+          "updatedAt": "2024-03-12T09:27:52Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "Pleas read new text and see if this improved.",
+              "createdAt": "2024-03-12T09:27:52Z",
+              "updatedAt": "2024-03-12T09:27:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zEa1H",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-12T09:32:52Z",
+          "updatedAt": "2024-03-12T09:32:53Z",
+          "comments": [
+            {
+              "originalPosition": 468,
+              "body": "Harmonised on proposed.",
+              "createdAt": "2024-03-12T09:32:53Z",
+              "updatedAt": "2024-03-12T09:32:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zEb5P",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-12T09:34:39Z",
+          "updatedAt": "2024-03-12T09:34:39Z",
+          "comments": [
+            {
+              "originalPosition": 66,
+              "body": "Para re-written to capture that TCP, SCTP and DCCP all existed. They can inherit CC algorithms from the same base - SCTP normally does; DCCP could or could do different. Please check new para.",
+              "createdAt": "2024-03-12T09:34:39Z",
+              "updatedAt": "2024-03-12T09:34:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zGzGd",
+          "commit": {
+            "abbreviatedOid": "5b0c120"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "one typo",
+          "createdAt": "2024-03-12T14:02:55Z",
+          "updatedAt": "2024-03-12T14:03:15Z",
+          "comments": [
+            {
+              "originalPosition": 86,
+              "body": "grammar",
+              "createdAt": "2024-03-12T14:02:55Z",
+              "updatedAt": "2024-03-12T14:03:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5zM0Y2",
+          "commit": {
+            "abbreviatedOid": "fc4ac5d"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-12T21:43:55Z",
+          "updatedAt": "2024-03-12T21:43:55Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "It is better. The only part that I don't like is the Oxford comma and the double \"and\" list. You can get the meaning when you read it, but not when you hear it. I would prefer something like:\r\n\r\n\"Since RFC 5033 was published, many conditions have changed. In addition to \r\nThe set of protocols using these algorithms has spread beyond\r\nTCP, SCTP and DCCP. It now includes QUIC {{?RFC9000}},\r\nRTP Media Congestion Avoidance Techniques (RMCAT) and probably more.\"\r\n\r\n",
+              "createdAt": "2024-03-12T21:43:55Z",
+              "updatedAt": "2024-03-12T21:43:55Z"
+            }
+          ]
         }
       ]
     },
@@ -5944,26 +6145,42 @@
       "id": "PR_kwDOI7aIXc5pTpLX",
       "title": "Fix word error from recent PR",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/95",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-03-11T21:34:48Z",
-      "updatedAt": "2024-03-11T21:34:48Z",
+      "updatedAt": "2024-03-12T08:37:27Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "b93b97c1ca695b23adb072c350bcfb93cd5787ad",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "martinduke-patch-1",
       "headRefOid": "bd29af24fc3df26c4b01fbb122101ff6f988a5aa",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-03-12T08:37:27Z",
+      "mergedAt": "2024-03-12T08:37:27Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "0709709ab5be54e546178fdf06c209b32e71c7f9"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc5zD7jY",
+          "commit": {
+            "abbreviatedOid": "bd29af2"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-03-12T08:37:16Z",
+          "updatedAt": "2024-03-12T08:37:16Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
