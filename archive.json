@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-21T00:37:07.444699+00:00",
+  "timestamp": "2024-03-24T00:40:11.617136+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -57,6 +57,11 @@
       "name": "editorial",
       "description": "",
       "color": "753E03"
+    },
+    {
+      "name": "IETF 119",
+      "description": "Issues discussed at IETF 119",
+      "color": "B39ACF"
     }
   ],
   "issues": [
@@ -1550,6 +1555,171 @@
           "body": "The PR has updated the words CC.\r\nThe two MUSTs originate from current practice around the use of multipath in IETF specs, and seem to reflect what I thought was the case. ",
           "createdAt": "2024-03-12T09:41:35Z",
           "updatedAt": "2024-03-12T09:41:35Z"
+        }
+      ]
+    },
+    {
+      "number": 97,
+      "id": "I_kwDOI7aIXc6DEn9-",
+      "title": "Mention that CCs should not impair the path for others",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/97",
+      "state": "OPEN",
+      "author": "ekinnear",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "IETF 119"
+      ],
+      "body": "Raised at IETF 119: We may want to consider mentioning that you shouldn't impair the path for others.",
+      "createdAt": "2024-03-21T03:19:15Z",
+      "updatedAt": "2024-03-21T03:19:21Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 98,
+      "id": "I_kwDOI7aIXc6DEpbP",
+      "title": "Data centers with really small RTTs should be discussed as a special case",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/98",
+      "state": "OPEN",
+      "author": "ekinnear",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "IETF 119"
+      ],
+      "body": "From IETF 119: Data centers with really small RTTs should be discussed as a special case",
+      "createdAt": "2024-03-21T03:22:46Z",
+      "updatedAt": "2024-03-21T04:28:53Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "ekinnear",
+          "authorAssociation": "NONE",
+          "body": "- @huitema: We need to be specific about what we mean by datacenter (e.g. Hadoop queries), please give some details about the data center scenarios that we want to take into account\r\n- @larseggert: Typically you see proposals that rely on the fabric doing non-internet-y things, often there's combined implementation with the data plane, so we need to be specific there. Also saw some presentations this week about non-ethernet fabrics, need to describe what you see from your fabric and what you can then do from a congestion control perspective.\r\n- @jefftant: Some spillover from IPPM, doesn't work on public internet and not intended to. Number of things being deployed today, massive clusters, 100,000 endpoints constantly talking to each other. Special congestion controllers are very much needed. Trying to keep CPU/GPU non-idle all the time. We need something that is fast within 1-2 RTTs, doesn't matter if done on endpoints, NICs, switches.",
+          "createdAt": "2024-03-21T03:30:49Z",
+          "updatedAt": "2024-03-21T03:31:31Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "There are sets of specific network characteristics; some of this relies on non-IETF specs and it would help to know the interop requirements between implementations and also what the coexistence requirements are for other flows.",
+          "createdAt": "2024-03-21T04:28:52Z",
+          "updatedAt": "2024-03-21T04:28:52Z"
+        }
+      ]
+    },
+    {
+      "number": 99,
+      "id": "I_kwDOI7aIXc6DEub9",
+      "title": "Oscillations in over-utilization and under-utilization cycle can be added under the evaluation criteria",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/99",
+      "state": "OPEN",
+      "author": "altanai",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": " Since this is a problematic behaviour because it leads to an inefficient use of network resources and can cause variable/unreliable performance ( high speed followed by low speed so on ).  Maybe new Cc algorithms can focus on stability in this area. ",
+      "createdAt": "2024-03-21T03:44:58Z",
+      "updatedAt": "2024-03-22T04:52:09Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I agree that oscillations in the rate can really impact performance, and that this might be useful as a performance result.\r\nDo you think this translates in to harm for other flows (e.g., starvation)  or poor use of the available capacity? \r\n",
+          "createdAt": "2024-03-21T04:16:00Z",
+          "updatedAt": "2024-03-21T04:16:00Z"
+        },
+        {
+          "author": "altanai",
+          "authorAssociation": "NONE",
+          "body": "Exactly. I think such cycles would be detrimental to end-user experience, any telemetric system that a network service provider may be using  as well as the both the points you mentioned.",
+          "createdAt": "2024-03-21T18:59:08Z",
+          "updatedAt": "2024-03-21T18:59:08Z"
+        },
+        {
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "body": "We have to be a bit careful about recommending stability. I remember Van Jacobson explaining that yes, a more stable version of Reno would be a bit more efficient, but then it would also not adapt so quickly to changes in network conditions. There might be a tradeoff there.\r\n\r\nSo maybe we need to be very clear about the characteristics of the oscillation that we do not want. @altanai are you thinking about something like the \"saw tooth\" patterns of RENO, or the similar patterns in Cubic? Or do you have some example of worse oscillations?",
+          "createdAt": "2024-03-22T04:52:08Z",
+          "updatedAt": "2024-03-22T04:52:08Z"
+        }
+      ]
+    },
+    {
+      "number": 100,
+      "id": "I_kwDOI7aIXc6DE0gK",
+      "title": "Section 5 editorial comments",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/100",
+      "state": "OPEN",
+      "author": "gwhiteCL",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "1. The second paragraph of 5 reads:\r\n\r\n> In general, measurements from Internet-scale deployments will not expose the properties of operation in these scenarios, as they are statistically small.\r\n\r\nI probably agree that _some_ of the scenarios are statistically small, and may remain that way in the future, but others aren't all that statistically small even today and/or could become less small in the foreseeable future.  AQM is now reasonably widely deployed, anyone with Starlink internet sees varying delay, most Wi-Fi links exhibit periodic transient link disconnections during channel scanning, etc.  I'd suggest something like:\r\n\r\n> In general, measurements from Internet-scale deployments may not expose the properties of operation in each these scenarios, as they are not as ubiquitous as the General Use scenarios.\r\n\r\n\r\n2. The first paragraph of 5.7 Transient Events reads:\r\n\r\n> The proposal SHOULD consider how the proposed congestion control algorithm would perform in the presence of transient events such as sudden onset of congestion, a routing change, or a mobility event. Routing changes, link disconnections, intermittent link connectivity, and mobility are discussed in more detail in Section 17 of [[Tools](https://www.ietf.org/archive/id/draft-ietf-ccwg-rfc5033bis-03.html#Tools)].\r\n\r\nThe [Tools] link takes one to https://datatracker.ietf.org/doc/draft-irtf-tmrg-tools, where Section 17 provides us with: \r\n\r\n> 17.  Using the Tools Presented in this Document\r\n> \r\n>     [To be done.]\r\n\r\nWas this intended to be a joke?  .... Actually, I think you meant Section 16.",
+      "createdAt": "2024-03-21T04:14:15Z",
+      "updatedAt": "2024-03-21T13:34:15Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is indeed long-since expired: title: Tools for the Evaluation of Simulation and Testbed Scenarios target: \"https://datatracker.ietf.org/doc/draft-irtf-tmrg-tools\" seriesinfo: Work in Progress date: 2007-7 author: - ins: S. Floyd - ins: E. Kohler.\r\n",
+          "createdAt": "2024-03-21T13:34:13Z",
+          "updatedAt": "2024-03-21T13:34:13Z"
+        }
+      ]
+    },
+    {
+      "number": 101,
+      "id": "I_kwDOI7aIXc6DKDAx",
+      "title": "there should be a \"Protection Against High Packet Loss\" subsection of \"Single Algorithm Behavior\"",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/101",
+      "state": "OPEN",
+      "author": "nealcardwell",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The \"Single Algorithm Behavior\" section has a \"Protection Against Bufferbloat\" section. That's great. That's basically saying CCs should try to keep congestive delay at reasonable levels. But I would imagine there's a consensus that we would also say that CCs should try to keep congestive packet loss rates at reasonable levels. So IMHO there should be a \"Protection Against High Packet Loss\" subsection of \"Single Algorithm Behavior\".\r\n\r\nThis is important for \"Single Algorithm Behavior\"  because even if a congestion control algorithm can tolerate high loss, many types of short request/response traffic do not want to pay the loss recovery performance penalty induced by high loss rates.\r\n\r\nI can propose a pull request if there are no other volunteers.\r\n\r\ncc: @martinduke @gorryfair ",
+      "createdAt": "2024-03-21T15:09:04Z",
+      "updatedAt": "2024-03-22T19:05:20Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Yes, fair. The classic offender there is the \"slow start\" process of Reno (or Cubic). Last time I did measurements, it was fairly clear that this process was responsible for the bulk of packet losses experienced by short connections, and was also causing parallel connections to experience significant packet losses. In general, all CC algorithms that rely on packet losses for detecting congestion have that issue. But we have to be a bit careful to not come out as \"dissing the algorithm that everybody uses\".",
+          "createdAt": "2024-03-22T04:58:57Z",
+          "updatedAt": "2024-03-22T04:58:57Z"
+        },
+        {
+          "author": "nealcardwell",
+          "authorAssociation": "NONE",
+          "body": "FWIW I was not thinking of losses from the initial slow-start overshoot, but mainly just losses in steady state.  AFAIK for sufficiently shallow buffers all widely-deployed current algorithms (Reno, CUBIC, BBR) will have slow-start overshoot and cause high loss. IMHO that's just the BCP trade-off currently to favor rapid utilization of available bandwidth when the path properties are unknown.\r\n\r\nI just wanted to have some text about wanting CC algorithms to avoid generating high packet loss in the steady state. So I meant to implicitly categorize Reno/CUBIC behavior in most scenarios as already meeting this requirement (except perhaps in scenarios where the fair share cwnd is low; e.g. when the fair share cwnd is 2-3 packets Reno/CUBIC do generate very high packet loss rates, like 20% or so: send 2 packets, 2 packets ACKed; send 3 packets, 2 packets ACKed and 1 packet lost; repeat; loss rate is 1 packet / 5 packets sent = 20%).\r\n\r\ncc: @mattmathis\r\n",
+          "createdAt": "2024-03-22T12:39:17Z",
+          "updatedAt": "2024-03-22T12:39:17Z"
+        },
+        {
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Do you have example of deployed systems that generate high packet losses, e.g., larger than Reno or Cubic? I am only aware of toy systems, like sending a file by sending a stream of packets at maximum speed, then cycle repeating all the unacked packets at maximum speed. I think some people call that the \"Hilfinger protocol\", but I could not find a reference -- and I believe nobody actually ships that, let alone tries to get it through the IETF.",
+          "createdAt": "2024-03-22T18:43:08Z",
+          "updatedAt": "2024-03-22T18:43:08Z"
+        },
+        {
+          "author": "nealcardwell",
+          "authorAssociation": "NONE",
+          "body": "> Do you have example of deployed systems that generate high packet losses, e.g., larger than Reno or Cubic?\r\n\r\nSure. For example, BBRv1 will generate high packet losses with multiple BBRv1 flows and a bottleneck buffer less than roughly 1.5*BDP, as has been discussed at the IETF and in papers (e.g., \"Experimental evaluation of BBR congestion control\": https://ieeexplore.ieee.org/document/8117540).\r\n",
+          "createdAt": "2024-03-22T18:57:57Z",
+          "updatedAt": "2024-03-22T18:57:57Z"
+        },
+        {
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks. That reference will help writing a short section.",
+          "createdAt": "2024-03-22T19:05:19Z",
+          "updatedAt": "2024-03-22T19:05:19Z"
         }
       ]
     }
