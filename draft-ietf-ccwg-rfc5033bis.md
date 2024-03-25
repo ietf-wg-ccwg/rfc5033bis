@@ -680,6 +680,16 @@ these effects also ought to be evaluated.
 At the time of writing, there are no IETF standards for concurrent
 multipath congestion control in the general Internet.
 
+## Data Centers
+
+Data centers are characterized by very low latencies (< 2 ms). Many workloads
+involve bursty traffic where many nodes complete a task at the same time. As a
+controlled environment, data centers often deploy fabrics that employ rich
+signalling from switches to endpoints. Furthermore, the operator can often limit
+the number of operating congestion controls. A proposed congestion control need
+not coexist well with all other algorithms, but the proposal SHOULD indicate
+which are expected to safely coexist with it.
+
 # Security Considerations
 
 This document does not represent a change to any aspect of the TCP/IP
