@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-24T00:40:11.617136+00:00",
+  "timestamp": "2024-03-26T00:35:47.568901+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1572,9 +1572,17 @@
       ],
       "body": "Raised at IETF 119: We may want to consider mentioning that you shouldn't impair the path for others.",
       "createdAt": "2024-03-21T03:19:15Z",
-      "updatedAt": "2024-03-21T03:19:21Z",
+      "updatedAt": "2024-03-25T21:27:38Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This was Lars's contribution. I'm not sure there's anything to do here given what's already in the draft.",
+          "createdAt": "2024-03-25T21:23:36Z",
+          "updatedAt": "2024-03-25T21:27:38Z"
+        }
+      ]
     },
     {
       "number": 98,
@@ -1683,7 +1691,7 @@
       "labels": [],
       "body": "The \"Single Algorithm Behavior\" section has a \"Protection Against Bufferbloat\" section. That's great. That's basically saying CCs should try to keep congestive delay at reasonable levels. But I would imagine there's a consensus that we would also say that CCs should try to keep congestive packet loss rates at reasonable levels. So IMHO there should be a \"Protection Against High Packet Loss\" subsection of \"Single Algorithm Behavior\".\r\n\r\nThis is important for \"Single Algorithm Behavior\"  because even if a congestion control algorithm can tolerate high loss, many types of short request/response traffic do not want to pay the loss recovery performance penalty induced by high loss rates.\r\n\r\nI can propose a pull request if there are no other volunteers.\r\n\r\ncc: @martinduke @gorryfair ",
       "createdAt": "2024-03-21T15:09:04Z",
-      "updatedAt": "2024-03-22T19:05:20Z",
+      "updatedAt": "2024-03-25T21:54:53Z",
       "closedAt": null,
       "comments": [
         {
@@ -1720,6 +1728,13 @@
           "body": "Thanks. That reference will help writing a short section.",
           "createdAt": "2024-03-22T19:05:19Z",
           "updatedAt": "2024-03-22T19:05:19Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@nealcardwell @huitema you both hint you'd like to write a PR. Who's going to do it.?",
+          "createdAt": "2024-03-25T21:54:52Z",
+          "updatedAt": "2024-03-25T21:54:52Z"
         }
       ]
     }
@@ -6351,6 +6366,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 102,
+      "id": "PR_kwDOI7aIXc5qtlml",
+      "title": "Datacenter",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/102",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #98",
+      "createdAt": "2024-03-25T21:38:31Z",
+      "updatedAt": "2024-03-25T21:38:34Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "0709709ab5be54e546178fdf06c209b32e71c7f9",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "datacenter",
+      "headRefOid": "97d95599c34a0def6ba2934a8220985a111684dd",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
