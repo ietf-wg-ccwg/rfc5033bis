@@ -516,8 +516,8 @@ scenario. The community MAY allow a proposal to progress even if the criteria
 indicate an unsatisfactory result for these scenarios.
 
 In general, measurements from Internet-scale deployments might not expose the
-properties of operation in each these scenarios, as they are not as ubiquitous
-as the General Use scenarios.
+properties of operation in each of these scenarios, because they are not as
+ubiquitous as the General Use scenarios.
 
 ## Active Queue Management (AQM) {#aqm}
 
