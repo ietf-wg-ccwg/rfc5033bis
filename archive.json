@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-26T00:35:47.568901+00:00",
+  "timestamp": "2024-03-28T00:36:11.779362+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1572,7 +1572,7 @@
       ],
       "body": "Raised at IETF 119: We may want to consider mentioning that you shouldn't impair the path for others.",
       "createdAt": "2024-03-21T03:19:15Z",
-      "updatedAt": "2024-03-25T21:27:38Z",
+      "updatedAt": "2024-03-26T09:46:04Z",
       "closedAt": null,
       "comments": [
         {
@@ -1581,6 +1581,13 @@
           "body": "This was Lars's contribution. I'm not sure there's anything to do here given what's already in the draft.",
           "createdAt": "2024-03-25T21:23:36Z",
           "updatedAt": "2024-03-25T21:27:38Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agree, let's keep the issue open and re-read the draft after all edits - at most I expect this would need to be called out earlier.",
+          "createdAt": "2024-03-26T09:46:03Z",
+          "updatedAt": "2024-03-26T09:46:03Z"
         }
       ]
     },
@@ -6379,7 +6386,7 @@
       "labels": [],
       "body": "Fixes #98",
       "createdAt": "2024-03-25T21:38:31Z",
-      "updatedAt": "2024-03-25T21:38:34Z",
+      "updatedAt": "2024-03-26T17:13:43Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "0709709ab5be54e546178fdf06c209b32e71c7f9",
@@ -6390,8 +6397,70 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think this is the tip of a larger iceberg, and I'd suggest we'd need to go deeper, if the IETF now thinks they may produce specs in this space.\r\n\r\nAs I recall (others may add to the list), there  are challenges to be considered by a proponent/IETF, which include:\r\n- 1. Does the proposal rely on technologies specified by other Forums/SDOs?\r\n- 2. Does the IETF have sufficient experience of the DC requirements and to review the proposals?\r\n- 3. Does the proposal include experience of interoperability between different implementations? or a plan for this?\r\n- 4. Does the DC traffic share resources with Internet traffic?\r\n- 5. Specifically: does the method to be used *between* DCs or only *within* DCs? - How is this usage scoped? And what happens when the protocol is bridged across an Internet path?\r\n\r\nOne or more of these has in the past thwarted progress towards adoption in the IETF, can we say something about this?",
+          "createdAt": "2024-03-26T10:01:58Z",
+          "updatedAt": "2024-03-26T10:01:58Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Do you want to take a shot at it? Do we need a completely different section about DC algorithms?",
+          "createdAt": "2024-03-26T17:13:41Z",
+          "updatedAt": "2024-03-26T17:13:41Z"
+        }
+      ],
       "reviews": []
+    },
+    {
+      "number": 103,
+      "id": "PR_kwDOI7aIXc5q01p1",
+      "title": "Greg White review",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/103",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #100 ",
+      "createdAt": "2024-03-26T17:31:26Z",
+      "updatedAt": "2024-03-26T19:35:23Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "0709709ab5be54e546178fdf06c209b32e71c7f9",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "white-review",
+      "headRefOid": "dd38e07094268c8ce9758ff7cafd0c679f4e01ba",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc506qZ_",
+          "commit": {
+            "abbreviatedOid": "dd38e07"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-26T19:35:22Z",
+          "updatedAt": "2024-03-26T19:35:23Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Suggestions:\r\n/in each of these/\r\n/as they are/because they are/",
+              "createdAt": "2024-03-26T19:35:22Z",
+              "updatedAt": "2024-03-26T19:35:23Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
