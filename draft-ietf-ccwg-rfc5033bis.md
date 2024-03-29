@@ -514,8 +514,9 @@ following scenarios, unless the proposal specifically excludes its use in a
 scenario. The community MAY allow a proposal to progress even if the criteria
 indicate an unsatisfactory result for these scenarios.
 
-In general, measurements from Internet-scale deployments will not expose the
-properties of operation in these scenarios, as they are statistically small.
+In general, measurements from Internet-scale deployments might not expose the
+properties of operation in each of these scenarios, because they are not as
+ubiquitous as the General Use scenarios.
 
 ## Active Queue Management (AQM) {#aqm}
 
@@ -624,7 +625,7 @@ algorithm would perform in the presence of transient events such
 as sudden onset of congestion, a routing change, or a mobility event.
 Routing changes, link disconnections, intermittent link
 connectivity, and mobility are discussed in more detail in
-Section 17 of {{Tools}}.
+Section 16 of {{Tools}}.
 
 As an example from an Experimental RFC, response to transient
 events is discussed in Section&nbsp;9.2 of {{?RFC4782}} (Quick-Start).
