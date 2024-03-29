@@ -266,7 +266,7 @@ to deploy, but deployment would not be recommended because it
 could lead to unnecessary delays for the connections attempting to use
 Quick-Start. The Quick-Start method is discussed as an example in {{?RFC9049}}.
 
-Though out of scope of this document, a proponent of a new
+Alhough out of the scope of this document, a proponent of a new
 algorithm could alternatively
 seek publication as an Informational or Experimental RFC via the Internet
 Research Task Force (IRTF).
