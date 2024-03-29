@@ -1,12 +1,7 @@
 ---
 title: "Specifying New Congestion Control Algorithms"
-<<<<<<< HEAD
-abbrev: "Proposing New CC Algorithms"
-docname: draft-ietf-ccwg-rfc5033bis-latest
-=======
 abbrev: "New CC Algorithms"
 docname: draft-ietf-ccwg-rfc5033bis
->>>>>>> 860ccb4 (rebase)
 category: bcp
 stream: IETF
 obsoletes: 5033
