@@ -73,8 +73,7 @@ informative:
     - ins: E. Kohler
 
   Bufferbloat:
-    title: Bufferbloat: Dark Buffers in the Internet
-Networks without effective AQM may again be vulnerable to congestion collapse.
+    title: "Bufferbloat: Dark Buffers in the Internet"
     target: https://queue.acm.org/detail.cfm?id=2071893
     author:
       ins: Jim Gettys
