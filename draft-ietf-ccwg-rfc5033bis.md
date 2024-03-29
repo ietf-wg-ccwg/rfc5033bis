@@ -680,6 +680,19 @@ these effects also ought to be evaluated.
 At the time of writing, there are no IETF standards for concurrent
 multipath congestion control in the general Internet.
 
+## Data Centers
+
+Data centers are characterized by very low latencies (< 2 ms). Many workloads
+involve bursty traffic where many nodes complete a task at the same time. As a
+controlled environment, data centers often deploy fabrics that employ rich
+signalling from switches to endpoints. Furthermore, the operator can often limit
+the number of operating congestion controls.
+
+For these reasons, data center congestion controls are often distinct from those
+running elsewhere on the Interenet.  A proposed congestion control need not
+coexist well with all other algorithms if it is intended for data centers, but
+the proposal SHOULD indicate which are expected to safely coexist with it.
+
 # Security Considerations
 
 This document does not represent a change to any aspect of the TCP/IP
@@ -718,6 +731,11 @@ contributions to that document.  It also drew from {{?RFC5166}}.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
+
+## Since draft-ietf-ccwg-rfc5033bis-03
+{:numbered="false"}
+
+- Added discussion of data centers
 
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
