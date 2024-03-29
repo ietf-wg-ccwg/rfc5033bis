@@ -119,8 +119,7 @@ In 2007, TCP was the dominant consumer of this work, and proposals for changes
 to the congestion control algorithms
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
 SCTP {{?RFC9260}} followed the congestion control algorithms specified for TCP.
-DCCP {{?RFC4340}}, provided support 
-for congestion control algorithms
+DCCP {{?RFC4340}}, provided support for congestion control algorithms
 similar to TCP, but also other congestion control algorithms.
 
 Since RFC 5033 was published, many conditions have changed.
@@ -202,7 +201,7 @@ developers of alternative algorithms and by the IETF
 in the context of each proposal.
 
 The high-order criterion for advancing any proposal
-is a serious scientific study of the pros and cons of 
+is a serious scientific study of the pros and cons of
 the congestion control algorithm that is brought to the IETF and
 considered for publication by the IETF.
 
