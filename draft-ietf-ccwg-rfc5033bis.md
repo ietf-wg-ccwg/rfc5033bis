@@ -73,12 +73,7 @@ informative:
     - ins: E. Kohler
 
   Bufferbloat:
-<<<<<<< HEAD
     title: "Bufferbloat: Dark Buffers in the Internet"
-=======
-    title: Bufferbloat: Dark Buffers in the Internet
-Networks without effective AQM may again be vulnerable to congestion collapse.
->>>>>>> 860ccb4 (rebase)
     target: https://queue.acm.org/detail.cfm?id=2071893
     author:
       ins: Jim Gettys
@@ -119,35 +114,16 @@ performance challenges in various environments
 long distance satellite links)
 and also flows carrrying specific workloads (VoIP, gaming, and videoconferencing).
 
-<<<<<<< HEAD
-In 2007, TCP was the dominant consumer of this work, and proposals for changes
-to the congestion control algorithms
-were typically discussed in the Internet Congestion Control Research Group (ICCRG).
-SCTP {{?RFC9260}} followed the congestion control algorithms specified for TCP.
-DCCP {{?RFC4340}}, provided support for congestion control algorithms
-similar to TCP, but also other congestion control algorithms.
-
-Since RFC 5033 was published, many conditions have changed.
-The set of protocols using these algorithms has spread beyond
-TCP, SCTP and DCCP. This set now includes QUIC {{?RFC9000}},
-RTP Media Congestion Avoidance Techniques (RMCAT) and probably more.
-
-=======
 In 2007, TCP was the dominant consumer of this work, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
-The Datagream Congestrion Copntrol Protocol (DCCP)
-<<<<<<< HEAD
+The Datagram Congestrion Copntrol Protocol (DCCP)
 was developed as a method for developing new congestion control algorithms for
 datagram traffic.
-=======
-was developed as a method for developing congestion control algorithms for
-datagram flows.
->>>>>>> 248a691 (Try to fix build. Update draft-ietf-ccwg-rfc5033bis)
 
 Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
 TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}}, RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
->>>>>>> 860ccb4 (rebase)
+
 Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
 There is more interest in specialized use cases, such as data centers, and in
@@ -222,15 +198,9 @@ developers of alternative algorithms and by the IETF
 in the context of each proposal.
 
 The high-order criterion for advancing any proposal
-<<<<<<< HEAD
-is a serious scientific study of the pros and cons of
-the congestion control algorithm that is brought to the IETF and
-considered for publication by the IETF.
-=======
 is a serious scientific study of the pros and cons that occur when the proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.
->>>>>>> 860ccb4 (rebase)
 
 After initial studies, we encourage authors to write a specification
 of their proposal for publication in the RFC series. This allows others
@@ -279,11 +249,7 @@ perform well for the user.
 
 As examples of such statements, {{?RFC3649}} specifying HighSpeed TCP
 includes a statement in the abstract stating that the proposed congestion control algorithm is
-<<<<<<< HEAD
 Experimental, but may be deployed in the current Internet. In
-=======
-Experimental, but may be deployed in the current Internet.  In
->>>>>>> 860ccb4 (rebase)
 contrast, the Quick-Start document {{?RFC4782}} includes a paragraph in
 the abstract stating the mechanism is only being proposed for
 use in controlled environments.  The abstract specifies environments where
@@ -300,11 +266,7 @@ Alhough out of the scope of this document, a proponent of a new
 algorithm could alternatively
 seek publication as an Informational or Experimental RFC via the Internet
 Research Task Force (IRTF).
-<<<<<<< HEAD
 In general, these algorithms are expected to be less
-=======
-In general, these x are expected to be less
->>>>>>> 860ccb4 (rebase)
 mature than ones that follow the procedures in this document. Authors documenting
 deployed congestion control algorithms that cannot be changed by IETF or IRTF review
 are invited to publish as an Informational RFC via the Independent Stream Editor
@@ -314,12 +276,7 @@ are invited to publish as an Informational RFC via the Independent Stream Editor
 
 As noted above, authors are expected to do a well-rounded evaluation
 of the pros and cons of congestion control algorithms that are brought to the IETF.
-<<<<<<< HEAD
 The following guidelines are designed to help authors and the IETF community. Concerns that
-=======
-The following
-are guidelines to help authors and the IETF community.  Concerns that
->>>>>>> 860ccb4 (rebase)
 fall outside the scope of these guidelines are certainly possible;
 these guidelines should not be considered as an all-encompassing
 check-list.
@@ -330,11 +287,7 @@ domains (see {{general-use}} and {{special-cases}}).
 
 ## Single Algorithm Behavior
 
-<<<<<<< HEAD
 The criteria in this section evaluate the congestion control algorithm when one or more flows
-=======
-The following criteria evaluate the congestion control algorithm when one or more flows
->>>>>>> 860ccb4 (rebase)
 using that algorithm share a bottleneck link (i.e. with no flows
 using a differing congestion control algorithm).
 
@@ -398,11 +351,7 @@ of long flows. However, many Internet flows are relatively short-lived. If flows
 never experience a packet loss, a short-lived flow remains in the "slow start" mode of
 operation {{?RFC5681}} that commonly features exponential congestion window growth.
 
-<<<<<<< HEAD
 A proposed congestion control algorithm MUST consider how new and short-lived flows affect long-lived flows,
-=======
-A proposed new congestion control algorithm MUST consider how new and short-lived flows affect long-lived flows,
->>>>>>> 860ccb4 (rebase)
 and vice versa.
 
 ## Mixed Algorithm Behavior
@@ -463,11 +412,7 @@ flows can be less frequent than the acknowledgements provided by reliable
 transports. This document does not change the informational status of those
 RFCs.
 
-<<<<<<< HEAD
-A proposed congestion control algorithms SHOULD consider coexistence with widely deployed real-time
-=======
-New proposed congestion control algorithms SHOULD consider coexistence with widely deployed real-time
->>>>>>> 860ccb4 (rebase)
+A proposed congestion control algorithm SHOULD consider coexistence with widely deployed real-time
 congestion control algorithms. Regrettably, at the time of writing, many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
@@ -533,17 +478,8 @@ bandwidths, delays, and queue depths. Of course, the set of parameters
 representative of the public Internet will change over time.
 
 These criteria are intended to capture a statistically dominant set of Internet
-<<<<<<< HEAD
-<<<<<<< HEAD
 conditions. In the case that a proposed congestion control algorithm
 has been tested at Internet scale,
-=======
-conditions. In the case that a proposed congestion control algorithm has been tested at Internet scale,
->>>>>>> 860ccb4 (rebase)
-=======
-conditions. In the case that a proposed congestion control algorithm
-has been tested at Internet scale,
->>>>>>> 248a691 (Try to fix build. Update draft-ietf-ccwg-rfc5033bis)
 the results from that deployment are often useful for answering these questions.
 
 ## Paths with Tail-drop Queues
@@ -557,15 +493,7 @@ disciplines.
 
 When a proposed congestion control algorithm relies on explicit signals from the path, the proposal
 MUST consider the effect of
-<<<<<<< HEAD
-<<<<<<< HEAD
-flow passing through a tunnel, where routers may not be aware of the
-=======
 traffic passing through a tunnel, where routers may not be aware of the
->>>>>>> 860ccb4 (rebase)
-=======
-flow passing through a tunnel, where routers may not be aware of the
->>>>>>> 248a691 (Try to fix build. Update draft-ietf-ccwg-rfc5033bis)
 flow.
 
 ## Wired Paths
@@ -591,15 +519,10 @@ discussion of wireless properties.
 # Special Cases {#special-cases}
 
 The criteria in {{evaluation-criteria}} will be evaluated in the
-<<<<<<< HEAD
 following scenarios, unless the proposed congestion control
 algorithm specifically excludes its use in a
 scenario. For these specific use-cases, the community
 MAY allow a proposal to progress even if the criteria
-=======
-following scenarios, unless the proposed congestion control algorithm specifically excludes its use in a
-scenario. For these specific use-cases, the community MAY allow a proposal to progress even if the criteria
->>>>>>> 860ccb4 (rebase)
 indicate an unsatisfactory result for these scenarios.
 
 In general, measurements from Internet-scale deployments might not expose the
@@ -608,11 +531,7 @@ ubiquitous as the General Use scenarios.
 
 ## Active Queue Management (AQM) {#aqm}
 
-<<<<<<< HEAD
 The proposed congestion control algorithm SHOULD be evaluated under a variety of bottleneck queue disciplines.
-=======
-proposed congestion control algorithm SHOULD be evaluated under a variety of bottleneck queue disciplines.
->>>>>>> 860ccb4 (rebase)
 The effect of an AQM discipline can be hard to detect by Internet evaluation.
 At a minimum, a proposal should reason about an algorithm's response to various
 AQM disciplines. Simulation or empirical results are, of course, valuable.
@@ -691,13 +610,8 @@ Robustness to delay and delay variation may be a key evaluation metric.
 
 A proposed congestion control algorithm should explore
 how the algorithm performs with non-compliant senders, receivers, or
-<<<<<<< HEAD
 routers.  In addition, the proposal should explore how a
 proposed congestion control algorithm performs with outside
-=======
-routers.  In addition, the proposal should explore how an
-alternate congestion control algorithm performs with outside
->>>>>>> 860ccb4 (rebase)
 attackers.  This can be particularly important for proposed congestion control algorithms
 that involve explicit feedback from routers
 along the path.
@@ -712,12 +626,8 @@ available Quick-Start bandwidth.
 
 ## Extreme Packet Reordering
 
-<<<<<<< HEAD
 A proposed congestion control algorithm ought not to presume that all general
 Internet paths reliably deliver
-=======
-A proposed congestion control algorithm ought not to presume that all general Internet paths reliably deliver
->>>>>>> 860ccb4 (rebase)
 packets in order. {{?RFC4653}} discusses the effect of extreme packet reordering.
 
 ## Transient Events
