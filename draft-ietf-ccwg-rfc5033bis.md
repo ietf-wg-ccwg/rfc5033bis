@@ -727,8 +727,8 @@ Sally Floyd and Mark Allman were the authors of this document's predecessor,
 
 Thanks to Richard Scheffenegger for helping to get this revision process started.
 
-The editors would like to thanks to Neal Cardwell, Reese Enghardt and Dave Taht
-for suggesting improvements to this document.
+The editors would like to thanks to Neal Cardwell, Reese Enghardt, Dave Taht,
+Michael Welzl, or suggesting improvements to this document.
 
 Discussions with Lars Eggert and Aaron Falk seeded the original RFC5033.
 Bob Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye,
