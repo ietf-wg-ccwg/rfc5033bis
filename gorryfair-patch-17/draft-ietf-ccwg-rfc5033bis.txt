@@ -104,6 +104,7 @@ Table of Contents
      5.7.  Transient Events
        5.7.1.  Sudden changes in the Path
      5.8.  Multipath Transport
+     5.9.  Data Centers
    6.  Security Considerations
    7.  IANA Considerations
    8.  References
@@ -142,17 +143,15 @@ Table of Contents
    gaming, and videoconferencing).
 
    In 2007, TCP was the dominant consumer of this work, and proposals
-   for changes to the congestion control algorithms were typically
-   discussed in the Internet Congestion Control Research Group (ICCRG).
-   SCTP [RFC9260] followed the congestion control algorithms specified
-   for TCP.  DCCP [RFC4340], provided support for congestion control
-   algorithms similar to TCP, but also other congestion control
-   algorithms.
+   were typically discussed in the Internet Congestion Control Research
+   Group (ICCRG).  The Datagram Congestrion Copntrol Protocol (DCCP) was
+   developed as a method for developing new congestion control
+   algorithms for datagram traffic.
 
    Since RFC 5033 was published, many conditions have changed.  The set
-   of protocols using these algorithms has spread beyond TCP, SCTP and
-   DCCP.  This set now includes QUIC [RFC9000], RTP Media Congestion
-   Avoidance Techniques (RMCAT) and probably more.
+   of protocols using these algorithms has spread beyond TCP, SCTP
+   [RFC9260], and DCCP [RFC4340], to include QUIC [RFC9000], RTP Media
+   Congestion Avoidance Techniques (RMCAT) and beyond.
 
    Some proponents of alternative congestion control algorithms now have
    the opportunity to test and deploy at scale without IETF review.
@@ -231,9 +230,9 @@ Table of Contents
    context of each proposal.
 
    The high-order criterion for advancing any proposal is a serious
-   scientific study of the pros and cons of the congestion control
-   algorithm that is brought to the IETF and considered for publication
-   by the IETF.
+   scientific study of the pros and cons that occur when the proposal is
+   considered for publication by the IETF or before it is deployed at
+   large scale.
 
    After initial studies, we encourage authors to write a specification
    of their proposal for publication in the RFC series.  This allows
@@ -447,7 +446,7 @@ Table of Contents
    acknowledgements provided by reliable transports.  This document does
    not change the informational status of those RFCs.
 
-   A proposed congestion control algorithms SHOULD consider coexistence
+   A proposed congestion control algorithm SHOULD consider coexistence
    with widely deployed real-time congestion control algorithms.
    Regrettably, at the time of writing, many algorithms with detailed
    public specifications are not widely deployed, while many widely
@@ -527,8 +526,9 @@ Table of Contents
 4.2.  Tunnel Behavior
 
    When a proposed congestion control algorithm relies on explicit
-   signals from the path, the proposal MUST consider the effect of flow
-   passing through a tunnel, where routers may not be aware of the flow.
+   signals from the path, the proposal MUST consider the effect of
+   traffic passing through a tunnel, where routers may not be aware of
+   the flow.
 
 4.3.  Wired Paths
 
@@ -715,12 +715,12 @@ Table of Contents
    (latency, throughput, reliability, cost).  Designs need to
    independently track the congestion state of each path, and need to
    demonstrate independent congestion control for each path being used.
-   A proposed multipath congestion control algorithm that implements
-   path fail-over MUST evaluate the harm resulting from a change in the
-   path, and show that this does not result in flow starvation.
-   Synchronisation of failover (e.g., where multiple flows change their
-   path on similar timeframes) can also contribute to harm and/or reduce
-   fairness, these effects also ought to be evaluated.
+   Authors of a proposed multipath congestion control algorithm that
+   implements path fail-over MUST evaluate the harm resulting from a
+   change in the path, and show that this does not result in flow
+   starvation.  Synchronisation of failover (e.g., where multiple flows
+   change their path on similar timeframes) can also contribute to harm
+   and/or reduce fairness, these effects also ought to be evaluated.
 
    Another example use is concurrent multipath, where the transport
    protocol simultaneously schedules flows to aggregate the capacity
@@ -737,6 +737,21 @@ Table of Contents
    effects also ought to be evaluated.  At the time of writing, there
    are no IETF standards for concurrent multipath congestion control in
    the general Internet.
+
+5.9.  Data Centers
+
+   Data centers are characterized by very low latencies (< 2 ms).  Many
+   workloads involve bursty traffic where many nodes complete a task at
+   the same time.  As a controlled environment, data centers often
+   deploy fabrics that employ rich signalling from switches to
+   endpoints.  Furthermore, the operator can often limit the number of
+   operating congestion controls.
+
+   For these reasons, data center congestion controls are often distinct
+   from those running elsewhere on the Interenet.  A proposed congestion
+   control need not coexist well with all other algorithms if it is
+   intended for data centers, but the proposal SHOULD indicate which are
+   expected to safely coexist with it.
 
 6.  Security Considerations
 

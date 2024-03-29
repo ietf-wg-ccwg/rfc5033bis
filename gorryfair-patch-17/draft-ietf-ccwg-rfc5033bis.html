@@ -1031,7 +1031,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">Proposing New CC Algorithms</td>
+<td class="center">New CC Algorithms</td>
 <td class="right">March 2024</td>
 </tr></thead>
 <tfoot><tr>
@@ -1249,6 +1249,9 @@ changes in the congestion control landscape.<a href="#section-abstract-1" class=
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.8">
                 <p id="section-toc.1-1.5.2.8.1"><a href="#section-5.8" class="auto internal xref">5.8</a>.  <a href="#name-multipath-transport" class="internal xref">Multipath Transport</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.9">
+                <p id="section-toc.1-1.5.2.9.1"><a href="#section-5.9" class="auto internal xref">5.9</a>.  <a href="#name-data-centers" class="internal xref">Data Centers</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
@@ -1324,16 +1327,14 @@ performance challenges in various environments
 (e.g., high-speed networks, cellular and WiFi wireless technologies,
 long distance satellite links)
 and also flows carrrying specific workloads (VoIP, gaming, and videoconferencing).<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">In 2007, TCP was the dominant consumer of this work, and proposals for changes
-to the congestion control algorithms
+<p id="section-1-4">In 2007, TCP was the dominant consumer of this work, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
-SCTP <span>[<a href="#RFC9260" class="cite xref">RFC9260</a>]</span> followed the congestion control algorithms specified for TCP.
-DCCP <span>[<a href="#RFC4340" class="cite xref">RFC4340</a>]</span>, provided support for congestion control algorithms
-similar to TCP, but also other congestion control algorithms.<a href="#section-1-4" class="pilcrow">¶</a></p>
+The Datagram Congestrion Copntrol Protocol (DCCP)
+was developed as a method for developing new congestion control algorithms for
+datagram traffic.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <p id="section-1-5">Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP, SCTP and DCCP. This set now includes QUIC <span>[<a href="#RFC9000" class="cite xref">RFC9000</a>]</span>,
-RTP Media Congestion Avoidance Techniques (RMCAT) and probably more.<a href="#section-1-5" class="pilcrow">¶</a></p>
+TCP, SCTP <span>[<a href="#RFC9260" class="cite xref">RFC9260</a>]</span>, and DCCP <span>[<a href="#RFC4340" class="cite xref">RFC4340</a>]</span>, to include QUIC <span>[<a href="#RFC9000" class="cite xref">RFC9000</a>]</span>, RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <p id="section-1-6">Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
 There is more interest in specialized use cases, such as data centers, and in
@@ -1405,9 +1406,9 @@ a set of criteria that should be considered and weighed by the
 developers of alternative algorithms and by the IETF
 in the context of each proposal.<a href="#section-1-16" class="pilcrow">¶</a></p>
 <p id="section-1-17">The high-order criterion for advancing any proposal
-is a serious scientific study of the pros and cons of
-the congestion control algorithm that is brought to the IETF and
-considered for publication by the IETF.<a href="#section-1-17" class="pilcrow">¶</a></p>
+is a serious scientific study of the pros and cons that occur when the proposal is
+considered for publication by the IETF or before it is deployed at
+large scale.<a href="#section-1-17" class="pilcrow">¶</a></p>
 <p id="section-1-18">After initial studies, we encourage authors to write a specification
 of their proposal for publication in the RFC series. This allows others
 to concretely understand and investigate the wealth of proposals in
@@ -1637,7 +1638,7 @@ for the RTP Control Protocol (RTCP). In particular, feedback for real-time
 flows can be less frequent than the acknowledgements provided by reliable
 transports. This document does not change the informational status of those
 RFCs.<a href="#section-3.2.2-2" class="pilcrow">¶</a></p>
-<p id="section-3.2.2-3">A proposed congestion control algorithms SHOULD consider coexistence with widely deployed real-time
+<p id="section-3.2.2-3">A proposed congestion control algorithm SHOULD consider coexistence with widely deployed real-time
 congestion control algorithms. Regrettably, at the time of writing, many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
@@ -1743,7 +1744,7 @@ disciplines.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
         </h3>
 <p id="section-4.2-1">When a proposed congestion control algorithm relies on explicit signals from the path, the proposal
 MUST consider the effect of
-flow passing through a tunnel, where routers may not be aware of the
+traffic passing through a tunnel, where routers may not be aware of the
 flow.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1957,8 +1958,7 @@ one path to another when this is expected to improve performance
 (latency, throughput, reliability, cost).
 Designs need to independently track the congestion state of each path,
 and need to demonstrate independent congestion control for each path being used.
-A proposed multipath congestion control algorithm that
-implements path fail-over MUST evaluate the harm resulting
+Authors of a proposed multipath congestion control algorithm that implements path fail-over MUST evaluate the harm resulting
 from a change in the path, and show that this does not result in flow starvation.
 Synchronisation of failover (e.g., where multiple flows change their path on similar
 timeframes) can also contribute to harm and/or reduce fairness,
@@ -1979,6 +1979,22 @@ timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
 At the time of writing, there are no IETF standards for concurrent
 multipath congestion control in the general Internet.<a href="#section-5.8-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="data-centers">
+<section id="section-5.9">
+        <h3 id="name-data-centers">
+<a href="#section-5.9" class="section-number selfRef">5.9. </a><a href="#name-data-centers" class="section-name selfRef">Data Centers</a>
+        </h3>
+<p id="section-5.9-1">Data centers are characterized by very low latencies (&lt; 2 ms). Many workloads
+involve bursty traffic where many nodes complete a task at the same time. As a
+controlled environment, data centers often deploy fabrics that employ rich
+signalling from switches to endpoints. Furthermore, the operator can often limit
+the number of operating congestion controls.<a href="#section-5.9-1" class="pilcrow">¶</a></p>
+<p id="section-5.9-2">For these reasons, data center congestion controls are often distinct from those
+running elsewhere on the Interenet.  A proposed congestion control need not
+coexist well with all other algorithms if it is intended for data centers, but
+the proposal SHOULD indicate which are expected to safely coexist with it.<a href="#section-5.9-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
