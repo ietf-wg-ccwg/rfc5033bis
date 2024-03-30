@@ -275,9 +275,9 @@ understand any dependent functions.
 A data centre is an example of a controlled environment, which often deploys fabrics with rich
 signalling from switches to endpoints. Furthermore, an operator can often limit
 the number of operating congestion controls.
-Many data centers are characterized by very low latencies (< 2 ms) and can support 
-specific workloads (e.g., that introduce bursty traffic 
-where many nodes complete a task at the same time). 
+Many data centers are characterized by very low latencies (< 2 ms) and can support
+specific workloads (e.g., that introduce bursty traffic
+where many nodes complete a task at the same time).
 
 In evaluating a new proposal for use in a controlled environment, the IETF needs
 to understand the usage, e.g., how the usage is scoped to the controlled environment,
