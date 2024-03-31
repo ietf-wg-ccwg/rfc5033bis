@@ -348,19 +348,19 @@ congestion control algorithm has the opportunity to improve the state of the art
 ### Protection Against High Packet Loss
 
 A congestion control algorithm should reduce its sending
-rate if experiencing high packet loss. 
+rate if experiencing high packet loss.
 Even if a congestion control algorithm can tolerate high loss, many types
 of short request/response traffic do not want to pay the loss recovery
-performance penalty induced by high loss rates. 
+performance penalty induced by high loss rates.
 
 The first version of the BBR algorithm {{BBRv1-draft}} failed this requirement.
 Experimental evaluation {{BBRv1-Evaluation}} showed that
 it caused a sustained rate of
 when multiple BBRv1 flows share a bottleneck and the buffer size was
-less than roughly one and a half BDP. 
+less than roughly one and a half BDP.
 This kind of behavior needed to be fixed, and indeed
 further versions of BBR {{BBR-draft}}
-fixed this issue. 
+fixed this issue.
 
 This requirement does not imply that the algorithm should react to
 packet losses in exactly the same way as the classic congestion
