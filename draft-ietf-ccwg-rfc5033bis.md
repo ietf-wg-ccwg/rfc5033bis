@@ -84,7 +84,7 @@ informative:
     date: 2011
     seriesinfo: ACM Queue Volume 9, issue 11
 
- BBRv1-Evaluation:
+  BBRv1-Evaluation:
     title: "Experimental evaluation of BBR congestion control"
     target: https://ieeexplore.ieee.org/document/8117540
     author:
@@ -349,19 +349,22 @@ congestion control algorithm has the opportunity to improve the state of the art
 
 A congestion control algorithm should reduce its sending
 rate if experiencing high packet loss. 
-
 Even if a congestion control algorithm can tolerate high loss, many types
 of short request/response traffic do not want to pay the loss recovery
-performance penalty induced by high loss rates. For example,
-Experimental evaluation {{BBRv1-Evaluation}} showed that this
-problem happened with the first version of the BBR algorithm {{BBRv1-draft}}
+performance penalty induced by high loss rates. 
+
+The first version of the BBR algorithm {{BBRv1-draft}} failed this requirement.
+Experimental evaluation {{BBRv1-Evaluation}} showed that
+it caused a sustained rate of
 when multiple BBRv1 flows share a bottleneck and the buffer size was
-less than roughly one and a half BDP. Further versions of BBR {{BBR-draft}}
-fixed this issue.
+less than roughly one and a half BDP. 
+This kind of behavior needed to be fixed, and indeed
+further versions of BBR {{BBR-draft}}
+fixed this issue. 
 
 This requirement does not imply that the algorithm should react to
 packet losses in exactly the same way as the classic congestion
-control algorithm {{!RFC5681}}
+control algorithm {{!RFC5681}}.
 
 ### Fairness within the Proposed Congestion Control Algorithm
 
