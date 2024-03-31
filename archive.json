@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-28T00:36:11.779362+00:00",
+  "timestamp": "2024-03-31T00:40:07.302589+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1532,15 +1532,15 @@
       "id": "I_kwDOI7aIXc6CAI1u",
       "title": "Review inserted on behalf of M Welzl",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/96",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "1. General:\r\n\r\nIn some places, a new proposed congestion control algorithm that this document addresses is repeatedly called \"The alternate congestion control algorithm\".\r\nIn some places, it's repeatedly called \"A proposed congestion control algorithm\".\r\nIn some places, it's repeatedly called \"The proposal\u201d.\r\nIn some places, it\u2019s called \u201cNew CCs\u201d  (only in a few places - else the abbreviation CC isn\u2019t introduced).\r\n\r\nI think it would be good to unify this. My suggestion: mixing \u201cThe proposal\u201d and \u201cA proposed congestion control algorithm\u201d doesn\u2019t really matter, but \u201cThe alternative congestion control algorithm\u201d stands out - I would replace these occurrences with \u201cThe proposed congestion control algorithm\u201d, and replace \u201cNew CCs\u201d in the same way.\r\n\r\n2. Section 1 Intro:\r\nOLD:\r\nIn 2007, TCP was the dominant consumer of this work, and proposals were typically discussed in research groups, for example the Internet Congestion Control Research Group (ICCRG).\r\nNEW:\r\nIn 2007, TCP was the dominant consumer of this work, and proposals were typically discussed in the Internet Congestion Control Research Group (ICCRG).\r\nREASON:\r\nI don\u2019t remember seeing any other proposal being discussed in any other RG.\r\n- accepted\r\n\r\n***\r\n3. Since RFC 5033 was published, many conditions have changed.\r\nThe set of protocols using these algorithms has spread beyond\r\nTCP and SCTP to include DCCP, QUIC, and beyond.\r\n***\r\n\r\nThe DCCP RFCs pre-date RFC 5033, and so I find it a bit odd to see it mentioned in this context. On the other hand, the problem that this text is about is largely related to the deployment of cc. mechanisms without first getting an OK from the IETF, and so it fits to talk about QUIC which is mostly written in user space. Similarly, it would fit to talk about the RMCAT CC\u2019s, or LEDBAT - much more, it seems to me, than to talk about DCCP. So, I suggest to instead say the \u201cWebRTC protocol suite\u201d or something like that.\r\n\r\n4. Section 3.1.2:\r\n***\r\nBufferbloat [Bufferbloat] refers to the building of long queues in the network. \r\n***\r\nI think the [Bufferbloat] reference should be replaced with a \u201cproper\u201d one with longer-term archival value, instead of pointing at the IETF blog. E.g., this:\r\nhttps://ieeexplore.ieee.org/document/5755608 <https://ieeexplore.ieee.org/document/5755608>\r\nwhich is also freely available: https://queue.acm.org/detail.cfm?id=2071893 <https://queue.acm.org/detail.cfm?id=2071893>\r\n\r\n5. Section 3.2.1:\r\n***\r\nEvaluate the impact on TCP [RFC9293], SCTP [RFC9260], DCCP [RFC4340], and QUIC [RFC9000].\r\n***\r\nI would recommend to remove this. I find it odd: this is about the interaction between congestion control mechanisms, not transport protocols - why would there be a significant difference between running a mechanism against SCTP or TCP, for example? Indeed this is clarified in the next paragraph, which says: \"A proposed congestion control algorithm SHOULD be evaluated when competing with standard IETF congestion control [RFC5681], [RFC9260], [RFC4340], [RFC9002], [RFC9438].\u201d  - so why then list these protocols here?  (also: they seem strange to include as references in the sentence I mention here - instead, I would only cite RFC 5681 and RFC 9438).\r\nIt seems to me that listing the actual protocols expects a proponent of a new mechanism to carry out a huge amount of actually rather useless work.\r\n\r\nBesides, DCCP is an odd one in this list, because evaluating the impact \u201con it\u201d would mean to also evaluate against TFRC and TFRC-SP. Seriously, at this time and day? Is anyone using these controls, still, in any context?\r\n(technically, RMCAT controls and LEDBAT would make more sense IMO, but I think it\u2019s ok to skip them because they\u2019re all Experimental).\r\n\r\n6.\r\nI would swap section 4.1 on tunnel behavior with section 4.2 on paths with Tail-drop Queues, because the latter is the more common case. No big deal, but it\u2019s just a strange sequence IMO.\r\n\r\n7. Section 5.7.1:\r\n***\r\nNew CCs MUST evaluate the impact of changes in the path, and be robust\r\nto changes in path characteristics on the interval of common Internet re-routing intervals.\r\n***\r\nFirst, I don\u2019t think that the abbreviation \u201cCC\u201d has been used before. it is also later used in section 5.8 - I suggest to fix this, to be uniform.\r\n\r\n8. Issue:\r\n\r\nMore importantly though, the beginning of Section 5 says, about the whole section, that \u201cThe community MAY allow a proposal to progress even if the criteria indicate an unsatisfactory result for these scenarios.\u201d\r\nThis seems to collide with the \u201cMUST\u201d above.\r\n\r\n9. I have the same concern about the two MUSTs in section 5.8, \r\n10. and there, also, we have the use of \u201cCC\u201d.\r\n",
       "createdAt": "2024-03-12T09:01:05Z",
-      "updatedAt": "2024-03-12T09:41:36Z",
-      "closedAt": null,
+      "updatedAt": "2024-03-30T14:31:17Z",
+      "closedAt": "2024-03-30T14:31:17Z",
       "comments": [
         {
           "author": "gorryfair",
@@ -1596,17 +1596,19 @@
       "id": "I_kwDOI7aIXc6DEpbP",
       "title": "Data centers with really small RTTs should be discussed as a special case",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/98",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "ekinnear",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "gorryfair"
+      ],
       "labels": [
         "IETF 119"
       ],
       "body": "From IETF 119: Data centers with really small RTTs should be discussed as a special case",
       "createdAt": "2024-03-21T03:22:46Z",
-      "updatedAt": "2024-03-21T04:28:53Z",
-      "closedAt": null,
+      "updatedAt": "2024-03-29T19:51:41Z",
+      "closedAt": "2024-03-29T19:51:41Z",
       "comments": [
         {
           "author": "ekinnear",
@@ -1636,7 +1638,7 @@
       "labels": [],
       "body": " Since this is a problematic behaviour because it leads to an inefficient use of network resources and can cause variable/unreliable performance ( high speed followed by low speed so on ).  Maybe new Cc algorithms can focus on stability in this area. ",
       "createdAt": "2024-03-21T03:44:58Z",
-      "updatedAt": "2024-03-22T04:52:09Z",
+      "updatedAt": "2024-03-28T20:49:08Z",
       "closedAt": null,
       "comments": [
         {
@@ -1659,6 +1661,13 @@
           "body": "We have to be a bit careful about recommending stability. I remember Van Jacobson explaining that yes, a more stable version of Reno would be a bit more efficient, but then it would also not adapt so quickly to changes in network conditions. There might be a tradeoff there.\r\n\r\nSo maybe we need to be very clear about the characteristics of the oscillation that we do not want. @altanai are you thinking about something like the \"saw tooth\" patterns of RENO, or the similar patterns in Cubic? Or do you have some example of worse oscillations?",
           "createdAt": "2024-03-22T04:52:08Z",
           "updatedAt": "2024-03-22T04:52:08Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I'm not sure we need a new criterion here. Under-utilization is not a problem for network stability. Over-utilization is well-covered by our bufferbloat metric. \r\n\r\nEven an algorithm that sawtooths around the correct link capacity will experience more buffering than a smoother algorithm.",
+          "createdAt": "2024-03-28T20:49:08Z",
+          "updatedAt": "2024-03-28T20:49:08Z"
         }
       ]
     },
@@ -1667,15 +1676,15 @@
       "id": "I_kwDOI7aIXc6DE0gK",
       "title": "Section 5 editorial comments",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/100",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "gwhiteCL",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "1. The second paragraph of 5 reads:\r\n\r\n> In general, measurements from Internet-scale deployments will not expose the properties of operation in these scenarios, as they are statistically small.\r\n\r\nI probably agree that _some_ of the scenarios are statistically small, and may remain that way in the future, but others aren't all that statistically small even today and/or could become less small in the foreseeable future.  AQM is now reasonably widely deployed, anyone with Starlink internet sees varying delay, most Wi-Fi links exhibit periodic transient link disconnections during channel scanning, etc.  I'd suggest something like:\r\n\r\n> In general, measurements from Internet-scale deployments may not expose the properties of operation in each these scenarios, as they are not as ubiquitous as the General Use scenarios.\r\n\r\n\r\n2. The first paragraph of 5.7 Transient Events reads:\r\n\r\n> The proposal SHOULD consider how the proposed congestion control algorithm would perform in the presence of transient events such as sudden onset of congestion, a routing change, or a mobility event. Routing changes, link disconnections, intermittent link connectivity, and mobility are discussed in more detail in Section 17 of [[Tools](https://www.ietf.org/archive/id/draft-ietf-ccwg-rfc5033bis-03.html#Tools)].\r\n\r\nThe [Tools] link takes one to https://datatracker.ietf.org/doc/draft-irtf-tmrg-tools, where Section 17 provides us with: \r\n\r\n> 17.  Using the Tools Presented in this Document\r\n> \r\n>     [To be done.]\r\n\r\nWas this intended to be a joke?  .... Actually, I think you meant Section 16.",
       "createdAt": "2024-03-21T04:14:15Z",
-      "updatedAt": "2024-03-21T13:34:15Z",
-      "closedAt": null,
+      "updatedAt": "2024-03-29T18:55:55Z",
+      "closedAt": "2024-03-29T18:55:55Z",
       "comments": [
         {
           "author": "gorryfair",
@@ -1694,11 +1703,13 @@
       "state": "OPEN",
       "author": "nealcardwell",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "huitema"
+      ],
       "labels": [],
       "body": "The \"Single Algorithm Behavior\" section has a \"Protection Against Bufferbloat\" section. That's great. That's basically saying CCs should try to keep congestive delay at reasonable levels. But I would imagine there's a consensus that we would also say that CCs should try to keep congestive packet loss rates at reasonable levels. So IMHO there should be a \"Protection Against High Packet Loss\" subsection of \"Single Algorithm Behavior\".\r\n\r\nThis is important for \"Single Algorithm Behavior\"  because even if a congestion control algorithm can tolerate high loss, many types of short request/response traffic do not want to pay the loss recovery performance penalty induced by high loss rates.\r\n\r\nI can propose a pull request if there are no other volunteers.\r\n\r\ncc: @martinduke @gorryfair ",
       "createdAt": "2024-03-21T15:09:04Z",
-      "updatedAt": "2024-03-25T21:54:53Z",
+      "updatedAt": "2024-03-30T00:43:02Z",
       "closedAt": null,
       "comments": [
         {
@@ -1742,8 +1753,33 @@
           "body": "@nealcardwell @huitema you both hint you'd like to write a PR. Who's going to do it.?",
           "createdAt": "2024-03-25T21:54:52Z",
           "updatedAt": "2024-03-25T21:54:52Z"
+        },
+        {
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I am willing to write a PR, but could we land #94 first? I am worried of merge conflicts if we don't do that.",
+          "createdAt": "2024-03-30T00:42:56Z",
+          "updatedAt": "2024-03-30T00:42:56Z"
         }
       ]
+    },
+    {
+      "number": 104,
+      "id": "I_kwDOI7aIXc6EBMDW",
+      "title": "Add a couple of paras of context for IETF DC work?",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/104",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "gorryfair"
+      ],
+      "labels": [],
+      "body": "Moving this from PR to a separate issue:\r\n\r\nAs I recall (others may add to the list), there are challenges to be considered by a proponent/IETF, which include:\r\n\r\nDoes the proposal rely on technologies specified by other Forums/SDOs?\r\nDoes the IETF have sufficient experience of the DC requirements and to review the proposals?\r\nDoes the proposal include experience of interoperability between different implementations? or a plan for this?\r\nDoes the DC traffic share resources with Internet traffic?\r\nSpecifically: does the method to be used between DCs or only within DCs? - How is this usage scoped? And what happens when the protocol is bridged across an Internet path?\r\nOne or more of these has in the past thwarted progress towards adoption in the IETF, can we say something about this?\r\n\r\nI think this is the tip of a larger iceberg, and I'd suggest we'd need a little more text in the intro, if the IETF now thinks they may produce specs in this space.\r\n",
+      "createdAt": "2024-03-29T08:17:40Z",
+      "updatedAt": "2024-03-29T08:17:40Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -6056,24 +6092,26 @@
       "id": "PR_kwDOI7aIXc5pSkOl",
       "title": "PR based on MW review 2",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/94",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This will need a review pass",
       "createdAt": "2024-03-11T18:59:08Z",
-      "updatedAt": "2024-03-13T17:23:12Z",
+      "updatedAt": "2024-03-30T14:31:16Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
-      "baseRefOid": "b93b97c1ca695b23adb072c350bcfb93cd5787ad",
+      "baseRefOid": "eae7033021f3ae8ccdd69267533ad616100258d3",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-17",
-      "headRefOid": "35251227a2520305da885c060ad6dcb480cdc176",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "695564a63f4c1ab8d26f5dc4d6d6113aa0c1af5c",
+      "closedAt": "2024-03-30T14:31:16Z",
+      "mergedAt": "2024-03-30T14:31:16Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "a7d9fce035e7feb882b9f27a0077da4733b43718"
+      },
       "comments": [],
       "reviews": [
         {
@@ -6329,6 +6367,26 @@
               "updatedAt": "2024-03-12T21:43:55Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51Tgr8",
+          "commit": {
+            "abbreviatedOid": "e503cad"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-29T07:57:57Z",
+          "updatedAt": "2024-03-29T07:57:57Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "Text updated",
+              "createdAt": "2024-03-29T07:57:57Z",
+              "updatedAt": "2024-03-29T07:57:57Z"
+            }
+          ]
         }
       ]
     },
@@ -6379,24 +6437,26 @@
       "id": "PR_kwDOI7aIXc5qtlml",
       "title": "Datacenter",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/102",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Fixes #98",
       "createdAt": "2024-03-25T21:38:31Z",
-      "updatedAt": "2024-03-26T17:13:43Z",
+      "updatedAt": "2024-03-29T19:51:40Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "0709709ab5be54e546178fdf06c209b32e71c7f9",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "datacenter",
-      "headRefOid": "97d95599c34a0def6ba2934a8220985a111684dd",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "dfca135fab0462f44bc550eb064d666eddef019e",
+      "closedAt": "2024-03-29T19:51:40Z",
+      "mergedAt": "2024-03-29T19:51:40Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "eae7033021f3ae8ccdd69267533ad616100258d3"
+      },
       "comments": [
         {
           "author": "gorryfair",
@@ -6411,33 +6471,56 @@
           "body": "Do you want to take a shot at it? Do we need a completely different section about DC algorithms?",
           "createdAt": "2024-03-26T17:13:41Z",
           "updatedAt": "2024-03-26T17:13:41Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "OK, it might be good to keep some version of this as a guidance for evaluating general-purpose protocols in datacenters, AND have a totally different section for DC-specific algorithms.",
+          "createdAt": "2024-03-29T19:49:32Z",
+          "updatedAt": "2024-03-29T19:49:32Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc51To5g",
+          "commit": {
+            "abbreviatedOid": "97d9559"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Approving this text - LGTM, I propose to move the additional context on data centres to a separate issue, and resolve in a small separate PR against Section 2 & 3.",
+          "createdAt": "2024-03-29T08:14:14Z",
+          "updatedAt": "2024-03-29T08:14:14Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 103,
       "id": "PR_kwDOI7aIXc5q01p1",
       "title": "Greg White review",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/103",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Fixes #100 ",
       "createdAt": "2024-03-26T17:31:26Z",
-      "updatedAt": "2024-03-26T19:35:23Z",
+      "updatedAt": "2024-03-29T18:55:54Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "0709709ab5be54e546178fdf06c209b32e71c7f9",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "white-review",
-      "headRefOid": "dd38e07094268c8ce9758ff7cafd0c679f4e01ba",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "f8b8ff3308ba4bd75113b8cf73acc1b564025944",
+      "closedAt": "2024-03-29T18:55:54Z",
+      "mergedAt": "2024-03-29T18:55:54Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "92065c3d0fd60f34c88bc63ff0c42adaa36ac1c3"
+      },
       "comments": [],
       "reviews": [
         {
@@ -6459,8 +6542,49 @@
               "updatedAt": "2024-03-26T19:35:23Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51YGhR",
+          "commit": {
+            "abbreviatedOid": "f8b8ff3"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "WFM",
+          "createdAt": "2024-03-29T18:13:22Z",
+          "updatedAt": "2024-03-29T18:13:22Z",
+          "comments": []
         }
       ]
+    },
+    {
+      "number": 105,
+      "id": "PR_kwDOI7aIXc5rOZT_",
+      "title": "DC and Controlled Environments",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/105",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "gorryfair"
+      ],
+      "labels": [],
+      "body": "This responds to a discussion about how algorithms intended for DCs are to be developed/evaluated in the IETF.\r\nCloses #104.",
+      "createdAt": "2024-03-30T13:54:57Z",
+      "updatedAt": "2024-03-30T13:56:08Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "eae7033021f3ae8ccdd69267533ad616100258d3",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-18",
+      "headRefOid": "2411ce26cfdbdfcd55878123008239c8e9f5a6aa",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
