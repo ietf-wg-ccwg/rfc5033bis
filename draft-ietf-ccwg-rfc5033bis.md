@@ -47,6 +47,8 @@ informative:
 
   BBR-draft: I-D.cardwell-iccrg-bbr-congestion-control
 
+  BBRv1-draft: I-D.cardwell-iccrg-bbr-congestion-control-01
+
   HRX08:
     title: "CUBIC: a new TCP-friendly high-speed TCP variant"
     seriesinfo: ACM SIGOPS Operating Systems Review, vol. 42, no. 5, pp. 64-74
@@ -81,6 +83,16 @@ informative:
       ins: Kathleen Nichols
     date: 2011
     seriesinfo: ACM Queue Volume 9, issue 11
+
+ BBRv1-Evaluation:
+    title: "Experimental evaluation of BBR congestion control"
+    target: https://ieeexplore.ieee.org/document/8117540
+    author:
+      ins: M. Hock
+      ins: R. Bless
+      ins: M. Zitterbart
+    date: 2017
+    seriesinfo: 2017 IEEE 25th International Conference on Network Protocols (ICNP)
 
 --- abstract
 
@@ -332,6 +344,24 @@ the Congestion Control Principles published in September 2002 {{!RFC2914}}.
 The classic congestion control algorithm {{!RFC5681}} and the widely deployed
 Cubic algorithm {{?RFC9438}} do not address it, but a new
 congestion control algorithm has the opportunity to improve the state of the art.
+
+### Protection Against High Packet Loss
+
+A congestion control algorithm should reduce its sending
+rate if experiencing high packet loss. 
+
+Even if a congestion control algorithm can tolerate high loss, many types
+of short request/response traffic do not want to pay the loss recovery
+performance penalty induced by high loss rates. For example,
+Experimental evaluation {{BBRv1-Evaluation}} showed that this
+problem happened with the first version of the BBR algorithm {{BBRv1-draft}}
+when multiple BBRv1 flows share a bottleneck and the buffer size was
+less than roughly one and a half BDP. Further versions of BBR {{BBR-draft}}
+fixed this issue.
+
+This requirement does not imply that the algorithm should react to
+packet losses in exactly the same way as the classic congestion
+control algorithm {{!RFC5681}}
 
 ### Fairness within the Proposed Congestion Control Algorithm
 
