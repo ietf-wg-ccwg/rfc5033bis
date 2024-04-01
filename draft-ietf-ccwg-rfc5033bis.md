@@ -339,7 +339,7 @@ the network. Many network routers are configured with very large buffers.
 The standards-track Reno {{!RFC5681}} and Cubic {{?RFC9438}} congestion control algorithms
 send at progressively higher rates until a First-In First-Out
 (FIFO) buffer completely fills and packet losses then occur.
-Every connection pasing through that bottleneck experiences increased
+Every connection passing through that bottleneck experiences increased
 latency due to the high buffer occupancy. This adds unwanted latency that
 negatively impacts highly interactive applications like
 videoconferencing or games, but it also affects routine
