@@ -347,7 +347,7 @@ web browsing and video playing.
 
 This problem has been widely discussed since 2011 {{Bufferbloat}} but was not discussed in
 the Congestion Control Principles published in September 2002 {{!RFC2914}}.
-The Reno {{!RFC5681}} and Cubic {{?RFC9438}} congestion control algorithms
+The Reno and Cubic congestion control algorithms
 do not address it, but a new congestion control algorithm
 has the opportunity to improve the state of the art.
 
