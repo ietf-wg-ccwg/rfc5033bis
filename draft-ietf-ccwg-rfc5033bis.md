@@ -355,7 +355,7 @@ performance penalty induced by high loss rates.
 
 The first version of the BBR algorithm {{BBRv1-draft}} failed this requirement.
 Experimental evaluation {{BBRv1-Evaluation}} showed that
-it caused a sustained rate of
+it caused a sustained rate of loss
 when multiple BBRv1 flows share a bottleneck and the buffer size was
 less than roughly one and a half BDP.
 This kind of behavior needed to be fixed, and indeed
