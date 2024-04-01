@@ -266,10 +266,10 @@ Algorithms can be designed for general Internet deployment or for use in control
 A controlled environment can form all or part of the Internet path
 or might carry network traffic that is isolated from the end-to-end path.
 Algorithms that rely on specific functions or
-configurations in a network need to provide a reference or specifications for these functions
+configurations in a network need to provide a reference or specification for these functions
 (an RFC or another stable specification).
 The IETF will need to assess whether the relevant working group is able review the
-specification of a proposed new algorithm and whethr there is sufficient experience to
+proposed new algorithm and whether there is sufficient experience to
 understand any dependent functions.
 
 A data centre is an example of a controlled environment, which often deploys fabrics with rich
