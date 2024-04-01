@@ -82,6 +82,18 @@ informative:
     date: 2011
     seriesinfo: ACM Queue Volume 9, issue 11
 
+  Vegas:
+    title: "TCP Vegas: end to end congestion avoidance on a global internet"
+    date: 1995-10
+    target: https://ieeexplore.ieee.org/document/464716
+    author:
+      ins: L. S. Brakmo
+    author:
+      ins: L. L. Peterson
+    date: 1995
+    seriesinfo: IEEE Journal on Selected Areas in Communications, Volume: 13, Issue: 8
+
+
 --- abstract
 
 Introducing new or modified congestion control algorithms in the global Internet has
@@ -313,25 +325,31 @@ times comparable capacity during backoff.
 
 ### Protection Against Bufferbloat
 
-A congestion control algorithm should reduce its sending
-rate if the round trip time (RTT) significantly increases. Exactly how
-the algorithm reduces its sending rate is algorithm-specific, but see
-{{!RFC8961}} and {{!RFC8085}} for requirements.
+A congestion control algorithm should try to avoid maintaining
+excessive queues in the network. Exactly how
+the algorithm achieves this is algorithm-specific, but see
+{{!RFC8961}} and {{!RFC8085}} for requirements. Some congestion control
+algorithms have attempted to address this based on heuristics that
+decrease the sending rate based on patterns of increases in
+round trip time (RTT) {{Vegas}} {{BBR-draft}}. Other algorithms use
+Explicit Congestion Notification (ECN) {{?RFC3168}},{{?RFC9332}}.
 
-Bufferbloat {{Bufferbloat}} refers to the building of long queues in
+Bufferbloat {{Bufferbloat}} refers to the building of excessive queues in
 the network. Many network routers are configured with very large buffers.
-If congestion is detected, classic TCP congestion control algorithms
-{{!RFC5681}} will continue sending at a high rate until a First-In First-Out
-(FIFO) buffer completely fills and packet losses then occur. Every connection pasing through
-that bottleneck will then experience increased latency.  This adds unwanted latency that
-impacts highly interactive applications like games, but it also affects routine
+The Reno {{!RFC5681}} and Cubic {{?RFC9438}} congestion control algorithms
+send at progressively higher rates until a First-In First-Out
+(FIFO) buffer completely fills and packet losses then occur.
+Every connection pasing through that bottleneck experiences increased
+latency due to the high buffer occupancy. This adds unwanted latency that
+negatively impacts highly interactive applications like
+videoconferencing or games, but it also affects routine
 web browsing and video playing.
 
-This problem became apparent in the last decade and was not discussed in
+This problem has been widely discussed since 2011 {{Bufferbloat}} but was not discussed in
 the Congestion Control Principles published in September 2002 {{!RFC2914}}.
-The classic congestion control algorithm {{!RFC5681}} and the widely deployed
-Cubic algorithm {{?RFC9438}} do not address it, but a new
-congestion control algorithm has the opportunity to improve the state of the art.
+The Reno {{!RFC5681}} and Cubic {{?RFC9438}} congestion control algorithms
+do not address it, but a new congestion control algorithm
+has the opportunity to improve the state of the art.
 
 ### Fairness within the Proposed Congestion Control Algorithm
 
