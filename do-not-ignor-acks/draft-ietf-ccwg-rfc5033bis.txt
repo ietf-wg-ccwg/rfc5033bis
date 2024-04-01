@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 2 October 2024                                    31 March 2024
+Expires: 3 October 2024                                     1 April 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 October 2024.
+   This Internet-Draft will expire on 3 October 2024.
 
 Copyright Notice
 
@@ -386,8 +386,8 @@ Table of Contents
    versions of BBR [BBR-draft] fixed this issue.
 
    This requirement does not imply that the algorithm should react to
-   packet losses in exactly the same way as the classic congestion
-   control algorithm [RFC5681].
+   packet losses in exactly the same way as current standards-track
+   congestion control algorithms (e.g., [RFC5681]).
 
 3.1.4.  Fairness within the Proposed Congestion Control Algorithm
 
