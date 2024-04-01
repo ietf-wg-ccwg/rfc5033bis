@@ -363,7 +363,7 @@ further versions of BBR {{BBR-draft}}
 fixed this issue.
 
 This requirement does not imply that the algorithm should react to
-packet losses in exactly the same way as the classic congestion
+packet losses in exactly the same way as current standards-track congestion
 control algorithms (e.g., {{!RFC5681}}).
 
 ### Fairness within the Proposed Congestion Control Algorithm
