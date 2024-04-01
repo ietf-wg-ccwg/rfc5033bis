@@ -263,8 +263,8 @@ are invited to publish as an Informational RFC via the Independent Stream Editor
 # Specifying Algorithms for use in Controlled Environments
 
 Algorithms can be designed for general Internet deployment or for use in controlled environments.
-A controlled environment can form all or part of the Internet path
-or might carry network traffic that is isolated from the end-to-end path.
+An operator can ensure thart flows within a controlled environment are isolated from other
+Internet flows, or they might allow these flows to share resources with other Internet flows. 
 Algorithms that rely on specific functions or
 configurations in a network need to provide a reference or specification for these functions
 (an RFC or another stable specification).
@@ -272,7 +272,7 @@ The IETF will need to assess whether the relevant working group is able review t
 proposed new algorithm and whether there is sufficient experience to
 understand any dependent functions.
 
-A data centre is an example of a controlled environment, which often deploys fabrics with rich
+A data center is an example of a controlled environment, which often deploys fabrics with rich
 signalling from switches to endpoints. Furthermore, an operator can often limit
 the number of operating congestion controls.
 Many data centers are characterized by very low latencies (< 2 ms) and can support
