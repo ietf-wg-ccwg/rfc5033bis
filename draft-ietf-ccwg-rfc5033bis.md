@@ -263,7 +263,7 @@ are invited to publish as an Informational RFC via the Independent Stream Editor
 # Specifying Algorithms for use in Controlled Environments
 
 Algorithms can be designed for general Internet deployment or for use in controlled environments.
-An operator can ensure thart flows within a controlled environment are isolated from other
+An operator can ensure that flows within a controlled environment are isolated from other
 Internet flows, or they might allow these flows to share resources with other Internet flows. 
 Algorithms that rely on specific functions or
 configurations in a network need to provide a reference or specification for these functions
