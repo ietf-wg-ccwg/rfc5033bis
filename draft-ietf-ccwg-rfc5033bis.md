@@ -82,18 +82,6 @@ informative:
     date: 2011
     seriesinfo: ACM Queue Volume 9, issue 11
 
-  Vegas:
-    title: "TCP Vegas: end to end congestion avoidance on a global internet"
-    date: 1995-10
-    target: https://ieeexplore.ieee.org/document/464716
-    author:
-      ins: L. S. Brakmo
-    author:
-      ins: L. L. Peterson
-    date: 1995
-    seriesinfo: IEEE Journal on Selected Areas in Communications, Volume: 13, Issue: 8
-
-
 --- abstract
 
 Introducing new or modified congestion control algorithms in the global Internet has
@@ -328,11 +316,7 @@ times comparable capacity during backoff.
 A congestion control algorithm should try to avoid maintaining
 excessive queues in the network. Exactly how
 the algorithm achieves this is algorithm-specific, but see
-{{!RFC8961}} and {{!RFC8085}} for requirements. Some congestion control
-algorithms have attempted to address this based on heuristics that
-decrease the sending rate based on patterns of increases in
-round trip time (RTT) {{Vegas}} {{BBR-draft}}. Other algorithms use
-Explicit Congestion Notification (ECN) {{?RFC3168}},{{?RFC9332}}.
+{{!RFC8961}} and {{!RFC8085}} for requirements.
 
 Bufferbloat {{Bufferbloat}} refers to the building of excessive queues in
 the network. Many network routers are configured with very large buffers.
