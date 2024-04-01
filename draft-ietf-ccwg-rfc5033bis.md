@@ -285,7 +285,7 @@ whether the algorithm will share resources with Internet traffic
 and consider what could happen if used in a protocol that is bridged across an Internet path.
 Algorithms that are designed for special environments and are forbidden from use
 in the general Internet, might instead seek real-world data for those environments.
-In such cases, the following evaluation criteria might not apply.
+In such cases, the evaluation criteria in the remainder of this document might not apply.
 
 # Evaluation Criteria {#evaluation-criteria}
 
