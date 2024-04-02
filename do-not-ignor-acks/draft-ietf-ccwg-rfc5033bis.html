@@ -1557,20 +1557,17 @@ congestion control algorithm has the opportunity to improve the state of the art
 <p id="section-3.1.3-1">A congestion control algorithm should try to avoid causing excessively high rates of packet loss.
 To accomplish this, it should avoid excessive increases in sending rate, and reduce its
 sending rate if experiencing high packet loss.<a href="#section-3.1.3-1" class="pilcrow">¶</a></p>
-<p id="section-3.1.3-2">Even if a congestion control algorithm can tolerate high loss, many types
-of short request/response traffic do not want to pay the loss recovery
-performance penalty induced by high loss rates.<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
-<p id="section-3.1.3-3">The first version of the BBR algorithm <span>[<a href="#BBRv1-draft" class="cite xref">BBRv1-draft</a>]</span> failed this requirement.
+<p id="section-3.1.3-2">The first version of the BBR algorithm <span>[<a href="#BBRv1-draft" class="cite xref">BBRv1-draft</a>]</span> failed this requirement.
 Experimental evaluation <span>[<a href="#BBRv1-Evaluation" class="cite xref">BBRv1-Evaluation</a>]</span> showed that
 it caused a sustained rate of packet loss
 when multiple BBRv1 flows shared a bottleneck and the buffer size was
 less than roughly one and a half BDP.
 This kind of behavior needed to be fixed, and indeed
 further versions of BBR <span>[<a href="#BBR-draft" class="cite xref">BBR-draft</a>]</span>
-fixed this issue.<a href="#section-3.1.3-3" class="pilcrow">¶</a></p>
-<p id="section-3.1.3-4">This requirement does not imply that the algorithm should react to
+fixed this issue.<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-3">This requirement does not imply that the algorithm should react to
 packet losses in exactly the same way as current standards-track congestion
-control algorithms (e.g., <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span>).<a href="#section-3.1.3-4" class="pilcrow">¶</a></p>
+control algorithms (e.g., <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span>).<a href="#section-3.1.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="fairness-within-the-proposed-congestion-control-algorithm">
