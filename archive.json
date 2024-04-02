@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-31T00:40:07.302589+00:00",
+  "timestamp": "2024-04-02T00:37:04.420811+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1631,15 +1631,15 @@
       "id": "I_kwDOI7aIXc6DEub9",
       "title": "Oscillations in over-utilization and under-utilization cycle can be added under the evaluation criteria",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/99",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "altanai",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": " Since this is a problematic behaviour because it leads to an inefficient use of network resources and can cause variable/unreliable performance ( high speed followed by low speed so on ).  Maybe new Cc algorithms can focus on stability in this area. ",
       "createdAt": "2024-03-21T03:44:58Z",
-      "updatedAt": "2024-03-28T20:49:08Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-01T17:14:46Z",
+      "closedAt": "2024-04-01T17:14:46Z",
       "comments": [
         {
           "author": "gorryfair",
@@ -6572,19 +6572,407 @@
       "labels": [],
       "body": "This responds to a discussion about how algorithms intended for DCs are to be developed/evaluated in the IETF.\r\nCloses #104.",
       "createdAt": "2024-03-30T13:54:57Z",
-      "updatedAt": "2024-03-30T13:56:08Z",
+      "updatedAt": "2024-04-01T20:04:23Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
-      "baseRefOid": "eae7033021f3ae8ccdd69267533ad616100258d3",
+      "baseRefOid": "a7d9fce035e7feb882b9f27a0077da4733b43718",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-18",
-      "headRefOid": "2411ce26cfdbdfcd55878123008239c8e9f5a6aa",
+      "headRefOid": "1c1174f93fb300784ee68a7bdfdd15653777af4a",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc51gNRy",
+          "commit": {
+            "abbreviatedOid": "2a9527e"
+          },
+          "author": "nealcardwell",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-01T14:32:37Z",
+          "updatedAt": "2024-04-01T14:32:42Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "I confess that I don't know what this sentence means: \r\n  \"might carry network traffic that is isolated from the end-to-end path\"\r\nSorry if I'm being dense. :-)\r\n",
+              "createdAt": "2024-04-01T14:32:37Z",
+              "updatedAt": "2024-04-01T14:32:42Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51gVUv",
+          "commit": {
+            "abbreviatedOid": "2a9527e"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-01T14:52:58Z",
+          "updatedAt": "2024-04-01T14:52:59Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "Not dense, the relocated text didn't make sense. New words suggested.",
+              "createdAt": "2024-04-01T14:52:59Z",
+              "updatedAt": "2024-04-01T14:52:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51gp32",
+          "commit": {
+            "abbreviatedOid": "2a9527e"
+          },
+          "author": "nealcardwell",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-01T15:29:13Z",
+          "updatedAt": "2024-04-01T15:29:13Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "Thanks! Looks good to me now at f1d5dd25a0ba4e7831bef9958f00e60083e183e1\r\n",
+              "createdAt": "2024-04-01T15:29:13Z",
+              "updatedAt": "2024-04-01T15:29:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51hR7C",
+          "commit": {
+            "abbreviatedOid": "f1d5dd2"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2024-04-01T16:27:35Z",
+          "updatedAt": "2024-04-01T16:27:40Z",
+          "comments": [
+            {
+              "originalPosition": 39,
+              "body": "Can you add something here to the effect of \"the criteria in the remainder of this document might not apply?\"",
+              "createdAt": "2024-04-01T16:27:35Z",
+              "updatedAt": "2024-04-01T16:27:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51hlcK",
+          "commit": {
+            "abbreviatedOid": "a1d31bb"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-01T17:13:17Z",
+          "updatedAt": "2024-04-01T17:13:28Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\nIn such cases, the evaluation criteria in the remainder of this document might not apply.\r\n```",
+              "createdAt": "2024-04-01T17:13:18Z",
+              "updatedAt": "2024-04-01T17:13:28Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 106,
+      "id": "PR_kwDOI7aIXc5rQZ0A",
+      "title": "add requirement to not ignore high losses.",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/106",
+      "state": "OPEN",
+      "author": "huitema",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This is an attempt to address issue #101",
+      "createdAt": "2024-03-31T18:18:16Z",
+      "updatedAt": "2024-04-01T17:01:45Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "a7d9fce035e7feb882b9f27a0077da4733b43718",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "do-not-ignor-acks",
+      "headRefOid": "dec7cb34ef7473bfada094d563920e77f56a424c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc51gFIu",
+          "commit": {
+            "abbreviatedOid": "97a38ad"
+          },
+          "author": "nealcardwell",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "cc: @martinduke @mattmathis @gorryfair ",
+          "createdAt": "2024-04-01T14:12:52Z",
+          "updatedAt": "2024-04-01T14:24:03Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "I would suggest expanding this, since reducing the sending rate in response to packet loss is not sufficient to protect against high packet loss.\r\n\r\nAFAICT there are at least two parts to avoiding high packet loss:\r\n\r\n(1) don't send unreasonably fast, based on previously available signals (e.g., don't be like Reno/CUBIC and cause 20% losses if the fair-share cwnd is 2 packets; don't slow-start with an exponential factor that causes 100x growth of the sending rate per round trip; and don't use an approach like HTCP, which repeatedly causes excess loss by using maximal acceleration when exceeding the capacity of the path)\r\n\r\n(2) if a flow experiences high packet loss, slow down\r\n\r\nSo I would suggest something like:\r\n\r\n\"A congestion control algorithm should try to avoid causing excessively high rates of packet loss. To accomplish this, it should maintain its sending rate sufficiently near the recently measured capacity of the network path, and reduce its sending rate if experiencing high packet loss.\"\r\n",
+              "createdAt": "2024-04-01T14:12:52Z",
+              "updatedAt": "2024-04-01T14:24:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51ggax",
+          "commit": {
+            "abbreviatedOid": "39f7929"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-01T15:18:08Z",
+          "updatedAt": "2024-04-01T15:18:09Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "I understand your point, but I am trying to find a way to say that without prescribing exactly the solution used in BBR. At the abstract level there are two variables, the sending rate and the size of bursts, and yes the proposed text misses the bursts. But many congestion control algorithms do not directly measure the \"capacity of the network path\" -- they will have to shrink the congestion window.",
+              "createdAt": "2024-04-01T15:18:08Z",
+              "updatedAt": "2024-04-01T15:18:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51goGN",
+          "commit": {
+            "abbreviatedOid": "39f7929"
+          },
+          "author": "nealcardwell",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-01T15:25:00Z",
+          "updatedAt": "2024-04-01T15:25:00Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "I agree we don't want to prescribe exactly the solution used in BBR. But IMHO my proposed text does not do that.\r\n\r\nReno and CUBIC also use the approach: \"maintain its sending rate sufficiently near the recently measured capacity of the network path\". Though documents explaining the algorithms don't use this framework to explain the algorithms, they do explicitly track the recently measured capacity of the path (in volumetric terms, bytes or packets) using cwnd. And they maintain their sending rate sufficiently near the recently measured capacity by making changes in cwnd that growing cwnd no more than 2x per round trip.\r\n\r\nIf you still think that's too specific, how about:\r\n\r\n\"A congestion control algorithm should try to avoid causing excessively high rates of packet loss. To accomplish this, it should avoid excessive increases in sending rate, and reduce its sending rate if experiencing high packet loss.\"",
+              "createdAt": "2024-04-01T15:25:00Z",
+              "updatedAt": "2024-04-01T15:25:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51gQCO",
+          "commit": {
+            "abbreviatedOid": "97a38ad"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "See review comments",
+          "createdAt": "2024-04-01T14:40:04Z",
+          "updatedAt": "2024-04-01T16:58:44Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "\"A congestion control algorithm should reduce its sending\r\n rate if experiencing high packet loss.\r\n Even if a congestion control algorithm can tolerate high loss,\"\r\n...  1) This strikes me as understated. A controller of any type needs feedback, so it seems odd to me to suggest a control algorithm can tolerate high loss and be reactive. ",
+              "createdAt": "2024-04-01T14:40:04Z",
+              "updatedAt": "2024-04-01T16:58:44Z"
+            },
+            {
+              "originalPosition": 46,
+              "body": "I don't agree that this type of behaviour does need to be fixed, but much of the document is about evaluation, so I wonder if the request is ought to be to evaluate the impact to induce loss?",
+              "createdAt": "2024-04-01T14:40:06Z",
+              "updatedAt": "2024-04-01T16:58:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51hb5z",
+          "commit": {
+            "abbreviatedOid": "97a38ad"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-01T16:51:04Z",
+          "updatedAt": "2024-04-01T17:01:17Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "```suggestion\r\nit caused a sustained rate of loss\r\n```",
+              "createdAt": "2024-04-01T16:51:05Z",
+              "updatedAt": "2024-04-01T17:01:17Z"
+            },
+            {
+              "originalPosition": 48,
+              "body": "```suggestion\r\npacket losses in exactly the same way as current standards-track congestion\r\n```",
+              "createdAt": "2024-04-01T16:51:34Z",
+              "updatedAt": "2024-04-01T17:01:17Z"
+            },
+            {
+              "originalPosition": 49,
+              "body": "```suggestion\r\ncontrol algorithms (e.g., {{!RFC5681}}).\r\n```",
+              "createdAt": "2024-04-01T16:51:58Z",
+              "updatedAt": "2024-04-01T17:01:17Z"
+            },
+            {
+              "originalPosition": 45,
+              "body": "I am not sure we need this war story in the draft, especially since the BBR draft hasn't progressed much in the IETF. Gorry, what do you think?",
+              "createdAt": "2024-04-01T16:56:04Z",
+              "updatedAt": "2024-04-01T17:01:17Z"
+            },
+            {
+              "originalPosition": 33,
+              "body": "I like Neal's second proposal.  I might even delete the second sentence, to avoid presupposing anything about how a proposal meets the requirement. (I might add that \"sending rate\" can be used in a rate pacing context, or as a synonym for cwnd)",
+              "createdAt": "2024-04-01T17:00:33Z",
+              "updatedAt": "2024-04-01T17:01:17Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 107,
+      "id": "PR_kwDOI7aIXc5rVBxg",
+      "title": "update \"Protection Against Bufferbloat\"",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/107",
+      "state": "OPEN",
+      "author": "nealcardwell",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Tighten up the text and add some references.\r\ncc: @mattmathis @martinduke @gorryfair @huitema ",
+      "createdAt": "2024-04-01T15:18:08Z",
+      "updatedAt": "2024-04-01T20:05:09Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "a7d9fce035e7feb882b9f27a0077da4733b43718",
+      "headRepository": "nealcardwell/rfc5033bis",
+      "headRefName": "patch-1",
+      "headRefOid": "92814ef9eca2e08d1ca1baeeec8aaacc7a12fbda",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc51hTd3",
+          "commit": {
+            "abbreviatedOid": "a6e3ac2"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Most of your proposed changes make this read much better. Thanks!",
+          "createdAt": "2024-04-01T16:32:09Z",
+          "updatedAt": "2024-04-01T16:49:14Z",
+          "comments": [
+            {
+              "originalPosition": 47,
+              "body": "```suggestion\r\nEvery connection passing through that bottleneck experiences increased\r\n```",
+              "createdAt": "2024-04-01T16:32:09Z",
+              "updatedAt": "2024-04-01T16:49:14Z"
+            },
+            {
+              "originalPosition": 44,
+              "body": "```suggestion\r\nThe standards-track Reno {{!RFC5681}} and Cubic {{?RFC9438}} congestion control algorithms\r\n```",
+              "createdAt": "2024-04-01T16:39:29Z",
+              "updatedAt": "2024-04-01T16:49:14Z"
+            },
+            {
+              "originalPosition": 34,
+              "body": "IMO, the segment beginning with \"Some congestion control...\" veers into tutorial territory. I think it's worth it to discuss what the current standards (Reno/Cubic) are doing, because it's so different from what we want in future standards. But name-checking a bunch of other drafts is out of scope.",
+              "createdAt": "2024-04-01T16:43:30Z",
+              "updatedAt": "2024-04-01T16:49:14Z"
+            },
+            {
+              "originalPosition": 15,
+              "body": "I suggest deleting this reference, per the comment below.",
+              "createdAt": "2024-04-01T16:43:50Z",
+              "updatedAt": "2024-04-01T16:49:14Z"
+            },
+            {
+              "originalPosition": 46,
+              "body": "```suggestion\r\n(FIFO) buffer completely fills, and packet losses then occur.\r\n```",
+              "createdAt": "2024-04-01T16:44:16Z",
+              "updatedAt": "2024-04-01T16:49:14Z"
+            },
+            {
+              "originalPosition": 59,
+              "body": "```suggestion\r\nThe Reno and Cubic congestion control algorithms\r\n```",
+              "createdAt": "2024-04-01T16:45:54Z",
+              "updatedAt": "2024-04-01T16:49:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51ii87",
+          "commit": {
+            "abbreviatedOid": "a6e3ac2"
+          },
+          "author": "nealcardwell",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-01T19:39:00Z",
+          "updatedAt": "2024-04-01T19:39:01Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "OK, thanks. Removed!\r\n",
+              "createdAt": "2024-04-01T19:39:00Z",
+              "updatedAt": "2024-04-01T19:39:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51ijAF",
+          "commit": {
+            "abbreviatedOid": "a6e3ac2"
+          },
+          "author": "nealcardwell",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-01T19:39:10Z",
+          "updatedAt": "2024-04-01T19:39:10Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "OK, removed!\r\n",
+              "createdAt": "2024-04-01T19:39:10Z",
+              "updatedAt": "2024-04-01T19:39:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51itWn",
+          "commit": {
+            "abbreviatedOid": "92814ef"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-01T20:05:09Z",
+          "updatedAt": "2024-04-01T20:05:09Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
