@@ -228,11 +228,7 @@ it is safe, and the design is stable, guided by the considerations in
 {{general-use}}. The existence of this data does not waive the other
 considerations in this document.
 
-Algorithms that are designed for special environments (e.g., data centers) and
-forbidden from use in the Internet would, of course, instead seek real-world
-data for those environments.
-
-Experimental specifications SHOULD NOT be deployed as a default and SHOULD
+Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
 only be deployed in situations where they are being actively measured, and where
 it is possible to deactivate if there are signs of pathological behavior.
 
@@ -271,6 +267,33 @@ mature than ones that follow the procedures in this document. Authors documentin
 deployed congestion control algorithms that cannot be changed by IETF or IRTF review
 are invited to publish as an Informational RFC via the Independent Stream Editor
 (ISE).
+
+# Specifying Algorithms for use in Controlled Environments
+
+Algorithms can be designed for general Internet deployment or for use in controlled environments.
+An operator can ensure that flows within a controlled environment are isolated from other
+Internet flows, or they might allow these flows to share resources with other Internet flows.
+Algorithms that rely on specific functions or
+configurations in a network need to provide a reference or specification for these functions
+(an RFC or another stable specification).
+The IETF will need to assess whether the relevant working group is able review the
+proposed new algorithm and whether there is sufficient experience to
+understand any dependent functions.
+
+A data center is an example of a controlled environment, which often deploys fabrics with rich
+signalling from switches to endpoints. Furthermore, an operator can often limit
+the number of operating congestion controls.
+Many data centers are characterized by very low latencies (< 2 ms) and can support
+specific workloads (e.g., that introduce bursty traffic
+where many nodes complete a task at the same time).
+
+In evaluating a new proposal for use in a controlled environment, the IETF needs
+to understand the usage, e.g., how the usage is scoped to the controlled environment,
+whether the algorithm will share resources with Internet traffic
+and consider what could happen if used in a protocol that is bridged across an Internet path.
+Algorithms that are designed for special environments and are forbidden from use
+in the general Internet, might instead seek real-world data for those environments.
+In such cases, the evaluation criteria in the remainder of this document might not apply.
 
 # Evaluation Criteria {#evaluation-criteria}
 
