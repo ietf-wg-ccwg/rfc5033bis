@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 1 October 2024                                    30 March 2024
+Expires: 4 October 2024                                     2 April 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 October 2024.
+   This Internet-Draft will expire on 4 October 2024.
 
 Copyright Notice
 
@@ -75,41 +75,42 @@ Table of Contents
 
    1.  Introduction
    2.  Document Status
-   3.  Evaluation Criteria
-     3.1.  Single Algorithm Behavior
-       3.1.1.  Protection Against Congestion Collapse
-       3.1.2.  Protection Against Bufferbloat
-       3.1.3.  Fairness within the Proposed Congestion Control
+   3.  Specifying Algorithms for use in Controlled Environments
+   4.  Evaluation Criteria
+     4.1.  Single Algorithm Behavior
+       4.1.1.  Protection Against Congestion Collapse
+       4.1.2.  Protection Against Bufferbloat
+       4.1.3.  Fairness within the Proposed Congestion Control
                Algorithm
-       3.1.4.  Short Flows
-     3.2.  Mixed Algorithm Behavior
-       3.2.1.  Existing General-Purpose Transports
-       3.2.2.  Real-Time Protocols
-       3.2.3.  Short and Long Flows
-     3.3.  Other Criteria
-       3.3.1.  Differences with Congestion Control Principles
-       3.3.2.  Incremental Deployment
-   4.  General Use
-     4.1.  Paths with Tail-drop Queues
-     4.2.  Tunnel Behavior
-     4.3.  Wired Paths
-     4.4.  Wireless Paths
-   5.  Special Cases
-     5.1.  Active Queue Management (AQM)
-     5.2.  Paths with Varying Delay
-     5.3.  Internet of Things
-     5.4.  Paths with High Delay
-     5.5.  Misbehaving Nodes
-     5.6.  Extreme Packet Reordering
-     5.7.  Transient Events
-       5.7.1.  Sudden changes in the Path
-     5.8.  Multipath Transport
-     5.9.  Data Centers
-   6.  Security Considerations
-   7.  IANA Considerations
-   8.  References
-     8.1.  Normative References
-     8.2.  Informative References
+       4.1.4.  Short Flows
+     4.2.  Mixed Algorithm Behavior
+       4.2.1.  Existing General-Purpose Transports
+       4.2.2.  Real-Time Protocols
+       4.2.3.  Short and Long Flows
+     4.3.  Other Criteria
+       4.3.1.  Differences with Congestion Control Principles
+       4.3.2.  Incremental Deployment
+   5.  General Use
+     5.1.  Paths with Tail-drop Queues
+     5.2.  Tunnel Behavior
+     5.3.  Wired Paths
+     5.4.  Wireless Paths
+   6.  Special Cases
+     6.1.  Active Queue Management (AQM)
+     6.2.  Paths with Varying Delay
+     6.3.  Internet of Things
+     6.4.  Paths with High Delay
+     6.5.  Misbehaving Nodes
+     6.6.  Extreme Packet Reordering
+     6.7.  Transient Events
+       6.7.1.  Sudden changes in the Path
+     6.8.  Multipath Transport
+     6.9.  Data Centers
+   7.  Security Considerations
+   8.  IANA Considerations
+   9.  References
+     9.1.  Normative References
+     9.2.  Informative References
    Acknowledgments
    Evolution of RFC5033bis
      Since draft-ietf-ccwg-rfc5033bis-03
@@ -255,21 +256,17 @@ Table of Contents
 
    Congestion control algorithms without experience of Internet-scale
    deployment SHOULD seek Experimental status until real-world data is
-   able to answer the questions in Section 4.  Congestion control
+   able to answer the questions in Section 5.  Congestion control
    algorithms with a record of measured Internet-scale deployment MAY
    directly seek the Standards Track if the community believes it is
    safe, and the design is stable, guided by the considerations in
-   Section 4.  The existence of this data does not waive the other
+   Section 5.  The existence of this data does not waive the other
    considerations in this document.
 
-   Algorithms that are designed for special environments (e.g., data
-   centers) and forbidden from use in the Internet would, of course,
-   instead seek real-world data for those environments.
-
-   Experimental specifications SHOULD NOT be deployed as a default and
-   SHOULD only be deployed in situations where they are being actively
-   measured, and where it is possible to deactivate if there are signs
-   of pathological behavior.
+   Experimental specifications SHOULD NOT be deployed as a default.
+   They SHOULD only be deployed in situations where they are being
+   actively measured, and where it is possible to deactivate if there
+   are signs of pathological behavior.
 
    Each published congestion control algorithm is REQUIRED to include a
    statement in the abstract indicating whether or not there is IETF
@@ -306,7 +303,38 @@ Table of Contents
    or IRTF review are invited to publish as an Informational RFC via the
    Independent Stream Editor (ISE).
 
-3.  Evaluation Criteria
+3.  Specifying Algorithms for use in Controlled Environments
+
+   Algorithms can be designed for general Internet deployment or for use
+   in controlled environments.  An operator can ensure that flows within
+   a controlled environment are isolated from other Internet flows, or
+   they might allow these flows to share resources with other Internet
+   flows.  Algorithms that rely on specific functions or configurations
+   in a network need to provide a reference or specification for these
+   functions (an RFC or another stable specification).  The IETF will
+   need to assess whether the relevant working group is able review the
+   proposed new algorithm and whether there is sufficient experience to
+   understand any dependent functions.
+
+   A data center is an example of a controlled environment, which often
+   deploys fabrics with rich signalling from switches to endpoints.
+   Furthermore, an operator can often limit the number of operating
+   congestion controls.  Many data centers are characterized by very low
+   latencies (< 2 ms) and can support specific workloads (e.g., that
+   introduce bursty traffic where many nodes complete a task at the same
+   time).
+
+   In evaluating a new proposal for use in a controlled environment, the
+   IETF needs to understand the usage, e.g., how the usage is scoped to
+   the controlled environment, whether the algorithm will share
+   resources with Internet traffic and consider what could happen if
+   used in a protocol that is bridged across an Internet path.
+   Algorithms that are designed for special environments and are
+   forbidden from use in the general Internet, might instead seek real-
+   world data for those environments.  In such cases, the evaluation
+   criteria in the remainder of this document might not apply.
+
+4.  Evaluation Criteria
 
    As noted above, authors are expected to do a well-rounded evaluation
    of the pros and cons of congestion control algorithms that are
@@ -317,16 +345,16 @@ Table of Contents
 
    When considering a proposed congestion control algorithm, the
    community MUST consider the following criteria.  These criteria will
-   be evaluated in various domains (see Section 4 and Section 5).
+   be evaluated in various domains (see Section 5 and Section 6).
 
-3.1.  Single Algorithm Behavior
+4.1.  Single Algorithm Behavior
 
    The criteria in this section evaluate the congestion control
    algorithm when one or more flows using that algorithm share a
    bottleneck link (i.e. with no flows using a differing congestion
    control algorithm).
 
-3.1.1.  Protection Against Congestion Collapse
+4.1.1.  Protection Against Congestion Collapse
 
    A congestion control algorithm should either stop sending when the
    packet drop rate exceeds some threshold [RFC3714], or should include
@@ -345,7 +373,7 @@ Table of Contents
    backoff mechanisms that would give flows with different round-trip
    times comparable capacity during backoff.
 
-3.1.2.  Protection Against Bufferbloat
+4.1.2.  Protection Against Bufferbloat
 
    A congestion control algorithm should reduce its sending rate if the
    round trip time (RTT) significantly increases.  Exactly how the
@@ -369,7 +397,7 @@ Table of Contents
    a new congestion control algorithm has the opportunity to improve the
    state of the art.
 
-3.1.3.  Fairness within the Proposed Congestion Control Algorithm
+4.1.3.  Fairness within the Proposed Congestion Control Algorithm
 
    When multiple competing flows all use the same proposed congestion
    control algorithm, the proposal should explore how the capacity is
@@ -379,7 +407,7 @@ Table of Contents
    that seek to send at different rates or when some of the flows do not
    last sufficiently long to approach asymptotic behavior.
 
-3.1.4.  Short Flows
+4.1.4.  Short Flows
 
    A great deal of congestion control analysis concerns the steady-state
    behavior of long flows.  However, many Internet flows are relatively
@@ -390,7 +418,7 @@ Table of Contents
    A proposed congestion control algorithm MUST consider how new and
    short-lived flows affect long-lived flows, and vice versa.
 
-3.2.  Mixed Algorithm Behavior
+4.2.  Mixed Algorithm Behavior
 
    These criteria evaluate the interaction of the proposed congestion
    control algorithm with commonly deployed congestion control
@@ -406,7 +434,7 @@ Table of Contents
    starvation, including assurance that a loss of all feedback (e.g.,
    detected by expiry of a retransmission time out) results in backoff.
 
-3.2.1.  Existing General-Purpose Transports
+4.2.1.  Existing General-Purpose Transports
 
    A proposed congestion control algorithm SHOULD be evaluated when
    competing using standard IETF congestion controls, e.g.  [RFC5681],
@@ -432,7 +460,7 @@ Table of Contents
    discussed in Sections 4 and 6 of [RFC3649] (HighSpeed TCP) and using
    spare capacity is discussed in Sections 6, 11.1, and 12 of [RFC3649].
 
-3.2.2.  Real-Time Protocols
+4.2.2.  Real-Time Protocols
 
    General-purpose protocols need to coexist in the Internet with real-
    time congestion control algorithms, which, in general, have finite
@@ -463,19 +491,19 @@ Table of Contents
    other mechanisms, which substantially reduces the interplay with
    other traffic.  However, a proposal targeting general Internet use
 
-3.2.3.  Short and Long Flows
+4.2.3.  Short and Long Flows
 
    The effect on short-lived and long-lived flows using other common
-   congestion control algorithms MUST be evaluated, as in Section 3.1.4.
+   congestion control algorithms MUST be evaluated, as in Section 4.1.4.
 
-3.3.  Other Criteria
+4.3.  Other Criteria
 
-3.3.1.  Differences with Congestion Control Principles
+4.3.1.  Differences with Congestion Control Principles
 
    Proposed congestion control algorithms SHOULD include a clear
    explanation of any deviations from [RFC2914] and [RFC7141].
 
-3.3.2.  Incremental Deployment
+4.3.2.  Incremental Deployment
 
    The proposed congestion control algorithm ought to discuss whether it
    allows for incremental deployment in the targeted environment.  For a
@@ -498,9 +526,9 @@ Table of Contents
    As an example from an Experimental RFC, deployment issues are
    discussed in Sections 10.3 and 10.4 of [RFC4782] (Quick-Start).
 
-4.  General Use
+5.  General Use
 
-   The criteria in Section 3 will be evaluated in the following
+   The criteria in Section 4 will be evaluated in the following
    scenarios.  Unless a proposed congestion control algorithm explicitly
    forbids use on the public Internet, the community MUST find that it
    meets the criteria in these scenarios for the proposed congestion
@@ -516,21 +544,21 @@ Table of Contents
    control algorithm has been tested at Internet scale, the results from
    that deployment are often useful for answering these questions.
 
-4.1.  Paths with Tail-drop Queues
+5.1.  Paths with Tail-drop Queues
 
    The performance of a congestion control algorithm is affected by the
    queue discipline applied at the bottleneck link.  The drop-tail queue
-   discipline (using a FIFO buffer) MUST be evaluated.  See Section 5.1
+   discipline (using a FIFO buffer) MUST be evaluated.  See Section 6.1
    for evaluation of other queue disciplines.
 
-4.2.  Tunnel Behavior
+5.2.  Tunnel Behavior
 
    When a proposed congestion control algorithm relies on explicit
    signals from the path, the proposal MUST consider the effect of
    traffic passing through a tunnel, where routers may not be aware of
    the flow.
 
-4.3.  Wired Paths
+5.3.  Wired Paths
 
    Wired networks are usually characterized by extremely low rates of
    packet loss except for those due to queue drops.  They tend to have
@@ -539,7 +567,7 @@ Table of Contents
    simple, wired links are typically used as a "baseline" case even if
    they are not always the bottleneck link in the modern Internet.
 
-4.4.  Wireless Paths
+5.4.  Wireless Paths
 
    While the early Internet was dominated by wired links, the properties
    of wireless links have become extremely important to Internet
@@ -551,9 +579,9 @@ Table of Contents
    round-trip times.  See [RFC3819] and Section 16 of [Tools] for
    further discussion of wireless properties.
 
-5.  Special Cases
+6.  Special Cases
 
-   The criteria in Section 3 will be evaluated in the following
+   The criteria in Section 4 will be evaluated in the following
    scenarios, unless the proposed congestion control algorithm
    specifically excludes its use in a scenario.  For these specific use-
    cases, the community MAY allow a proposal to progress even if the
@@ -563,7 +591,7 @@ Table of Contents
    expose the properties of operation in each of these scenarios,
    because they are not as ubiquitous as the General Use scenarios.
 
-5.1.  Active Queue Management (AQM)
+6.1.  Active Queue Management (AQM)
 
    The proposed congestion control algorithm SHOULD be evaluated under a
    variety of bottleneck queue disciplines.  The effect of an AQM
@@ -592,7 +620,7 @@ Table of Contents
    scope of this document.  [RFC7567] describes design considerations
    for AQMs.
 
-5.2.  Paths with Varying Delay
+6.2.  Paths with Varying Delay
 
    An Internet Path can include simple links, where the minimum delay is
    the propagation delay, and any additional delay can be attributed to
@@ -618,7 +646,7 @@ Table of Contents
    their operation is robust when there is a significant change in the
    minimum delay.
 
-5.3.  Internet of Things
+6.3.  Internet of Things
 
    The "Internet of Things" (IoT) is a broad concept, but when
    evaluating a proposed congestion control algorithm, it is often
@@ -639,7 +667,7 @@ Table of Contents
    bandwidth- delay product, well below the standard operating range of
    most Internet flows.
 
-5.4.  Paths with High Delay
+6.4.  Paths with High Delay
 
    A proposed congestion control algorithm ought not to presume that all
    general Internet paths have a low delay.  Some paths include links
@@ -651,7 +679,7 @@ Table of Contents
    path RTT.  Robustness to delay and delay variation may be a key
    evaluation metric.
 
-5.5.  Misbehaving Nodes
+6.5.  Misbehaving Nodes
 
    A proposed congestion control algorithm should explore how the
    algorithm performs with non-compliant senders, receivers, or routers.
@@ -667,13 +695,13 @@ Table of Contents
    routers; misbehaving middleboxes; and the potential use of Quick-
    Start to attack routers or to tie up available Quick-Start bandwidth.
 
-5.6.  Extreme Packet Reordering
+6.6.  Extreme Packet Reordering
 
    A proposed congestion control algorithm ought not to presume that all
    general Internet paths reliably deliver packets in order.  [RFC4653]
    discusses the effect of extreme packet reordering.
 
-5.7.  Transient Events
+6.7.  Transient Events
 
    A proposed congestion control algorithm SHOULD consider how the
    proposed congestion control algorithm would perform in the presence
@@ -685,7 +713,7 @@ Table of Contents
    As an example from an Experimental RFC, response to transient events
    is discussed in Section 9.2 of [RFC4782] (Quick-Start).
 
-5.7.1.  Sudden changes in the Path
+6.7.1.  Sudden changes in the Path
 
    An IETF transport is not tied to a specific Internet path or type of
    path.  The set of routers that form a path can and do change with
@@ -701,7 +729,7 @@ Table of Contents
    flows sharing a bottleneck), with a potential impact on the operation
    of a congestion control algorithm.
 
-5.8.  Multipath Transport
+6.8.  Multipath Transport
 
    Multipath transport protocols permit more than one path to be
    differentiated and used by a single connection at the sender.  A
@@ -738,7 +766,7 @@ Table of Contents
    are no IETF standards for concurrent multipath congestion control in
    the general Internet.
 
-5.9.  Data Centers
+6.9.  Data Centers
 
    Data centers are characterized by very low latencies (< 2 ms).  Many
    workloads involve bursty traffic where many nodes complete a task at
@@ -753,7 +781,7 @@ Table of Contents
    intended for data centers, but the proposal SHOULD indicate which are
    expected to safely coexist with it.
 
-6.  Security Considerations
+7.  Security Considerations
 
    This document does not represent a change to any aspect of the TCP/IP
    protocol suite and therefore does not directly impact Internet
@@ -766,13 +794,13 @@ Table of Contents
    control algorithms therefore ought to be mindful of pitfalls, and
    should examine any potential security issues that may arise.
 
-7.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-8.  References
+9.  References
 
-8.1.  Normative References
+9.1.  Normative References
 
    [RFC2914]  Floyd, S., "Congestion Control Principles", BCP 41,
               RFC 2914, DOI 10.17487/RFC2914, September 2000,
@@ -803,7 +831,7 @@ Table of Contents
               DOI 10.17487/RFC9438, August 2023,
               <https://www.rfc-editor.org/rfc/rfc9438>.
 
-8.2.  Informative References
+9.2.  Informative References
 
    [BBR-draft]
               Cardwell, N., Cheng, Y., Yeganeh, S. H., Swett, I., and V.
