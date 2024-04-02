@@ -833,12 +833,11 @@ Table of Contents
               iccrg-bbr-congestion-control-02>.
 
    [BBRv1-draft]
-              Cardwell, N., Cheng, Y., Yeganeh, S. H., Swett, I., and V.
-              Jacobson, "BBR Congestion Control", Work in Progress,
-              Internet-Draft, draft-cardwell-iccrg-bbr-congestion-
-              control-01, 7 November 2021,
-              <https://datatracker.ietf.org/doc/html/draft-cardwell-
-              iccrg-bbr-congestion-control-01>.
+              Cardwell, N., Cheng, Y., Yeganeh, S. H., and V. Jacobson,
+              "BBR Congestion Control", Work in Progress, Internet-
+              Draft, draft-cardwell-iccrg-bbr-congestion-control-00, 3
+              July 2017, <https://datatracker.ietf.org/doc/html/draft-
+              cardwell-iccrg-bbr-congestion-control-00>.
 
    [BBRv1-Evaluation]
               Zitterbart, M., "Experimental evaluation of BBR congestion
