@@ -47,7 +47,7 @@ informative:
 
   BBR-draft: I-D.cardwell-iccrg-bbr-congestion-control
 
-  BBRv1-draft: I-D.cardwell-iccrg-bbr-congestion-control-01
+  BBRv1-draft: I-D.cardwell-iccrg-bbr-congestion-control-00
 
   HRX08:
     title: "CUBIC: a new TCP-friendly high-speed TCP variant"
