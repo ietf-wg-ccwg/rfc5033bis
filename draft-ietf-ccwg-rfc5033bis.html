@@ -1556,23 +1556,25 @@ times comparable capacity during backoff.<a href="#section-4.1.1-2" class="pilcr
           <h4 id="name-protection-against-bufferbl">
 <a href="#section-4.1.2" class="section-number selfRef">4.1.2. </a><a href="#name-protection-against-bufferbl" class="section-name selfRef">Protection Against Bufferbloat</a>
           </h4>
-<p id="section-4.1.2-1">A congestion control algorithm should reduce its sending
-rate if the round trip time (RTT) significantly increases. Exactly how
-the algorithm reduces its sending rate is algorithm-specific, but see
+<p id="section-4.1.2-1">A congestion control algorithm should try to avoid maintaining
+excessive queues in the network. Exactly how
+the algorithm achieves this is algorithm-specific, but see
 <span>[<a href="#RFC8961" class="cite xref">RFC8961</a>]</span> and <span>[<a href="#RFC8085" class="cite xref">RFC8085</a>]</span> for requirements.<a href="#section-4.1.2-1" class="pilcrow">¶</a></p>
-<p id="section-4.1.2-2">Bufferbloat <span>[<a href="#Bufferbloat" class="cite xref">Bufferbloat</a>]</span> refers to the building of long queues in
+<p id="section-4.1.2-2">Bufferbloat <span>[<a href="#Bufferbloat" class="cite xref">Bufferbloat</a>]</span> refers to the building of excessive queues in
 the network. Many network routers are configured with very large buffers.
-If congestion is detected, classic TCP congestion control algorithms
-<span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span> will continue sending at a high rate until a First-In First-Out
-(FIFO) buffer completely fills and packet losses then occur. Every connection pasing through
-that bottleneck will then experience increased latency.  This adds unwanted latency that
-impacts highly interactive applications like games, but it also affects routine
+The standards-track Reno <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span> and Cubic <span>[<a href="#RFC9438" class="cite xref">RFC9438</a>]</span> congestion control algorithms
+send at progressively higher rates until a First-In First-Out
+(FIFO) buffer completely fills, and packet losses then occur.
+Every connection passing through that bottleneck experiences increased
+latency due to the high buffer occupancy. This adds unwanted latency that
+negatively impacts highly interactive applications like
+videoconferencing or games, but it also affects routine
 web browsing and video playing.<a href="#section-4.1.2-2" class="pilcrow">¶</a></p>
-<p id="section-4.1.2-3">This problem became apparent in the last decade and was not discussed in
+<p id="section-4.1.2-3">This problem has been widely discussed since 2011 <span>[<a href="#Bufferbloat" class="cite xref">Bufferbloat</a>]</span> but was not discussed in
 the Congestion Control Principles published in September 2002 <span>[<a href="#RFC2914" class="cite xref">RFC2914</a>]</span>.
-The classic congestion control algorithm <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span> and the widely deployed
-Cubic algorithm <span>[<a href="#RFC9438" class="cite xref">RFC9438</a>]</span> do not address it, but a new
-congestion control algorithm has the opportunity to improve the state of the art.<a href="#section-4.1.2-3" class="pilcrow">¶</a></p>
+The Reno and Cubic congestion control algorithms
+do not address it, but a new congestion control algorithm
+has the opportunity to improve the state of the art.<a href="#section-4.1.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="fairness-within-the-proposed-congestion-control-algorithm">

@@ -375,27 +375,27 @@ Table of Contents
 
 4.1.2.  Protection Against Bufferbloat
 
-   A congestion control algorithm should reduce its sending rate if the
-   round trip time (RTT) significantly increases.  Exactly how the
-   algorithm reduces its sending rate is algorithm-specific, but see
-   [RFC8961] and [RFC8085] for requirements.
+   A congestion control algorithm should try to avoid maintaining
+   excessive queues in the network.  Exactly how the algorithm achieves
+   this is algorithm-specific, but see [RFC8961] and [RFC8085] for
+   requirements.
 
-   Bufferbloat [Bufferbloat] refers to the building of long queues in
-   the network.  Many network routers are configured with very large
-   buffers.  If congestion is detected, classic TCP congestion control
-   algorithms [RFC5681] will continue sending at a high rate until a
-   First-In First-Out (FIFO) buffer completely fills and packet losses
-   then occur.  Every connection pasing through that bottleneck will
-   then experience increased latency.  This adds unwanted latency that
-   impacts highly interactive applications like games, but it also
-   affects routine web browsing and video playing.
+   Bufferbloat [Bufferbloat] refers to the building of excessive queues
+   in the network.  Many network routers are configured with very large
+   buffers.  The standards-track Reno [RFC5681] and Cubic [RFC9438]
+   congestion control algorithms send at progressively higher rates
+   until a First-In First-Out (FIFO) buffer completely fills, and packet
+   losses then occur.  Every connection passing through that bottleneck
+   experiences increased latency due to the high buffer occupancy.  This
+   adds unwanted latency that negatively impacts highly interactive
+   applications like videoconferencing or games, but it also affects
+   routine web browsing and video playing.
 
-   This problem became apparent in the last decade and was not discussed
-   in the Congestion Control Principles published in September 2002
-   [RFC2914].  The classic congestion control algorithm [RFC5681] and
-   the widely deployed Cubic algorithm [RFC9438] do not address it, but
-   a new congestion control algorithm has the opportunity to improve the
-   state of the art.
+   This problem has been widely discussed since 2011 [Bufferbloat] but
+   was not discussed in the Congestion Control Principles published in
+   September 2002 [RFC2914].  The Reno and Cubic congestion control
+   algorithms do not address it, but a new congestion control algorithm
+   has the opportunity to improve the state of the art.
 
 4.1.3.  Fairness within the Proposed Congestion Control Algorithm
 
