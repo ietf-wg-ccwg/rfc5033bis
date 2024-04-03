@@ -419,7 +419,8 @@ congestion control algorithms.
 In contexts where differing congestion control
 algorithms are used, it is important to understand whether
 the proposed congestion control algorithm could result in more
-harm than previously defined algorithms to flows sharing a common bottleneck.
+harm than previous standards-track algorithms (e.g. {{!RFC5681}},
+{{!RFC9002}}, {{!RFC9438}}) to flows sharing a common bottleneck.
 The measure of harm is not restricted to the equality
 of capacity, but ought also to consider metrics such as the
 introduced latency, or an increase in packet loss. An evaluation must
