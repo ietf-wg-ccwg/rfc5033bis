@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 4 October 2024                                     2 April 2024
+Expires: 5 October 2024                                     3 April 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 October 2024.
+   This Internet-Draft will expire on 5 October 2024.
 
 Copyright Notice
 
@@ -80,9 +80,10 @@ Table of Contents
      4.1.  Single Algorithm Behavior
        4.1.1.  Protection Against Congestion Collapse
        4.1.2.  Protection Against Bufferbloat
-       4.1.3.  Fairness within the Proposed Congestion Control
+       4.1.3.  Protection Against High Packet Loss
+       4.1.4.  Fairness within the Proposed Congestion Control
                Algorithm
-       4.1.4.  Short Flows
+       4.1.5.  Short Flows
      4.2.  Mixed Algorithm Behavior
        4.2.1.  Existing General-Purpose Transports
        4.2.2.  Real-Time Protocols
@@ -397,7 +398,25 @@ Table of Contents
    algorithms do not address it, but a new congestion control algorithm
    has the opportunity to improve the state of the art.
 
-4.1.3.  Fairness within the Proposed Congestion Control Algorithm
+4.1.3.  Protection Against High Packet Loss
+
+   A congestion control algorithm should try to avoid causing
+   excessively high rates of packet loss.  To accomplish this, it should
+   avoid excessive increases in sending rate, and reduce its sending
+   rate if experiencing high packet loss.
+
+   The first version of the BBR algorithm [BBRv1-draft] failed this
+   requirement.  Experimental evaluation [BBRv1-Evaluation] showed that
+   it caused a sustained rate of packet loss when multiple BBRv1 flows
+   shared a bottleneck and the buffer size was less than roughly one and
+   a half BDP.  This kind of behavior needed to be fixed, and indeed
+   further versions of BBR [BBR-draft] fixed this issue.
+
+   This requirement does not imply that the algorithm should react to
+   packet losses in exactly the same way as current standards-track
+   congestion control algorithms (e.g., [RFC5681]).
+
+4.1.4.  Fairness within the Proposed Congestion Control Algorithm
 
    When multiple competing flows all use the same proposed congestion
    control algorithm, the proposal should explore how the capacity is
@@ -407,7 +426,7 @@ Table of Contents
    that seek to send at different rates or when some of the flows do not
    last sufficiently long to approach asymptotic behavior.
 
-4.1.4.  Short Flows
+4.1.5.  Short Flows
 
    A great deal of congestion control analysis concerns the steady-state
    behavior of long flows.  However, many Internet flows are relatively
@@ -494,7 +513,7 @@ Table of Contents
 4.2.3.  Short and Long Flows
 
    The effect on short-lived and long-lived flows using other common
-   congestion control algorithms MUST be evaluated, as in Section 4.1.4.
+   congestion control algorithms MUST be evaluated, as in Section 4.1.5.
 
 4.3.  Other Criteria
 
@@ -840,6 +859,19 @@ Table of Contents
               control-02, 7 March 2022,
               <https://datatracker.ietf.org/doc/html/draft-cardwell-
               iccrg-bbr-congestion-control-02>.
+
+   [BBRv1-draft]
+              Cardwell, N., Cheng, Y., Yeganeh, S. H., and V. Jacobson,
+              "BBR Congestion Control", Work in Progress, Internet-
+              Draft, draft-cardwell-iccrg-bbr-congestion-control-00, 3
+              July 2017, <https://datatracker.ietf.org/doc/html/draft-
+              cardwell-iccrg-bbr-congestion-control-00>.
+
+   [BBRv1-Evaluation]
+              Zitterbart, M., "Experimental evaluation of BBR congestion
+              control", 2017 IEEE 25th International Conference on
+              Network Protocols (ICNP) , 2017,
+              <https://ieeexplore.ieee.org/document/8117540>.
 
    [Bufferbloat]
               Kathleen Nichols, "Bufferbloat: Dark Buffers in the
