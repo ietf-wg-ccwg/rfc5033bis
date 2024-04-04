@@ -480,10 +480,10 @@ a proposed congestion control algorithm
 can analyze and simulate their interaction with those algorithms. To the
 extent they are not, experiments can be conducted where possible.
 
-Note that in many deployments, real-time flows are directed into distinct
+Real-time flows can directed into distinct 
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
-which substantially reduces the interplay with other traffic. However, a proposal
-targeting general Internet use
+which can substantially reduce the interplay with other traffic. However, a proposal
+targeting general Internet use can not assume this is always the case.
 
 ### Short and Long Flows
 
