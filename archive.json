@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-02T00:37:04.420811+00:00",
+  "timestamp": "2024-04-04T00:37:26.188497+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1185,7 +1185,7 @@
         },
         {
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": ">  It might be appropriate to greatly relax the guidelines for transports with 64kB maximum window sizes.\r\n\r\nI would argue against that. Even a 64KByte maximum window size can cause massive buffer bloat at the data rates of dial-up modems or LPWAN networks, which constrained/IoT devices might be using:\r\n\r\n```\r\n64*1024*8bits / 56kbps > 9.3 secs\r\n```\r\n\r\nhttps://en.wikipedia.org/wiki/Low-power_wide-area_network\r\n\"The LPWAN data rate ranges from 0.3 kbit/s to 50 kbit/s per channel.\"\r\n\r\n",
           "createdAt": "2023-11-26T15:23:11Z",
           "updatedAt": "2023-11-27T14:44:52Z"
@@ -1329,7 +1329,7 @@
       "comments": [
         {
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "Agreed. How about something closer to:\r\n\r\n\"The IETF's standard congestion control schemes have been shown to have performance challenges in various environments (e.g., high-speed networks, cellular and WiFi wireless technologies, long distance satellite links) and also for interactive traffic workloads (VoIP, gaming, and videoconferencing).\"\r\n\r\ncc: @martinduke @mattmathis ",
           "createdAt": "2024-01-16T16:29:45Z",
           "updatedAt": "2024-01-16T16:29:45Z"
@@ -1397,7 +1397,7 @@
       "comments": [
         {
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "I agree it would be great to add this to the doc, and agree that those two bullet points would be good to integrate.\r\n\r\nAnother more specific benefit that may make sense to add: due to the constraints of open source licenses, some implementors have noted that in some cases they are unable to read open source reference implementations; in such cases it is important to have a detailed spec of the algorithm that is unencumbered by open source license constraints.\r\n",
           "createdAt": "2024-01-25T20:00:56Z",
           "updatedAt": "2024-01-25T20:00:56Z"
@@ -1506,7 +1506,7 @@
       "id": "I_kwDOI7aIXc6AMQx8",
       "title": "Something very odd about section 3.1.4 (technical github problem?)",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/92",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mwelzl",
       "authorAssociation": "NONE",
       "assignees": [
@@ -1515,8 +1515,8 @@
       "labels": [],
       "body": "Hi,\r\n\r\nIn the \"Editor's copy\", there is a section 3.1.4. called \"Avoiding Starvation of Flows sharing a bottleneck.\"\r\n(side note: I suggest to update this title to \"Avoiding Starvation of Flows Sharing a Bottleneck\")\r\n\r\nThis section is also visible when I follow the link called: \"Compare Editor's Copy to Individual Draft\".\r\n\r\nHOWEVER: the section is *not* a part of the .md file ???\r\nHow strange? How can this happen?\r\n\r\nBTW, in terms of content, this section is useful to me, but perhaps not strictly necessary to include since section 3.1.1 exists.",
       "createdAt": "2024-02-23T09:27:20Z",
-      "updatedAt": "2024-03-12T14:06:03Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-02T16:13:34Z",
+      "closedAt": "2024-04-02T16:13:34Z",
       "comments": [
         {
           "author": "martinduke",
@@ -1524,6 +1524,13 @@
           "body": "Yes, our editors' copy isn't building. I think we deleted this section because of 3.1.1, as you inferred.",
           "createdAt": "2024-03-12T14:06:02Z",
           "updatedAt": "2024-03-12T14:06:02Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I believe this problem has fixed itself. Closing.",
+          "createdAt": "2024-04-02T16:13:34Z",
+          "updatedAt": "2024-04-02T16:13:34Z"
         }
       ]
     },
@@ -1572,7 +1579,7 @@
       ],
       "body": "Raised at IETF 119: We may want to consider mentioning that you shouldn't impair the path for others.",
       "createdAt": "2024-03-21T03:19:15Z",
-      "updatedAt": "2024-03-26T09:46:04Z",
+      "updatedAt": "2024-04-02T16:59:42Z",
       "closedAt": null,
       "comments": [
         {
@@ -1588,6 +1595,27 @@
           "body": "Agree, let's keep the issue open and re-read the draft after all edits - at most I expect this would need to be called out earlier.",
           "createdAt": "2024-03-26T09:46:03Z",
           "updatedAt": "2024-03-26T09:46:03Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@ekinnear In 4.2, we have: \"In contexts where differing congestion control algorithms are used, it is important to understand whether the proposed congestion control algorithm could result in more harm than previously defined algorithms to flows sharing a common bottleneck.\"\r\n- Is this enough, or do you have a request for something section that needs attention?",
+          "createdAt": "2024-04-02T16:36:14Z",
+          "updatedAt": "2024-04-02T16:36:14Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Eric is just recording Lars's comment at the mic. I'm fairly sure Lars hasn't read the draft, so as you said, let's make sure this is covered when we re-read it.",
+          "createdAt": "2024-04-02T16:38:57Z",
+          "updatedAt": "2024-04-02T16:38:57Z"
+        },
+        {
+          "author": "nealcardwell",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "IMHO \"previously defined algorithms\" is not exactly what we mean, and this could be made more precise: \"previous standards-track algorithms (e.g. {{!RFC5681}}, {{!RFC9002}}, {{!RFC9438}})\"\r\n\r\nAFAICT the goal is to consider harm induced relative to the harm induced by Reno/CUBIC. There may be other experimental algorithms that become \"defined\", which are not intended as a yardstick by which to measure harm.\r\n\r\nSo I have proposed an edit for that:\r\nhttps://github.com/ietf-wg-ccwg/rfc5033bis/pull/108",
+          "createdAt": "2024-04-02T16:59:26Z",
+          "updatedAt": "2024-04-02T16:59:42Z"
         }
       ]
     },
@@ -1702,7 +1730,7 @@
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/101",
       "state": "OPEN",
       "author": "nealcardwell",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [
         "huitema"
       ],
@@ -1721,7 +1749,7 @@
         },
         {
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "FWIW I was not thinking of losses from the initial slow-start overshoot, but mainly just losses in steady state.  AFAIK for sufficiently shallow buffers all widely-deployed current algorithms (Reno, CUBIC, BBR) will have slow-start overshoot and cause high loss. IMHO that's just the BCP trade-off currently to favor rapid utilization of available bandwidth when the path properties are unknown.\r\n\r\nI just wanted to have some text about wanting CC algorithms to avoid generating high packet loss in the steady state. So I meant to implicitly categorize Reno/CUBIC behavior in most scenarios as already meeting this requirement (except perhaps in scenarios where the fair share cwnd is low; e.g. when the fair share cwnd is 2-3 packets Reno/CUBIC do generate very high packet loss rates, like 20% or so: send 2 packets, 2 packets ACKed; send 3 packets, 2 packets ACKed and 1 packet lost; repeat; loss rate is 1 packet / 5 packets sent = 20%).\r\n\r\ncc: @mattmathis\r\n",
           "createdAt": "2024-03-22T12:39:17Z",
           "updatedAt": "2024-03-22T12:39:17Z"
@@ -1735,7 +1763,7 @@
         },
         {
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "> Do you have example of deployed systems that generate high packet losses, e.g., larger than Reno or Cubic?\r\n\r\nSure. For example, BBRv1 will generate high packet losses with multiple BBRv1 flows and a bottleneck buffer less than roughly 1.5*BDP, as has been discussed at the IETF and in papers (e.g., \"Experimental evaluation of BBR congestion control\": https://ieeexplore.ieee.org/document/8117540).\r\n",
           "createdAt": "2024-03-22T18:57:57Z",
           "updatedAt": "2024-03-22T18:57:57Z"
@@ -1768,7 +1796,7 @@
       "id": "I_kwDOI7aIXc6EBMDW",
       "title": "Add a couple of paras of context for IETF DC work?",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/104",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1777,7 +1805,73 @@
       "labels": [],
       "body": "Moving this from PR to a separate issue:\r\n\r\nAs I recall (others may add to the list), there are challenges to be considered by a proponent/IETF, which include:\r\n\r\nDoes the proposal rely on technologies specified by other Forums/SDOs?\r\nDoes the IETF have sufficient experience of the DC requirements and to review the proposals?\r\nDoes the proposal include experience of interoperability between different implementations? or a plan for this?\r\nDoes the DC traffic share resources with Internet traffic?\r\nSpecifically: does the method to be used between DCs or only within DCs? - How is this usage scoped? And what happens when the protocol is bridged across an Internet path?\r\nOne or more of these has in the past thwarted progress towards adoption in the IETF, can we say something about this?\r\n\r\nI think this is the tip of a larger iceberg, and I'd suggest we'd need a little more text in the intro, if the IETF now thinks they may produce specs in this space.\r\n",
       "createdAt": "2024-03-29T08:17:40Z",
-      "updatedAt": "2024-03-29T08:17:40Z",
+      "updatedAt": "2024-04-02T08:26:18Z",
+      "closedAt": "2024-04-02T08:26:18Z",
+      "comments": []
+    },
+    {
+      "number": 109,
+      "id": "I_kwDOI7aIXc6EjlTB",
+      "title": "\"Forbidden\" in Section 2",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/109",
+      "state": "OPEN",
+      "author": "ekinnear",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "From @gloinul's review:\r\n\r\n> Algorithms that are designed for special environments (e.g., data centers) and forbidden from use in the Internet would, of course, instead seek real-world data for those environments.\r\n \r\nI reacted to the use of \u201cforbidden\u201d in this sentence. Would not \u201cnot intended at all for use in the Internet\u201d be a better formulation? Because forbidden want me to invoke the Protocol Police if someone ever attempted to use it. ",
+      "createdAt": "2024-04-03T21:03:05Z",
+      "updatedAt": "2024-04-03T21:03:05Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 110,
+      "id": "I_kwDOI7aIXc6Ejlm5",
+      "title": "Indicate that a lack of DSCP is more common than we imply",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/110",
+      "state": "OPEN",
+      "author": "ekinnear",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "editorial"
+      ],
+      "body": "From @gloinul's review: \r\n\r\nSection 3.2.2:\r\n \r\n> Note that in many deployments, real-time traffic is directed into distinct queues via Differentiated Services Code Points (DSCP) or other mechanisms, which substantially reduces the interplay with other traffic. However, a proposal targeting Internet use MUST NOT assume that all paths support specific mechanisms.\r\n \r\nAlthough there are clearly a number of network especially access networks that do deploy and use DSCP classes for its real-time media traffic I think this sentence is misleading. I would think that the majority of the WebRTC traffic carrying audio and video will in fact not be marked or have DSCP markings that survive into the general Internet. I would at least suggest to rewrite the above first sentence to indicate that although this may occur, the CC algorithm under consideration will have to deal with this type of traffic.\r\n",
+      "createdAt": "2024-04-03T21:04:02Z",
+      "updatedAt": "2024-04-03T21:04:07Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 111,
+      "id": "I_kwDOI7aIXc6Ejl1W",
+      "title": "Mention circuit breakers?",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/111",
+      "state": "OPEN",
+      "author": "ekinnear",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "From @gloinul's review: \r\n\r\nI do wonder if this document needs to bring up the circuit breaker specifications (RFC 8083, RFC 8084) we do have and potential interaction with them. I would expect a congestion control algorithm to work well within the envelope which would trigger them. The question is if one needs to take them into account when dealing with them. I will note that traffic applying a circuit breaker can be dynamic in transmission pattern and rates and otherwise be very non-responsive in relation to congestion signals. Only if they exceed the circuit breaker threshold will something happen.",
+      "createdAt": "2024-04-03T21:04:46Z",
+      "updatedAt": "2024-04-03T21:04:46Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 112,
+      "id": "I_kwDOI7aIXc6EjmEq",
+      "title": "Mention RFC6356?",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/112",
+      "state": "OPEN",
+      "author": "ekinnear",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "From @gloinul's review: \r\n\r\nSection 5.8:\r\n\r\nWhat is the verdict on RFC 6356? Is it not worth bringing this up in relation to concurrent usage? RFC 8041 do bring up additional experience with also other algorithms for MP-TCP that have been tried. I would at least claim \u201cAt the time of writing, there are no IETF standards for concurrent multipath congestion control in the general Internet.\u201d that this sentence is factual wrong as RFC 6356 is an IETF experimental specification.  \r\n \r\nI do think this section brings up important aspects to consider. However, it also point to some interesting challenges in reasoning and responsibility between functionalities when managing different paths. Looking at the text I think we have scheduler application data, path availability checks  as well as congestion control all impacting what is happening. What is truly congestion control here?",
+      "createdAt": "2024-04-03T21:05:32Z",
+      "updatedAt": "2024-04-03T21:05:32Z",
       "closedAt": null,
       "comments": []
     }
@@ -4480,7 +4574,7 @@
             "abbreviatedOid": "de1e47e"
           },
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-12-17T15:56:57Z",
@@ -4864,7 +4958,7 @@
             "abbreviatedOid": "9978926"
           },
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "LGTM\r\n",
           "createdAt": "2024-01-16T16:33:13Z",
@@ -5774,7 +5868,7 @@
       "comments": [
         {
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "Very nice. Looks good to me. Thanks for this!\r\n",
           "createdAt": "2024-01-30T15:47:03Z",
           "updatedAt": "2024-01-30T15:47:03Z"
@@ -5829,7 +5923,7 @@
         },
         {
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "> This makes sense to me, thanks! One small point: Should we require that (or mention that it's good if) the new algorithm compete \"fairly\" with itself? That's the only nuance I don't see explicitly mentioned in the text post deletion.\r\n\r\nAFAICT this is covered in the previous paragraph? I mean this one:\r\n\r\n```\r\n### Fairness within the Alternate Congestion Control Algorithm.\r\n\r\nWhen multiple competing flows all use the same\r\nalternate congestion control algorithm, the proposal should\r\nexplore how the capacity is shared among the competing flows.\r\nCapacity fairness can be important when a small number of similar\r\nflows compete to fill a bottleneck. It can however also not be useful,\r\nfor example, when comparing flows that seek to send at different rates or\r\nwhen some of the flows do not last sufficiently long to approach\r\nasymptotic behavior.\r\n```\r\n",
           "createdAt": "2024-01-31T19:38:28Z",
           "updatedAt": "2024-01-31T19:38:28Z"
@@ -6563,7 +6657,7 @@
       "id": "PR_kwDOI7aIXc5rOZT_",
       "title": "DC and Controlled Environments",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/105",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -6572,17 +6666,19 @@
       "labels": [],
       "body": "This responds to a discussion about how algorithms intended for DCs are to be developed/evaluated in the IETF.\r\nCloses #104.",
       "createdAt": "2024-03-30T13:54:57Z",
-      "updatedAt": "2024-04-01T20:04:23Z",
+      "updatedAt": "2024-04-02T08:26:17Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "a7d9fce035e7feb882b9f27a0077da4733b43718",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-18",
       "headRefOid": "1c1174f93fb300784ee68a7bdfdd15653777af4a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-04-02T08:26:17Z",
+      "mergedAt": "2024-04-02T08:26:17Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "8aa6ec0db3b0e87655956f3b7e7761b1971a2342"
+      },
       "comments": [],
       "reviews": [
         {
@@ -6591,7 +6687,7 @@
             "abbreviatedOid": "2a9527e"
           },
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-04-01T14:32:37Z",
@@ -6631,7 +6727,7 @@
             "abbreviatedOid": "2a9527e"
           },
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-04-01T15:29:13Z",
@@ -6692,25 +6788,42 @@
       "id": "PR_kwDOI7aIXc5rQZ0A",
       "title": "add requirement to not ignore high losses.",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/106",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "huitema",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This is an attempt to address issue #101",
       "createdAt": "2024-03-31T18:18:16Z",
-      "updatedAt": "2024-04-01T17:01:45Z",
+      "updatedAt": "2024-04-03T15:06:38Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "a7d9fce035e7feb882b9f27a0077da4733b43718",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "do-not-ignor-acks",
-      "headRefOid": "dec7cb34ef7473bfada094d563920e77f56a424c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "headRefOid": "5615ba2f7e3192f5ec7688ac6ef13f27922fa4d3",
+      "closedAt": "2024-04-03T15:06:31Z",
+      "mergedAt": "2024-04-03T15:06:31Z",
+      "mergedBy": "huitema",
+      "mergeCommit": {
+        "oid": "0a72c3ef4999e7235d35dcffc53fa6c8ae71f460"
+      },
+      "comments": [
+        {
+          "author": "nealcardwell",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Current version looks good to me as well, FWIW.\r\n",
+          "createdAt": "2024-04-02T16:50:37Z",
+          "updatedAt": "2024-04-02T16:50:37Z"
+        },
+        {
+          "author": "nealcardwell",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Thanks! Looks good to me, FWIW. :-)\r\n",
+          "createdAt": "2024-04-02T18:29:23Z",
+          "updatedAt": "2024-04-02T18:29:23Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOI7aIXc51gFIu",
@@ -6718,7 +6831,7 @@
             "abbreviatedOid": "97a38ad"
           },
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "cc: @martinduke @mattmathis @gorryfair ",
           "createdAt": "2024-04-01T14:12:52Z",
@@ -6758,7 +6871,7 @@
             "abbreviatedOid": "39f7929"
           },
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-04-01T15:25:00Z",
@@ -6841,6 +6954,205 @@
               "updatedAt": "2024-04-01T17:01:17Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51k9oI",
+          "commit": {
+            "abbreviatedOid": "39f7929"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-02T05:05:40Z",
+          "updatedAt": "2024-04-02T05:05:40Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "Yes. Committing it now.",
+              "createdAt": "2024-04-02T05:05:40Z",
+              "updatedAt": "2024-04-02T05:05:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51k9-m",
+          "commit": {
+            "abbreviatedOid": "97a38ad"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-02T05:07:31Z",
+          "updatedAt": "2024-04-02T05:07:31Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "That's text that I copied from Neal's comments in the issue. I think we can just remove it. ",
+              "createdAt": "2024-04-02T05:07:31Z",
+              "updatedAt": "2024-04-02T05:07:31Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51k_qO",
+          "commit": {
+            "abbreviatedOid": "97a38ad"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-02T05:15:51Z",
+          "updatedAt": "2024-04-02T05:15:51Z",
+          "comments": [
+            {
+              "originalPosition": 46,
+              "body": "@gorryfair you wrote \"I don't agree\", but from the remainder of your text I suppose this is a typo.\r\n\r\nThe problem with evaluation is that there is a vast space of possible network conditions. For BBRv1, the issue was manifest with a specific configuration and a specific size of bottleneck buffers. For other protocol, we might find issue  with a range of delays, or with a specific number of competing flows.\r\n\r\nWe probably need a good sentence for \"try enough combination because the worms may hide under an not-yet-turned rock\".",
+              "createdAt": "2024-04-02T05:15:51Z",
+              "updatedAt": "2024-04-02T05:15:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51lA5b",
+          "commit": {
+            "abbreviatedOid": "97a38ad"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-02T05:21:33Z",
+          "updatedAt": "2024-04-02T05:21:33Z",
+          "comments": [
+            {
+              "originalPosition": 45,
+              "body": "Neal gave me this \"war story\" when I was asking him for a specific example of what he had in mind -- see the first 2-3 comments in issue #101.\r\n\r\nPart of the reason for including the description is to insist on the \"sustained\" nature of packet loss. Most algorithm end up causing a high rate of packet loss at the end of the startup period, but we don't want to say \"don't use Reno because it causes lots of packet losses at the end of startup\". Or \"don't use Cubic because it causes some packet losses at the end of each epoch\". BBRv1 is a neat example of the behavior that we find questionable.",
+              "createdAt": "2024-04-02T05:21:33Z",
+              "updatedAt": "2024-04-02T05:21:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51rNTA",
+          "commit": {
+            "abbreviatedOid": "97a38ad"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-02T15:55:18Z",
+          "updatedAt": "2024-04-02T15:55:19Z",
+          "comments": [
+            {
+              "originalPosition": 45,
+              "body": "OK, I can live with it.",
+              "createdAt": "2024-04-02T15:55:19Z",
+              "updatedAt": "2024-04-02T15:55:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51rNoO",
+          "commit": {
+            "abbreviatedOid": "344695c"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "I'm satisfied but won't merge until Gorry is satisfied too.",
+          "createdAt": "2024-04-02T15:55:55Z",
+          "updatedAt": "2024-04-02T15:55:55Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51sgUP",
+          "commit": {
+            "abbreviatedOid": "d854658"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-02T18:20:17Z",
+          "updatedAt": "2024-04-02T18:20:18Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "This should be draft-00, not draft-01. Draft-01 defines BBRv2, we want to specifically refer to BBRv1.",
+              "createdAt": "2024-04-02T18:20:18Z",
+              "updatedAt": "2024-04-02T18:20:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51shjk",
+          "commit": {
+            "abbreviatedOid": "d854658"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-02T18:23:07Z",
+          "updatedAt": "2024-04-02T18:23:07Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Fixed.",
+              "createdAt": "2024-04-02T18:23:07Z",
+              "updatedAt": "2024-04-02T18:23:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51siLE",
+          "commit": {
+            "abbreviatedOid": "97a38ad"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-02T18:24:38Z",
+          "updatedAt": "2024-04-02T18:24:38Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "@gorryfair I just removed the text about \"tolerate high loss\". Is that OK with you?",
+              "createdAt": "2024-04-02T18:24:38Z",
+              "updatedAt": "2024-04-02T18:24:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51med-",
+          "commit": {
+            "abbreviatedOid": "5615ba2"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "This seems fine.",
+          "createdAt": "2024-04-02T08:29:18Z",
+          "updatedAt": "2024-04-03T07:48:43Z",
+          "comments": [
+            {
+              "originalPosition": 46,
+              "body": "sorry for the typo:/I do agree!/ ...and  I think what you say resonates with the section on \"harm\".",
+              "createdAt": "2024-04-02T08:29:18Z",
+              "updatedAt": "2024-04-03T07:48:43Z"
+            },
+            {
+              "originalPosition": 36,
+              "body": "So close, but I'm not persuaded that it is good to write: \"a congestion control algorithm can tolerate high loss\" ... I wonder if we could propose:\r\n\"a congestion control algorithm could tolerate high loss\"",
+              "createdAt": "2024-04-02T16:31:02Z",
+              "updatedAt": "2024-04-03T07:48:43Z"
+            }
+          ]
         }
       ]
     },
@@ -6849,24 +7161,26 @@
       "id": "PR_kwDOI7aIXc5rVBxg",
       "title": "update \"Protection Against Bufferbloat\"",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/107",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "nealcardwell",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Tighten up the text and add some references.\r\ncc: @mattmathis @martinduke @gorryfair @huitema ",
       "createdAt": "2024-04-01T15:18:08Z",
-      "updatedAt": "2024-04-01T20:05:09Z",
+      "updatedAt": "2024-04-02T14:36:49Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "a7d9fce035e7feb882b9f27a0077da4733b43718",
       "headRepository": "nealcardwell/rfc5033bis",
       "headRefName": "patch-1",
       "headRefOid": "92814ef9eca2e08d1ca1baeeec8aaacc7a12fbda",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-04-02T14:36:49Z",
+      "mergedAt": "2024-04-02T14:36:49Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "fb9381c0120938cdee62aea141a10117cf9c0504"
+      },
       "comments": [],
       "reviews": [
         {
@@ -6925,7 +7239,7 @@
             "abbreviatedOid": "a6e3ac2"
           },
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-04-01T19:39:00Z",
@@ -6945,7 +7259,7 @@
             "abbreviatedOid": "a6e3ac2"
           },
           "author": "nealcardwell",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-04-01T19:39:10Z",
@@ -6970,6 +7284,182 @@
           "body": "",
           "createdAt": "2024-04-01T20:05:09Z",
           "updatedAt": "2024-04-01T20:05:09Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc51lCUa",
+          "commit": {
+            "abbreviatedOid": "92814ef"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-02T05:28:00Z",
+          "updatedAt": "2024-04-02T05:28:00Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 108,
+      "id": "PR_kwDOI7aIXc5rdrqm",
+      "title": "\"previously defined algorithms\" -> \"previous standards-track algorith\u2026",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/108",
+      "state": "MERGED",
+      "author": "nealcardwell",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "\u2026ms...\"\r\n\r\nAFAICT the goal is to consider harm induced relative to the harm induced by Reno/CUBIC. There may be other experimental algorithms that become \"defined\", which are not intended as a yardstick by which to measure harm.",
+      "createdAt": "2024-04-02T16:58:03Z",
+      "updatedAt": "2024-04-03T22:17:50Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "fb9381c0120938cdee62aea141a10117cf9c0504",
+      "headRepository": "nealcardwell/rfc5033bis",
+      "headRefName": "patch-2",
+      "headRefOid": "d617dc0b445351dc75ab097c8813491143620c2f",
+      "closedAt": "2024-04-03T22:17:49Z",
+      "mergedAt": "2024-04-03T22:17:49Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "b5cbdcafd79fddac5f46f92c411d5a01da2c0aa3"
+      },
+      "comments": [
+        {
+          "author": "nealcardwell",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "cc: @martinduke @gorryfair @mattmathis @huitema ",
+          "createdAt": "2024-04-02T17:01:19Z",
+          "updatedAt": "2024-04-02T17:01:19Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc5135Kj",
+          "commit": {
+            "abbreviatedOid": "d617dc0"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-03T17:58:09Z",
+          "updatedAt": "2024-04-03T17:58:10Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "You present this list an example, as in \"example given, (classic), (Reno in QUIC), Cubic\". I actually think that this list is exhaustive.",
+              "createdAt": "2024-04-03T17:58:09Z",
+              "updatedAt": "2024-04-03T17:58:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5137XC",
+          "commit": {
+            "abbreviatedOid": "d617dc0"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-03T18:03:03Z",
+          "updatedAt": "2024-04-03T18:03:03Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "It is exhaustive, but maybe won't be in the future? I could go either way on this.",
+              "createdAt": "2024-04-03T18:03:03Z",
+              "updatedAt": "2024-04-03T18:03:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5137ef",
+          "commit": {
+            "abbreviatedOid": "d617dc0"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-03T18:03:17Z",
+          "updatedAt": "2024-04-03T18:03:17Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc513-wc",
+          "commit": {
+            "abbreviatedOid": "d617dc0"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-03T18:07:13Z",
+          "updatedAt": "2024-04-03T18:07:14Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "I think the current list with e.g. list is fine - the list isis for previous standards-track RFCs fro algo's, so if this were extended in the future, it would be OK for the advice to include those to-be-done RFCs.",
+              "createdAt": "2024-04-03T18:07:13Z",
+              "updatedAt": "2024-04-03T18:07:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc514UBj",
+          "commit": {
+            "abbreviatedOid": "d617dc0"
+          },
+          "author": "nealcardwell",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-03T18:48:34Z",
+          "updatedAt": "2024-04-03T18:48:35Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Yeah, I was trying to be consistent with the approach in the next paragraph, which has a similar list: \"A proposed congestion control algorithm SHOULD be evaluated when competing using standard IETF congestion controls, e.g. {{!RFC5681}}, {{!RFC9002}}, {{!RFC9438}}.\"\r\n",
+              "createdAt": "2024-04-03T18:48:35Z",
+              "updatedAt": "2024-04-03T18:48:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc514h_b",
+          "commit": {
+            "abbreviatedOid": "d617dc0"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-03T19:16:35Z",
+          "updatedAt": "2024-04-03T19:16:35Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "OK, I think I was just too picky.",
+              "createdAt": "2024-04-03T19:16:35Z",
+              "updatedAt": "2024-04-03T19:16:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc514iOK",
+          "commit": {
+            "abbreviatedOid": "d617dc0"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-03T19:17:12Z",
+          "updatedAt": "2024-04-03T19:17:12Z",
           "comments": []
         }
       ]
