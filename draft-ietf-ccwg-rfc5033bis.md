@@ -1,4 +1,4 @@
----
+y---
 title: "Specifying New Congestion Control Algorithms"
 abbrev: "New CC Algorithms"
 docname: draft-ietf-ccwg-rfc5033bis-latest
@@ -480,7 +480,7 @@ a proposed congestion control algorithm
 can analyze and simulate their interaction with those algorithms. To the
 extent they are not, experiments can be conducted where possible.
 
-Real-time flows can directed into distinct
+Real-time flows can be directed into distinct
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
 which can substantially reduce the interplay with other traffic. However, a proposal
 targeting general Internet use can not assume this is always the case.
