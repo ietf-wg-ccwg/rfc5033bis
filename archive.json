@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-04T00:37:26.188497+00:00",
+  "timestamp": "2024-04-07T00:40:22.044156+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -62,6 +62,11 @@
       "name": "IETF 119",
       "description": "Issues discussed at IETF 119",
       "color": "B39ACF"
+    },
+    {
+      "name": "Parked",
+      "description": "",
+      "color": "D97813"
     }
   ],
   "issues": [
@@ -1088,10 +1093,12 @@
       "assignees": [
         "mattmathis"
       ],
-      "labels": [],
+      "labels": [
+        "Parked"
+      ],
       "body": "Replace all or part of section 2, \"document status\" with a new section on CCA development lifecycles.   Include the following major phases and constraints.\r\n\r\nPilot (private evaluation)\r\n - Authors MUST maintain full control and the ability to withdraw all instances\r\n - Sources and binaries are not published outside of the author's domain\r\n - It includes instrumentation for data rate, loss, delay , ECN marking, etc\r\n - And infrastructure to harvest telemetry from all instances\r\n - Continuous A/B testing against legacy algorithms\r\n - Include methods for estimating impact on other protocols and algorithms \r\n - I-D published and revised as the pilot matures\r\n\r\nPre-deployment and public evaluation\r\n - Published sources\r\n - Opt-in usage only\r\n - I-D kept up-to-date and progresses towards RFC (experimental or info status)\r\n - Authors maintain instrumentation, telemetry and continuous A/B testing for early adopters\r\n - Widespread evaluation by the broader community\r\n   - A/B testing\r\n   - Testing in challenging and unexpected network environments\r\n - Open a wiki evaluation doc\r\n  - Conformance statement for RFC5033bis (this doc)\r\n  - Summaries and references of external evaluations\r\n    - Including details necessary for others to duplicate to expand on the experiments\r\n  - If there are algorithm changes, add appropriate annotation to older reports and solicit updated results\r\n\r\nApproval for wider deployment\r\n - Requires RFC publication(s) covering:\r\n  - Algorithm spec\r\n  - Snapshot of the evaluation wiki\r\n  - Deployment guidelines\r\n     - Most important question: Is it safe for unattended use by non-experts?\r\n - Preserve (and maintain) the pre deployment implementation as a reference for future conformance testing.\r\n - Evaluation wiki lives on to capture unexpected events or problems discovered later\r\n",
       "createdAt": "2023-11-09T20:43:01Z",
-      "updatedAt": "2023-11-21T02:17:13Z",
+      "updatedAt": "2024-04-04T16:12:16Z",
       "closedAt": null,
       "comments": [
         {
@@ -1121,10 +1128,12 @@
       "assignees": [
         "mattmathis"
       ],
-      "labels": [],
+      "labels": [
+        "Parked"
+      ],
       "body": "Define congestion collapse in terms of excess overhead under adverse conditions.    This is how it was defined circa 1987.\r\n\r\nRename the current \"congestion collapse\" section.",
       "createdAt": "2023-11-15T15:49:20Z",
-      "updatedAt": "2024-01-08T18:56:19Z",
+      "updatedAt": "2024-04-04T16:11:55Z",
       "closedAt": null,
       "comments": [
         {
@@ -1575,11 +1584,12 @@
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [
-        "IETF 119"
+        "IETF 119",
+        "Parked"
       ],
       "body": "Raised at IETF 119: We may want to consider mentioning that you shouldn't impair the path for others.",
       "createdAt": "2024-03-21T03:19:15Z",
-      "updatedAt": "2024-04-02T16:59:42Z",
+      "updatedAt": "2024-04-04T16:11:36Z",
       "closedAt": null,
       "comments": [
         {
@@ -1821,9 +1831,24 @@
       "labels": [],
       "body": "From @gloinul's review:\r\n\r\n> Algorithms that are designed for special environments (e.g., data centers) and forbidden from use in the Internet would, of course, instead seek real-world data for those environments.\r\n \r\nI reacted to the use of \u201cforbidden\u201d in this sentence. Would not \u201cnot intended at all for use in the Internet\u201d be a better formulation? Because forbidden want me to invoke the Protocol Police if someone ever attempted to use it. ",
       "createdAt": "2024-04-03T21:03:05Z",
-      "updatedAt": "2024-04-03T21:03:05Z",
+      "updatedAt": "2024-04-04T13:25:05Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "For me, this was meant to be stronger than \"not intended\", more like \"confined to a limited to a controlled environment\". \r\n\r\nRFC 8799 describes some of these cases, and could be a useful reference?",
+          "createdAt": "2024-04-04T07:54:05Z",
+          "updatedAt": "2024-04-04T07:54:05Z"
+        },
+        {
+          "author": "gloinul",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "So I think a stronger wording is fine. But, an alternative formulation would be good that doesn't imply that you might get the protocol police after you. ",
+          "createdAt": "2024-04-04T13:25:03Z",
+          "updatedAt": "2024-04-04T13:25:03Z"
+        }
+      ]
     },
     {
       "number": 110,
@@ -7461,6 +7486,75 @@
           "createdAt": "2024-04-03T19:17:12Z",
           "updatedAt": "2024-04-03T19:17:12Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 113,
+      "id": "PR_kwDOI7aIXc5rqn02",
+      "title": "Restore end of PR #57",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/113",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "gorryfair"
+      ],
+      "labels": [],
+      "body": "Fixed an editorial problem resulting in removing the end of the sentence, which went on to say that you can't assume DSCP, etc. \r\nAlso changed /many deployments/ to simply say this happens without saying it is often.",
+      "createdAt": "2024-04-04T07:46:09Z",
+      "updatedAt": "2024-04-04T16:10:19Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "b5cbdcafd79fddac5f46f92c411d5a01da2c0aa3",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "DSCP",
+      "headRefOid": "c35e7d8ef2d297297e0938115254d1b4c1931123",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc52Au3m",
+          "commit": {
+            "abbreviatedOid": "d2792ca"
+          },
+          "author": "gloinul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Otherwise looks good, and with change I would approve. ",
+          "createdAt": "2024-04-04T13:26:13Z",
+          "updatedAt": "2024-04-04T13:27:14Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "missing \"be\"?",
+              "createdAt": "2024-04-04T13:26:13Z",
+              "updatedAt": "2024-04-04T13:27:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52C0HC",
+          "commit": {
+            "abbreviatedOid": "5c81397"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-04T16:10:07Z",
+          "updatedAt": "2024-04-04T16:10:13Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "```suggestion\r\n---\r\n```",
+              "createdAt": "2024-04-04T16:10:07Z",
+              "updatedAt": "2024-04-04T16:10:14Z"
+            }
+          ]
         }
       ]
     }
