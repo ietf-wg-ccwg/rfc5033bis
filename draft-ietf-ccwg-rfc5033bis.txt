@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 5 October 2024                                     3 April 2024
+Expires: 11 October 2024                                    9 April 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 October 2024.
+   This Internet-Draft will expire on 11 October 2024.
 
 Copyright Notice
 
@@ -506,10 +506,11 @@ Table of Contents
    simulate their interaction with those algorithms.  To the extent they
    are not, experiments can be conducted where possible.
 
-   Note that in many deployments, real-time flows are directed into
-   distinct queues via Differentiated Services Code Points (DSCP) or
-   other mechanisms, which substantially reduces the interplay with
-   other traffic.  However, a proposal targeting general Internet use
+   Real-time flows can be directed into distinct queues via
+   Differentiated Services Code Points (DSCP) or other mechanisms, which
+   can substantially reduce the interplay with other traffic.  However,
+   a proposal targeting general Internet use can not assume this is
+   always the case.
 
 4.2.3.  Short and Long Flows
 
