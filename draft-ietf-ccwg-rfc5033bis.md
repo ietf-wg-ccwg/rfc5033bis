@@ -299,12 +299,13 @@ Many data centers are characterized by very low latencies (< 2 ms) and can suppo
 specific workloads (e.g., that introduce bursty traffic
 where many nodes complete a task at the same time).
 
-In evaluating a new proposal for use in a controlled environment, the IETF needs
+In evaluating a new proposal for use in a controlled environment {{?RFC8799}}, the IETF needs
 to understand the usage, e.g., how the usage is scoped to the controlled environment,
 whether the algorithm will share resources with Internet traffic
 and consider what could happen if used in a protocol that is bridged across an Internet path.
-Algorithms that are designed for special environments and are forbidden from use
-in the general Internet, might instead seek real-world data for those environments.
+Algorithms that are designed to be confined to a controlled environment
+and are not intended for use in the general Internet,
+might instead seek real-world data for those environments.
 In such cases, the evaluation criteria in the remainder of this document might not apply.
 
 # Evaluation Criteria {#evaluation-criteria}
