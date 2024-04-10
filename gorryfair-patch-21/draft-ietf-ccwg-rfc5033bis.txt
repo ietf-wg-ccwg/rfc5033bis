@@ -776,8 +776,6 @@ Table of Contents
    across multiple paths.  There are currently no Standards Track RFCs,
    but there is an Experimental RFC [RFC6356] that specifies a
    concurrent multipath congestion control algorithm for TCP (MP-TCP).
-   [RFC8041] discusses use cases and operational experience in real
-   networks.
 
    The Internet provides no guarantee that different paths (e.g., using
    different endpoint addresses) are disjoint.  This has additional
@@ -958,11 +956,6 @@ Table of Contents
               Lightweight Control Scheme to Address the Bufferbloat
               Problem", RFC 8033, DOI 10.17487/RFC8033, February 2017,
               <https://www.rfc-editor.org/rfc/rfc8033>.
-
-   [RFC8041]  Bonaventure, O., Paasch, C., and G. Detal, "Use Cases and
-              Operational Experience with Multipath TCP", RFC 8041,
-              DOI 10.17487/RFC8041, January 2017,
-              <https://www.rfc-editor.org/rfc/rfc8041>.
 
    [RFC8087]  Fairhurst, G. and M. Welzl, "The Benefits of Using
               Explicit Congestion Notification (ECN)", RFC 8087,
