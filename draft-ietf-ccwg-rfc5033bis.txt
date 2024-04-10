@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 11 October 2024                                    9 April 2024
+Expires: 12 October 2024                                   10 April 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 October 2024.
+   This Internet-Draft will expire on 12 October 2024.
 
 Copyright Notice
 
@@ -325,15 +325,16 @@ Table of Contents
    introduce bursty traffic where many nodes complete a task at the same
    time).
 
-   In evaluating a new proposal for use in a controlled environment, the
-   IETF needs to understand the usage, e.g., how the usage is scoped to
-   the controlled environment, whether the algorithm will share
-   resources with Internet traffic and consider what could happen if
-   used in a protocol that is bridged across an Internet path.
-   Algorithms that are designed for special environments and are
-   forbidden from use in the general Internet, might instead seek real-
-   world data for those environments.  In such cases, the evaluation
-   criteria in the remainder of this document might not apply.
+   In evaluating a new proposal for use in a controlled environment
+   [RFC8799], the IETF needs to understand the usage, e.g., how the
+   usage is scoped to the controlled environment, whether the algorithm
+   will share resources with Internet traffic and consider what could
+   happen if used in a protocol that is bridged across an Internet path.
+   Algorithms that are designed to be confined to a controlled
+   environment and are not intended for use in the general Internet,
+   might instead seek real-world data for those environments.  In such
+   cases, the evaluation criteria in the remainder of this document
+   might not apply.
 
 4.  Evaluation Criteria
 
@@ -963,6 +964,10 @@ Table of Contents
               R. Scheffenegger, "CUBIC for Fast Long-Distance Networks",
               RFC 8312, DOI 10.17487/RFC8312, February 2018,
               <https://www.rfc-editor.org/rfc/rfc8312>.
+
+   [RFC8799]  Carpenter, B. and B. Liu, "Limited Domains and Internet
+              Protocols", RFC 8799, DOI 10.17487/RFC8799, July 2020,
+              <https://www.rfc-editor.org/rfc/rfc8799>.
 
    [RFC8867]  Sarker, Z., Singh, V., Zhu, X., and M. Ramalho, "Test
               Cases for Evaluating Congestion Control for Interactive
