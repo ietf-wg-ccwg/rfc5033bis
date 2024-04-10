@@ -737,10 +737,8 @@ these effects also ought to be evaluated.
 
 Another example use is concurrent multipath, where the transport protocol simultaneously
 schedules flows to aggregate the capacity across multiple paths.
-{{?RFC6356}} presents an experimental congestion control algorithm for MP-TCP that couples
-the congestion control algorithms running on different subflows by
-linking their increase functions, and dynamically controlling the
-overall aggressiveness of the multipath flow.
+{{?RFC6356}} is an Experimental RFC specifying
+a concurrent multipath congestion control algorithm for TCP (MP-TCP).
 {{?RFC8041}} discusses use cases
 and operational experience in real networks.
 
