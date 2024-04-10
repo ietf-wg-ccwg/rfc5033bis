@@ -738,6 +738,7 @@ these effects also ought to be evaluated.
 
 Another example use is concurrent multipath, where the transport protocol simultaneously
 schedules flows to aggregate the capacity across multiple paths.
+
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
 This has additional implications:
@@ -750,8 +751,9 @@ the potential for harm to other flows. Synchronisation of congestion control mec
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
-At the time of writing, there are no IETF standards for concurrent
-multipath congestion control in the general Internet.
+
+At the time of writing, there are currently no Standards Track RFCs, but there is an Experimental RFC {{?RFC6356}} that specifies
+a concurrent multipath congestion control algorithm for TCP (MP-TCP).
 
 ## Data Centers
 
