@@ -505,7 +505,7 @@ transport circuit breaker algorithms.
 {{!RFC8083}} also defines a
 minimal set of RTP circuit breakers. This identifies conditions under which a sender
 needs to stop transmitting media data to protect the network from excessive congestion.
-It is expected that, in the absence of long-lived excessive congestion
+It is expected that, in the absence of long-lived excessive congestion,
 RTP applications running on best-effort IP networks will be able to operate without
 triggering these circuit breakers.  To avoid triggering this circuit breaker,
 any Standards Track congestion control algorithms defined for RTP needs to operate
