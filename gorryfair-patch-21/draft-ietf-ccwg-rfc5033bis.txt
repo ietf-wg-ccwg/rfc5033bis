@@ -773,9 +773,7 @@ Table of Contents
 
    Another example use is concurrent multipath, where the transport
    protocol simultaneously schedules flows to aggregate the capacity
-   across multiple paths.  There are currently no Standards Track RFCs,
-   but there is an Experimental RFC [RFC6356] that specifies a
-   concurrent multipath congestion control algorithm for TCP (MP-TCP).
+   across multiple paths.
 
    The Internet provides no guarantee that different paths (e.g., using
    different endpoint addresses) are disjoint.  This has additional
@@ -787,9 +785,11 @@ Table of Contents
    Synchronisation of congestion control mechanisms (e.g., where
    multiple flows change their behaviour on similar timeframes) can also
    contribute to harm and/or reduce fairness, these effects also ought
-   to be evaluated.  At the time of writing, there are no IETF Standards
-   Track RFCs for concurrent multipath congestion control in the general
-   Internet.
+   to be evaluated.
+
+   At the time of writing, there are currently no Standards Track RFCs,
+   but there is an Experimental RFC [RFC6356] that specifies a
+   concurrent multipath congestion control algorithm for TCP (MP-TCP).
 
 6.9.  Data Centers
 
