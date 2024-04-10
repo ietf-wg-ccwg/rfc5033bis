@@ -162,7 +162,7 @@ in an Informational Internet Draft in 2015, published as an
 Informational RFC in 2017 {{?RFC8312}} and then as a Proposed
 Standard in 2023 {{?RFC9438}}.
 
-BBR was developed as an internal research project by Google,
+At the time of writing, BBR is being developed as an internal research project by Google,
 with the first implementation contributed to Linux kernel 4.19 in 2016.
 It was described in an IRTF draft in 2018, and that draft has been
 regularly updated to document the evolving versions of the algorithm
