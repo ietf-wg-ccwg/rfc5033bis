@@ -347,7 +347,7 @@ full backoff mechanism must be identical to that of TCP
 backoff mechanisms that would give flows with different round-trip
 times comparable capacity during backoff.
 
-### Operation with the Envelope set by Circuit Breakers {{#circuit-breakers}}
+### Operation with the Envelope set by Circuit Breakers {#circuit-breakers}
 
 A network transport circuit breaker {{!RFC8084}} is an automatic mechanism
 that is used by some equipment in the network to continuously monitor a
