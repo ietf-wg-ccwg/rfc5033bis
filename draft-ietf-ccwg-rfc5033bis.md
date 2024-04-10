@@ -739,8 +739,6 @@ Another example use is concurrent multipath, where the transport protocol simult
 schedules flows to aggregate the capacity across multiple paths.
 There are currently no Standards Track RFCs, but there is an Experimental RFC {{?RFC6356}} that specifies
 a concurrent multipath congestion control algorithm for TCP (MP-TCP).
-{{?RFC8041}} discusses use cases
-and operational experience in real networks.
 
 The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
