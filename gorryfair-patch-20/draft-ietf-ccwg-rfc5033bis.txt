@@ -210,7 +210,7 @@ Table of Contents
       specification can help multiple contributors align on a consensus
       change to the algorithm.
 
-   *  A specification that is accessible to anyone, can circumvent the
+   *  A specification that is accessible to anyone can circumvent the
       issue that some implementors may be unable to read open source
       reference implementations due to the constraints of some open
       source licenses.
