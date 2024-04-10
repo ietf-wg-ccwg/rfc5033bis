@@ -347,6 +347,19 @@ full backoff mechanism must be identical to that of TCP
 backoff mechanisms that would give flows with different round-trip
 times comparable capacity during backoff.
 
+### Operation with the Envelope set by Circuit Breakers {{#circuit-breakers}}
+
+A network transport circuit breaker {{!RFC8084}} is an automatic mechanism
+that is used by some equipment in the network to continuously monitor a
+flow or aggregate set of flows.  The mechanism seeks to detect when the
+flow(s) experience persistent excessive congestion, and when detected,
+to terminate (or significantly reduces the rate of) the flow(s).
+
+A well-designed congestion control algorithm ought to react before
+a flow uses excessive resources and therefore
+needs to operate within the envelope set by network transport circuit
+breaker algorithms.
+
 ### Protection Against Bufferbloat
 
 A congestion control algorithm should try to avoid maintaining
@@ -485,6 +498,18 @@ Real-time flows can be directed into distinct
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
 which can substantially reduce the interplay with other traffic. However, a proposal
 targeting general Internet use can not assume this is always the case.
+
+As noted in {{circuit-breakers}}, all congestion control algorithms
+need to operate within the envelope set by network
+transport circuit breaker algorithms.
+{{!RFC8083}} also defines a
+minimal set of RTP circuit breakers. This identifies conditions under which a sender
+needs to stop transmitting media data to protect the network from excessive congestion.
+It is expected that, in the absence of long-lived excessive congestion
+RTP applications running on best-effort IP networks will be able to operate without
+triggering these circuit breakers.  To avoid triggering this circuit breaker,
+any Standards Track congestion control algorithms defined for RTP needs to operate
+within the envelope set by an RTP circuit breaker.
 
 ### Short and Long Flows
 
