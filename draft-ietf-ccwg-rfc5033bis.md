@@ -186,7 +186,7 @@ Nevertheless, specifying congestion control algorithms has a number of advantage
   which can make it easier for them to suggest improvements and/or identify
   limitations. Further, the specification can help multiple contributors align
   on a consensus change to the algorithm.
-- A specification that is accessible to anyone, can circumvent the issue that some
+- A specification that is accessible to anyone can circumvent the issue that some
   implementors may be unable to read open source reference implementations due
   to the constraints of some open source licenses.
 
