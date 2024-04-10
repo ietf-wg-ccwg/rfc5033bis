@@ -162,11 +162,11 @@ in an Informational Internet Draft in 2015, published as an
 Informational RFC in 2017 {{?RFC8312}} and then as a Proposed
 Standard in 2023 {{?RFC9438}}.
 
-BBR is developed as an internal research project by Google,
+BBR was developed as an internal research project by Google,
 with the first implementation contributed to Linux kernel 4.19 in 2016.
-It was described in an IRTF draft in 2018, and that draft is
+It was described in an IRTF draft in 2018, and that draft has been
 regularly updated to document the evolving versions of the algorithm
-{{BBR-draft}}. BBR is widely used for Google services using either
+{{BBR-draft}}. BBR is currently widely used for Google services using either
 TCP or QUIC, and is also widely deployed outside of
 Google.
 
@@ -174,7 +174,7 @@ We cannot say now whether the original authors of {{?RFC5033}}
 expected that developers would be somehow waiting for IETF review
 before widely deploying a new congestion control algorithm over the
 Internet, but the examples of Cubic and BBR teach us that
-deployment of new algorithms is not in fact gated by publication
+deployment of new algorithms is not in fact gated by the publication
 of the algorithm as an RFC.
 
 Nevertheless, specifying congestion control algorithms has a number of advantages:
@@ -186,7 +186,7 @@ Nevertheless, specifying congestion control algorithms has a number of advantage
   which can make it easier for them to suggest improvements and/or identify
   limitations. Further, the specification can help multiple contributors align
   on a consensus change to the algorithm.
-- A specification that is accessible to anyone circumvents the issue that some
+- A specification that is accessible to anyone, can circumvent the issue that some
   implementors may be unable to read open source reference implementations due
   to the constraints of some open source licenses.
 
@@ -220,7 +220,8 @@ to concretely understand and investigate the wealth of proposals in
 this space.
 
 This document is meant to reduce the barriers to entry for new congestion
-control work to the IETF. As such, proponents ought not to interpret these criteria as a
+control work to the IETF. As such, proponents of new congestion control algorithms
+ought not to interpret these criteria as a
 checklist of requirements before approaching the IETF. Instead, proponents
 are encouraged to think about these issues beforehand, and have the willingness
 to do the work implied by the remainder of this document.
@@ -280,7 +281,7 @@ deployed congestion control algorithms that cannot be changed by IETF or IRTF re
 are invited to publish as an Informational RFC via the Independent Stream Editor
 (ISE).
 
-# Specifying Algorithms for use in Controlled Environments
+# Specifying Algorithms for use in Controlled Environments {#controlled-environments}
 
 Algorithms can be designed for general Internet deployment or for use in controlled environments.
 An operator can ensure that flows within a controlled environment are isolated from other
@@ -323,7 +324,7 @@ domains (see {{general-use}} and {{special-cases}}).
 ## Single Algorithm Behavior
 
 The criteria in this section evaluate the congestion control algorithm when one or more flows
-using that algorithm share a bottleneck link (i.e. with no flows
+using that algorithm share a bottleneck link (i.e., with no flows
 using a differing congestion control algorithm).
 
 ### Protection Against Congestion Collapse
@@ -412,7 +413,7 @@ and vice versa.
 
 ## Mixed Algorithm Behavior
 
-These criteria evaluate the interaction of the
+Mixed algorithm behavior criteria evaluate the interaction of the
 proposed congestion control algorithm with commonly deployed
 congestion control algorithms.
 
@@ -494,7 +495,7 @@ control algorithms MUST be evaluated, as in {{short-flows}}.
 
 ### Differences with Congestion Control Principles
 
-Proposed congestion control algorithms SHOULD include a clear
+A proposed congestion control algorithm SHOULD include a clear
 explanation of any deviations from {{!RFC2914}} and {{!RFC7141}}.
 
 ### Incremental Deployment
@@ -623,8 +624,8 @@ resource is periodically distributed among the active nodes and where a node mig
 have to buffer data until an assigned transmission opportunity or when the physical path
 changes (e.g., when the length of a wireless path changes, or the physical layer changes
 its mode of operation).
-Variation also arises when a higher priority diffserv traffic classic prompts the
-transmission by a lower class. In these cases, the delay varies as a function of
+Variation also arises when traffic with a higher priority diffserv class pre-empts
+transmission of traffic with a lower class. In these cases, the delay varies as a function of
 external factors and attempting to infer congestion from an increase in the delay
 results in reduced throughput. The jitter from variation over short timescales
 might not be distinguishable similar from other effects.
@@ -761,7 +762,7 @@ signalling from switches to endpoints. Furthermore, the operator can often limit
 the number of operating congestion controls.
 
 For these reasons, data center congestion controls are often distinct from those
-running elsewhere on the Interenet.  A proposed congestion control need not
+running elsewhere on the Interenet (see {{controlled-environments}}).  A proposed congestion control need not
 coexist well with all other algorithms if it is intended for data centers, but
 the proposal SHOULD indicate which are expected to safely coexist with it.
 
