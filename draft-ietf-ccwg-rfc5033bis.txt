@@ -774,19 +774,23 @@ Table of Contents
 
    Another example use is concurrent multipath, where the transport
    protocol simultaneously schedules flows to aggregate the capacity
-   across multiple paths.  The Internet provides no guarantee that
-   different paths (e.g., using different endpoint addresses) are
-   disjoint.  This has additional implications: A proposed congestion
-   control algorithm MUST evaluate the potential harm to other flows
-   when the multiple paths share a common congested bottleneck (or share
-   resources that are coupled between different paths, such as an
-   overall capacity limit), and SHOULD consider the potential for harm
-   to other flows.  Synchronisation of congestion control mechanisms
-   (e.g., where multiple flows change their behaviour on similar
-   timeframes) can also contribute to harm and/or reduce fairness, these
-   effects also ought to be evaluated.  At the time of writing, there
-   are no IETF standards for concurrent multipath congestion control in
-   the general Internet.
+   across multiple paths.
+
+   The Internet provides no guarantee that different paths (e.g., using
+   different endpoint addresses) are disjoint.  This has additional
+   implications: A proposed congestion control algorithm MUST evaluate
+   the potential harm to other flows when the multiple paths share a
+   common congested bottleneck (or share resources that are coupled
+   between different paths, such as an overall capacity limit), and
+   SHOULD consider the potential for harm to other flows.
+   Synchronisation of congestion control mechanisms (e.g., where
+   multiple flows change their behaviour on similar timeframes) can also
+   contribute to harm and/or reduce fairness, these effects also ought
+   to be evaluated.
+
+   At the time of writing, there are currently no Standards Track RFCs,
+   but there is an Experimental RFC [RFC6356] that specifies a
+   concurrent multipath congestion control algorithm for TCP (MP-TCP).
 
 6.9.  Data Centers
 
@@ -937,6 +941,11 @@ Table of Contents
    [RFC5166]  Floyd, S., Ed., "Metrics for the Evaluation of Congestion
               Control Mechanisms", RFC 5166, DOI 10.17487/RFC5166, March
               2008, <https://www.rfc-editor.org/rfc/rfc5166>.
+
+   [RFC6356]  Raiciu, C., Handley, M., and D. Wischik, "Coupled
+              Congestion Control for Multipath Transport Protocols",
+              RFC 6356, DOI 10.17487/RFC6356, October 2011,
+              <https://www.rfc-editor.org/rfc/rfc6356>.
 
    [RFC7567]  Baker, F., Ed. and G. Fairhurst, Ed., "IETF
               Recommendations Regarding Active Queue Management",

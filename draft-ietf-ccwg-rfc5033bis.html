@@ -2021,8 +2021,8 @@ Synchronisation of failover (e.g., where multiple flows change their path on sim
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.<a href="#section-6.8-2" class="pilcrow">¶</a></p>
 <p id="section-6.8-3">Another example use is concurrent multipath, where the transport protocol simultaneously
-schedules flows to aggregate the capacity across multiple paths.
-The Internet provides no guarantee that different paths
+schedules flows to aggregate the capacity across multiple paths.<a href="#section-6.8-3" class="pilcrow">¶</a></p>
+<p id="section-6.8-4">The Internet provides no guarantee that different paths
 (e.g., using different endpoint addresses) are disjoint.
 This has additional implications:
 A proposed congestion control algorithm MUST evaluate the potential
@@ -2033,9 +2033,9 @@ such as an overall capacity limit), and SHOULD consider
 the potential for harm to other flows. Synchronisation of congestion control mechanisms
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
-these effects also ought to be evaluated.
-At the time of writing, there are no IETF standards for concurrent
-multipath congestion control in the general Internet.<a href="#section-6.8-3" class="pilcrow">¶</a></p>
+these effects also ought to be evaluated.<a href="#section-6.8-4" class="pilcrow">¶</a></p>
+<p id="section-6.8-5">At the time of writing, there are currently no Standards Track RFCs, but there is an Experimental RFC <span>[<a href="#RFC6356" class="cite xref">RFC6356</a>]</span> that specifies
+a concurrent multipath congestion control algorithm for TCP (MP-TCP).<a href="#section-6.8-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="data-centers">
@@ -2190,6 +2190,10 @@ examine any potential security issues that may arise.<a href="#section-7-2" clas
 <dt id="RFC5166">[RFC5166]</dt>
         <dd>
 <span class="refAuthor">Floyd, S., Ed.</span>, <span class="refTitle">"Metrics for the Evaluation of Congestion Control Mechanisms"</span>, <span class="seriesInfo">RFC 5166</span>, <span class="seriesInfo">DOI 10.17487/RFC5166</span>, <time datetime="2008-03" class="refDate">March 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5166">https://www.rfc-editor.org/rfc/rfc5166</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6356">[RFC6356]</dt>
+        <dd>
+<span class="refAuthor">Raiciu, C.</span>, <span class="refAuthor">Handley, M.</span>, and <span class="refAuthor">D. Wischik</span>, <span class="refTitle">"Coupled Congestion Control for Multipath Transport Protocols"</span>, <span class="seriesInfo">RFC 6356</span>, <span class="seriesInfo">DOI 10.17487/RFC6356</span>, <time datetime="2011-10" class="refDate">October 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6356">https://www.rfc-editor.org/rfc/rfc6356</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC7567">[RFC7567]</dt>
         <dd>
