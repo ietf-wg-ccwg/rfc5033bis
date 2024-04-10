@@ -353,7 +353,7 @@ A network transport circuit breaker {{!RFC8084}} is an automatic mechanism
 that is used by some equipment in the network to continuously monitor a
 flow or aggregate set of flows.  The mechanism seeks to detect when the
 flow(s) experience persistent excessive congestion, and when detected,
-to terminate (or significantly reduces the rate of) the flow(s).
+to terminate (or significantly reduce the rate of) the flow(s).
 
 A well-designed congestion control algorithm ought to react before
 a flow uses excessive resources and therefore
