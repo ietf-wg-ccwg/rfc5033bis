@@ -506,9 +506,7 @@ minimal set of RTP circuit breakers that operate across a path. This identifies 
 needs to stop transmitting media data to protect the network from excessive congestion.
 It is expected that, in the absence of long-lived excessive congestion,
 RTP applications running on best-effort IP networks will be able to operate without
-triggering these circuit breakers.  To avoid triggering this circuit breaker,
-any Standards Track congestion control algorithms defined for RTP needs to operate
-within the envelope set by an RTP circuit breaker.
+triggering these circuit breakers.  
 
 ### Short and Long Flows
 
