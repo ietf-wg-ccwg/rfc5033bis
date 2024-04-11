@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-09T00:36:37.364106+00:00",
+  "timestamp": "2024-04-11T00:36:51.847888+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1579,7 +1579,7 @@
       "id": "I_kwDOI7aIXc6DEn9-",
       "title": "Mention that CCs should not impair the path for others",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/97",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "ekinnear",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -1589,8 +1589,8 @@
       ],
       "body": "Raised at IETF 119: We may want to consider mentioning that you shouldn't impair the path for others.",
       "createdAt": "2024-03-21T03:19:15Z",
-      "updatedAt": "2024-04-04T16:11:36Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-09T15:17:26Z",
+      "closedAt": "2024-04-09T15:17:26Z",
       "comments": [
         {
           "author": "martinduke",
@@ -1626,6 +1626,13 @@
           "body": "IMHO \"previously defined algorithms\" is not exactly what we mean, and this could be made more precise: \"previous standards-track algorithms (e.g. {{!RFC5681}}, {{!RFC9002}}, {{!RFC9438}})\"\r\n\r\nAFAICT the goal is to consider harm induced relative to the harm induced by Reno/CUBIC. There may be other experimental algorithms that become \"defined\", which are not intended as a yardstick by which to measure harm.\r\n\r\nSo I have proposed an edit for that:\r\nhttps://github.com/ietf-wg-ccwg/rfc5033bis/pull/108",
           "createdAt": "2024-04-02T16:59:26Z",
           "updatedAt": "2024-04-02T16:59:42Z"
+        },
+        {
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "body": "We also have recommendations about bufferbloat and packet losses, which are also very much about \"not causing harm to others\". That plus #108 means we can probably close the issue.",
+          "createdAt": "2024-04-09T05:53:23Z",
+          "updatedAt": "2024-04-09T05:53:23Z"
         }
       ]
     },
@@ -1738,7 +1745,7 @@
       "id": "I_kwDOI7aIXc6DKDAx",
       "title": "there should be a \"Protection Against High Packet Loss\" subsection of \"Single Algorithm Behavior\"",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/101",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "nealcardwell",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -1747,8 +1754,8 @@
       "labels": [],
       "body": "The \"Single Algorithm Behavior\" section has a \"Protection Against Bufferbloat\" section. That's great. That's basically saying CCs should try to keep congestive delay at reasonable levels. But I would imagine there's a consensus that we would also say that CCs should try to keep congestive packet loss rates at reasonable levels. So IMHO there should be a \"Protection Against High Packet Loss\" subsection of \"Single Algorithm Behavior\".\r\n\r\nThis is important for \"Single Algorithm Behavior\"  because even if a congestion control algorithm can tolerate high loss, many types of short request/response traffic do not want to pay the loss recovery performance penalty induced by high loss rates.\r\n\r\nI can propose a pull request if there are no other volunteers.\r\n\r\ncc: @martinduke @gorryfair ",
       "createdAt": "2024-03-21T15:09:04Z",
-      "updatedAt": "2024-03-30T00:43:02Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-09T15:16:40Z",
+      "closedAt": "2024-04-09T15:16:40Z",
       "comments": [
         {
           "author": "huitema",
@@ -1798,6 +1805,20 @@
           "body": "I am willing to write a PR, but could we land #94 first? I am worried of merge conflicts if we don't do that.",
           "createdAt": "2024-03-30T00:42:56Z",
           "updatedAt": "2024-03-30T00:42:56Z"
+        },
+        {
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Is #106 sufficient to close this issue?",
+          "createdAt": "2024-04-09T05:56:10Z",
+          "updatedAt": "2024-04-09T05:56:10Z"
+        },
+        {
+          "author": "nealcardwell",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Yes, IMHO #106 is sufficient to close this issue. Thanks!\r\n",
+          "createdAt": "2024-04-09T12:50:54Z",
+          "updatedAt": "2024-04-09T12:50:54Z"
         }
       ]
     },
@@ -1824,15 +1845,15 @@
       "id": "I_kwDOI7aIXc6EjlTB",
       "title": "\"Forbidden\" in Section 2",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/109",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "ekinnear",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "From @gloinul's review:\r\n\r\n> Algorithms that are designed for special environments (e.g., data centers) and forbidden from use in the Internet would, of course, instead seek real-world data for those environments.\r\n \r\nI reacted to the use of \u201cforbidden\u201d in this sentence. Would not \u201cnot intended at all for use in the Internet\u201d be a better formulation? Because forbidden want me to invoke the Protocol Police if someone ever attempted to use it. ",
       "createdAt": "2024-04-03T21:03:05Z",
-      "updatedAt": "2024-04-04T13:25:05Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-10T15:34:32Z",
+      "closedAt": "2024-04-10T15:34:32Z",
       "comments": [
         {
           "author": "gorryfair",
@@ -1855,7 +1876,7 @@
       "id": "I_kwDOI7aIXc6Ejlm5",
       "title": "Indicate that a lack of DSCP is more common than we imply",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/110",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "ekinnear",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -1864,8 +1885,8 @@
       ],
       "body": "From @gloinul's review: \r\n\r\nSection 3.2.2:\r\n \r\n> Note that in many deployments, real-time traffic is directed into distinct queues via Differentiated Services Code Points (DSCP) or other mechanisms, which substantially reduces the interplay with other traffic. However, a proposal targeting Internet use MUST NOT assume that all paths support specific mechanisms.\r\n \r\nAlthough there are clearly a number of network especially access networks that do deploy and use DSCP classes for its real-time media traffic I think this sentence is misleading. I would think that the majority of the WebRTC traffic carrying audio and video will in fact not be marked or have DSCP markings that survive into the general Internet. I would at least suggest to rewrite the above first sentence to indicate that although this may occur, the CC algorithm under consideration will have to deal with this type of traffic.\r\n",
       "createdAt": "2024-04-03T21:04:02Z",
-      "updatedAt": "2024-04-03T21:04:07Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-09T15:16:18Z",
+      "closedAt": "2024-04-09T15:16:18Z",
       "comments": []
     },
     {
@@ -1889,15 +1910,15 @@
       "id": "I_kwDOI7aIXc6EjmEq",
       "title": "Mention RFC6356?",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/112",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "ekinnear",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "From @gloinul's review: \r\n\r\nSection 5.8:\r\n\r\nWhat is the verdict on RFC 6356? Is it not worth bringing this up in relation to concurrent usage? RFC 8041 do bring up additional experience with also other algorithms for MP-TCP that have been tried. I would at least claim \u201cAt the time of writing, there are no IETF standards for concurrent multipath congestion control in the general Internet.\u201d that this sentence is factual wrong as RFC 6356 is an IETF experimental specification.  \r\n \r\nI do think this section brings up important aspects to consider. However, it also point to some interesting challenges in reasoning and responsibility between functionalities when managing different paths. Looking at the text I think we have scheduler application data, path availability checks  as well as congestion control all impacting what is happening. What is truly congestion control here?",
       "createdAt": "2024-04-03T21:05:32Z",
-      "updatedAt": "2024-04-03T21:05:32Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-10T16:06:48Z",
+      "closedAt": "2024-04-10T16:06:48Z",
       "comments": []
     }
   ],
@@ -7494,7 +7515,7 @@
       "id": "PR_kwDOI7aIXc5rqn02",
       "title": "Restore end of PR #57",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/113",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -7503,17 +7524,19 @@
       "labels": [],
       "body": "Fixed an editorial problem resulting in removing the end of the sentence, which went on to say that you can't assume DSCP, etc. \r\nAlso changed /many deployments/ to simply say this happens without saying it is often.",
       "createdAt": "2024-04-04T07:46:09Z",
-      "updatedAt": "2024-04-04T16:10:19Z",
+      "updatedAt": "2024-04-09T15:16:17Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "b5cbdcafd79fddac5f46f92c411d5a01da2c0aa3",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "DSCP",
       "headRefOid": "c35e7d8ef2d297297e0938115254d1b4c1931123",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-04-09T15:16:17Z",
+      "mergedAt": "2024-04-09T15:16:17Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "cdf970bd0844126b5c4402190c7f5ab4caf8e252"
+      },
       "comments": [],
       "reviews": [
         {
@@ -7553,6 +7576,399 @@
               "body": "```suggestion\r\n---\r\n```",
               "createdAt": "2024-04-04T16:10:07Z",
               "updatedAt": "2024-04-04T16:10:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52gk9f",
+          "commit": {
+            "abbreviatedOid": "c35e7d8"
+          },
+          "author": "gloinul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-09T06:59:10Z",
+          "updatedAt": "2024-04-09T06:59:10Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 114,
+      "id": "PR_kwDOI7aIXc5sOMBD",
+      "title": "Avoid assuming \"protocol police\"",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/114",
+      "state": "MERGED",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "gorryfair"
+      ],
+      "labels": [
+        "editorial"
+      ],
+      "body": "To address review comments and closing Issue #109 ",
+      "createdAt": "2024-04-10T09:20:39Z",
+      "updatedAt": "2024-04-10T15:34:31Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "cdf970bd0844126b5c4402190c7f5ab4caf8e252",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-19",
+      "headRefOid": "8a3a47a0f07243b29a216e390807a115b530d9b1",
+      "closedAt": "2024-04-10T15:34:31Z",
+      "mergedAt": "2024-04-10T15:34:31Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "23e03381c4bc764d2f2e3c00823630af3f44a368"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc52uGNt",
+          "commit": {
+            "abbreviatedOid": "8a3a47a"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-10T14:02:40Z",
+          "updatedAt": "2024-04-10T14:02:40Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52vGQm",
+          "commit": {
+            "abbreviatedOid": "8a3a47a"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-10T15:34:26Z",
+          "updatedAt": "2024-04-10T15:34:26Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 115,
+      "id": "PR_kwDOI7aIXc5sOU_G",
+      "title": "Editorial review",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/115",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "gorryfair"
+      ],
+      "labels": [],
+      "body": "Please do not merge yet, I will tray to update to include a few sentences to address the issue related to in-network Circuit breakers.",
+      "createdAt": "2024-04-10T09:42:49Z",
+      "updatedAt": "2024-04-10T18:03:42Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "cdf970bd0844126b5c4402190c7f5ab4caf8e252",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-20",
+      "headRefOid": "3aaa66f6653f58ee99e4f47f850c9af6fe1ada39",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc52uJYH",
+          "commit": {
+            "abbreviatedOid": "576021f"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "I have a minor comment on BBR (it still is developed by Google), and a more substantial one on \"circuit breakers\". The circuit breaker specification is entirely focused on RTP/RTCP, and should not be promoted here to apply to the general case. The text should make clear that the circuit breaker section only applies to protocols designed to control RTP/RTCP.",
+          "createdAt": "2024-04-10T14:07:24Z",
+          "updatedAt": "2024-04-10T14:18:08Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "I think \"is developed\" is actually correct. There is ongoing active development, entirely at Google, and periodic reports to the IRTF/ICCRG or IETF/CCWG. Change control is firmly by Google, and there have been no attempt to make this an IETF project.",
+              "createdAt": "2024-04-10T14:07:24Z",
+              "updatedAt": "2024-04-10T14:18:08Z"
+            },
+            {
+              "originalPosition": 77,
+              "body": "How does an endpoint know that a \"circuit breaker\" is deployed, and what envelope is being used? How wide is the deployment? Are we requiring that CCA developers test with circuit breakers?",
+              "createdAt": "2024-04-10T14:10:41Z",
+              "updatedAt": "2024-04-10T14:18:08Z"
+            },
+            {
+              "originalPosition": 77,
+              "body": "RFC8083 is entirely about RTP/RTCP, and the algorithms rely on analyzing the RTCP messages to evaluate packet losses, etc. I think whatever we say here has to be qualified by \"if algorithms are designed to control RTP transmissions [cite], they need to remain within the envelope, etc.\"",
+              "createdAt": "2024-04-10T14:15:34Z",
+              "updatedAt": "2024-04-10T14:18:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52u0LS",
+          "commit": {
+            "abbreviatedOid": "576021f"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T15:07:08Z",
+          "updatedAt": "2024-04-10T15:07:09Z",
+          "comments": [
+            {
+              "originalPosition": 77,
+              "body": "I do not understand the comment: if RFC8084 is deployed - then the CCs will be subject to the envelope of this circuit breaker. The text does not explicitly state that they ought to be tested though, maybe it could?  NOTE: that RFC 8084 is NOT about RTP. That topic is dealt with RFC8083, (which is described in the section about multimedia).",
+              "createdAt": "2024-04-10T15:07:08Z",
+              "updatedAt": "2024-04-10T15:07:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52u0ic",
+          "commit": {
+            "abbreviatedOid": "576021f"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T15:07:46Z",
+          "updatedAt": "2024-04-10T15:07:47Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Hmmm... somebody needs to decide on the form of words. Would this word work: \" At the time this document was published, BBR is being developed as\"....?",
+              "createdAt": "2024-04-10T15:07:46Z",
+              "updatedAt": "2024-04-10T15:46:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52u45p",
+          "commit": {
+            "abbreviatedOid": "576021f"
+          },
+          "author": "nealcardwell",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T15:14:18Z",
+          "updatedAt": "2024-04-10T15:19:18Z",
+          "comments": [
+            {
+              "originalPosition": 71,
+              "body": "s/reduces/reduce/\r\n",
+              "createdAt": "2024-04-10T15:14:18Z",
+              "updatedAt": "2024-04-10T15:19:18Z"
+            },
+            {
+              "originalPosition": 29,
+              "body": "The comma here looks superfluous?\r\n\r\nAFAIK, in a statement of the form \"An X that is Y can Z\" there should not be a comma after the Y...\r\n",
+              "createdAt": "2024-04-10T15:16:15Z",
+              "updatedAt": "2024-04-10T15:19:18Z"
+            },
+            {
+              "originalPosition": 100,
+              "body": "Is there a missing comma at the end of this line? I would have expected something like:\r\n\r\n  It is expected that, in the absence of long-lived excessive congestion,\r\n",
+              "createdAt": "2024-04-10T15:18:48Z",
+              "updatedAt": "2024-04-10T15:19:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52va9u",
+          "commit": {
+            "abbreviatedOid": "576021f"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T16:09:37Z",
+          "updatedAt": "2024-04-10T16:09:38Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "At the time of writing, ... has been applied, see latest PR.",
+              "createdAt": "2024-04-10T16:09:37Z",
+              "updatedAt": "2024-04-10T16:09:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52wDEk",
+          "commit": {
+            "abbreviatedOid": "bf83124"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T17:26:38Z",
+          "updatedAt": "2024-04-10T17:27:14Z",
+          "comments": [
+            {
+              "originalPosition": 77,
+              "body": "I'm not sure this is the right section -- are we confident that these circuit breakers are prevalent enough that they will move the needle in an internet-wide deployment? If not, these are a special case.",
+              "createdAt": "2024-04-10T17:26:38Z",
+              "updatedAt": "2024-04-10T17:27:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52wR0m",
+          "commit": {
+            "abbreviatedOid": "576021f"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T18:03:42Z",
+          "updatedAt": "2024-04-10T18:03:42Z",
+          "comments": [
+            {
+              "originalPosition": 77,
+              "body": "Saying the level of deployment is a judgment call I'd rather not venture into. I'd be happy though personally to include these in the \"special cases\" section, if you feel this is more appropriate. \r\nIn reality, the envelope ought not to be crossed by any new algorithm that follows the general rules we laid out, but I do think the original comment is valid: I think the IETF has already provided an envelope and somewhere it ought to appear in this spec.",
+              "createdAt": "2024-04-10T18:03:42Z",
+              "updatedAt": "2024-04-10T18:03:42Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 116,
+      "id": "PR_kwDOI7aIXc5sOpHm",
+      "title": "PR to update concurrent multipath",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/116",
+      "state": "MERGED",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Proposed text to add MP-TCP RFCs.",
+      "createdAt": "2024-04-10T10:30:16Z",
+      "updatedAt": "2024-04-10T16:06:47Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "cdf970bd0844126b5c4402190c7f5ab4caf8e252",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-21",
+      "headRefOid": "3d832c0d2d70a5ebbe34c0f01fbeff165a08c8eb",
+      "closedAt": "2024-04-10T16:06:47Z",
+      "mergedAt": "2024-04-10T16:06:47Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "883598bd9d87f12044779acf2f3602bb3259353a"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc52uHJp",
+          "commit": {
+            "abbreviatedOid": "dc279e5"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-10T14:04:15Z",
+          "updatedAt": "2024-04-10T14:04:15Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52vItR",
+          "commit": {
+            "abbreviatedOid": "dc279e5"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "LGTM. Some suggestions but I can live with this as is.",
+          "createdAt": "2024-04-10T15:38:06Z",
+          "updatedAt": "2024-04-10T15:38:46Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I might instead add this to the end of this section, like:\r\n \"There are no standards track RFCs, but there is an Experimental RFC...\"\r\n",
+              "createdAt": "2024-04-10T15:38:06Z",
+              "updatedAt": "2024-04-10T15:38:46Z"
+            },
+            {
+              "originalPosition": 7,
+              "body": "I don't apply this rule consistently, but this seems a little tutorial-mode.",
+              "createdAt": "2024-04-10T15:38:28Z",
+              "updatedAt": "2024-04-10T15:38:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52vSCw",
+          "commit": {
+            "abbreviatedOid": "aff230e"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T15:53:04Z",
+          "updatedAt": "2024-04-10T15:53:04Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Fair comment, I agree, this text is tutorial. There was a request to include RFC8041, and that was the shortest text I could add. Since the reference provides very little to help identify how to specify or evaluate a CC, I'd be very happy to not add that sentence. Thoughts?",
+              "createdAt": "2024-04-10T15:53:04Z",
+              "updatedAt": "2024-04-10T15:53:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52vT-A",
+          "commit": {
+            "abbreviatedOid": "dc279e5"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T15:56:50Z",
+          "updatedAt": "2024-04-10T15:56:50Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "I would delete it, but it's not a big deal if you'd prefer to keep it.",
+              "createdAt": "2024-04-10T15:56:50Z",
+              "updatedAt": "2024-04-10T15:56:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52vUv-",
+          "commit": {
+            "abbreviatedOid": "dc279e5"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-10T15:58:20Z",
+          "updatedAt": "2024-04-10T15:58:20Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Thanks, but now the \"there are no standards  track RFCs\" sentences -- one at the beginning and one at the end. I think it works better at the end, but there definitely should only be one.",
+              "createdAt": "2024-04-10T15:58:20Z",
+              "updatedAt": "2024-04-10T15:58:20Z"
             }
           ]
         }
