@@ -104,6 +104,8 @@ The goal of this document is to provide guidance for considering standardization
 of a proposed congestion control algorithm at the IETF. It replaces RFC5033 to reflect
 changes in the congestion control landscape.
 
+This document obsoletes RFC 5033.
+
 --- middle
 
 # Introduction
@@ -116,37 +118,37 @@ congestion control algorithms and for the IETF community when evaluating whether
 a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.
 
-This document obsoletes the similarly titled {{?RFC5033}} that was
+This document obsoletes {{?RFC5033}} which was
 published in 2007 as a Best Current Practice to evaluate proposed
 congestion control algorithms as Experimental or Proposed Standard RFCs.
 
 The IETF's standard congestion control algorithms have been shown to have
 performance challenges in various environments
-(e.g., high-speed networks, cellular and WiFi wireless technologies,
+(e.g., high-speed networks, cellular and Wireless Local Area Network (WLAN) technologies, and
 long distance satellite links)
-and also flows carrrying specific workloads (VoIP, gaming, and videoconferencing).
+and also flows carrying specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
-In 2007, TCP was the dominant consumer of this work, and proposals
+In 2007, TCP {{?RFC9293}} was the dominant consumer of this work on congestion control, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
-The Datagram Congestrion Copntrol Protocol (DCCP)
-was developed as a method for developing new congestion control algorithms for
+The Datagram Congestion Control Protocol (DCCP) {{?RFC4340}}
+was developed as a method for defining new congestion control algorithms for
 datagram traffic.
 
-Since RFC 5033 was published, many conditions have changed.
+Since {{?RFC5033}} was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}}, RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
+TCP, Stream Control Transmission Protocol (SCTP) {{?RFC9260}}, and DCCP, to include QUIC {{?RFC9000}}, RTP Media Congestion Avoidance Techniques (RMCAT) (e.g., {{?RFC8836}}) and beyond.
 
 Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
-There is more interest in specialized use cases, such as data centers, and in
+There is more interest in specialized use cases, such as data centers (e.g., {{?RFC8257}}), and in
 support for a variety of upper layer protocols/applications, e.g.,
 real-time protocols.
 Finally, the community has gained much more experience with indications
-of congestion beyond packet loss.
+of congestion beyond indicators based on packet loss.
 
 Multicast congestion control is a considerably less mature field of study
 and are not in scope for this document.
-However, Section 4 of the UDP Usage Guidelines {{RFC8085}} provides
+However, {{Section 4 of ?RFC8085}} provides
 additional guidelines for multicast and broadcast usage of UDP.
 
 Congestion control algorithms
@@ -158,13 +160,13 @@ Cubic was documented in a research publication in 2007 {{HRX08}},
 and was then adopted as the default congestion control algorithm for
 the TCP implementation in Linux. It was already used in a significant
 fraction of TCP connections over the Internet before being documented
-in an Informational Internet Draft in 2015, published as an
+in an Informational Internet-Draft in 2015, published as an
 Informational RFC in 2017 {{?RFC8312}} and then as a Proposed
 Standard in 2023 {{?RFC9438}}.
 
 BBR is developed as an internal research project by Google,
 with the first implementation contributed to Linux kernel 4.19 in 2016.
-It was described in an IRTF draft in 2018, and that draft is
+It was described in an IRTF Internet-Draft in 2018, and that Internet-Draft is
 regularly updated to document the evolving versions of the algorithm
 {{BBR-draft}}. BBR is widely used for Google services using either
 TCP or QUIC, and is also widely deployed outside of
@@ -177,14 +179,14 @@ Internet, but the examples of Cubic and BBR teach us that
 deployment of new algorithms is not in fact gated by publication
 of the algorithm as an RFC.
 
-Nevertheless, specifying congestion control algorithms has a number of advantages:
+Nevertheless, editing and publicly sharing the specification of congestion control algorithms has a number of advantages:
 
 - A specification can help implementers, operators, and other interested
   parties to develop a shared understanding of how the algorithm works and how
   it is expected to behave in various different scenarios or configurations.
-- A specification can help potential contributors understand the algorithm,
+- A specification can help potential contributors understand the algorithm and objectives,
   which can make it easier for them to suggest improvements and/or identify
-  limitations. Further, the specification can help multiple contributors align
+  limitations. Furthermore, the specification can help multiple contributors align
   on a consensus change to the algorithm.
 - A specification that is accessible to anyone circumvents the issue that some
   implementors may be unable to read open source reference implementations due
@@ -209,14 +211,14 @@ a set of criteria that should be considered and weighed by the
 developers of alternative algorithms and by the IETF
 in the context of each proposal.
 
-The high-order criterion for advancing any proposal
+The high-order criterion for advancing any proposal within the IETF
 is a serious scientific study of the pros and cons that occur when the proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.
 
-After initial studies, we encourage authors to write a specification
+After initial studies, authors are encouraged to write a specification
 of their proposal for publication in the RFC series. This allows others
-to concretely understand and investigate the wealth of proposals in
+to understand and investigate the wealth of proposals in
 this space.
 
 This document is meant to reduce the barriers to entry for new congestion
@@ -441,7 +443,7 @@ be part of the community's decision making with regards to the suitability of
 the proposed congestion control algorithm. The community should also consider
 other non-standard congestion control algorithms that are known to be widely deployed.
 
-We note that this guideline is not a requirement for strict Reno- or Cubic-
+This guideline is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for a proposed congestion
 control mechanism to advance to Experimental or Standards Track status.
 As an example,
@@ -471,7 +473,7 @@ transports. This document does not change the informational status of those
 RFCs.
 
 A proposed congestion control algorithm SHOULD consider coexistence with widely deployed real-time
-congestion control algorithms. Regrettably, at the time of writing, many algorithms with
+congestion control algorithms. Regrettably, at the time of writing (2024), many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
 It is hoped this situation will change.
@@ -752,8 +754,8 @@ the potential for harm to other flows. Synchronisation of congestion control mec
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.
 
-At the time of writing, there are currently no Standards Track RFCs, but there is an Experimental RFC {{?RFC6356}} that specifies
-a concurrent multipath congestion control algorithm for TCP (MP-TCP).
+At the time of writing (2024), there are currently no Standards Track RFCs, but there is an Experimental RFC {{?RFC6356}} that specifies
+a concurrent multipath congestion control algorithm for TCP (MPTCP {{?RFC8684}}).
 
 ## Data Centers
 
