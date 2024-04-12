@@ -225,24 +225,23 @@ checklist of requirements before approaching the IETF. Instead, proponents
 are encouraged to think about these issues beforehand, and have the willingness
 to do the work implied by the remainder of this document.
 
-# Document Status
+# Guidelines for Authors about Document Status
 
-This document applies to proposed congestion control algorithms that seek Experimental or
+This document applies to congestion control algorithm proposals that seek Experimental or
 Standards Track status. Evaluation of both cases involves the same questions,
 but with different expectations for both the answers and the degree of
 certainty of the answers.
 
-Congestion control algorithms without experience of Internet-scale deployment SHOULD
-seek Experimental status until real-world data is able to answer the questions
-in {{general-use}}. Congestion control algorithms with a record of measured
-Internet-scale deployment MAY directly seek the Standards Track if the community believes
-it is safe, and the design is stable, guided by the considerations in
-{{general-use}}. The existence of this data does not waive the other
+Congestion control algorithms without empirical evidence of Internet-scale deployment SHOULD
+seek Experimental status. Congestion control algorithms with a record of measured
+Internet-scale deployment MAY directly seek the Standards Track if there is solid data that reflects
+that it is safe, and the design is stable, guided by the considerations in
+{{general-use}}. However, the existence of this data does not waive the other
 considerations in this document.
 
 Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
-only be deployed in situations where they are being actively measured, and where
-it is possible to deactivate if there are signs of pathological behavior.
+only be deployed in controlled environments or other situations where they are being actively measured, and where
+it is possible to deactivate them if there are signs of pathological behavior.
 
 Each published congestion control algorithm is REQUIRED to include a
 statement in the abstract indicating whether or not there is IETF consensus that
@@ -252,14 +251,14 @@ is also required to include a statement in the
 abstract describing environments where the protocol is not recommended
 for deployment. There can be environments where the congestion control
 algorith is deemed *safe*
-for use, but it is still is not *recommended* for use because it does not
-perform well for the user.
+for use, but it is still is *not recommended* for use over the public Internet because it does not
+perform well for the user {{?RFC8890}}.
 
 As examples of such statements, {{?RFC3649}} specifying HighSpeed TCP
 includes a statement in the abstract stating that the proposed congestion control algorithm is
-Experimental, but may be deployed in the current Internet. In
+Experimental, but may be deployed in the Internet. In
 contrast, the Quick-Start document {{?RFC4782}} includes a paragraph in
-the abstract stating the mechanism is only being proposed for
+the abstract stating that the mechanism is only being proposed for
 use in controlled environments.  The abstract specifies environments where
 the Quick-Start request could give false positives (and therefore
 would be unsafe for incremental deployment where some routers
@@ -270,7 +269,7 @@ to deploy, but deployment would not be recommended because it
 could lead to unnecessary delays for the connections attempting to use
 Quick-Start. The Quick-Start method is discussed as an example in {{?RFC9049}}.
 
-Alhough out of the scope of this document, a proponent of a new
+Alhough out of the scope of this document, proponents of a new
 algorithm could alternatively
 seek publication as an Informational or Experimental RFC via the Internet
 Research Task Force (IRTF).
@@ -280,7 +279,7 @@ deployed congestion control algorithms that cannot be changed by IETF or IRTF re
 are invited to publish as an Informational RFC via the Independent Stream Editor
 (ISE).
 
-# Specifying Algorithms for use in Controlled Environments
+# Specifying Algorithms for Use in Controlled Environments
 
 Algorithms can be designed for general Internet deployment or for use in controlled environments.
 An operator can ensure that flows within a controlled environment are isolated from other
