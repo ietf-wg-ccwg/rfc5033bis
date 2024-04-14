@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-11T00:36:51.847888+00:00",
+  "timestamp": "2024-04-14T00:42:21.801076+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -7667,13 +7667,13 @@
       "labels": [],
       "body": "Please do not merge yet, I will tray to update to include a few sentences to address the issue related to in-network Circuit breakers.",
       "createdAt": "2024-04-10T09:42:49Z",
-      "updatedAt": "2024-04-10T18:03:42Z",
+      "updatedAt": "2024-04-11T08:55:11Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "cdf970bd0844126b5c4402190c7f5ab4caf8e252",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-20",
-      "headRefOid": "3aaa66f6653f58ee99e4f47f850c9af6fe1ada39",
+      "headRefOid": "194dcc7d27c0558260aded20387f9deaf8bde4a6",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -7843,6 +7843,66 @@
               "updatedAt": "2024-04-10T18:03:42Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52zVPH",
+          "commit": {
+            "abbreviatedOid": "576021f"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-11T02:20:13Z",
+          "updatedAt": "2024-04-11T02:20:13Z",
+          "comments": [
+            {
+              "originalPosition": 77,
+              "body": "I think that moving the mention of circuit breakers to a special case is an OK compromise. I did a quick look at citations, and Google Scholar gives 31 results -- which is not bad, but looks to mostly come from IETF drafts and RFC. For comparison, the FQ-Codel spec has 149 citations on Google scholar. It is also referenced in user manuals of commercial routers (e.g., Aruba), while I did not find that for RFC8084. So, some interest, but not at the same level as popular AQM techniques. It does look like a special case.",
+              "createdAt": "2024-04-11T02:20:13Z",
+              "updatedAt": "2024-04-11T02:20:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc52z_k0",
+          "commit": {
+            "abbreviatedOid": "3aaa66f"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-11T06:03:42Z",
+          "updatedAt": "2024-04-11T06:03:43Z",
+          "comments": [
+            {
+              "originalPosition": 105,
+              "body": "RFC 8084 does not exactly say that. In section6. \"Examples in Which CBs May Not Be Needed\", it says \"A CB is not required for a single congestion-controlled flow using TCP, SCTP, TFRC, etc.  In these cases, the congestion control methods are already designed to prevent persistent excessive congestion.\" Arguably, flows using CCA that follow the recommendations of RFC5033bis fall in that category.",
+              "createdAt": "2024-04-11T06:03:43Z",
+              "updatedAt": "2024-04-11T06:03:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc521EjC",
+          "commit": {
+            "abbreviatedOid": "3aaa66f"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-11T08:46:34Z",
+          "updatedAt": "2024-04-11T08:46:34Z",
+          "comments": [
+            {
+              "originalPosition": 105,
+              "body": "Right, so I'll reword this first sentence to say something about network CB.",
+              "createdAt": "2024-04-11T08:46:34Z",
+              "updatedAt": "2024-04-11T08:46:34Z"
+            }
+          ]
         }
       ]
     },
@@ -7973,6 +8033,58 @@
           ]
         }
       ]
+    },
+    {
+      "number": 117,
+      "id": "PR_kwDOI7aIXc5sc4bU",
+      "title": "minor edits to the Introduction",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/117",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-04-12T08:41:02Z",
+      "updatedAt": "2024-04-12T08:41:02Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "883598bd9d87f12044779acf2f3602bb3259353a",
+      "headRepository": "boucadair/rfc5033bis",
+      "headRefName": "main",
+      "headRefOid": "3e74893ef2d03e023d1940d99da4ddad0028f946",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 118,
+      "id": "PR_kwDOI7aIXc5sdEtB",
+      "title": "some proposed edits to doc status",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/118",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "* Make it clear this is about guidelines for authors, not status of this document\r\n* avoid redundant guidance\r\n* avoid \"subjective\" guidance such as \"believes\"",
+      "createdAt": "2024-04-12T09:01:54Z",
+      "updatedAt": "2024-04-12T09:01:54Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "883598bd9d87f12044779acf2f3602bb3259353a",
+      "headRepository": "boucadair/rfc5033bis",
+      "headRefName": "patch-1",
+      "headRefOid": "0af0a0964f7c8553bcae04915449049d16b6e9f0",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
