@@ -281,7 +281,7 @@ deployed congestion control algorithms that cannot be changed by IETF or IRTF re
 are invited to publish as an Informational RFC via the Independent Stream Editor
 (ISE).
 
-# Specifying Algorithms for use in Controlled Environments {#controlled-environments}
+# Specifying Algorithms for use in Controlled Environments
 
 Algorithms can be designed for general Internet deployment or for use in controlled environments.
 An operator can ensure that flows within a controlled environment are isolated from other
