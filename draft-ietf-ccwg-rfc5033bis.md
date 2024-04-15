@@ -101,10 +101,8 @@ possible ramifications to both the flows using the proposed congestion control a
 and to flows using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
 The goal of this document is to provide guidance for considering standardization
-of a proposed congestion control algorithm at the IETF. It replaces RFC5033 to reflect
+of a proposed congestion control algorithm at the IETF. It obsoletes RFC5033 to reflect
 changes in the congestion control landscape.
-
-This document obsoletes RFC 5033.
 
 --- middle
 
