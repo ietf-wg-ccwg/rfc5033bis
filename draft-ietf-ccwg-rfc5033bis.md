@@ -240,7 +240,7 @@ that it is safe, and the design is stable, guided by the considerations in
 considerations in this document.
 
 Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
-only be deployed in controlled environments or other situations where they are being actively measured, and where
+only be deployed in situations where they are being actively measured, and where
 it is possible to deactivate them if there are signs of pathological behavior.
 
 Each published congestion control algorithm is REQUIRED to include a
