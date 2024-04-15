@@ -142,7 +142,7 @@ There is more interest in specialized use cases, such as data centers (e.g., {{?
 support for a variety of upper layer protocols/applications, e.g.,
 real-time protocols.
 Finally, the community has gained much more experience with indications
-of congestion beyond indicators based on packet loss.
+of congestion beyond packet loss.
 
 Multicast congestion control is a considerably less mature field of study
 and are not in scope for this document.
