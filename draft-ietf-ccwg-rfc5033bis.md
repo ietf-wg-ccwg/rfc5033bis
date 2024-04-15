@@ -251,7 +251,7 @@ is also required to include a statement in the
 abstract describing environments where the protocol is not recommended
 for deployment. There can be environments where the congestion control
 algorith is deemed *safe*
-for use, but it is still is *not recommended* for use over the public Internet because it does not
+for use, but it is still is *not recommended* for use because it does not
 perform well for the user {{?RFC8890}}.
 
 As examples of such statements, {{?RFC3649}} specifying HighSpeed TCP
