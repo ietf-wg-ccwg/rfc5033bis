@@ -164,7 +164,7 @@ Standard in 2023 {{?RFC9438}}.
 
 At the time of writing, BBR is being developed as an internal research project by Google,
 with the first implementation contributed to Linux kernel 4.19 in 2016.
-It was described in an IRTF Internet-Draft in 2018, and that draft has been
+It was described in an IRTF Internet-Draft in 2018, and that Internet-Draft has been
 regularly updated to document the evolving versions of the algorithm
 {{BBR-draft}}. BBR is currently widely used for Google services using either
 TCP or QUIC, and is also widely deployed outside of
