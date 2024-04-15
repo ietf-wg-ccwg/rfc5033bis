@@ -37,7 +37,7 @@ author:
 contributor:
  -
     ins: C. Huitema
-    name: Christian Huitema
+    name: Chrtian Huitema
     organization: Private Octopus, Inc.
     email: huitema@huitema.net
 
@@ -63,7 +63,7 @@ informative:
         name: Injong Rhee
       -
         ins: L. Xu
-        name: Lisong Xu
+        name: Long Xu
 
   Tools:
     title: Tools for the Evaluation of Simulation and Testbed Scenarios
@@ -82,7 +82,7 @@ informative:
     author:
       ins: Kathleen Nichols
     date: 2011
-    seriesinfo: ACM Queue Volume 9, issue 11
+    seriesinfo: ACM Queue Volume 9, sue 11
 
   BBRv1-Evaluation:
     title: "Experimental evaluation of BBR congestion control"
@@ -100,7 +100,7 @@ Introducing new or modified congestion control algorithms in the global Internet
 possible ramifications to both the flows using the proposed congestion control algorithms
 and to flows using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
-The goal of this document is to provide guidance for considering standardization
+The goal of th document is to provide guidance for considering standardization
 of a proposed congestion control algorithm at the IETF. It replaces RFC5033 to reflect
 changes in the congestion control landscape.
 
@@ -164,7 +164,7 @@ Standard in 2023 {{?RFC9438}}.
 
 At the time of writing, BBR is being developed as an internal research project by Google,
 with the first implementation contributed to Linux kernel 4.19 in 2016.
-It was described in an IRTF Internet-Draft in 2018, and that Internet-Draft has been
+It was described in an IRTF Internet-Draft in 2018, and that Internet-Draft is
 regularly updated to document the evolving versions of the algorithm
 {{BBR-draft}}. BBR is currently widely used for Google services using either
 TCP or QUIC, and is also widely deployed outside of
