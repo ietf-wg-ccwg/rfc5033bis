@@ -182,7 +182,7 @@ Nevertheless, specifying congestion control algorithms has a number of advantage
 - A specification can help implementers, operators, and other interested
   parties to develop a shared understanding of how the algorithm works and how
   it is expected to behave in various different scenarios or configurations.
-- A specification can help potential contributors understand the algorithm and objectives,
+- A specification can help potential contributors understand the algorithm,
   which can make it easier for them to suggest improvements and/or identify
   limitations. Furthermore, the specification can help multiple contributors align
   on a consensus change to the algorithm.
