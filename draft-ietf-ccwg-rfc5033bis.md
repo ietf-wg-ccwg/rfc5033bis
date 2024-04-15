@@ -177,7 +177,7 @@ Internet, but the examples of Cubic and BBR teach us that
 deployment of new algorithms is not in fact gated by publication
 of the algorithm as an RFC.
 
-Nevertheless, editing and publicly sharing the specification of congestion control algorithms has a number of advantages:
+Nevertheless, specifying congestion control algorithms has a number of advantages:
 
 - A specification can help implementers, operators, and other interested
   parties to develop a shared understanding of how the algorithm works and how
