@@ -1151,10 +1151,10 @@ changes in the congestion control landscape.<a href="#section-abstract-1" class=
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-document-status" class="internal xref">Document Status</a></p>
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-guidelines-for-authors-abou" class="internal xref">Guidelines for Authors about Document Status</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-specifying-algorithms-for-u" class="internal xref">Specifying Algorithms for use in Controlled Environments</a></p>
+            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-specifying-algorithms-for-u" class="internal xref">Specifying Algorithms for Use in Controlled Environments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-evaluation-criteria" class="internal xref">Evaluation Criteria</a></p>
@@ -1426,25 +1426,24 @@ are encouraged to think about these issues beforehand, and have the willingness
 to do the work implied by the remainder of this document.<a href="#section-1-19" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="document-status">
+<div id="guidelines-for-authors-about-document-status">
 <section id="section-2">
-      <h2 id="name-document-status">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-document-status" class="section-name selfRef">Document Status</a>
+      <h2 id="name-guidelines-for-authors-abou">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-guidelines-for-authors-abou" class="section-name selfRef">Guidelines for Authors about Document Status</a>
       </h2>
-<p id="section-2-1">This document applies to proposed congestion control algorithms that seek Experimental or
+<p id="section-2-1">This document applies to proposed congestion control algorithms proposals that seek Experimental or
 Standards Track status. Evaluation of both cases involves the same questions,
 but with different expectations for both the answers and the degree of
 certainty of the answers.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">Congestion control algorithms without experience of Internet-scale deployment SHOULD
-seek Experimental status until real-world data is able to answer the questions
-in <a href="#general-use" class="auto internal xref">Section 5</a>. Congestion control algorithms with a record of measured
-Internet-scale deployment MAY directly seek the Standards Track if the community believes
-it is safe, and the design is stable, guided by the considerations in
-<a href="#general-use" class="auto internal xref">Section 5</a>. The existence of this data does not waive the other
+<p id="section-2-2">Congestion control algorithms without empirical evidence of Internet-scale deployment SHOULD
+seek Experimental status. Congestion control algorithms with a record of measured
+Internet-scale deployment MAY directly seek the Standards Track if there is solid data that reflects
+that it is safe, and the design is stable, guided by the considerations in
+<a href="#general-use" class="auto internal xref">Section 5</a>. However, the existence of this data does not waive the other
 considerations in this document.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <p id="section-2-3">Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
 only be deployed in situations where they are being actively measured, and where
-it is possible to deactivate if there are signs of pathological behavior.<a href="#section-2-3" class="pilcrow">¶</a></p>
+it is possible to deactivate them if there are signs of pathological behavior.<a href="#section-2-3" class="pilcrow">¶</a></p>
 <p id="section-2-4">Each published congestion control algorithm is REQUIRED to include a
 statement in the abstract indicating whether or not there is IETF consensus that
 the proposed congestion control algorithm is considered safe for use on the Internet.
@@ -1453,13 +1452,13 @@ is also required to include a statement in the
 abstract describing environments where the protocol is not recommended
 for deployment. There can be environments where the congestion control
 algorith is deemed <em>safe</em>
-for use, but it is still is not <em>recommended</em> for use because it does not
-perform well for the user.<a href="#section-2-4" class="pilcrow">¶</a></p>
+for use, but it is still is <em>not recommended</em> for use because it does not
+perform well for the user <span>[<a href="#RFC8890" class="cite xref">RFC8890</a>]</span>.<a href="#section-2-4" class="pilcrow">¶</a></p>
 <p id="section-2-5">As examples of such statements, <span>[<a href="#RFC3649" class="cite xref">RFC3649</a>]</span> specifying HighSpeed TCP
 includes a statement in the abstract stating that the proposed congestion control algorithm is
-Experimental, but may be deployed in the current Internet. In
+Experimental, but may be deployed in the Internet. In
 contrast, the Quick-Start document <span>[<a href="#RFC4782" class="cite xref">RFC4782</a>]</span> includes a paragraph in
-the abstract stating the mechanism is only being proposed for
+the abstract stating that the mechanism is only being proposed for
 use in controlled environments.  The abstract specifies environments where
 the Quick-Start request could give false positives (and therefore
 would be unsafe for incremental deployment where some routers
@@ -1469,7 +1468,7 @@ the network; in such an environment, Quick-Start would not be unsafe
 to deploy, but deployment would not be recommended because it
 could lead to unnecessary delays for the connections attempting to use
 Quick-Start. The Quick-Start method is discussed as an example in <span>[<a href="#RFC9049" class="cite xref">RFC9049</a>]</span>.<a href="#section-2-5" class="pilcrow">¶</a></p>
-<p id="section-2-6">Alhough out of the scope of this document, a proponent of a new
+<p id="section-2-6">Alhough out of the scope of this document, proponents of a new
 algorithm could alternatively
 seek publication as an Informational or Experimental RFC via the Internet
 Research Task Force (IRTF).
@@ -1483,7 +1482,7 @@ are invited to publish as an Informational RFC via the Independent Stream Editor
 <div id="specifying-algorithms-for-use-in-controlled-environments">
 <section id="section-3">
       <h2 id="name-specifying-algorithms-for-u">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-specifying-algorithms-for-u" class="section-name selfRef">Specifying Algorithms for use in Controlled Environments</a>
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-specifying-algorithms-for-u" class="section-name selfRef">Specifying Algorithms for Use in Controlled Environments</a>
       </h2>
 <p id="section-3-1">Algorithms can be designed for general Internet deployment or for use in controlled environments.
 An operator can ensure that flows within a controlled environment are isolated from other
@@ -2238,6 +2237,10 @@ examine any potential security issues that may arise.<a href="#section-7-2" clas
 <dt id="RFC8868">[RFC8868]</dt>
         <dd>
 <span class="refAuthor">Singh, V.</span>, <span class="refAuthor">Ott, J.</span>, and <span class="refAuthor">S. Holmer</span>, <span class="refTitle">"Evaluating Congestion Control for Interactive Real-Time Media"</span>, <span class="seriesInfo">RFC 8868</span>, <span class="seriesInfo">DOI 10.17487/RFC8868</span>, <time datetime="2021-01" class="refDate">January 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8868">https://www.rfc-editor.org/rfc/rfc8868</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8890">[RFC8890]</dt>
+        <dd>
+<span class="refAuthor">Nottingham, M.</span>, <span class="refTitle">"The Internet is for End Users"</span>, <span class="seriesInfo">RFC 8890</span>, <span class="seriesInfo">DOI 10.17487/RFC8890</span>, <time datetime="2020-08" class="refDate">August 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8890">https://www.rfc-editor.org/rfc/rfc8890</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9000">[RFC9000]</dt>
         <dd>
