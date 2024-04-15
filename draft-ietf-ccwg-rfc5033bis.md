@@ -122,7 +122,7 @@ congestion control algorithms as Experimental or Proposed Standard RFCs.
 
 The IETF's standard congestion control algorithms have been shown to have
 performance challenges in various environments
-(e.g., high-speed networks, cellular and Wireless Local Area Network (WLAN) technologies, and
+(e.g., high-speed networks, cellular and WiFi wireless technologies, and
 long distance satellite links)
 and also flows carrying specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
