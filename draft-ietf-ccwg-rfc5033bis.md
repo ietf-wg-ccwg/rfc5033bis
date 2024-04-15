@@ -347,19 +347,6 @@ full backoff mechanism must be identical to that of TCP
 backoff mechanisms that would give flows with different round-trip
 times comparable capacity during backoff.
 
-### Operation with the Envelope set by Circuit Breakers {#circuit-breakers}
-
-A network transport circuit breaker {{!RFC8084}} is an automatic mechanism
-that is used by some equipment in the network to continuously monitor a
-flow or aggregate set of flows.  The mechanism seeks to detect when the
-flow(s) experience persistent excessive congestion, and when detected,
-to terminate (or significantly reduce the rate of) the flow(s).
-
-A well-designed congestion control algorithm ought to react before
-a flow uses excessive resources and therefore
-needs to operate within the envelope set by network transport circuit
-breaker algorithms.
-
 ### Protection Against Bufferbloat
 
 A congestion control algorithm should try to avoid maintaining
@@ -632,6 +619,20 @@ requirements of the ECT codepoint that was used.
 Note that evaluation of AQM techniques -- as opposed to their impact on a specific
 proposed congestion control algorithm -- is out of scope of this document. {{?RFC7567}}
 describes design considerations for AQMs.
+
+### Operation with the Envelope set by Network Circuit Breakers {#circuit-breakers}
+
+Some equipment in the network use an automatic mechanism to
+continuously monitor the use of resources by a
+flow or aggregate set of flows {{!RFC8084}}.
+Such a
+network transport circuit breaker can automatically detect
+excessive congestion, and when detected,
+it can terminate (or significantly reduce the rate of) the flow(s).
+A well-designed congestion control algorithm ought to react before
+the flow uses excessive resources and therefore
+will operate within the envelope set by network transport circuit
+breaker algorithms.
 
 ## Paths with Varying Delay {#delay}
 
