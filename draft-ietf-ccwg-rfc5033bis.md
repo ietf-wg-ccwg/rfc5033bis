@@ -441,7 +441,7 @@ be part of the community's decision making with regards to the suitability of
 the proposed congestion control algorithm. The community should also consider
 other non-standard congestion control algorithms that are known to be widely deployed.
 
-This guideline is not a requirement for strict Reno- or Cubic-
+Note that this guideline is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for a proposed congestion
 control mechanism to advance to Experimental or Standards Track status.
 As an example,
