@@ -126,7 +126,7 @@ performance challenges in various environments
 long distance satellite links)
 and also flows carrying specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
-In 2007, TCP {{?RFC9293}} was the dominant consumer of this work on congestion control, and proposals
+In 2007, TCP {{?RFC9293}} was the dominant consumer of this work, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
 The Datagram Congestion Control Protocol (DCCP) {{?RFC4340}}
 was developed as a method for defining new congestion control algorithms for
