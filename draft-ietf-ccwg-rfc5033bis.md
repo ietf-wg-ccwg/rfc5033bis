@@ -227,7 +227,7 @@ to do the work implied by the remainder of this document.
 
 # Guidelines for Authors about Document Status
 
-This document applies to congestion control algorithm proposals that seek Experimental or
+This document applies to proposed congestion control algorithms proposals that seek Experimental or
 Standards Track status. Evaluation of both cases involves the same questions,
 but with different expectations for both the answers and the degree of
 certainty of the answers.
