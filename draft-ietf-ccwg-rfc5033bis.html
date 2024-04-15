@@ -13,7 +13,7 @@ possible ramifications to both the flows using the proposed congestion control a
 and to flows using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
 The goal of this document is to provide guidance for considering standardization
-of a proposed congestion control algorithm at the IETF. It replaces RFC5033 to reflect
+of a proposed congestion control algorithm at the IETF. It obsoletes RFC5033 to reflect
 changes in the congestion control landscape. 
     " name="description">
 <meta content="xml2rfc 3.20.1" name="generator">
@@ -1036,7 +1036,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Duke &amp; Fairhurst</td>
-<td class="center">Expires 12 October 2024</td>
+<td class="center">Expires 17 October 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1052,12 +1052,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5033" class="eref">5033</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-04-10" class="published">10 April 2024</time>
+<time datetime="2024-04-15" class="published">15 April 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Best Current Practice</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-10-12">12 October 2024</time></dd>
+<dd class="expires"><time datetime="2024-10-17">17 October 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1081,7 +1081,7 @@ possible ramifications to both the flows using the proposed congestion control a
 and to flows using a standardized congestion control algorithm. Therefore, the IETF
 must proceed with caution when evaluating proposals for alternate congestion control.
 The goal of this document is to provide guidance for considering standardization
-of a proposed congestion control algorithm at the IETF. It replaces RFC5033 to reflect
+of a proposed congestion control algorithm at the IETF. It obsoletes RFC5033 to reflect
 changes in the congestion control landscape.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
@@ -1118,7 +1118,7 @@ changes in the congestion control landscape.<a href="#section-abstract-1" class=
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 12 October 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 17 October 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1325,32 +1325,32 @@ The guidance is intended to be useful to authors proposing
 congestion control algorithms and for the IETF community when evaluating whether
 a proposal is appropriate for publication in the RFC series and for
 deployment in the Internet.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">This document obsoletes the similarly titled <span>[<a href="#RFC5033" class="cite xref">RFC5033</a>]</span> that was
+<p id="section-1-2">This document obsoletes <span>[<a href="#RFC5033" class="cite xref">RFC5033</a>]</span>, which was
 published in 2007 as a Best Current Practice to evaluate proposed
 congestion control algorithms as Experimental or Proposed Standard RFCs.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">The IETF's standard congestion control algorithms have been shown to have
 performance challenges in various environments
-(e.g., high-speed networks, cellular and WiFi wireless technologies,
+(e.g., high-speed networks, cellular and WiFi wireless technologies, and
 long distance satellite links)
-and also flows carrrying specific workloads (VoIP, gaming, and videoconferencing).<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">In 2007, TCP was the dominant consumer of this work, and proposals
+and also flows carrying specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">In 2007, TCP <span>[<a href="#RFC9293" class="cite xref">RFC9293</a>]</span> was the dominant consumer of this work, and proposals
 were typically discussed in the Internet Congestion Control Research Group (ICCRG).
-The Datagram Congestrion Copntrol Protocol (DCCP)
-was developed as a method for developing new congestion control algorithms for
+The Datagram Congestion Control Protocol (DCCP) <span>[<a href="#RFC4340" class="cite xref">RFC4340</a>]</span>
+was developed as a method for defining new congestion control algorithms for
 datagram traffic.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">Since RFC 5033 was published, many conditions have changed.
+<p id="section-1-5">Since <span>[<a href="#RFC5033" class="cite xref">RFC5033</a>]</span> was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP, SCTP <span>[<a href="#RFC9260" class="cite xref">RFC9260</a>]</span>, and DCCP <span>[<a href="#RFC4340" class="cite xref">RFC4340</a>]</span>, to include QUIC <span>[<a href="#RFC9000" class="cite xref">RFC9000</a>]</span>, RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.<a href="#section-1-5" class="pilcrow">¶</a></p>
+TCP, Stream Control Transmission Protocol (SCTP) <span>[<a href="#RFC9260" class="cite xref">RFC9260</a>]</span>, and DCCP, to include QUIC <span>[<a href="#RFC9000" class="cite xref">RFC9000</a>]</span>, RTP Media Congestion Avoidance Techniques (RMCAT) (e.g., <span>[<a href="#RFC8836" class="cite xref">RFC8836</a>]</span>) and beyond.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <p id="section-1-6">Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
-There is more interest in specialized use cases, such as data centers, and in
+There is more interest in specialized use cases, such as data centers (e.g., <span>[<a href="#RFC8257" class="cite xref">RFC8257</a>]</span>), and in
 support for a variety of upper layer protocols/applications, e.g.,
 real-time protocols.
 Finally, the community has gained much more experience with indications
 of congestion beyond packet loss.<a href="#section-1-6" class="pilcrow">¶</a></p>
 <p id="section-1-7">Multicast congestion control is a considerably less mature field of study
 and are not in scope for this document.
-However, Section 4 of the UDP Usage Guidelines <span>[<a href="#RFC8085" class="cite xref">RFC8085</a>]</span> provides
+However, <span><a href="https://rfc-editor.org/rfc/rfc8085#section-4" class="relref">Section 4</a> of [<a href="#RFC8085" class="cite xref">RFC8085</a>]</span> provides
 additional guidelines for multicast and broadcast usage of UDP.<a href="#section-1-7" class="pilcrow">¶</a></p>
 <p id="section-1-8">Congestion control algorithms
 have been developed outside of the IETF, including at least two that saw
@@ -1360,12 +1360,12 @@ and Bottleneck Bandwidth and Round-trip propagation time (BBR) <span>[<a href="#
 and was then adopted as the default congestion control algorithm for
 the TCP implementation in Linux. It was already used in a significant
 fraction of TCP connections over the Internet before being documented
-in an Informational Internet Draft in 2015, published as an
+in an Informational Internet-Draft in 2015, published as an
 Informational RFC in 2017 <span>[<a href="#RFC8312" class="cite xref">RFC8312</a>]</span> and then as a Proposed
 Standard in 2023 <span>[<a href="#RFC9438" class="cite xref">RFC9438</a>]</span>.<a href="#section-1-9" class="pilcrow">¶</a></p>
 <p id="section-1-10">BBR is developed as an internal research project by Google,
 with the first implementation contributed to Linux kernel 4.19 in 2016.
-It was described in an IRTF draft in 2018, and that draft is
+It was described in an IRTF Internet-Draft in 2018, and that Internet-Draft is
 regularly updated to document the evolving versions of the algorithm
 <span>[<a href="#BBR-draft" class="cite xref">BBR-draft</a>]</span>. BBR is widely used for Google services using either
 TCP or QUIC, and is also widely deployed outside of
@@ -1386,7 +1386,7 @@ it is expected to behave in various different scenarios or configurations.<a hre
         <li class="normal" id="section-1-13.2">
           <p id="section-1-13.2.1">A specification can help potential contributors understand the algorithm,
 which can make it easier for them to suggest improvements and/or identify
-limitations. Further, the specification can help multiple contributors align
+limitations. Furthermore, the specification can help multiple contributors align
 on a consensus change to the algorithm.<a href="#section-1-13.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-1-13.3">
@@ -1411,13 +1411,13 @@ Rather, the document provides
 a set of criteria that should be considered and weighed by the
 developers of alternative algorithms and by the IETF
 in the context of each proposal.<a href="#section-1-16" class="pilcrow">¶</a></p>
-<p id="section-1-17">The high-order criterion for advancing any proposal
+<p id="section-1-17">The high-order criterion for advancing any proposal within the IETF
 is a serious scientific study of the pros and cons that occur when the proposal is
 considered for publication by the IETF or before it is deployed at
 large scale.<a href="#section-1-17" class="pilcrow">¶</a></p>
-<p id="section-1-18">After initial studies, we encourage authors to write a specification
+<p id="section-1-18">After initial studies, authors are encouraged to write a specification
 of their proposal for publication in the RFC series. This allows others
-to concretely understand and investigate the wealth of proposals in
+to understand and investigate the wealth of proposals in
 this space.<a href="#section-1-18" class="pilcrow">¶</a></p>
 <p id="section-1-19">This document is meant to reduce the barriers to entry for new congestion
 control work to the IETF. As such, proponents ought not to interpret these criteria as a
@@ -1665,7 +1665,7 @@ flows using standard congestion control might be suspect and this aspect should
 be part of the community's decision making with regards to the suitability of
 the proposed congestion control algorithm. The community should also consider
 other non-standard congestion control algorithms that are known to be widely deployed.<a href="#section-4.2.1-1" class="pilcrow">¶</a></p>
-<p id="section-4.2.1-2">We note that this guideline is not a requirement for strict Reno- or Cubic-
+<p id="section-4.2.1-2">Note that this guideline is not a requirement for strict Reno- or Cubic-
 friendliness as a prerequisite for a proposed congestion
 control mechanism to advance to Experimental or Standards Track status.
 As an example,
@@ -1696,7 +1696,7 @@ flows can be less frequent than the acknowledgements provided by reliable
 transports. This document does not change the informational status of those
 RFCs.<a href="#section-4.2.2-2" class="pilcrow">¶</a></p>
 <p id="section-4.2.2-3">A proposed congestion control algorithm SHOULD consider coexistence with widely deployed real-time
-congestion control algorithms. Regrettably, at the time of writing, many algorithms with
+congestion control algorithms. Regrettably, at the time of writing (2024), many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
 It is hoped this situation will change.<a href="#section-4.2.2-3" class="pilcrow">¶</a></p>
@@ -2034,8 +2034,8 @@ the potential for harm to other flows. Synchronisation of congestion control mec
 (e.g., where multiple flows change their behaviour on similar
 timeframes) can also contribute to harm and/or reduce fairness,
 these effects also ought to be evaluated.<a href="#section-6.8-4" class="pilcrow">¶</a></p>
-<p id="section-6.8-5">At the time of writing, there are currently no Standards Track RFCs, but there is an Experimental RFC <span>[<a href="#RFC6356" class="cite xref">RFC6356</a>]</span> that specifies
-a concurrent multipath congestion control algorithm for TCP (MP-TCP).<a href="#section-6.8-5" class="pilcrow">¶</a></p>
+<p id="section-6.8-5">At the time of writing (2024), there are currently no Standards Track RFCs, but there is an Experimental RFC <span>[<a href="#RFC6356" class="cite xref">RFC6356</a>]</span> that specifies
+a concurrent multipath congestion control algorithm for TCP (MPTCP <span>[<a href="#RFC8684" class="cite xref">RFC8684</a>]</span>).<a href="#section-6.8-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="data-centers">
@@ -2207,6 +2207,10 @@ examine any potential security issues that may arise.<a href="#section-7-2" clas
         <dd>
 <span class="refAuthor">Fairhurst, G.</span> and <span class="refAuthor">M. Welzl</span>, <span class="refTitle">"The Benefits of Using Explicit Congestion Notification (ECN)"</span>, <span class="seriesInfo">RFC 8087</span>, <span class="seriesInfo">DOI 10.17487/RFC8087</span>, <time datetime="2017-03" class="refDate">March 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8087">https://www.rfc-editor.org/rfc/rfc8087</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC8257">[RFC8257]</dt>
+        <dd>
+<span class="refAuthor">Bensley, S.</span>, <span class="refAuthor">Thaler, D.</span>, <span class="refAuthor">Balasubramanian, P.</span>, <span class="refAuthor">Eggert, L.</span>, and <span class="refAuthor">G. Judd</span>, <span class="refTitle">"Data Center TCP (DCTCP): TCP Congestion Control for Data Centers"</span>, <span class="seriesInfo">RFC 8257</span>, <span class="seriesInfo">DOI 10.17487/RFC8257</span>, <time datetime="2017-10" class="refDate">October 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8257">https://www.rfc-editor.org/rfc/rfc8257</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC8290">[RFC8290]</dt>
         <dd>
 <span class="refAuthor">Hoeiland-Joergensen, T.</span>, <span class="refAuthor">McKenney, P.</span>, <span class="refAuthor">Taht, D.</span>, <span class="refAuthor">Gettys, J.</span>, and <span class="refAuthor">E. Dumazet</span>, <span class="refTitle">"The Flow Queue CoDel Packet Scheduler and Active Queue Management Algorithm"</span>, <span class="seriesInfo">RFC 8290</span>, <span class="seriesInfo">DOI 10.17487/RFC8290</span>, <time datetime="2018-01" class="refDate">January 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8290">https://www.rfc-editor.org/rfc/rfc8290</a>&gt;</span>. </dd>
@@ -2215,9 +2219,17 @@ examine any potential security issues that may arise.<a href="#section-7-2" clas
         <dd>
 <span class="refAuthor">Rhee, I.</span>, <span class="refAuthor">Xu, L.</span>, <span class="refAuthor">Ha, S.</span>, <span class="refAuthor">Zimmermann, A.</span>, <span class="refAuthor">Eggert, L.</span>, and <span class="refAuthor">R. Scheffenegger</span>, <span class="refTitle">"CUBIC for Fast Long-Distance Networks"</span>, <span class="seriesInfo">RFC 8312</span>, <span class="seriesInfo">DOI 10.17487/RFC8312</span>, <time datetime="2018-02" class="refDate">February 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8312">https://www.rfc-editor.org/rfc/rfc8312</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC8684">[RFC8684]</dt>
+        <dd>
+<span class="refAuthor">Ford, A.</span>, <span class="refAuthor">Raiciu, C.</span>, <span class="refAuthor">Handley, M.</span>, <span class="refAuthor">Bonaventure, O.</span>, and <span class="refAuthor">C. Paasch</span>, <span class="refTitle">"TCP Extensions for Multipath Operation with Multiple Addresses"</span>, <span class="seriesInfo">RFC 8684</span>, <span class="seriesInfo">DOI 10.17487/RFC8684</span>, <time datetime="2020-03" class="refDate">March 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8684">https://www.rfc-editor.org/rfc/rfc8684</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC8799">[RFC8799]</dt>
         <dd>
 <span class="refAuthor">Carpenter, B.</span> and <span class="refAuthor">B. Liu</span>, <span class="refTitle">"Limited Domains and Internet Protocols"</span>, <span class="seriesInfo">RFC 8799</span>, <span class="seriesInfo">DOI 10.17487/RFC8799</span>, <time datetime="2020-07" class="refDate">July 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8799">https://www.rfc-editor.org/rfc/rfc8799</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8836">[RFC8836]</dt>
+        <dd>
+<span class="refAuthor">Jesup, R.</span> and <span class="refAuthor">Z. Sarker, Ed.</span>, <span class="refTitle">"Congestion Control Requirements for Interactive Real-Time Media"</span>, <span class="seriesInfo">RFC 8836</span>, <span class="seriesInfo">DOI 10.17487/RFC8836</span>, <time datetime="2021-01" class="refDate">January 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8836">https://www.rfc-editor.org/rfc/rfc8836</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8867">[RFC8867]</dt>
         <dd>
@@ -2238,6 +2250,10 @@ examine any potential security issues that may arise.<a href="#section-7-2" clas
 <dt id="RFC9260">[RFC9260]</dt>
         <dd>
 <span class="refAuthor">Stewart, R.</span>, <span class="refAuthor">Tüxen, M.</span>, and <span class="refAuthor">K. Nielsen</span>, <span class="refTitle">"Stream Control Transmission Protocol"</span>, <span class="seriesInfo">RFC 9260</span>, <span class="seriesInfo">DOI 10.17487/RFC9260</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9260">https://www.rfc-editor.org/rfc/rfc9260</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9293">[RFC9293]</dt>
+        <dd>
+<span class="refAuthor">Eddy, W., Ed.</span>, <span class="refTitle">"Transmission Control Protocol (TCP)"</span>, <span class="seriesInfo">STD 7</span>, <span class="seriesInfo">RFC 9293</span>, <span class="seriesInfo">DOI 10.17487/RFC9293</span>, <time datetime="2022-08" class="refDate">August 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9293">https://www.rfc-editor.org/rfc/rfc9293</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9332">[RFC9332]</dt>
         <dd>
