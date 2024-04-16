@@ -134,9 +134,7 @@ datagram traffic.
 
 Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP, Stream Control Transmission Protocol (SCTP) {{?RFC9260}},
-and DCCP, to include QUIC {{?RFC9000}},
-RTP Media Congestion Avoidance Techniques (RMCAT) (e.g., {{?RFC8836}}) and beyond.
+TCP, Stream Control Transmission Protocol (SCTP) {{?RFC9260}}, and DCCP, to include QUIC {{?RFC9000}}, RTP Media Congestion Avoidance Techniques (RMCAT) (e.g., {{?RFC8836}}) and beyond.
 
 Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
