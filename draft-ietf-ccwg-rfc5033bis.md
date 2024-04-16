@@ -782,7 +782,7 @@ signalling from switches to endpoints. Furthermore, the operator can often limit
 the number of operating congestion control algorithms.
 
 For these reasons, data center congestion controls are often distinct from those
-running elsewhere on the Interenet (see {{controlled-environments}}).  A proposed congestion control need not
+running elsewhere on the Interenet (see Controlled Environments).  A proposed congestion control need not
 coexist well with all other algorithms if it is intended for data centers, but
 the proposal SHOULD indicate which are expected to safely coexist with it.
 
