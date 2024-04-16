@@ -134,7 +134,8 @@ datagram traffic.
 
 Since RFC 5033 was published, many conditions have changed.
 The set of protocols using these algorithms has spread beyond
-TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}}, RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
+TCP, SCTP {{?RFC9260}}, and DCCP {{?RFC4340}}, to include QUIC {{?RFC9000}},
+RTP Media Congestion Avoidance Techniques (RMCAT) and beyond.
 
 Some proponents of alternative congestion control algorithms now have the opportunity
 to test and deploy at scale without IETF review.
@@ -294,11 +295,7 @@ proposed new algorithm and whether there is sufficient experience to
 understand any dependent functions.
 
 A data center is an example of a controlled environment, which often deploys fabrics with rich
-signalling from switches to endpoints. Furthermore, an operator can often limit
-the number of operating congestion controls.
-Many data centers are characterized by very low latencies (< 2 ms) and can support
-specific workloads (e.g., that introduce bursty traffic
-where many nodes complete a task at the same time).
+signalling from switches to endpoints.
 
 In evaluating a new proposal for use in a controlled environment, the IETF needs
 to understand the usage, e.g., how the usage is scoped to the controlled environment,
@@ -361,11 +358,11 @@ send at progressively higher rates until a First-In First-Out
 (FIFO) buffer completely fills, and packet losses then occur.
 Every connection passing through that bottleneck experiences increased
 latency due to the high buffer occupancy. This adds unwanted latency that
-negatively impacts highly interactive applications like
+negatively impacts highly interactive applications such as
 videoconferencing or games, but it also affects routine
 web browsing and video playing.
 
-This problem has been widely discussed since 2011 {{Bufferbloat}} but was not discussed in
+This problem has been widely discussed since 2011 {{Bufferbloat}}, but was not discussed in
 the Congestion Control Principles published in September 2002 {{!RFC2914}}.
 The Reno and Cubic congestion control algorithms
 do not address it, but a new congestion control algorithm
@@ -420,7 +417,7 @@ congestion control algorithms.
 In contexts where differing congestion control
 algorithms are used, it is important to understand whether
 the proposed congestion control algorithm could result in more
-harm than previous standards-track algorithms (e.g. {{!RFC5681}},
+harm than previous standards-track algorithms (e.g., {{!RFC5681}},
 {{!RFC9002}}, {{!RFC9438}}) to flows sharing a common bottleneck.
 The measure of harm is not restricted to the equality
 of capacity, but ought also to consider metrics such as the
@@ -459,7 +456,7 @@ discussed in Sections 6, 11.1, and 12 of {{?RFC3649}}.
 ### Real-Time Protocols
 
 General-purpose protocols need to coexist in the Internet with real-time congestion
-control algorithms, which, in general, have finite throughput requirements (i.e.
+control algorithms, which, in general, have finite throughput requirements (i.e.,
 do not seek to utilize all available capacity) and more strict latency
 bounds.
 
@@ -474,7 +471,7 @@ A proposed congestion control algorithm SHOULD consider coexistence with widely 
 congestion control algorithms. Regrettably, at the time of writing, many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
-It is hoped this situation will change.
+It is hoped that this situation will change.
 
 To the extent that behavior of widely deployed algorithms is understood,
 a proposed congestion control algorithm
@@ -487,13 +484,14 @@ which can substantially reduce the interplay with other traffic. However, a prop
 targeting general Internet use can not assume this is always the case.
 
 {{circuit-breakers}} describes the impact of network
-transport circuit breaker algorithms. 
+transport circuit breaker algorithms.
 {{!RFC8083}} also defines a
-minimal set of RTP circuit breakers that operate across a path. This identifies conditions under which a sender
+minimal set of RTP circuit breakers that operate across a path.
+This identifies conditions under which a sender
 needs to stop transmitting media data to protect the network from excessive congestion.
 It is expected that, in the absence of long-lived excessive congestion,
 RTP applications running on best-effort IP networks will be able to operate without
-triggering these circuit breakers.  
+triggering these circuit breakers.
 
 ### Short and Long Flows
 
@@ -526,7 +524,7 @@ is to be realised.  The community will have to address the
 question of whether the scope can be enforced by stating
 the restrictions or whether additional protocol mechanisms are
 required to enforce this scoping.  The answer will necessarily
-depend on the change that is being proposed.
+depend on the proposed change.
 
 As an example from an Experimental RFC, deployment issues are
 discussed in Sections 10.3 and 10.4 of {{?RFC4782}} (Quick-Start).
@@ -598,7 +596,8 @@ ubiquitous as the General Use scenarios.
 
 ## Active Queue Management (AQM) {#aqm}
 
-The proposed congestion control algorithm SHOULD be evaluated under a variety of bottleneck queue disciplines.
+The proposed congestion control algorithm SHOULD be evaluated
+under a variety of bottleneck queue disciplines.
 The effect of an AQM discipline can be hard to detect by Internet evaluation.
 At a minimum, a proposal should reason about an algorithm's response to various
 AQM disciplines. Simulation or empirical results are, of course, valuable.
@@ -625,8 +624,7 @@ describes design considerations for AQMs.
 Some equipment in the network use an automatic mechanism to
 continuously monitor the use of resources by a
 flow or aggregate set of flows {{!RFC8084}}.
-Such a
-network transport circuit breaker can automatically detect
+Such a network transport circuit breaker can automatically detect
 excessive congestion, and when detected,
 it can terminate (or significantly reduce the rate of) the flow(s).
 A well-designed congestion control algorithm ought to react before
@@ -677,8 +675,8 @@ delay product, well below the standard operating range of most Internet flows.
 
 ## Paths with High Delay
 
-A proposed congestion control algorithm ought not to presume that all general Internet paths have a low
-delay.
+A proposed congestion control algorithm ought not to presume that all
+general Internet paths have a low delay.
 Some paths include links that contibute much more delay than for a typical Internet path.
 Satellite links often have delays longer than typical for wired paths
 {{?RFC2488}} and high delay bandwidth products {{?RFC3649}}.
@@ -782,7 +780,7 @@ Data centers are characterized by very low latencies (< 2 ms). Many workloads
 involve bursty traffic where many nodes complete a task at the same time. As a
 controlled environment, data centers often deploy fabrics that employ rich
 signalling from switches to endpoints. Furthermore, the operator can often limit
-the number of operating congestion controls.
+the number of operating congestion control algorithms.
 
 For these reasons, data center congestion controls are often distinct from those
 running elsewhere on the Interenet (see {{controlled-environments}}).  A proposed congestion control need not
