@@ -452,14 +452,6 @@ Code Points (DSCP) or other mechanisms, which can substantially reduce the
 interplay with other traffic. However, a proposal targeting general Internet use
 can not assume this is always the case.
 
-{{circuit-breakers}} describes the impact of network transport circuit breaker
-algorithms. {{!RFC8083}} also defines a minimal set of RTP circuit breakers that
-operate across a path. This identifies conditions under which a sender needs to
-stop transmitting media data to protect the network from excessive congestion.
-It is expected that, in the absence of long-lived excessive congestion, RTP
-applications running on best-effort IP networks will be able to operate without
-triggering these circuit breakers.
-
 ### Short and Long Flows
 
 The effect on short-lived and long-lived flows using other common congestion
