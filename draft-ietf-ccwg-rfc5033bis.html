@@ -1036,7 +1036,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Duke &amp; Fairhurst</td>
-<td class="center">Expires 17 October 2024</td>
+<td class="center">Expires 18 October 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1052,12 +1052,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5033" class="eref">5033</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-04-15" class="published">15 April 2024</time>
+<time datetime="2024-04-16" class="published">16 April 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Best Current Practice</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-10-17">17 October 2024</time></dd>
+<dd class="expires"><time datetime="2024-10-18">18 October 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1118,7 +1118,7 @@ changes in the congestion control landscape.<a href="#section-abstract-1" class=
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 17 October 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 18 October 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1228,6 +1228,11 @@ changes in the congestion control landscape.<a href="#section-abstract-1" class=
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1">
                 <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-active-queue-management-aqm" class="internal xref">Active Queue Management (AQM)</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.1">
+                    <p id="section-toc.1-1.6.2.1.2.1.1"><a href="#section-6.1.1" class="auto internal xref">6.1.1</a>.  <a href="#name-operation-with-the-envelope" class="internal xref">Operation with the Envelope set by Network Circuit Breakers</a></p>
+</li>
+                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.2">
                 <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-paths-with-varying-delay" class="internal xref">Paths with Varying Delay</a></p>
@@ -1363,18 +1368,18 @@ fraction of TCP connections over the Internet before being documented
 in an Informational Internet-Draft in 2015, published as an
 Informational RFC in 2017 <span>[<a href="#RFC8312" class="cite xref">RFC8312</a>]</span> and then as a Proposed
 Standard in 2023 <span>[<a href="#RFC9438" class="cite xref">RFC9438</a>]</span>.<a href="#section-1-9" class="pilcrow">¶</a></p>
-<p id="section-1-10">BBR is developed as an internal research project by Google,
+<p id="section-1-10">At the time of writing, BBR is being developed as an internal research project by Google,
 with the first implementation contributed to Linux kernel 4.19 in 2016.
 It was described in an IRTF Internet-Draft in 2018, and that Internet-Draft is
 regularly updated to document the evolving versions of the algorithm
-<span>[<a href="#BBR-draft" class="cite xref">BBR-draft</a>]</span>. BBR is widely used for Google services using either
+<span>[<a href="#BBR-draft" class="cite xref">BBR-draft</a>]</span>. BBR is currently widely used for Google services using either
 TCP or QUIC, and is also widely deployed outside of
 Google.<a href="#section-1-10" class="pilcrow">¶</a></p>
 <p id="section-1-11">We cannot say now whether the original authors of <span>[<a href="#RFC5033" class="cite xref">RFC5033</a>]</span>
 expected that developers would be somehow waiting for IETF review
 before widely deploying a new congestion control algorithm over the
 Internet, but the examples of Cubic and BBR teach us that
-deployment of new algorithms is not in fact gated by publication
+deployment of new algorithms is not in fact gated by the publication
 of the algorithm as an RFC.<a href="#section-1-11" class="pilcrow">¶</a></p>
 <p id="section-1-12">Nevertheless, specifying congestion control algorithms has a number of advantages:<a href="#section-1-12" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -1390,7 +1395,7 @@ limitations. Furthermore, the specification can help multiple contributors align
 on a consensus change to the algorithm.<a href="#section-1-13.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-1-13.3">
-          <p id="section-1-13.3.1">A specification that is accessible to anyone circumvents the issue that some
+          <p id="section-1-13.3.1">A specification that is accessible to anyone can circumvent the issue that some
 implementors may be unable to read open source reference implementations due
 to the constraints of some open source licenses.<a href="#section-1-13.3.1" class="pilcrow">¶</a></p>
 </li>
@@ -1420,7 +1425,8 @@ of their proposal for publication in the RFC series. This allows others
 to understand and investigate the wealth of proposals in
 this space.<a href="#section-1-18" class="pilcrow">¶</a></p>
 <p id="section-1-19">This document is meant to reduce the barriers to entry for new congestion
-control work to the IETF. As such, proponents ought not to interpret these criteria as a
+control work to the IETF. As such, proponents of new congestion control algorithms
+ought not to interpret these criteria as a
 checklist of requirements before approaching the IETF. Instead, proponents
 are encouraged to think about these issues beforehand, and have the willingness
 to do the work implied by the remainder of this document.<a href="#section-1-19" class="pilcrow">¶</a></p>
@@ -1494,11 +1500,7 @@ The IETF will need to assess whether the relevant working group is able review t
 proposed new algorithm and whether there is sufficient experience to
 understand any dependent functions.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">A data center is an example of a controlled environment, which often deploys fabrics with rich
-signalling from switches to endpoints. Furthermore, an operator can often limit
-the number of operating congestion controls.
-Many data centers are characterized by very low latencies (&lt; 2 ms) and can support
-specific workloads (e.g., that introduce bursty traffic
-where many nodes complete a task at the same time).<a href="#section-3-2" class="pilcrow">¶</a></p>
+signalling from switches to endpoints.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">In evaluating a new proposal for use in a controlled environment <span>[<a href="#RFC8799" class="cite xref">RFC8799</a>]</span>, the IETF needs
 to understand the usage, e.g., how the usage is scoped to the controlled environment,
 whether the algorithm will share resources with Internet traffic
@@ -1529,7 +1531,7 @@ domains (see <a href="#general-use" class="auto internal xref">Section 5</a> and
 <a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-single-algorithm-behavior" class="section-name selfRef">Single Algorithm Behavior</a>
         </h3>
 <p id="section-4.1-1">The criteria in this section evaluate the congestion control algorithm when one or more flows
-using that algorithm share a bottleneck link (i.e. with no flows
+using that algorithm share a bottleneck link (i.e., with no flows
 using a differing congestion control algorithm).<a href="#section-4.1-1" class="pilcrow">¶</a></p>
 <div id="protection-against-congestion-collapse">
 <section id="section-4.1.1">
@@ -1570,10 +1572,10 @@ send at progressively higher rates until a First-In First-Out
 (FIFO) buffer completely fills, and packet losses then occur.
 Every connection passing through that bottleneck experiences increased
 latency due to the high buffer occupancy. This adds unwanted latency that
-negatively impacts highly interactive applications like
+negatively impacts highly interactive applications such as
 videoconferencing or games, but it also affects routine
 web browsing and video playing.<a href="#section-4.1.2-2" class="pilcrow">¶</a></p>
-<p id="section-4.1.2-3">This problem has been widely discussed since 2011 <span>[<a href="#Bufferbloat" class="cite xref">Bufferbloat</a>]</span> but was not discussed in
+<p id="section-4.1.2-3">This problem has been widely discussed since 2011 <span>[<a href="#Bufferbloat" class="cite xref">Bufferbloat</a>]</span>, but was not discussed in
 the Congestion Control Principles published in September 2002 <span>[<a href="#RFC2914" class="cite xref">RFC2914</a>]</span>.
 The Reno and Cubic congestion control algorithms
 do not address it, but a new congestion control algorithm
@@ -1636,13 +1638,13 @@ and vice versa.<a href="#section-4.1.5-2" class="pilcrow">¶</a></p>
         <h3 id="name-mixed-algorithm-behavior">
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-mixed-algorithm-behavior" class="section-name selfRef">Mixed Algorithm Behavior</a>
         </h3>
-<p id="section-4.2-1">These criteria evaluate the interaction of the
+<p id="section-4.2-1">Mixed algorithm behavior criteria evaluate the interaction of the
 proposed congestion control algorithm with commonly deployed
 congestion control algorithms.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <p id="section-4.2-2">In contexts where differing congestion control
 algorithms are used, it is important to understand whether
 the proposed congestion control algorithm could result in more
-harm than previous standards-track algorithms (e.g. <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span>,
+harm than previous standards-track algorithms (e.g., <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span>,
 <span>[<a href="#RFC9002" class="cite xref">RFC9002</a>]</span>, <span>[<a href="#RFC9438" class="cite xref">RFC9438</a>]</span>) to flows sharing a common bottleneck.
 The measure of harm is not restricted to the equality
 of capacity, but ought also to consider metrics such as the
@@ -1685,7 +1687,7 @@ discussed in Sections 6, 11.1, and 12 of <span>[<a href="#RFC3649" class="cite x
 <a href="#section-4.2.2" class="section-number selfRef">4.2.2. </a><a href="#name-real-time-protocols" class="section-name selfRef">Real-Time Protocols</a>
           </h4>
 <p id="section-4.2.2-1">General-purpose protocols need to coexist in the Internet with real-time congestion
-control algorithms, which, in general, have finite throughput requirements (i.e.
+control algorithms, which, in general, have finite throughput requirements (i.e.,
 do not seek to utilize all available capacity) and more strict latency
 bounds.<a href="#section-4.2.2-1" class="pilcrow">¶</a></p>
 <p id="section-4.2.2-2"><span>[<a href="#RFC8868" class="cite xref">RFC8868</a>]</span> provides suggestions for real-time congestion control design and
@@ -1698,7 +1700,7 @@ RFCs.<a href="#section-4.2.2-2" class="pilcrow">¶</a></p>
 congestion control algorithms. Regrettably, at the time of writing (2024), many algorithms with
 detailed public specifications are not widely deployed, while many widely
 deployed real-time congestion control algorithms have incomplete public specifications.
-It is hoped this situation will change.<a href="#section-4.2.2-3" class="pilcrow">¶</a></p>
+It is hoped that this situation will change.<a href="#section-4.2.2-3" class="pilcrow">¶</a></p>
 <p id="section-4.2.2-4">To the extent that behavior of widely deployed algorithms is understood,
 a proposed congestion control algorithm
 can analyze and simulate their interaction with those algorithms. To the
@@ -1707,6 +1709,15 @@ extent they are not, experiments can be conducted where possible.<a href="#secti
 queues via Differentiated Services Code Points (DSCP) or other mechanisms,
 which can substantially reduce the interplay with other traffic. However, a proposal
 targeting general Internet use can not assume this is always the case.<a href="#section-4.2.2-5" class="pilcrow">¶</a></p>
+<p id="section-4.2.2-6"><a href="#circuit-breakers" class="auto internal xref">Section 6.1.1</a> describes the impact of network
+transport circuit breaker algorithms.
+<span>[<a href="#RFC8083" class="cite xref">RFC8083</a>]</span> also defines a
+minimal set of RTP circuit breakers that operate across a path.
+This identifies conditions under which a sender
+needs to stop transmitting media data to protect the network from excessive congestion.
+It is expected that, in the absence of long-lived excessive congestion,
+RTP applications running on best-effort IP networks will be able to operate without
+triggering these circuit breakers.<a href="#section-4.2.2-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="short-and-long-flows">
@@ -1730,7 +1741,7 @@ control algorithms MUST be evaluated, as in <a href="#short-flows" class="auto i
           <h4 id="name-differences-with-congestion">
 <a href="#section-4.3.1" class="section-number selfRef">4.3.1. </a><a href="#name-differences-with-congestion" class="section-name selfRef">Differences with Congestion Control Principles</a>
           </h4>
-<p id="section-4.3.1-1">Proposed congestion control algorithms SHOULD include a clear
+<p id="section-4.3.1-1">A proposed congestion control algorithm SHOULD include a clear
 explanation of any deviations from <span>[<a href="#RFC2914" class="cite xref">RFC2914</a>]</span> and <span>[<a href="#RFC7141" class="cite xref">RFC7141</a>]</span>.<a href="#section-4.3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1755,7 +1766,7 @@ is to be realised.  The community will have to address the
 question of whether the scope can be enforced by stating
 the restrictions or whether additional protocol mechanisms are
 required to enforce this scoping.  The answer will necessarily
-depend on the change that is being proposed.<a href="#section-4.3.2-2" class="pilcrow">¶</a></p>
+depend on the proposed change.<a href="#section-4.3.2-2" class="pilcrow">¶</a></p>
 <p id="section-4.3.2-3">As an example from an Experimental RFC, deployment issues are
 discussed in Sections 10.3 and 10.4 of <span>[<a href="#RFC4782" class="cite xref">RFC4782</a>]</span> (Quick-Start).<a href="#section-4.3.2-3" class="pilcrow">¶</a></p>
 </section>
@@ -1853,7 +1864,8 @@ ubiquitous as the General Use scenarios.<a href="#section-6-2" class="pilcrow">�
         <h3 id="name-active-queue-management-aqm">
 <a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-active-queue-management-aqm" class="section-name selfRef">Active Queue Management (AQM)</a>
         </h3>
-<p id="section-6.1-1">The proposed congestion control algorithm SHOULD be evaluated under a variety of bottleneck queue disciplines.
+<p id="section-6.1-1">The proposed congestion control algorithm SHOULD be evaluated
+under a variety of bottleneck queue disciplines.
 The effect of an AQM discipline can be hard to detect by Internet evaluation.
 At a minimum, a proposal should reason about an algorithm's response to various
 AQM disciplines. Simulation or empirical results are, of course, valuable.<a href="#section-6.1-1" class="pilcrow">¶</a></p>
@@ -1871,6 +1883,23 @@ requirements of the ECT codepoint that was used.<a href="#section-6.1-3" class="
 <p id="section-6.1-4">Note that evaluation of AQM techniques -- as opposed to their impact on a specific
 proposed congestion control algorithm -- is out of scope of this document. <span>[<a href="#RFC7567" class="cite xref">RFC7567</a>]</span>
 describes design considerations for AQMs.<a href="#section-6.1-4" class="pilcrow">¶</a></p>
+<div id="circuit-breakers">
+<section id="section-6.1.1">
+          <h4 id="name-operation-with-the-envelope">
+<a href="#section-6.1.1" class="section-number selfRef">6.1.1. </a><a href="#name-operation-with-the-envelope" class="section-name selfRef">Operation with the Envelope set by Network Circuit Breakers</a>
+          </h4>
+<p id="section-6.1.1-1">Some equipment in the network use an automatic mechanism to
+continuously monitor the use of resources by a
+flow or aggregate set of flows <span>[<a href="#RFC8084" class="cite xref">RFC8084</a>]</span>.
+Such a network transport circuit breaker can automatically detect
+excessive congestion, and when detected,
+it can terminate (or significantly reduce the rate of) the flow(s).
+A well-designed congestion control algorithm ought to react before
+the flow uses excessive resources and therefore
+will operate within the envelope set by network transport circuit
+breaker algorithms.<a href="#section-6.1.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="delay">
@@ -1888,11 +1917,11 @@ resource is periodically distributed among the active nodes and where a node mig
 have to buffer data until an assigned transmission opportunity or when the physical path
 changes (e.g., when the length of a wireless path changes, or the physical layer changes
 its mode of operation).
-Variation also arises when a higher priority diffserv traffic classic prompts the
-transmission by a lower class. In these cases, the delay varies as a function of
+Variation also arises when traffic with a higher priority diffserv class pre-empts
+transmission of traffic with a lower class. In these cases, the delay varies as a function of
 external factors and attempting to infer congestion from an increase in the delay
-results in reduced throughput. The jitter from variation over short timescales
-might not be distinguishable similar from other effects.<a href="#section-6.2-2" class="pilcrow">¶</a></p>
+results in reduced throughput. This variation in the delay over short timescales (jitter)
+might not be distinguishable from jitter that results from other effects.<a href="#section-6.2-2" class="pilcrow">¶</a></p>
 <p id="section-6.2-3">A proposed congestion control algorithm SHOULD be evaluated to ensure their operation is robust
 when there is a significant change in the minimum delay.<a href="#section-6.2-3" class="pilcrow">¶</a></p>
 </section>
@@ -1922,8 +1951,8 @@ delay product, well below the standard operating range of most Internet flows.<a
         <h3 id="name-paths-with-high-delay">
 <a href="#section-6.4" class="section-number selfRef">6.4. </a><a href="#name-paths-with-high-delay" class="section-name selfRef">Paths with High Delay</a>
         </h3>
-<p id="section-6.4-1">A proposed congestion control algorithm ought not to presume that all general Internet paths have a low
-delay.
+<p id="section-6.4-1">A proposed congestion control algorithm ought not to presume that all
+general Internet paths have a low delay.
 Some paths include links that contibute much more delay than for a typical Internet path.
 Satellite links often have delays longer than typical for wired paths
 <span>[<a href="#RFC2488" class="cite xref">RFC2488</a>]</span> and high delay bandwidth products <span>[<a href="#RFC3649" class="cite xref">RFC3649</a>]</span>.
@@ -2046,9 +2075,9 @@ a concurrent multipath congestion control algorithm for TCP (MPTCP <span>[<a hre
 involve bursty traffic where many nodes complete a task at the same time. As a
 controlled environment, data centers often deploy fabrics that employ rich
 signalling from switches to endpoints. Furthermore, the operator can often limit
-the number of operating congestion controls.<a href="#section-6.9-1" class="pilcrow">¶</a></p>
+the number of operating congestion control algorithms.<a href="#section-6.9-1" class="pilcrow">¶</a></p>
 <p id="section-6.9-2">For these reasons, data center congestion controls are often distinct from those
-running elsewhere on the Interenet.  A proposed congestion control need not
+running elsewhere on the Interenet (see Controlled Environments).  A proposed congestion control need not
 coexist well with all other algorithms if it is intended for data centers, but
 the proposal SHOULD indicate which are expected to safely coexist with it.<a href="#section-6.9-2" class="pilcrow">¶</a></p>
 </section>
@@ -2101,6 +2130,14 @@ examine any potential security issues that may arise.<a href="#section-7-2" clas
         <dd>
 <span class="refAuthor">Briscoe, B.</span> and <span class="refAuthor">J. Manner</span>, <span class="refTitle">"Byte and Packet Congestion Notification"</span>, <span class="seriesInfo">BCP 41</span>, <span class="seriesInfo">RFC 7141</span>, <span class="seriesInfo">DOI 10.17487/RFC7141</span>, <time datetime="2014-02" class="refDate">February 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7141">https://www.rfc-editor.org/rfc/rfc7141</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC8083">[RFC8083]</dt>
+        <dd>
+<span class="refAuthor">Perkins, C.</span> and <span class="refAuthor">V. Singh</span>, <span class="refTitle">"Multimedia Congestion Control: Circuit Breakers for Unicast RTP Sessions"</span>, <span class="seriesInfo">RFC 8083</span>, <span class="seriesInfo">DOI 10.17487/RFC8083</span>, <time datetime="2017-03" class="refDate">March 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8083">https://www.rfc-editor.org/rfc/rfc8083</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8084">[RFC8084]</dt>
+        <dd>
+<span class="refAuthor">Fairhurst, G.</span>, <span class="refTitle">"Network Transport Circuit Breakers"</span>, <span class="seriesInfo">BCP 208</span>, <span class="seriesInfo">RFC 8084</span>, <span class="seriesInfo">DOI 10.17487/RFC8084</span>, <time datetime="2017-03" class="refDate">March 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8084">https://www.rfc-editor.org/rfc/rfc8084</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC8085">[RFC8085]</dt>
         <dd>
 <span class="refAuthor">Eggert, L.</span>, <span class="refAuthor">Fairhurst, G.</span>, and <span class="refAuthor">G. Shepherd</span>, <span class="refTitle">"UDP Usage Guidelines"</span>, <span class="seriesInfo">BCP 145</span>, <span class="seriesInfo">RFC 8085</span>, <span class="seriesInfo">DOI 10.17487/RFC8085</span>, <time datetime="2017-03" class="refDate">March 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8085">https://www.rfc-editor.org/rfc/rfc8085</a>&gt;</span>. </dd>
@@ -2140,7 +2177,7 @@ examine any potential security issues that may arise.<a href="#section-7-2" clas
 <dd class="break"></dd>
 <dt id="Bufferbloat">[Bufferbloat]</dt>
         <dd>
-<span class="refAuthor">Kathleen Nichols</span>, <span class="refTitle">"Bufferbloat: Dark Buffers in the Internet"</span>, <span class="seriesInfo">ACM Queue Volume 9, issue 11 </span>, <time datetime="2011" class="refDate">2011</time>, <span>&lt;<a href="https://queue.acm.org/detail.cfm?id=2071893">https://queue.acm.org/detail.cfm?id=2071893</a>&gt;</span>. </dd>
+<span class="refAuthor">Kathleen Nichols</span>, <span class="refTitle">"Bufferbloat: Dark Buffers in the Internet"</span>, <span class="seriesInfo">ACM Queue Volume 9, Issue 11 </span>, <time datetime="2011" class="refDate">2011</time>, <span>&lt;<a href="https://queue.acm.org/detail.cfm?id=2071893">https://queue.acm.org/detail.cfm?id=2071893</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="HRX08">[HRX08]</dt>
         <dd>
