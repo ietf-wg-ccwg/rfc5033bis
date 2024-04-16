@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-14T00:42:21.801076+00:00",
+  "timestamp": "2024-04-16T00:36:08.743816+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -7667,13 +7667,13 @@
       "labels": [],
       "body": "Please do not merge yet, I will tray to update to include a few sentences to address the issue related to in-network Circuit breakers.",
       "createdAt": "2024-04-10T09:42:49Z",
-      "updatedAt": "2024-04-11T08:55:11Z",
+      "updatedAt": "2024-04-15T19:34:34Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "cdf970bd0844126b5c4402190c7f5ab4caf8e252",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-20",
-      "headRefOid": "194dcc7d27c0558260aded20387f9deaf8bde4a6",
+      "headRefOid": "a1c224f53924f4f3591fc3ca44ab4e9400c87895",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -7903,6 +7903,58 @@
               "updatedAt": "2024-04-11T08:46:34Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc53T0tZ",
+          "commit": {
+            "abbreviatedOid": "576021f"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-15T16:49:41Z",
+          "updatedAt": "2024-04-15T16:49:41Z",
+          "comments": [
+            {
+              "originalPosition": 77,
+              "body": "OK, moved as suggested and framed as a special case.",
+              "createdAt": "2024-04-15T16:49:41Z",
+              "updatedAt": "2024-04-15T16:49:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc53U93E",
+          "commit": {
+            "abbreviatedOid": "a1c224f"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "This looks good, but please don't mangle my name, or that of Lisong Xu, or ACM Queue reference. \r\n\r\nMinor edit suggestion on the wording of the last paragraph in \"## Paths with Varying Delay {#delay}\"",
+          "createdAt": "2024-04-15T19:24:15Z",
+          "updatedAt": "2024-04-15T19:34:34Z",
+          "comments": [
+            {
+              "originalPosition": 153,
+              "body": "Not part of the PR, but the last sentence in that paragraph is weird. Do we want to say \"It might be hard to distinguish the jitter due to variation over short timescales from other effects\" ?",
+              "createdAt": "2024-04-15T19:24:15Z",
+              "updatedAt": "2024-04-15T19:34:34Z"
+            },
+            {
+              "originalPosition": 6,
+              "body": "Uh? My name is indeed \"Christian Huitema\"",
+              "createdAt": "2024-04-15T19:25:36Z",
+              "updatedAt": "2024-04-15T19:34:34Z"
+            },
+            {
+              "originalPosition": 24,
+              "body": "I think there was an errant edit command replacing \"is\" by null: Christian -> Chrtian, Lisong Xu -> Long Xu, issue -> sue. Please reverse that!",
+              "createdAt": "2024-04-15T19:32:37Z",
+              "updatedAt": "2024-04-15T19:34:34Z"
+            }
+          ]
         }
       ]
     },
@@ -8039,52 +8091,152 @@
       "id": "PR_kwDOI7aIXc5sc4bU",
       "title": "minor edits to the Introduction",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/117",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-04-12T08:41:02Z",
-      "updatedAt": "2024-04-12T08:41:02Z",
+      "updatedAt": "2024-04-15T14:31:15Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "883598bd9d87f12044779acf2f3602bb3259353a",
       "headRepository": "boucadair/rfc5033bis",
       "headRefName": "main",
-      "headRefOid": "3e74893ef2d03e023d1940d99da4ddad0028f946",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "2a4137023a7beac41b33aff58231fd9c425199e7",
+      "closedAt": "2024-04-15T14:31:15Z",
+      "mergedAt": "2024-04-15T14:31:15Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "db4ecfb06ba2995f02e49d376185776af921a2c2"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc53SNun",
+          "commit": {
+            "abbreviatedOid": "3e74893"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thanks for the edits. I am a big fan of losing fewer words, so I reverted changes that went in the wrong direction.",
+          "createdAt": "2024-04-15T14:22:51Z",
+          "updatedAt": "2024-04-15T14:30:08Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\nof a proposed congestion control algorithm at the IETF. It obsoletes RFC5033 to reflect\r\nchanges in the congestion control landscape.\r\n```",
+              "createdAt": "2024-04-15T14:22:51Z",
+              "updatedAt": "2024-04-15T14:30:08Z"
+            },
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\nThis document obsoletes {{?RFC5033}}, which was\r\n```",
+              "createdAt": "2024-04-15T14:23:24Z",
+              "updatedAt": "2024-04-15T14:30:08Z"
+            },
+            {
+              "originalPosition": 49,
+              "body": "```suggestion\r\nof congestion beyond packet loss.\r\n```",
+              "createdAt": "2024-04-15T14:25:00Z",
+              "updatedAt": "2024-04-15T14:30:08Z"
+            },
+            {
+              "originalPosition": 79,
+              "body": "```suggestion\r\nNevertheless, specifying congestion control algorithms has a number of advantages:\r\n```",
+              "createdAt": "2024-04-15T14:25:36Z",
+              "updatedAt": "2024-04-15T14:30:08Z"
+            },
+            {
+              "originalPosition": 85,
+              "body": "```suggestion\r\n- A specification can help potential contributors understand the algorithm,\r\n```",
+              "createdAt": "2024-04-15T14:25:59Z",
+              "updatedAt": "2024-04-15T14:30:08Z"
+            },
+            {
+              "originalPosition": 21,
+              "body": "```suggestion\r\n(e.g., high-speed networks, cellular and WiFi wireless technologies, and\r\n```",
+              "createdAt": "2024-04-15T14:27:38Z",
+              "updatedAt": "2024-04-15T14:30:08Z"
+            },
+            {
+              "originalPosition": 27,
+              "body": "```suggestion\r\nIn 2007, TCP {{?RFC9293}} was the dominant consumer of this work, and proposals\r\n```",
+              "createdAt": "2024-04-15T14:28:06Z",
+              "updatedAt": "2024-04-15T14:30:08Z"
+            },
+            {
+              "originalPosition": 115,
+              "body": "```suggestion\r\nNote that this guideline is not a requirement for strict Reno- or Cubic-\r\n```",
+              "createdAt": "2024-04-15T14:29:21Z",
+              "updatedAt": "2024-04-15T14:30:08Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 118,
       "id": "PR_kwDOI7aIXc5sdEtB",
       "title": "some proposed edits to doc status",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/118",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "* Make it clear this is about guidelines for authors, not status of this document\r\n* avoid redundant guidance\r\n* avoid \"subjective\" guidance such as \"believes\"",
       "createdAt": "2024-04-12T09:01:54Z",
-      "updatedAt": "2024-04-12T09:01:54Z",
+      "updatedAt": "2024-04-15T14:35:55Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "883598bd9d87f12044779acf2f3602bb3259353a",
       "headRepository": "boucadair/rfc5033bis",
       "headRefName": "patch-1",
-      "headRefOid": "0af0a0964f7c8553bcae04915449049d16b6e9f0",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "56f84e32ee85aba991fc30985f2efe75f76ce76d",
+      "closedAt": "2024-04-15T14:35:55Z",
+      "mergedAt": "2024-04-15T14:35:55Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "fa5de61f7d46b36bb455fc88b1f6ffec4ace1bc6"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc53SUTu",
+          "commit": {
+            "abbreviatedOid": "0af0a09"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "thanks",
+          "createdAt": "2024-04-15T14:33:22Z",
+          "updatedAt": "2024-04-15T14:35:29Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\nThis document applies to proposed congestion control algorithms proposals that seek Experimental or\r\n```",
+              "createdAt": "2024-04-15T14:33:22Z",
+              "updatedAt": "2024-04-15T14:35:29Z"
+            },
+            {
+              "originalPosition": 29,
+              "body": "```suggestion\r\nonly be deployed in situations where they are being actively measured, and where\r\n```",
+              "createdAt": "2024-04-15T14:34:24Z",
+              "updatedAt": "2024-04-15T14:35:29Z"
+            },
+            {
+              "originalPosition": 40,
+              "body": "```suggestion\r\nfor use, but it is still is *not recommended* for use because it does not\r\n```",
+              "createdAt": "2024-04-15T14:35:00Z",
+              "updatedAt": "2024-04-15T14:35:29Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
