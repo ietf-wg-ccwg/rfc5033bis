@@ -37,7 +37,7 @@ author:
 contributor:
  -
     ins: C. Huitema
-    name: Chrtian Huitema
+    name: Christian Huitema
     organization: Private Octopus, Inc.
     email: huitema@huitema.net
 
@@ -63,7 +63,7 @@ informative:
         name: Injong Rhee
       -
         ins: L. Xu
-        name: Long Xu
+        name: Lisong Xu
 
   Tools:
     title: Tools for the Evaluation of Simulation and Testbed Scenarios
@@ -82,7 +82,7 @@ informative:
     author:
       ins: Kathleen Nichols
     date: 2011
-    seriesinfo: ACM Queue Volume 9, sue 11
+    seriesinfo: ACM Queue Volume 9, Issue 11
 
   BBRv1-Evaluation:
     title: "Experimental evaluation of BBR congestion control"
@@ -650,8 +650,8 @@ its mode of operation).
 Variation also arises when traffic with a higher priority diffserv class pre-empts
 transmission of traffic with a lower class. In these cases, the delay varies as a function of
 external factors and attempting to infer congestion from an increase in the delay
-results in reduced throughput. The jitter from variation over short timescales
-might not be distinguishable similar from other effects.
+results in reduced throughput. This variation in the delay over short timescales (jitter)
+might not be distinguishable from jitter that results from other effects.
 
 A proposed congestion control algorithm SHOULD be evaluated to ensure their operation is robust
 when there is a significant change in the minimum delay.
