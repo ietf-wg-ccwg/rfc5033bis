@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-16T00:36:08.743816+00:00",
+  "timestamp": "2024-04-18T00:36:12.084240+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1894,15 +1894,15 @@
       "id": "I_kwDOI7aIXc6Ejl1W",
       "title": "Mention circuit breakers?",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/111",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "ekinnear",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "From @gloinul's review: \r\n\r\nI do wonder if this document needs to bring up the circuit breaker specifications (RFC 8083, RFC 8084) we do have and potential interaction with them. I would expect a congestion control algorithm to work well within the envelope which would trigger them. The question is if one needs to take them into account when dealing with them. I will note that traffic applying a circuit breaker can be dynamic in transmission pattern and rates and otherwise be very non-responsive in relation to congestion signals. Only if they exceed the circuit breaker threshold will something happen.",
       "createdAt": "2024-04-03T21:04:46Z",
-      "updatedAt": "2024-04-03T21:04:46Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-16T07:55:22Z",
+      "closedAt": "2024-04-16T07:55:22Z",
       "comments": []
     },
     {
@@ -6024,7 +6024,7 @@
       "labels": [],
       "body": "Different fix for #86 ",
       "createdAt": "2024-02-02T15:59:39Z",
-      "updatedAt": "2024-02-02T16:21:14Z",
+      "updatedAt": "2024-04-16T21:44:30Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "05f6048e60901b53bcc290e92ce8babc445f6e45",
@@ -6584,7 +6584,7 @@
       "labels": [],
       "body": "Fixes #98",
       "createdAt": "2024-03-25T21:38:31Z",
-      "updatedAt": "2024-03-29T19:51:40Z",
+      "updatedAt": "2024-04-16T21:44:32Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "0709709ab5be54e546178fdf06c209b32e71c7f9",
@@ -6648,7 +6648,7 @@
       "labels": [],
       "body": "Fixes #100 ",
       "createdAt": "2024-03-26T17:31:26Z",
-      "updatedAt": "2024-03-29T18:55:54Z",
+      "updatedAt": "2024-04-16T21:44:29Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "0709709ab5be54e546178fdf06c209b32e71c7f9",
@@ -7658,7 +7658,7 @@
       "id": "PR_kwDOI7aIXc5sOU_G",
       "title": "Editorial review",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/115",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -7667,17 +7667,19 @@
       "labels": [],
       "body": "Please do not merge yet, I will tray to update to include a few sentences to address the issue related to in-network Circuit breakers.",
       "createdAt": "2024-04-10T09:42:49Z",
-      "updatedAt": "2024-04-15T19:34:34Z",
+      "updatedAt": "2024-04-16T07:55:22Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "cdf970bd0844126b5c4402190c7f5ab4caf8e252",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-20",
-      "headRefOid": "a1c224f53924f4f3591fc3ca44ab4e9400c87895",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "c77950e79857e9fc1cff43973e00ce561bbd22af",
+      "closedAt": "2024-04-16T07:55:22Z",
+      "mergedAt": "2024-04-16T07:55:22Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "caa52ac9be0cd2f3db81855006ab2d1468a3c1e1"
+      },
       "comments": [],
       "reviews": [
         {
@@ -8235,6 +8237,111 @@
               "updatedAt": "2024-04-15T14:35:29Z"
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 119,
+      "id": "PR_kwDOI7aIXc5s2ckH",
+      "title": "Full editorial pass for typos, line breaks, redundant text",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/119",
+      "state": "MERGED",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-04-16T21:40:38Z",
+      "updatedAt": "2024-04-17T06:25:31Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "caa52ac9be0cd2f3db81855006ab2d1468a3c1e1",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "final-pass",
+      "headRefOid": "deec95cb1a7f33bbd085cb7341bff551e61e1bb5",
+      "closedAt": "2024-04-16T21:41:58Z",
+      "mergedAt": "2024-04-16T21:41:58Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "5d6ffbcbc21f039ed54139a9b43dfbd9231c24b0"
+      },
+      "comments": [
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Merging immediately since this touches almost every line of text. IMO these are insignificant changes.",
+          "createdAt": "2024-04-16T21:41:54Z",
+          "updatedAt": "2024-04-16T21:41:54Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I quickly read the new text, this looks good - thanks for doing this - I also agree with the change /should/SHOULD/.",
+          "createdAt": "2024-04-17T06:25:30Z",
+          "updatedAt": "2024-04-17T06:25:30Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 120,
+      "id": "PR_kwDOI7aIXc5s2d8n",
+      "title": "Delete redundant discussion of circuit breakers",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/120",
+      "state": "CLOSED",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-04-16T21:46:19Z",
+      "updatedAt": "2024-04-17T14:40:42Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "5d6ffbcbc21f039ed54139a9b43dfbd9231c24b0",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "circuit-breaker-redundant",
+      "headRefOid": "37b8f97a4fc3419dbe4595876ede804239e3ab7c",
+      "closedAt": "2024-04-17T14:40:42Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Is this not covered by S6.1.1?",
+          "createdAt": "2024-04-16T21:46:59Z",
+          "updatedAt": "2024-04-16T21:46:59Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "No - sorry there are two places where circuit breakers come into play - and two different sets of actors/mechanism. This is not the same. For better or worse the two RFCs ended up with similar names and consecutive RFC numbers, because both can provide a way to prevent significant overload.\r\n\r\n1) In the multimedia work there is the notion of a CB to set the transport envelope. This is done in the CC or the framework, and works end-to-end. This is one RFC.\r\n\r\n2) Within the network, a device or control plane function can detect the presence of overload, and provide a reaction. This could be for a tunnel, or it could be using counters/measurements in a router or management system. This sheds excess load, either by filtering flows or dropping packets. This is another RFC.\r\n\r\n",
+          "createdAt": "2024-04-17T06:32:56Z",
+          "updatedAt": "2024-04-17T06:32:56Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "OK, I'll throw this PR away.",
+          "createdAt": "2024-04-17T14:40:42Z",
+          "updatedAt": "2024-04-17T14:40:42Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc53hEo7",
+          "commit": {
+            "abbreviatedOid": "37b8f97"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "I don't think this is the same thing as {{circuit-breakers}}. This is the endpoint version.",
+          "createdAt": "2024-04-17T06:34:57Z",
+          "updatedAt": "2024-04-17T06:34:57Z",
+          "comments": []
         }
       ]
     }
