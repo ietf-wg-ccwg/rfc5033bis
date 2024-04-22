@@ -120,7 +120,7 @@ This document obsoletes {{?RFC5033}}, which was published in 2007 as a Best
 Current Practice to evaluate proposed congestion control algorithms as
 Experimental or Proposed Standard RFCs.
 
-The IETF defines standard congestion control algorithms for use across the Internet.
+The IETF specifies standard Internet congestion control algorithms in the RFC-series.
 These congestion control algorithms can suffer performance challenges when used in
 various environments (e.g., high-speed networks, cellular and WiFi wireless
 technologies, and long distance satellite links) and also when flows carry
