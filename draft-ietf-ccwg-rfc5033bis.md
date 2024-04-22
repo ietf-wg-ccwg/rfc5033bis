@@ -262,7 +262,7 @@ because it could lead to unnecessary delays for the connections attempting to
 use Quick-Start. The Quick-Start method is discussed as an example in
 {{?RFC9049}}.
 
-Alhough out of the scope of this document, proponents of a new algorithm could
+Although out of the scope of this document, proponents of a new algorithm could
 alternatively seek publication as an Informational or Experimental RFC via the
 Internet Research Task Force (IRTF). In general, these algorithms are expected
 to be less mature than ones that follow the procedures in this document. Authors
@@ -274,7 +274,7 @@ Independent Stream Editor (ISE).
 
 Algorithms can be designed for general Internet deployment or for use in
 controlled environments {{?RFC8799}}. Within a controlled environment,
-an operator can ensure that flows within a
+an operator can ensure that flows
 are isolated from other Internet flows, or they might
 allow these flows to share resources with other Internet flows. 
 A data center is an example of a controlled environment, which often deploys
@@ -363,7 +363,7 @@ The first version of the BBR algorithm {{BBRv1-draft}} failed this requirement.
 Experimental evaluation {{BBRv1-Evaluation}} showed that it caused a sustained
 rate of packet loss when multiple BBRv1 flows shared a bottleneck and the buffer
 size was less than roughly one and a half BDP. This was unsatisfactory, and
-indeed further versions of fixed this aspect of BBR {{BBR-draft}}.
+indeed further versions have fixed this aspect of BBR {{BBR-draft}}.
 
 This requirement does not imply that the algorithm should react to packet losses
 in exactly the same way as current standards-track congestion control algorithms
@@ -384,7 +384,7 @@ A great deal of congestion control analysis concerns the steady-state behavior
 of long flows. However, many Internet flows are relatively short-lived.
 Many short-lived flows today remain in the "slow
 start" mode of operation {{?RFC5681}} that commonly features exponential
-congestion window growth because thw flow
+congestion window growth because the flow
 never experiences congestion (e.g., packet loss).
 
 A proposed congestion control algorithm MUST consider how new and short-lived
@@ -533,7 +533,7 @@ where routers may not be aware of the flow.
 
 Wired networks are usually characterized by extremely low rates of packet loss
 except for those due to queue drops. They tend to have stable aggregate
-caapcity, usually higher than other types of links, and low non-queueing delay.
+capacity, usually higher than other types of links, and low non-queueing delay.
 Because the properties are relatively simple, wired links are typically used as a
 "baseline" case even if they are not always the bottleneck link in the modern
 Internet.
@@ -641,7 +641,7 @@ path with other flows with different constraints.
 ## Paths with High Delay
 
 A proposed congestion control algorithm ought not to presume that all general
-Internet paths have a low delay. Some paths include links that contibute much
+Internet paths have a low delay. Some paths include links that contribute much
 more delay than for a typical Internet path. Satellite links often have delays
 longer than typical for wired paths {{?RFC2488}} and high delay bandwidth
 products {{?RFC3649}}.
@@ -784,7 +784,7 @@ from {{?RFC5166}}.
 - Addressed issues.
 - Examined RFC-2119 keywords and consistency with other RFCs.
 - Added text on constrained environments/limited domains
-- Added text on circuit breakers and aligend with other RFCs.
+- Added text on circuit breakers and aligned with other RFCs.
 - Several editorial passes
 
 ## Since draft-ietf-ccwg-rfc5033bis-02
