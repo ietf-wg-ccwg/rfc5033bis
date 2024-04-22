@@ -276,7 +276,7 @@ Algorithms can be designed for general Internet deployment or for use in
 controlled environments {{?RFC8799}}. Within a controlled environment,
 an operator can ensure that flows
 are isolated from other Internet flows, or they might
-allow these flows to share resources with other Internet flows. 
+allow these flows to share resources with other Internet flows.
 A data center is an example of a controlled environment, which often deploys
 fabrics with rich signalling from switches to endpoints.
 
