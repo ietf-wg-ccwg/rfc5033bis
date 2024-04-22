@@ -174,7 +174,7 @@ new congestion control algorithm over the Internet, but the examples of CUBIC
 and BBR teach us that deployment of new algorithms is not, in fact, gated by the
 publication of the algorithm as an RFC.
 
-Nevertheless, a specification for a congestion control algorithms provides a number of
+Nevertheless, a specification for a congestion control algorithm provides a number of
 advantages:
 
 - It can help implementers, operators, and other interested parties
