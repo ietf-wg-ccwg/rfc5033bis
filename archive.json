@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-21T00:39:51.966723+00:00",
+  "timestamp": "2024-04-23T00:37:16.011383+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -8342,6 +8342,85 @@
           "createdAt": "2024-04-17T06:34:57Z",
           "updatedAt": "2024-04-17T06:34:57Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 121,
+      "id": "PR_kwDOI7aIXc5tYOzT",
+      "title": "A complete review.",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/121",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "These proposed changes are intended to ready this for publication:\r\n* They seek to fix some inconsistencies.\r\n* They seek to improve reading, by explicitly saying what was intended.\r\n* They seek to elevate three /should/SHOULD/, because I suggest these topics will indeed be needed in any transport review of a CC algo.\r\n* They change /Cubic/CUBIC/ because that is how it is defined in the related RFC, and define FQ.\r\n* I would really like to change this, so I propose: /one might still need to share/can still need to share/ in the IoT section, - not because it changes what is needed, but it might avoid being misrepresented in future.\r\n* I updated the revision notes and removed me as an Acknowledgment, since I'm an editor ack'ing myself.",
+      "createdAt": "2024-04-22T17:06:06Z",
+      "updatedAt": "2024-04-22T19:32:03Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "5d6ffbcbc21f039ed54139a9b43dfbd9231c24b0",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-22",
+      "headRefOid": "a01e77659d20ab7375e71e732868e28164ffae07",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc54I720",
+          "commit": {
+            "abbreviatedOid": "f5714ac"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Generally looks good, by I flagged a couple of small nits and typos.",
+          "createdAt": "2024-04-22T19:08:30Z",
+          "updatedAt": "2024-04-22T19:13:43Z",
+          "comments": [
+            {
+              "originalPosition": 115,
+              "body": "within a what? Maybe just strike out \"within a\".",
+              "createdAt": "2024-04-22T19:08:31Z",
+              "updatedAt": "2024-04-22T19:13:43Z"
+            },
+            {
+              "originalPosition": 159,
+              "body": "I guess the \"of\" is spurious. Should be \"further versions fixed this aspect of BBR {{BBR-draft}}.\"",
+              "createdAt": "2024-04-22T19:09:50Z",
+              "updatedAt": "2024-04-22T19:13:43Z"
+            },
+            {
+              "originalPosition": 174,
+              "body": "Typo: thw -> the",
+              "createdAt": "2024-04-22T19:11:09Z",
+              "updatedAt": "2024-04-22T19:13:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc54JCIo",
+          "commit": {
+            "abbreviatedOid": "f5714ac"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-04-22T19:25:01Z",
+          "updatedAt": "2024-04-22T19:25:01Z",
+          "comments": [
+            {
+              "originalPosition": 159,
+              "body": "/of/have/",
+              "createdAt": "2024-04-22T19:25:01Z",
+              "updatedAt": "2024-04-22T19:25:02Z"
+            }
+          ]
         }
       ]
     }
