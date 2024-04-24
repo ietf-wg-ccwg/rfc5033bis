@@ -156,15 +156,15 @@ Table of Contents
    control algorithms.
 
    Since then, many conditions have changed.  The set of protocols using
-   congestion control algorithms has spread beyond TCP, SCTP and DCCP,
-   to include QUIC [RFC9000], RTP Media Congestion Avoidance Techniques
-   (RMCAT) (e.g., [RFC8836]) and beyond.  Some proponents of alternative
-   congestion control algorithms now have the opportunity to test and
-   deploy at scale without IETF review.  There is more interest in
-   specialized use cases, such as data centers (e.g., [RFC8257]), and in
-   support for a variety of upper layer protocols/applications, e.g.,
-   real-time protocols.  Finally, the community has gained much more
-   experience with indications of congestion beyond packet loss.
+   congestion control algorithms has grown to include QUIC [RFC9000],
+   RTP Media Congestion Avoidance Techniques (RMCAT) (e.g., [RFC8836])
+   and beyond.  Some proponents of alternative congestion control
+   algorithms now have the opportunity to test and deploy at scale
+   without IETF review.  There is more interest in specialized use
+   cases, such as data centers (e.g., [RFC8257]), and in support for a
+   variety of upper layer protocols/applications, e.g., real-time
+   protocols.  Finally, the community has gained much more experience
+   with indications of congestion beyond packet loss.
 
    Multicast congestion control is a considerably less mature field of
    study and is not in the scope for this document.  However, Section 4
