@@ -132,9 +132,9 @@ and proposals were typically discussed in the Internet
 Congestion Control Research Group (ICCRG). Around the same time,
 the Datagram Congestion Control
 Protocol (DCCP) {{?RFC4340}} was developed as a method for defining new
-congestion control algorithms for datagram traffic,
-and also Stream Control Transmission Protocol (SCTP)
-{{?RFC9260}}.
+congestion control algorithms for datagram traffic.
+The Stream Control Transmission Protocol (SCTP)
+{{?RFC9260}} re-used TCP congestion control algorithms.
 
 Since then, many conditions have changed. The set of protocols using congestion control
 algorithms has spread beyond TCP, SCTP and DCCP, to include QUIC {{?RFC9000}}, RTP Media Congestion
