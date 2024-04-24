@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 24 October 2024                                   22 April 2024
+Expires: 26 October 2024                                   24 April 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 October 2024.
+   This Internet-Draft will expire on 26 October 2024.
 
 Copyright Notice
 
@@ -143,7 +143,7 @@ Table of Contents
    the RFC-series.  These congestion control algorithms can suffer
    performance challenges when used in various environments (e.g., high-
    speed networks, cellular and WiFi wireless technologies, and long
-   distance satellite links) and also when flows carry specific
+   distance satellite links), and also when flows carry specific
    workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
    When [RFC5033] was published in 2007, TCP [RFC9293] was the dominant
@@ -151,8 +151,9 @@ Table of Contents
    typically discussed in the Internet Congestion Control Research Group
    (ICCRG).  Around the same time, the Datagram Congestion Control
    Protocol (DCCP) [RFC4340] was developed as a method for defining new
-   congestion control algorithms for datagram traffic, and also Stream
-   Control Transmission Protocol (SCTP) [RFC9260].
+   congestion control algorithms for datagram traffic.  The Stream
+   Control Transmission Protocol (SCTP) [RFC9260] re-used TCP congestion
+   control algorithms.
 
    Since then, many conditions have changed.  The set of protocols using
    congestion control algorithms has spread beyond TCP, SCTP and DCCP,
