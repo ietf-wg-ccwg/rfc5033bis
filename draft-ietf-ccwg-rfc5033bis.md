@@ -120,22 +120,25 @@ This document obsoletes {{?RFC5033}}, which was published in 2007 as a Best
 Current Practice to evaluate proposed congestion control algorithms as
 Experimental or Proposed Standard RFCs.
 
-The IETF's standard congestion control algorithms have performance challenges in
+The IETF specifies standard Internet congestion control algorithms in the RFC-series.
+These congestion control algorithms can suffer performance challenges when used in
 various environments (e.g., high-speed networks, cellular and WiFi wireless
-technologies, and long distance satellite links) and also for flOws carrying
+technologies, and long distance satellite links), and also when flows carry
 specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
 When {{?RFC5033}} was published in 2007, TCP {{?RFC9293}} was the dominant
-consumer of this work, and proposals were typically discussed in the Internet
-Congestion Control Research Group (ICCRG). The Datagram Congestion Control
+consumer of IETF congestion control work,
+and proposals were typically discussed in the Internet
+Congestion Control Research Group (ICCRG). Around the same time,
+the Datagram Congestion Control
 Protocol (DCCP) {{?RFC4340}} was developed as a method for defining new
 congestion control algorithms for datagram traffic.
+The Stream Control Transmission Protocol (SCTP)
+{{?RFC9260}} re-used TCP congestion control algorithms.
 
-Since then, many conditions have changed. The set of protocols using these
-algorithms has spread beyond TCP, Stream Control Transmission Protocol (SCTP)
-{{?RFC9260}}, and DCCP, to include QUIC {{?RFC9000}}, RTP Media Congestion
+Since then, many conditions have changed. The set of protocols using congestion control
+algorithms has grown to include QUIC {{?RFC9000}}, RTP Media Congestion
 Avoidance Techniques (RMCAT) (e.g., {{?RFC8836}}) and beyond.
-
 Some proponents of alternative congestion control algorithms now have the
 opportunity to test and deploy at scale without IETF review. There is more
 interest in specialized use cases, such as data centers (e.g., {{?RFC8257}}),
@@ -144,14 +147,14 @@ real-time protocols. Finally, the community has gained much more experience
 with indications of congestion beyond packet loss.
 
 Multicast congestion control is a considerably less mature field of study and
-are not in scope for this document. However, {{Section 4 of ?RFC8085}} provides
+is not in the scope of this document. However, {{Section 4 of ?RFC8085}} provides
 additional guidelines for multicast and broadcast usage of UDP.
 
 Congestion control algorithms have been developed outside of the IETF, including
-at least two that saw large scale deployment: Cubic {{HRX08}} and Bottleneck
+at least two that saw large scale deployment: CUBIC {{HRX08}} and Bottleneck
 Bandwidth and Round-trip propagation time (BBR) {{BBR-draft}}.
 
-Cubic was documented in a research publication in 2007 {{HRX08}}, and was then
+CUBIC was documented in a research publication in 2007 {{HRX08}}, and was then
 adopted as the default congestion control algorithm for the TCP implementation
 in Linux. It was already used in a significant fraction of TCP connections over
 the Internet before being documented in an Informational Internet-Draft in
@@ -166,18 +169,18 @@ Draft is regularly updated to document the evolving versions of the algorithm
 TCP or QUIC, and is also widely deployed outside of Google.
 
 We cannot say now whether the original authors of {{?RFC5033}} expected that
-developers would be somehow waiting for IETF review before widely deploying a
-new congestion control algorithm over the Internet, but the examples of Cubic
-and BBR teach us that deployment of new algorithms is not in fact gated by the
+developers would be waiting for IETF review before widely deploying a
+new congestion control algorithm over the Internet, but the examples of CUBIC
+and BBR teach us that deployment of new algorithms is not, in fact, gated by the
 publication of the algorithm as an RFC.
 
-Nevertheless, specifying congestion control algorithms has a number of
+Nevertheless, a specification for a congestion control algorithm provides a number of
 advantages:
 
-- A specification can help implementers, operators, and other interested parties
+- It can help implementers, operators, and other interested parties
   develop a shared understanding of how the algorithm works and how it is
   expected to behave in various scenarios and configurations.
-- A specification can help potential contributors understand the algorithm,
+- It can help potential contributors understand the algorithm,
   which can make it easier for them to suggest improvements and/or identify
   limitations. Furthermore, the specification can help multiple contributors
   align on a consensus change to the algorithm.
@@ -217,13 +220,15 @@ remainder of this document.
 
 # Guidelines for Authors about Document Status
 
-This document applies to proposed congestion control algorithms proposals that
+This document applies to proposals for congestion control algorithms that
 seek Experimental or Standards Track status. Evaluation of both cases involves
 the same questions, but with different expectations for both the answers and the
 degree of certainty of those answers.
 
 Congestion control algorithms without empirical evidence of Internet-scale
-deployment SHOULD seek Experimental status. Congestion control algorithms with a
+deployment SHOULD seek Experimental status.
+
+Congestion control algorithms with a
 record of measured Internet-scale deployment MAY directly seek the Standards
 Track if there is solid data that reflects that it is safe, and the design is
 stable, guided by the considerations in {{general-use}}. However, the existence
@@ -239,7 +244,7 @@ proposed congestion control algorithm is considered safe for use on the
 Internet. Each published algorithm is also required to include a statement in
 the abstract describing environments where the protocol is not recommended for
 deployment. There can be environments where the congestion control algorithm is
-deemed *safe* for use, but it is still is *not recommended* for use because it
+deemed safe for use, but it is still is not recommended for use because it
 does not perform well for the user.
 
 As examples of such statements, {{?RFC3649}} specifies HighSpeed TCP and
@@ -257,7 +262,7 @@ because it could lead to unnecessary delays for the connections attempting to
 use Quick-Start. The Quick-Start method is discussed as an example in
 {{?RFC9049}}.
 
-Alhough out of the scope of this document, proponents of a new algorithm could
+Although out of the scope of this document, proponents of a new algorithm could
 alternatively seek publication as an Informational or Experimental RFC via the
 Internet Research Task Force (IRTF). In general, these algorithms are expected
 to be less mature than ones that follow the procedures in this document. Authors
@@ -268,17 +273,19 @@ Independent Stream Editor (ISE).
 # Specifying Algorithms for Use in Controlled Environments {#controlled-environments}
 
 Algorithms can be designed for general Internet deployment or for use in
-controlled environments {{?RFC8799}}. An operator can ensure that flows within a
-controlled environment are isolated from other Internet flows, or they might
-allow these flows to share resources with other Internet flows. Algorithms that
-rely on specific functions or configurations in a network need to provide a
+controlled environments {{?RFC8799}}. Within a controlled environment,
+an operator can ensure that flows
+are isolated from other Internet flows, or they might
+allow these flows to share resources with other Internet flows.
+A data center is an example of a controlled environment, which often deploys
+fabrics with rich signalling from switches to endpoints.
+
+Algorithms that
+rely on specific functions or configurations in the network need to provide a
 reference or specification for these functions (an RFC or another stable
 specification). The IETF will need to assess whether the relevant working group
 is able to review the proposed new algorithm and whether there is sufficient
 experience to understand any dependent functions.
-
-A data center is an example of a controlled environment, which often deploys
-fabrics with rich signalling from switches to endpoints.
 
 In evaluating a new proposal for use in a controlled environment, the IETF needs
 to understand the usage, e.g., how the usage is scoped to the controlled
@@ -332,7 +339,7 @@ but see {{!RFC8961}} and {{!RFC8085}} for requirements.
 
 Bufferbloat {{Bufferbloat}} refers to the building of excessive queues in the
 network. Many network routers are configured with very large buffers. The
-standards-track Reno {{!RFC5681}} and Cubic {{?RFC9438}} congestion control
+standards-track Reno {{!RFC5681}} and CUBIC {{?RFC9438}} congestion control
 algorithms send at progressively higher rates until a First-In First-Out (FIFO)
 buffer completely fills, and packet losses then occur. Every connection passing
 through that bottleneck experiences increased latency due to the high buffer
@@ -342,8 +349,8 @@ browsing and video playing.
 
 This problem has been widely discussed since 2011 {{Bufferbloat}}, but was not
 discussed in the Congestion Control Principles published in September 2002
-{{!RFC2914}}. The Reno and Cubic congestion control algorithms do not address
-it, but a new congestion control algorithm has the opportunity to improve the
+{{!RFC2914}}. The Reno and CUBIC congestion control algorithms do not address
+this problem, but a new congestion control algorithm has the opportunity to improve the
 state of the art.
 
 ### Protection Against High Packet Loss
@@ -356,7 +363,7 @@ The first version of the BBR algorithm {{BBRv1-draft}} failed this requirement.
 Experimental evaluation {{BBRv1-Evaluation}} showed that it caused a sustained
 rate of packet loss when multiple BBRv1 flows shared a bottleneck and the buffer
 size was less than roughly one and a half BDP. This was unsatisfactory, and
-indeed further versions of BBR {{BBR-draft}} fixed it.
+indeed further versions have fixed this aspect of BBR {{BBR-draft}}.
 
 This requirement does not imply that the algorithm should react to packet losses
 in exactly the same way as current standards-track congestion control algorithms
@@ -374,10 +381,11 @@ some of the flows do not last sufficiently long to approach asymptotic behavior.
 ### Short Flows {#short-flows}
 
 A great deal of congestion control analysis concerns the steady-state behavior
-of long flows. However, many Internet flows are relatively short-lived. If flows
-never experience a packet loss, many short-lived flows today remain in the "slow
+of long flows. However, many Internet flows are relatively short-lived.
+Many short-lived flows today remain in the "slow
 start" mode of operation {{?RFC5681}} that commonly features exponential
-congestion window growth.
+congestion window growth because the flow
+never experiences congestion (e.g., packet loss).
 
 A proposed congestion control algorithm MUST consider how new and short-lived
 flows affect long-lived flows, and vice versa.
@@ -409,7 +417,7 @@ the suitability of the proposed congestion control algorithm. The community
 should also consider other non-standard congestion control algorithms that are
 known to be widely deployed.
 
-Note that this guideline is not a requirement for strict Reno- or Cubic-
+Note that this guideline is not a requirement for strict Reno- or CUBIC-
 friendliness as a prerequisite for a proposed congestion control mechanism to
 advance to Experimental or Standards Track status. As an example, HighSpeed TCP
 is a congestion control mechanism specified as Experimental, that is not TCP-
@@ -431,8 +439,8 @@ strict latency bounds.
 
 {{?RFC8868}} provides suggestions for real-time congestion control design and
 {{?RFC8867}} suggests test cases. {{?RFC9392}} describes some considerations
-for the RTP Control Protocol (RTCP). In particular, feedback for real-time flows
-can be less frequent than the acknowledgements provided by reliable transports.
+for the RTP Control Protocol (RTCP). In particular, real-time flows
+can use less frequent feedback (acknowledgement) than that provided by reliable transports.
 This document does not change the informational status of those RFCs.
 
 A proposed congestion control algorithm SHOULD consider coexistence with widely
@@ -444,7 +452,7 @@ situation will change.
 
 To the extent that behavior of widely deployed algorithms is understood,
 proponents of a proposed congestion control algorithm can analyze and simulate
-its interaction with those algorithms. To the extent they are not, experiments
+a proposal's interaction with those algorithms. To the extent they are not, experiments
 can be conducted where possible.
 
 Real-time flows can be directed into distinct queues via Differentiated Services
@@ -454,7 +462,7 @@ can not assume this is always the case.
 
 {{circuit-breakers}} describes the impact of network transport circuit breaker
 algorithms. {{!RFC8083}} also defines a minimal set of RTP circuit breakers that
-operate across a path. This identifies conditions under which a sender needs to
+operate end-to-end across a path. This identifies conditions under which a sender needs to
 stop transmitting media data to protect the network from excessive congestion.
 It is expected that, in the absence of long-lived excessive congestion, RTP
 applications running on best-effort IP networks will be able to operate without
@@ -483,7 +491,7 @@ transparent proxies, WAN optimizers, intrusion detection systems, home routers,
 and the like.
 
 Similarly, if the proposed congestion control algorithm is intended only for
-specific environments (and not the global Internet), the proposal should
+specific environments (and not the global Internet), the proposal SHOULD
 consider how this intention is to be realised.  The community will have to
 address the question of whether the scope can be enforced by stating the
 restrictions, or whether additional protocol mechanisms are required to enforce
@@ -525,7 +533,7 @@ where routers may not be aware of the flow.
 
 Wired networks are usually characterized by extremely low rates of packet loss
 except for those due to queue drops. They tend to have stable aggregate
-bandwidth, usually higher than other types of links, and low non-queueing delay.
+capacity, usually higher than other types of links, and low non-queueing delay.
 Because the properties are relatively simple, wired links are typically used as a
 "baseline" case even if they are not always the bottleneck link in the modern
 Internet.
@@ -562,7 +570,7 @@ algorithm's response to various AQM disciplines. Simulation or empirical results
 are, of course, valuable.
 
 Among the AQM techniques that might have an impact on a proposed congestion
-control algorithm are FQ-CoDel {{?RFC8290}}; Proportional Integral Controller
+control algorithm are Flow Queue CoDel (FQ-CoDel) {{?RFC8290}}; Proportional Integral Controller
 Enhanced (PIE) {{?RFC8033}}; and Low Latency, Low Loss, and Scalable Throughput
 (L4S) {{?RFC9332}}.
 
@@ -616,34 +624,33 @@ operation is robust when there is a significant change in the minimum delay.
 
 The "Internet of Things" (IoT) is a broad concept, but when evaluating a
 proposed congestion control algorithm, it is often associated with unique
-characteristics.
-
+characteristics:
 IoT nodes might be more constrained in power, CPU, or other parameters than
 conventional Internet hosts. This might place limits on the complexity of any
 given algorithm. These power and radio constraints might make the volume of
 control packets in a given algorithm a key evaluation metric.
 
-Furthermore, many IoT applications do not a have a human in the loop, and
-therefore can have weaker latency constraints because they do not relate to a
-user experience. They mightt still need to share the path with other flows with
-different constraints.
-
 Extremely low-power links can lead to very low throughput and a low bandwidth-
 delay product, well below the standard operating range of most Internet flows.
+
+Furthermore, many IoT applications do not a have a human in the loop, and
+therefore can have weaker latency constraints because they do not relate to a
+user experience. Congestion control algorithm can still need to share the
+path with other flows with different constraints.
 
 ## Paths with High Delay
 
 A proposed congestion control algorithm ought not to presume that all general
-Internet paths have a low delay. Some paths include links that contibute much
+Internet paths have a low delay. Some paths include links that contribute much
 more delay than for a typical Internet path. Satellite links often have delays
 longer than typical for wired paths {{?RFC2488}} and high delay bandwidth
 products {{?RFC3649}}.
 
-They can also have variable delay as described in {{delay}}.
+Paths can also present a variable delay as described in {{delay}}.
 
 ## Misbehaving Nodes
 
-A proposed congestion control algorithm should explore how the algorithm
+A proposed congestion control algorithm SHOULD explore how the algorithm
 performs with non-compliant senders, receivers, or routers.  In addition, the
 proposal should explore how a proposed congestion control algorithm performs
 with outside attackers.  This can be particularly important for proposed
@@ -702,12 +709,11 @@ and/or reduce fairness. These effects also ought to be evaluated.
 
 Another example use is concurrent multipath, where the transport protocol
 simultaneously schedules a flow to aggregate the capacity across multiple paths.
-
 The Internet provides no guarantee that different paths (e.g., using different
-endpoint addresses) are disjoint. This has additional implications. A congestion
+endpoint addresses) are disjoint. This introduces additional implications: A congestion
 control algorithm proposal MUST evaluate the potential harm to other flows when
 the multiple paths share a common congested bottleneck or share resources that
-are coupled between different paths, such as an overall capacity limit). It
+are coupled between different paths, such as an overall capacity limit). A proposal
 SHOULD consider the potential for harm to other flows. Synchronisation of
 congestion control mechanisms (e.g., where multiple flows change their behaviour
 on similar timeframes) can also contribute to harm and/or reduce fairness. These
@@ -741,7 +747,7 @@ algorithms do have security implications (e.g., as outlined in {{!RFC5681}}).
 
 The IETF process that results in publication needs to ensure that these security
 implications are considered. Proposed congestion control algorithms therefore
-ought to be mindful of pitfalls, and should examine any potential security
+ought to be mindful of pitfalls, and SHOULD examine any potential security
 issues that may arise.
 
 # IANA Considerations
@@ -775,7 +781,11 @@ from {{?RFC5166}}.
 ## Since draft-ietf-ccwg-rfc5033bis-03
 {:numbered="false"}
 - Harmonised the "proposed congestion control algorithm"
-- addressed issues.
+- Addressed issues.
+- Examined RFC-2119 keywords and consistency with other RFCs.
+- Added text on constrained environments/limited domains
+- Added text on circuit breakers and aligned with other RFCs.
+- Several editorial passes
 
 ## Since draft-ietf-ccwg-rfc5033bis-02
 {:numbered="false"}
@@ -811,7 +821,7 @@ from {{?RFC5166}}.
 - Updated authorship and acknowledgements.
 - Include updated text suggested by Dave Taht
 - Added criterion for bufferbloat
-- Mentioned Cubic and BBR as motivation
+- Mentioned CUBIC and BBR as motivation
 - Include section to track updates between revisions
 - Update references
 
@@ -819,5 +829,5 @@ from {{?RFC5166}}.
 {:numbered="false"}
 
 - converted to Markdown and xml2rfc v3
-- various formatting changes
+- various formatting changes.
 
