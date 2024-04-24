@@ -147,7 +147,7 @@ real-time protocols. Finally, the community has gained much more experience
 with indications of congestion beyond packet loss.
 
 Multicast congestion control is a considerably less mature field of study and
-is not in the scope for this document. However, {{Section 4 of ?RFC8085}} provides
+is not in the scope of this document. However, {{Section 4 of ?RFC8085}} provides
 additional guidelines for multicast and broadcast usage of UDP.
 
 Congestion control algorithms have been developed outside of the IETF, including
