@@ -137,7 +137,7 @@ The Stream Control Transmission Protocol (SCTP)
 {{?RFC9260}} re-used TCP congestion control algorithms.
 
 Since then, many conditions have changed. The set of protocols using congestion control
-algorithms has spread beyond TCP, SCTP and DCCP, to include QUIC {{?RFC9000}}, RTP Media Congestion
+algorithms has grown to include QUIC {{?RFC9000}}, RTP Media Congestion
 Avoidance Techniques (RMCAT) (e.g., {{?RFC8836}}) and beyond.
 Some proponents of alternative congestion control algorithms now have the
 opportunity to test and deploy at scale without IETF review. There is more
