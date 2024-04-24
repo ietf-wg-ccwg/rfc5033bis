@@ -123,7 +123,7 @@ Experimental or Proposed Standard RFCs.
 The IETF specifies standard Internet congestion control algorithms in the RFC-series.
 These congestion control algorithms can suffer performance challenges when used in
 various environments (e.g., high-speed networks, cellular and WiFi wireless
-technologies, and long distance satellite links) and also when flows carry
+technologies, and long distance satellite links), and also when flows carry
 specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
 When {{?RFC5033}} was published in 2007, TCP {{?RFC9293}} was the dominant
