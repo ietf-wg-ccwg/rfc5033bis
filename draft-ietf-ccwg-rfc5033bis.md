@@ -770,7 +770,7 @@ Enghardt, Jonathan Lennox, Matt Mathis, Dave Taht, Michael Welzl, Magnus
 Westerlund, and Greg White for suggesting improvements to this document.
 
 Discussions with Lars Eggert and Aaron Falk seeded the original RFC5033. Bob
-Briscoe, Doug Leith, Jitendra Padhye, Colin Perkins, Pekka
+Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye, Colin Perkins, Pekka
 Savola, members of TSVWG, and participants at the TCP Workshop at Microsoft
 Research all provided feedback and contributions to that document. It also drew
 from {{?RFC5166}}.
