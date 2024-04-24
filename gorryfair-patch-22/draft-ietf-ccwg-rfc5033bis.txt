@@ -167,7 +167,7 @@ Table of Contents
    with indications of congestion beyond packet loss.
 
    Multicast congestion control is a considerably less mature field of
-   study and is not in the scope for this document.  However, Section 4
+   study and is not in the scope of this document.  However, Section 4
    of [RFC8085] provides additional guidelines for multicast and
    broadcast usage of UDP.
 
