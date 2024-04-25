@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-23T00:37:16.011383+00:00",
+  "timestamp": "2024-04-25T00:49:40.649282+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -8350,24 +8350,26 @@
       "id": "PR_kwDOI7aIXc5tYOzT",
       "title": "A complete review.",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/121",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "These proposed changes are intended to ready this for publication:\r\n* They seek to fix some inconsistencies.\r\n* They seek to improve reading, by explicitly saying what was intended.\r\n* They seek to elevate three /should/SHOULD/, because I suggest these topics will indeed be needed in any transport review of a CC algo.\r\n* They change /Cubic/CUBIC/ because that is how it is defined in the related RFC, and define FQ.\r\n* I would really like to change this, so I propose: /one might still need to share/can still need to share/ in the IoT section, - not because it changes what is needed, but it might avoid being misrepresented in future.\r\n* I updated the revision notes and removed me as an Acknowledgment, since I'm an editor ack'ing myself.",
       "createdAt": "2024-04-22T17:06:06Z",
-      "updatedAt": "2024-04-22T19:32:03Z",
+      "updatedAt": "2024-04-24T18:10:54Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "5d6ffbcbc21f039ed54139a9b43dfbd9231c24b0",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-22",
-      "headRefOid": "a01e77659d20ab7375e71e732868e28164ffae07",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "2baafb2c9e5fcdf09b4916b19a9f0e311819fccb",
+      "closedAt": "2024-04-24T18:10:54Z",
+      "mergedAt": "2024-04-24T18:10:54Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "22f935c10f1afb6f4b7d9bfa1824f235f48041ca"
+      },
       "comments": [],
       "reviews": [
         {
@@ -8419,6 +8421,50 @@
               "body": "/of/have/",
               "createdAt": "2024-04-22T19:25:01Z",
               "updatedAt": "2024-04-22T19:25:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc54bqeZ",
+          "commit": {
+            "abbreviatedOid": "a01e776"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "LGTM, some minor nits",
+          "createdAt": "2024-04-24T17:34:22Z",
+          "updatedAt": "2024-04-24T18:04:09Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "```suggestion\r\ntechnologies, and long distance satellite links), and also when flows carry\r\n```",
+              "createdAt": "2024-04-24T17:34:22Z",
+              "updatedAt": "2024-04-24T18:04:09Z"
+            },
+            {
+              "originalPosition": 23,
+              "body": "```suggestion\r\ncongestion control algorithms for datagram traffic.\r\nThe Stream Control Transmission Protocol (SCTP)\r\n{{?RFC9260}} re-used TCP congestion control algorithms.\r\n```",
+              "createdAt": "2024-04-24T17:35:29Z",
+              "updatedAt": "2024-04-24T18:04:09Z"
+            },
+            {
+              "originalPosition": 29,
+              "body": "```suggestion\r\nalgorithms has grown to include QUIC {{?RFC9000}}, RTP Media Congestion\r\n```",
+              "createdAt": "2024-04-24T18:00:40Z",
+              "updatedAt": "2024-04-24T18:04:09Z"
+            },
+            {
+              "originalPosition": 40,
+              "body": "```suggestion\r\nis not in the scope of this document. However, {{Section 4 of ?RFC8085}} provides\r\n```",
+              "createdAt": "2024-04-24T18:00:58Z",
+              "updatedAt": "2024-04-24T18:04:09Z"
+            },
+            {
+              "originalPosition": 324,
+              "body": "You were acknowledged in the original 5033!",
+              "createdAt": "2024-04-24T18:04:00Z",
+              "updatedAt": "2024-04-24T18:04:09Z"
             }
           ]
         }
