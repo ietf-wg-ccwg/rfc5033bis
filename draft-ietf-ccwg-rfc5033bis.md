@@ -49,6 +49,8 @@ informative:
 
   BBRv1-draft: I-D.cardwell-iccrg-bbr-congestion-control-00
 
+  ECN-Encaps: I-D.ietf-tsvwg-ecn-encap-guidelines-21
+
   HRX08:
     title: "CUBIC: a new TCP-friendly high-speed TCP variant"
     seriesinfo: ACM SIGOPS Operating Systems Review, vol. 42, no. 5, pp. 64-74
@@ -158,7 +160,7 @@ CUBIC was documented in a research publication in 2007 {{HRX08}}, and was then
 adopted as the default congestion control algorithm for the TCP implementation
 in Linux. It was already used in a significant fraction of TCP connections over
 the Internet before being documented in an Informational Internet-Draft in
-2015, published as an Informational RFC in 2017 {{?RFC8312}} and then as a
+2015, published as an Informational RFC in 2017 as {{?RFC8312}} and then as a
 Proposed Standard in 2023 {{?RFC9438}}.
 
 At the time of writing, BBR is being developed as an internal research project
@@ -327,7 +329,7 @@ this requirement is crucial to protect the network in times of extreme
 (persistent) congestion.
 
 If full backoff is used, this test does not require that the mechanism must be
-identical to that of TCP ({{?RFC2988}}, {{!RFC8961}}). For example, this does
+identical to that of TCP ({{?RFC6298}}, {{!RFC8961}}). For example, this does
 not preclude full backoff mechanisms that would give flows with different round-
 trip times comparable capacity during backoff.
 
@@ -528,6 +530,10 @@ disciplines.
 When a proposed congestion control algorithm relies on explicit signals from the
 path, the proposal MUST consider the effect of traffic passing through a tunnel,
 where routers may not be aware of the flow.
+
+The design of tunnels and similar encapsulations might need to consider nested 
+congestion control interactions. For example, when ECN is used by an
+IP and lower layer technology {{ECN-Encaps}}.
 
 ## Wired Paths
 
