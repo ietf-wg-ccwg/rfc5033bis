@@ -272,6 +272,13 @@ documenting deployed congestion control algorithms that cannot be changed by
 IETF or IRTF review are invited to publish as an Informational RFC via the
 Independent Stream Editor (ISE).
 
+# Specification of Requirements
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in BCP 14 {{!RFC2119}} {{!RFC8174}}
+when, and only when, they appear in all capitals, as shown here.
+
 # Specifying Algorithms for Use in Controlled Environments {#controlled-environments}
 
 Algorithms can be designed for general Internet deployment or for use in
