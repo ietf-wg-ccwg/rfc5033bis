@@ -49,7 +49,7 @@ informative:
 
   BBRv1-draft: I-D.cardwell-iccrg-bbr-congestion-control-00
 
-  ECN-Encaps: I-D.ietf-tsvwg-ecn-encap-guidelines-21
+  ECN-Encaps: I-D.ietf-tsvwg-ecn-encap-guidelines
 
   HRX08:
     title: "CUBIC: a new TCP-friendly high-speed TCP variant"
