@@ -539,7 +539,7 @@ path, the proposal MUST consider the effect of traffic passing through a tunnel,
 where routers may not be aware of the flow.
 
 The design of tunnels and similar encapsulations might need to consider nested
-congestion control interactions. For example, when ECN is used by an
+congestion control interactions. For example, when ECN is used by both an
 IP and lower layer technology {{ECN-Encaps}}.
 
 ## Wired Paths
