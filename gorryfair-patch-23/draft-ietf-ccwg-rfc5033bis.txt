@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 1 November 2024                                   30 April 2024
+Expires: 2 November 2024                                      1 May 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 November 2024.
+   This Internet-Draft will expire on 2 November 2024.
 
 Copyright Notice
 
@@ -602,7 +602,7 @@ Table of Contents
 
    The design of tunnels and similar encapsulations might need to
    consider nested congestion control interactions.  For example, when
-   ECN is used by an IP and lower layer technology [ECN-Encaps].
+   ECN is used by both an IP and lower layer technology [ECN-Encaps].
 
 6.3.  Wired Paths
 
