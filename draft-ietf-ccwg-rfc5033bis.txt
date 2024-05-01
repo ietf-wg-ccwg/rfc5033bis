@@ -117,6 +117,7 @@ Table of Contents
      10.2.  Informative References
    Acknowledgments
    Evolution of RFC5033bis
+     Since draft-ietf-ccwg-rfc5033bis-04
      Since draft-ietf-ccwg-rfc5033bis-03
      Since draft-ietf-ccwg-rfc5033bis-02
      Since draft-ietf-ccwg-rfc5033bis-01
@@ -1109,6 +1110,10 @@ Acknowledgments
    contributions to that document.  It also drew from [RFC5166].
 
 Evolution of RFC5033bis
+
+Since draft-ietf-ccwg-rfc5033bis-04
+
+   *  Editorial pass after shepherd review.
 
 Since draft-ietf-ccwg-rfc5033bis-03
 
