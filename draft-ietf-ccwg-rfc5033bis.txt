@@ -931,9 +931,9 @@ Table of Contents
               Briscoe, B. and J. Kaippallimalil, "Guidelines for Adding
               Congestion Notification to Protocols that Encapsulate IP",
               Work in Progress, Internet-Draft, draft-ietf-tsvwg-ecn-
-              encap-guidelines-21, 10 November 2023,
+              encap-guidelines-22, 5 December 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-tsvwg-
-              ecn-encap-guidelines-21>.
+              ecn-encap-guidelines-22>.
 
    [HRX08]    Ha, S., Rhee, I., and L. Xu, "CUBIC: a new TCP-friendly
               high-speed TCP variant", ACM SIGOPS Operating Systems
