@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-30T00:36:26.774558+00:00",
+  "timestamp": "2024-05-02T00:36:51.249397+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -8467,6 +8467,82 @@
               "updatedAt": "2024-04-24T18:04:09Z"
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 122,
+      "id": "PR_kwDOI7aIXc5uLHOS",
+      "title": "Minor update to fix NiTs from Shepherd Review",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/122",
+      "state": "MERGED",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "A new PR will addreess these issues, when rev'ed as an ID.\r\n\r\n1. -- Obsolete informational reference (is this intentional?): RFC 2988 (Obsoleted by RFC 6298)\r\n\r\nmea culpa for not spotting - we ought to replace by the later RFC.\r\n\r\n2.  -- Obsolete informational reference (is this intentional?): RFC 8312 (Obsoleted by RFC 9438)\r\n\r\nThat was intentional. The text of the PR has been updated to say this.\r\n\r\n3. We can add a note that tunnels, and similar encaps need to consider nested congestion control interactions:\r\n\r\nThe design of tunnels and similar encapsulations might need to consider nested congestion control interactions. For example, when ECN is used by an IP and lower layer technology {{ECN-encaps}}.",
+      "createdAt": "2024-04-30T16:59:47Z",
+      "updatedAt": "2024-05-01T14:12:32Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "22f935c10f1afb6f4b7d9bfa1824f235f48041ca",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-23",
+      "headRefOid": "f23d43e7b9c0a4d296d0ba739591ef5c45ecea2a",
+      "closedAt": "2024-05-01T14:12:32Z",
+      "mergedAt": "2024-05-01T14:12:32Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "400d141aec6f0543583c556d495a31d931e66275"
+      },
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Added 2119. I don't know where the BCP number ought to be placed in markdown, I can do it xml;-0. If we can't figure it out, we could let RFC-Ed do it at the end, the context is there.",
+          "createdAt": "2024-04-30T18:05:20Z",
+          "updatedAt": "2024-04-30T18:05:20Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc55HrXf",
+          "commit": {
+            "abbreviatedOid": "0518cc8"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "This looks good to me, but can we add BCP 133 and RFC 2119 as Reese requested?",
+          "createdAt": "2024-04-30T17:14:55Z",
+          "updatedAt": "2024-04-30T17:14:55Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc55KxkG",
+          "commit": {
+            "abbreviatedOid": "2d16edb"
+          },
+          "author": "theri",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "Thank you, these changes look good to me.",
+          "createdAt": "2024-05-01T00:52:00Z",
+          "updatedAt": "2024-05-01T00:52:00Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc55N8FK",
+          "commit": {
+            "abbreviatedOid": "f23d43e"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-05-01T14:08:47Z",
+          "updatedAt": "2024-05-01T14:08:47Z",
+          "comments": []
         }
       ]
     }
