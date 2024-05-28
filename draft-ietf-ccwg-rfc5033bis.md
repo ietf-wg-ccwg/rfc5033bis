@@ -444,7 +444,8 @@ discussed in Sections 6, 11.1, and 12 of {{?RFC3649}}.
 General-purpose protocols need to coexist in the Internet with real-time
 congestion control algorithms, which, in general, have finite throughput
 requirements (i.e., do not seek to utilize all available capacity) and more
-strict latency bounds.
+strict latency bounds. See {{?RFC8836}} for a description of the characteristics
+of this use case and the resulting
 
 {{?RFC8868}} provides suggestions for real-time congestion control design and
 {{?RFC8867}} suggests test cases. {{?RFC9392}} describes some considerations
