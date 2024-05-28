@@ -793,7 +793,7 @@ from {{?RFC5166}}.
 
 ## Since draft-ietf-ccwg-rfc5033bis-05
 {:numbered="false"}
-- AD evaluation comments 
+- AD evaluation comments
 
 ## Since draft-ietf-ccwg-rfc5033bis-04
 {:numbered="false"}
