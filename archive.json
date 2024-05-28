@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-26T00:42:01.037616+00:00",
+  "timestamp": "2024-05-28T00:38:44.387653+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -67,6 +67,11 @@
       "name": "Parked",
       "description": "",
       "color": "D97813"
+    },
+    {
+      "name": "AD review",
+      "description": "",
+      "color": "1d76db"
     }
   ],
   "issues": [
@@ -1920,6 +1925,96 @@
       "updatedAt": "2024-04-10T16:06:48Z",
       "closedAt": "2024-04-10T16:06:48Z",
       "comments": []
+    },
+    {
+      "number": 123,
+      "id": "I_kwDOI7aIXc6KM2De",
+      "title": "Swap the placement of section 3 with section 2 ",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/123",
+      "state": "OPEN",
+      "author": "zaheduzzaman",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "editorial",
+        "AD review"
+      ],
+      "body": "I suggest that we swap the section 3 and 2 in the sequence of sections so that the readers understand the interpretation of normative text before they read about it. \r\n\r\n\r\nhttps://github.com/ietf-wg-ccwg/rfc5033bis/blob/660760a9375d713c6586b11eb337235b51e7af50/draft-ietf-ccwg-rfc5033bis.md?plain=1#L275",
+      "createdAt": "2024-05-27T08:55:25Z",
+      "updatedAt": "2024-05-27T08:55:25Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 124,
+      "id": "I_kwDOI7aIXc6KM_jw",
+      "title": "General-purpose transport or standard congestion control algorithm",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/124",
+      "state": "OPEN",
+      "author": "zaheduzzaman",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "editorial",
+        "AD review"
+      ],
+      "body": "The title of section 5.2.1 mentions general-purpose transports but the content really about comparing against standard congestion control algorithms, I suggest to reflect that in the section title. \r\n\r\nhttps://github.com/ietf-wg-ccwg/rfc5033bis/blob/660760a9375d713c6586b11eb337235b51e7af50/draft-ietf-ccwg-rfc5033bis.md?plain=1#L418",
+      "createdAt": "2024-05-27T09:13:59Z",
+      "updatedAt": "2024-05-27T11:48:05Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hmmm: This was originally conceived as General-Purpose v Real-Time (next section). \r\nIf we change this to \"standard general-purpose congestion control algorithms\" , does it then make \"real-time look non-standard - so ought that now be \"standard real-time congestion control algorithms\"?\r\n- Would that help?",
+          "createdAt": "2024-05-27T11:48:04Z",
+          "updatedAt": "2024-05-27T11:48:04Z"
+        }
+      ]
+    },
+    {
+      "number": 125,
+      "id": "I_kwDOI7aIXc6KNH7f",
+      "title": "Congestion control requirements for real-time traffic ",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/125",
+      "state": "OPEN",
+      "author": "zaheduzzaman",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "AD review"
+      ],
+      "body": "This paragraph is a good summery of what is available related to congestion control when it comes to real-time traffic in the context of this specification. However, all of those referenced resources were developed following the requirements set out by https://datatracker.ietf.org/doc/rfc8836/ , also RFC8836 describes the aspects of real-time conversational media that helps the scope of being real-time. hence, I suggest we add a reference to RFC8836.  \r\n\r\nhttps://github.com/ietf-wg-ccwg/rfc5033bis/blob/660760a9375d713c6586b11eb337235b51e7af50/draft-ietf-ccwg-rfc5033bis.md?plain=1#L449-L453",
+      "createdAt": "2024-05-27T09:29:13Z",
+      "updatedAt": "2024-05-27T09:29:13Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 126,
+      "id": "I_kwDOI7aIXc6KNTM1",
+      "title": "Unclarity about the evaluation environment",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/126",
+      "state": "OPEN",
+      "author": "zaheduzzaman",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "AD review"
+      ],
+      "body": "While section 5 expects to do well-round of evaluations, it does not specify where or how to do the evaluation. Does the congestion control proposals provide the evaluation results in a simulator or in a real lab setup or in a controlled part of the Internet or over the Internet? While it is understandable that an accurate description on the evaluation environment is tough to define but the specification should at least mention what is good enough environment to evaluation on, or state it does not really matter.\r\n\r\n\r\n\r\n  ",
+      "createdAt": "2024-05-27T09:49:51Z",
+      "updatedAt": "2024-05-27T11:09:15Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "See below:On 27 May 2024, at 10:50, Zaheduzzaman Sarker ***@***.***> wrote:\ufeff\r\nWhile section 5 expects to do well-round of evaluations, it does not specify where or how to do the evaluation. Does the congestion control proposals provide the evaluation results in a simulator or in a real lab setup or in a controlled part of the Internet or over the Internet? While it is understandable that an accurate description on the evaluation environment is tough to define but the specification should at least mention what is good enough environment to evaluation on, or state it does not really matter.\r\n\r\n\u2014Reply to this email directly, view it on GitHub, or unsubscribe.You are receiving this because you are subscribed to this thread.Message ID: ***@***.***>\r\nI am not sure how we add guidance \u2026 surely all of these method can be appropriate (more so for some of the evaluations) when bringing new work to the IETF.\u00a0When last calling a draft - it would be good to see more than one approach where possible.\u00a0Simulation ought to be better in understanding stability and identifying worst case impact; real lab or controlled tested could be good for understanding typical interactions with other traffic.\u00a0I still wonder what we can best advise?Gorry",
+          "createdAt": "2024-05-27T11:09:14Z",
+          "updatedAt": "2024-05-27T11:09:14Z"
+        }
+      ]
     }
   ],
   "pulls": [
