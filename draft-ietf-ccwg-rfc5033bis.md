@@ -220,6 +220,13 @@ before approaching the IETF. Instead, proponents are encouraged to think about
 these issues beforehand, and have the willingness to do the work implied by the
 remainder of this document.
 
+# Specification of Requirements
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in BCP 14 {{!RFC2119}} {{!RFC8174}}
+when, and only when, they appear in all capitals, as shown here.
+
 # Guidelines for Authors about Document Status
 
 This document applies to proposals for congestion control algorithms that
@@ -271,13 +278,6 @@ to be less mature than ones that follow the procedures in this document. Authors
 documenting deployed congestion control algorithms that cannot be changed by
 IETF or IRTF review are invited to publish as an Informational RFC via the
 Independent Stream Editor (ISE).
-
-# Specification of Requirements
-
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this
-document are to be interpreted as described in BCP 14 {{!RFC2119}} {{!RFC8174}}
-when, and only when, they appear in all capitals, as shown here.
 
 # Specifying Algorithms for Use in Controlled Environments {#controlled-environments}
 
@@ -790,6 +790,10 @@ from {{?RFC5166}}.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
+
+## Since draft-ietf-ccwg-rfc5033bis-05
+{:numbered="false"}
+- AD evaluation comments 
 
 ## Since draft-ietf-ccwg-rfc5033bis-04
 {:numbered="false"}
