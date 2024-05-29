@@ -415,7 +415,7 @@ An evaluation MUST assess the potential to cause starvation, including
 assurance that a loss of all feedback (e.g., detected by expiry of a
 retransmission time out) results in backoff.
 
-### Existing General-Purpose Transports
+### Existing General-Purpose Congestion Control
 
 A proposed congestion control algorithm SHOULD be evaluated when competing using
 standard IETF congestion controls, e.g. {{!RFC5681}}, {{!RFC9002}},
@@ -439,9 +439,9 @@ As an example from an Experimental RFC, fairness with standard TCP is discussed
 in Sections 4 and 6 of {{?RFC3649}} (HighSpeed TCP) and using spare capacity is
 discussed in Sections 6, 11.1, and 12 of {{?RFC3649}}.
 
-### Real-Time Protocols
+### Real-Time Congestion Control
 
-General-purpose protocols need to coexist in the Internet with real-time
+General-purpose algorithms need to coexist in the Internet with real-time
 congestion control algorithms, which, in general, have finite throughput
 requirements (i.e., do not seek to utilize all available capacity) and more
 strict latency bounds. See {{?RFC8836}} for a description of the characteristics
