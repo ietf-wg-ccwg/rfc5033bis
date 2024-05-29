@@ -74,8 +74,8 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Guidelines for Authors about Document Status
-   3.  Specification of Requirements
+   2.  Specification of Requirements
+   3.  Guidelines for Authors about Document Status
    4.  Specifying Algorithms for Use in Controlled Environments
    5.  Evaluation Criteria
      5.1.  Single Algorithm Behavior
@@ -117,6 +117,7 @@ Table of Contents
      10.2.  Informative References
    Acknowledgments
    Evolution of RFC5033bis
+     Since draft-ietf-ccwg-rfc5033bis-05
      Since draft-ietf-ccwg-rfc5033bis-04
      Since draft-ietf-ccwg-rfc5033bis-03
      Since draft-ietf-ccwg-rfc5033bis-02
@@ -254,7 +255,15 @@ Table of Contents
    have the willingness to do the work implied by the remainder of this
    document.
 
-2.  Guidelines for Authors about Document Status
+2.  Specification of Requirements
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in BCP
+   14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  Guidelines for Authors about Document Status
 
    This document applies to proposals for congestion control algorithms
    that seek Experimental or Standards Track status.  Evaluation of both
@@ -309,14 +318,6 @@ Table of Contents
    deployed congestion control algorithms that cannot be changed by IETF
    or IRTF review are invited to publish as an Informational RFC via the
    Independent Stream Editor (ISE).
-
-3.  Specification of Requirements
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in BCP
-   14 [RFC2119] [RFC8174] when, and only when, they appear in all
-   capitals, as shown here.
 
 4.  Specifying Algorithms for Use in Controlled Environments
 
@@ -1112,6 +1113,10 @@ Acknowledgments
    contributions to that document.  It also drew from [RFC5166].
 
 Evolution of RFC5033bis
+
+Since draft-ietf-ccwg-rfc5033bis-05
+
+   *  AD evaluation comments
 
 Since draft-ietf-ccwg-rfc5033bis-04
 
