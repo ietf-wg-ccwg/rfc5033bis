@@ -1188,10 +1188,10 @@ congestion control landscape.<a href="#section-abstract-1" class="pilcrow">¶</a
                 <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-mixed-algorithm-behavior" class="internal xref">Mixed Algorithm Behavior</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.1">
-                    <p id="section-toc.1-1.5.2.2.2.1.1"><a href="#section-5.2.1" class="auto internal xref">5.2.1</a>.  <a href="#name-existing-general-purpose-tr" class="internal xref">Existing General-Purpose Transports</a></p>
+                    <p id="section-toc.1-1.5.2.2.2.1.1"><a href="#section-5.2.1" class="auto internal xref">5.2.1</a>.  <a href="#name-existing-general-purpose-co" class="internal xref">Existing General-Purpose Congestion Control</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.2">
-                    <p id="section-toc.1-1.5.2.2.2.2.1"><a href="#section-5.2.2" class="auto internal xref">5.2.2</a>.  <a href="#name-real-time-protocols" class="internal xref">Real-Time Protocols</a></p>
+                    <p id="section-toc.1-1.5.2.2.2.2.1"><a href="#section-5.2.2" class="auto internal xref">5.2.2</a>.  <a href="#name-real-time-congestion-contro" class="internal xref">Real-Time Congestion Control</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.3">
                     <p id="section-toc.1-1.5.2.2.2.3.1"><a href="#section-5.2.3" class="auto internal xref">5.2.3</a>.  <a href="#name-short-and-long-flows" class="internal xref">Short and Long Flows</a></p>
@@ -1654,10 +1654,10 @@ consider metrics such as the introduced latency, or an increase in packet loss.
 An evaluation MUST assess the potential to cause starvation, including
 assurance that a loss of all feedback (e.g., detected by expiry of a
 retransmission time out) results in backoff.<a href="#section-5.2-2" class="pilcrow">¶</a></p>
-<div id="existing-general-purpose-transports">
+<div id="existing-general-purpose-congestion-control">
 <section id="section-5.2.1">
-          <h4 id="name-existing-general-purpose-tr">
-<a href="#section-5.2.1" class="section-number selfRef">5.2.1. </a><a href="#name-existing-general-purpose-tr" class="section-name selfRef">Existing General-Purpose Transports</a>
+          <h4 id="name-existing-general-purpose-co">
+<a href="#section-5.2.1" class="section-number selfRef">5.2.1. </a><a href="#name-existing-general-purpose-co" class="section-name selfRef">Existing General-Purpose Congestion Control</a>
           </h4>
 <p id="section-5.2.1-1">A proposed congestion control algorithm SHOULD be evaluated when competing using
 standard IETF congestion controls, e.g. <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span>, <span>[<a href="#RFC9002" class="cite xref">RFC9002</a>]</span>,
@@ -1680,12 +1680,12 @@ in Sections 4 and 6 of <span>[<a href="#RFC3649" class="cite xref">RFC3649</a>]<
 discussed in Sections 6, 11.1, and 12 of <span>[<a href="#RFC3649" class="cite xref">RFC3649</a>]</span>.<a href="#section-5.2.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="real-time-protocols">
+<div id="real-time-congestion-control">
 <section id="section-5.2.2">
-          <h4 id="name-real-time-protocols">
-<a href="#section-5.2.2" class="section-number selfRef">5.2.2. </a><a href="#name-real-time-protocols" class="section-name selfRef">Real-Time Protocols</a>
+          <h4 id="name-real-time-congestion-contro">
+<a href="#section-5.2.2" class="section-number selfRef">5.2.2. </a><a href="#name-real-time-congestion-contro" class="section-name selfRef">Real-Time Congestion Control</a>
           </h4>
-<p id="section-5.2.2-1">General-purpose protocols need to coexist in the Internet with real-time
+<p id="section-5.2.2-1">General-purpose algorithms need to coexist in the Internet with real-time
 congestion control algorithms, which, in general, have finite throughput
 requirements (i.e., do not seek to utilize all available capacity) and more
 strict latency bounds. See <span>[<a href="#RFC8836" class="cite xref">RFC8836</a>]</span> for a description of the characteristics
