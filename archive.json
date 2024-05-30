@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-28T00:38:44.387653+00:00",
+  "timestamp": "2024-05-30T00:38:55.831078+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -1931,7 +1931,7 @@
       "id": "I_kwDOI7aIXc6KM2De",
       "title": "Swap the placement of section 3 with section 2 ",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/123",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -1941,8 +1941,8 @@
       ],
       "body": "I suggest that we swap the section 3 and 2 in the sequence of sections so that the readers understand the interpretation of normative text before they read about it. \r\n\r\n\r\nhttps://github.com/ietf-wg-ccwg/rfc5033bis/blob/660760a9375d713c6586b11eb337235b51e7af50/draft-ietf-ccwg-rfc5033bis.md?plain=1#L275",
       "createdAt": "2024-05-27T08:55:25Z",
-      "updatedAt": "2024-05-27T08:55:25Z",
-      "closedAt": null,
+      "updatedAt": "2024-05-29T14:14:19Z",
+      "closedAt": "2024-05-29T14:14:19Z",
       "comments": []
     },
     {
@@ -1950,7 +1950,7 @@
       "id": "I_kwDOI7aIXc6KM_jw",
       "title": "General-purpose transport or standard congestion control algorithm",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/124",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -1960,8 +1960,8 @@
       ],
       "body": "The title of section 5.2.1 mentions general-purpose transports but the content really about comparing against standard congestion control algorithms, I suggest to reflect that in the section title. \r\n\r\nhttps://github.com/ietf-wg-ccwg/rfc5033bis/blob/660760a9375d713c6586b11eb337235b51e7af50/draft-ietf-ccwg-rfc5033bis.md?plain=1#L418",
       "createdAt": "2024-05-27T09:13:59Z",
-      "updatedAt": "2024-05-27T11:48:05Z",
-      "closedAt": null,
+      "updatedAt": "2024-05-29T14:17:49Z",
+      "closedAt": "2024-05-29T14:17:49Z",
       "comments": [
         {
           "author": "gorryfair",
@@ -1969,6 +1969,13 @@
           "body": "Hmmm: This was originally conceived as General-Purpose v Real-Time (next section). \r\nIf we change this to \"standard general-purpose congestion control algorithms\" , does it then make \"real-time look non-standard - so ought that now be \"standard real-time congestion control algorithms\"?\r\n- Would that help?",
           "createdAt": "2024-05-27T11:48:04Z",
           "updatedAt": "2024-05-27T11:48:04Z"
+        },
+        {
+          "author": "zaheduzzaman",
+          "authorAssociation": "NONE",
+          "body": "It was not that clear that it was supposed to convey \"general-purpose\" VS \"real-time\". But my main point was that if this is all about congestion control for general purpose transport then lets say that.\r\n\r\n- Competing with general purpose congestion control \r\n- Competing with real-time congestion control \r\n",
+          "createdAt": "2024-05-28T13:55:48Z",
+          "updatedAt": "2024-05-28T13:55:48Z"
         }
       ]
     },
@@ -1977,7 +1984,7 @@
       "id": "I_kwDOI7aIXc6KNH7f",
       "title": "Congestion control requirements for real-time traffic ",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/125",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -1986,8 +1993,8 @@
       ],
       "body": "This paragraph is a good summery of what is available related to congestion control when it comes to real-time traffic in the context of this specification. However, all of those referenced resources were developed following the requirements set out by https://datatracker.ietf.org/doc/rfc8836/ , also RFC8836 describes the aspects of real-time conversational media that helps the scope of being real-time. hence, I suggest we add a reference to RFC8836.  \r\n\r\nhttps://github.com/ietf-wg-ccwg/rfc5033bis/blob/660760a9375d713c6586b11eb337235b51e7af50/draft-ietf-ccwg-rfc5033bis.md?plain=1#L449-L453",
       "createdAt": "2024-05-27T09:29:13Z",
-      "updatedAt": "2024-05-27T09:29:13Z",
-      "closedAt": null,
+      "updatedAt": "2024-05-29T14:13:47Z",
+      "closedAt": "2024-05-29T14:13:47Z",
       "comments": []
     },
     {
@@ -2004,15 +2011,36 @@
       ],
       "body": "While section 5 expects to do well-round of evaluations, it does not specify where or how to do the evaluation. Does the congestion control proposals provide the evaluation results in a simulator or in a real lab setup or in a controlled part of the Internet or over the Internet? While it is understandable that an accurate description on the evaluation environment is tough to define but the specification should at least mention what is good enough environment to evaluation on, or state it does not really matter.\r\n\r\n\r\n\r\n  ",
       "createdAt": "2024-05-27T09:49:51Z",
-      "updatedAt": "2024-05-27T11:09:15Z",
+      "updatedAt": "2024-05-29T15:20:39Z",
       "closedAt": null,
       "comments": [
         {
           "author": "gorryfair",
           "authorAssociation": "COLLABORATOR",
-          "body": "See below:On 27 May 2024, at 10:50, Zaheduzzaman Sarker ***@***.***> wrote:\ufeff\r\nWhile section 5 expects to do well-round of evaluations, it does not specify where or how to do the evaluation. Does the congestion control proposals provide the evaluation results in a simulator or in a real lab setup or in a controlled part of the Internet or over the Internet? While it is understandable that an accurate description on the evaluation environment is tough to define but the specification should at least mention what is good enough environment to evaluation on, or state it does not really matter.\r\n\r\n\u2014Reply to this email directly, view it on GitHub, or unsubscribe.You are receiving this because you are subscribed to this thread.Message ID: ***@***.***>\r\nI am not sure how we add guidance \u2026 surely all of these method can be appropriate (more so for some of the evaluations) when bringing new work to the IETF.\u00a0When last calling a draft - it would be good to see more than one approach where possible.\u00a0Simulation ought to be better in understanding stability and identifying worst case impact; real lab or controlled tested could be good for understanding typical interactions with other traffic.\u00a0I still wonder what we can best advise?Gorry",
+          "body": "See below:On 27 May 2024, at 10:50, Zaheduzzaman Sarker ***@***.***> wrote:\ufeff\r\nWhile section 5 expects to do well-round of evaluations, it does not specify where or how to do the evaluation. Does the congestion control proposals provide the evaluation results in a simulator or in a real lab setup or in a controlled part of the Internet or over the Internet? While it is understandable that an accurate description on the evaluation environment is tough to define but the specification should at least mention what is good enough environment to evaluation on, or state it does not really matter.\r\n\r\n\u2014Reply to this email directly, view it on GitHub, or unsubscribe.You are receiving this because you are subscribed to this thread.Message ID: ***@***.***>\r\nI am not sure how we add guidance \u2026 surely all of these method can be appropriate (more so for some of the evaluations) when bringing new work to the IETF.\u00a0When last calling a draft - it would be good to see more than one approach where possible.\u00a0Simulation ought to be better in understanding stability and identifying worst case impact; real lab or controlled tested could be good for understanding typical interactions with other traffic.\u00a0I still wonder what we can best advise?Gorry\r\n\r\nPostscript: Reading again: my comment is about testing specific new CC mechanisms, if we're talking about a new CC algorithm (not just a new technique), then I agree with Martin below.",
           "createdAt": "2024-05-27T11:09:14Z",
-          "updatedAt": "2024-05-27T11:09:14Z"
+          "updatedAt": "2024-05-29T07:02:56Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is covered in Section 3, which is becoming Section 2:\r\n\r\n> Congestion control algorithms without empirical evidence of Internet-scale deployment SHOULD seek Experimental status.\r\n> \r\n> Congestion control algorithms with a record of measured Internet-scale deployment MAY directly seek the Standards Track if there is solid data that reflects that it is safe, and the design is stable, guided by the considerations in [Section 6](https://ietf-wg-ccwg.github.io/rfc5033bis/draft-ietf-ccwg-rfc5033bis.html#general-use). However, the existence of this data does not waive the other considerations in this document.\r\n\r\nIs that good enough?",
+          "createdAt": "2024-05-28T20:10:05Z",
+          "updatedAt": "2024-05-28T20:10:05Z"
+        },
+        {
+          "author": "zaheduzzaman",
+          "authorAssociation": "NONE",
+          "body": "I have noticed that section. I think it is great that we are somewhat defining the criteria for a PS. But still we are not giving any hint on - say, if simulaiton results are good enough to be  considered as experimental or shall we at least want to see some controlled testbed evaluations, or put it like this - what is considered as bare minimum empirical evidence? I would be great if we can put some clarity here.",
+          "createdAt": "2024-05-29T14:27:57Z",
+          "updatedAt": "2024-05-29T14:27:57Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think we ought to expect some experiment results ... but how detailed, rather depends on what is being proposed. \r\nHaving some experiments (even at large scale) and no simulation of theory (e.g. on how a method treats overload) would also seem very dangerous to me. \r\nThese have always been the case in the past - i.e. TSVWG has pushed back to ICCRG to see experimental results AND some simulation/analysis when it comes to CC.\r\n",
+          "createdAt": "2024-05-29T15:20:38Z",
+          "updatedAt": "2024-05-29T15:20:38Z"
         }
       ]
     }
@@ -8637,6 +8665,145 @@
           "body": "",
           "createdAt": "2024-05-01T14:08:47Z",
           "updatedAt": "2024-05-01T14:08:47Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 127,
+      "id": "PR_kwDOI7aIXc5wzJ4B",
+      "title": "Switch sections 2 and 3",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/127",
+      "state": "MERGED",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #123 ",
+      "createdAt": "2024-05-28T18:42:37Z",
+      "updatedAt": "2024-05-29T14:14:18Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "660760a9375d713c6586b11eb337235b51e7af50",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "swap-section",
+      "headRefOid": "cfba187316214e685a45fc182ca98152d0d8d027",
+      "closedAt": "2024-05-29T14:14:18Z",
+      "mergedAt": "2024-05-29T14:14:18Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "919fa334c16fffbc86b1a1d3cc520097d6421f68"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc58Pkvr",
+          "commit": {
+            "abbreviatedOid": "cfba187"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-05-29T06:54:09Z",
+          "updatedAt": "2024-05-29T06:54:09Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 128,
+      "id": "PR_kwDOI7aIXc5wzPPQ",
+      "title": "Rename general-purpose transports to general-purpose congestion control",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/128",
+      "state": "MERGED",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #124 ",
+      "createdAt": "2024-05-28T18:58:02Z",
+      "updatedAt": "2024-05-29T14:17:48Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "660760a9375d713c6586b11eb337235b51e7af50",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "general-purpose",
+      "headRefOid": "274841119f61b589794c441dbd68153c3fcf583d",
+      "closedAt": "2024-05-29T14:17:48Z",
+      "mergedAt": "2024-05-29T14:17:48Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "da49cae97a6436c29380cfc97471ee6c0dcb1420"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc58Pk_Z",
+          "commit": {
+            "abbreviatedOid": "2748411"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-05-29T06:54:44Z",
+          "updatedAt": "2024-05-29T06:54:44Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 129,
+      "id": "PR_kwDOI7aIXc5wzV1G",
+      "title": "RFC8836",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/129",
+      "state": "MERGED",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #125.",
+      "createdAt": "2024-05-28T19:18:26Z",
+      "updatedAt": "2024-05-29T14:13:46Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "660760a9375d713c6586b11eb337235b51e7af50",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "rfc8836",
+      "headRefOid": "ce32029898d2873fa06051e61436f4d47a03e3bb",
+      "closedAt": "2024-05-29T14:13:46Z",
+      "mergedAt": "2024-05-29T14:13:46Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "5dd5e5fe7dee8b69d1340cf00dd66ef8e1759302"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc58NSmg",
+          "commit": {
+            "abbreviatedOid": "ce32029"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-05-28T21:13:35Z",
+          "updatedAt": "2024-05-28T21:13:35Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc58PlVz",
+          "commit": {
+            "abbreviatedOid": "ce32029"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-05-29T06:55:31Z",
+          "updatedAt": "2024-05-29T06:55:31Z",
           "comments": []
         }
       ]
