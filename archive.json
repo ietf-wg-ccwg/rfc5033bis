@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-04T00:39:26.968441+00:00",
+  "timestamp": "2024-06-06T00:39:06.633776+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -2011,7 +2011,7 @@
       ],
       "body": "While section 5 expects to do well-round of evaluations, it does not specify where or how to do the evaluation. Does the congestion control proposals provide the evaluation results in a simulator or in a real lab setup or in a controlled part of the Internet or over the Internet? While it is understandable that an accurate description on the evaluation environment is tough to define but the specification should at least mention what is good enough environment to evaluation on, or state it does not really matter.\r\n\r\n\r\n\r\n  ",
       "createdAt": "2024-05-27T09:49:51Z",
-      "updatedAt": "2024-05-29T15:20:39Z",
+      "updatedAt": "2024-06-04T10:07:27Z",
       "closedAt": null,
       "comments": [
         {
@@ -2041,6 +2041,20 @@
           "body": "I think we ought to expect some experiment results ... but how detailed, rather depends on what is being proposed. \r\nHaving some experiments (even at large scale) and no simulation of theory (e.g. on how a method treats overload) would also seem very dangerous to me. \r\nThese have always been the case in the past - i.e. TSVWG has pushed back to ICCRG to see experimental results AND some simulation/analysis when it comes to CC.\r\n",
           "createdAt": "2024-05-29T15:20:38Z",
           "updatedAt": "2024-05-29T15:20:38Z"
+        },
+        {
+          "author": "zaheduzzaman",
+          "authorAssociation": "NONE",
+          "body": "@gorryfair are you saying we are just fine with some expection on evidence of experiments without specifying what is the minimum required environ to test in? we do have test cases defined for new algorithm testing, can't we at least say get inspiration or use them in the experiments?",
+          "createdAt": "2024-06-04T09:56:21Z",
+          "updatedAt": "2024-06-04T09:56:21Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Aha - I think you're suggesting we provide examples (rather than requirements) and we could refer to RFCs? If so, I'll try a PR.",
+          "createdAt": "2024-06-04T10:07:26Z",
+          "updatedAt": "2024-06-04T10:07:26Z"
         }
       ]
     }
