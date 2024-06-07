@@ -752,6 +752,17 @@ congestion control need not coexist well with all other algorithms if it is
 intended for data centers, but the proposal SHOULD indicate which are expected
 to safely coexist with it.
 
+# Evaluation Methods and Results
+
+Although evaluations test and results are not normally described in an IETF specification, they are important to the development of a specification. This document does not specify a specific method to perform this evaluation. There are multiple possible approaches to evaluation. Each has a role, and the most appropriate approach depends on the criteria being evaluated and mthe aturity of the specification.
+
+For many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse the stability and explore the safety across a wide range of conditions, including overload.  For example, RFC 8869 describes evaluation test cases for interactive real-time media over wireless networks. Such results could also be published or form basis of discussion in IRTF research activities (such as ICCRG and MAPRG).
+
+Before a proposed congestion control algorithm is finally standardised, it is expected to have gained practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.
+An independent evaluation by multiple teams helps provide assurance that the design meets the evaluation criteria, and can asses typical interactions with other traffic.
+This evaluation could use an emulated laboratory environment or a controlled experiment (within a limited domain or at Internet-scale). 
+Evidence of results is normally considered by the working group in deciding if a specification is ready for publication and ought to be documented in any request for the working group to publish the specification.
+
 # Security Considerations
 
 This document does not represent a change to any aspect of the TCP/IP protocol
