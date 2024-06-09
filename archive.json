@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-06T00:39:06.633776+00:00",
+  "timestamp": "2024-06-09T00:43:48.309899+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -8821,6 +8821,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 130,
+      "id": "PR_kwDOI7aIXc5xxtPe",
+      "title": "A final piece of text on \"how\" to do this",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/130",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This responds to an AD question in review. The text is proposed to shed some light on how to go about evaluating a new CC algorithm, and when to use different approaches. It could be enough, or it could be improved, please think about how best to say this.",
+      "createdAt": "2024-06-07T09:53:34Z",
+      "updatedAt": "2024-06-07T09:53:35Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "da49cae97a6436c29380cfc97471ee6c0dcb1420",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-24",
+      "headRefOid": "27c221e6878ceaa00e2db349f3fa67f8e3ec5e88",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
