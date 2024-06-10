@@ -754,7 +754,7 @@ to safely coexist with it.
 
 # Evaluation Methods and Results
 
-Although evaluations test and results are not normally described in an IETF specification, they are important to the development of a specification. This document does not specify a specific method to perform this evaluation. There are multiple possible approaches to evaluation. Each has a role, and the most appropriate approach depends on the criteria being evaluated and mthe aturity of the specification.
+This document does not specify specific methods, short of internet-scale deployment and measurement, to test the criteria described below. There are multiple possible approaches to evaluation. Each has a role, and the most appropriate approach depends on the criteria being evaluated and the maturity of the specification.
 
 For many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse the stability and explore the safety across a wide range of conditions, including overload.  For example, RFC 8869 describes evaluation test cases for interactive real-time media over wireless networks. Such results could also be published or form basis of discussion in IRTF research activities (such as ICCRG and MAPRG).
 
