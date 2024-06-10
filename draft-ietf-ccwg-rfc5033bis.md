@@ -758,7 +758,7 @@ This document does not specify specific methods, short of internet-scale deploym
 
 For many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse their stability and safety across a wide range of conditions, including overload.  For example, {{?RFC8869}} describes evaluation test cases for interactive real-time media over wireless networks. Such results could also be published or discussed in the IRTF (such as ICCRG and MAPRG).
 
-Before a proposed congestion control algorithm is finally standardised, it is expected to have gained practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.
+Before a proposed congestion control algorithm is published as an Experimental or Standards Track RFC, the community SHOULD gain practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.
 An independent evaluation by multiple teams helps provide assurance that the design meets the evaluation criteria, and can asses typical interactions with other traffic.
 This evaluation could use an emulated laboratory environment or a controlled experiment (within a limited domain or at Internet-scale). 
 Evidence of results is normally considered by the working group in deciding if a specification is ready for publication and ought to be documented in any request for the working group to publish the specification.
