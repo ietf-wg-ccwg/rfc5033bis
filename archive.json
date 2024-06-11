@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-09T00:43:48.309899+00:00",
+  "timestamp": "2024-06-11T00:39:51.820339+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -8834,19 +8834,84 @@
       "labels": [],
       "body": "This responds to an AD question in review. The text is proposed to shed some light on how to go about evaluating a new CC algorithm, and when to use different approaches. It could be enough, or it could be improved, please think about how best to say this.",
       "createdAt": "2024-06-07T09:53:34Z",
-      "updatedAt": "2024-06-07T09:53:35Z",
+      "updatedAt": "2024-06-10T20:45:42Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "da49cae97a6436c29380cfc97471ee6c0dcb1420",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-24",
-      "headRefOid": "27c221e6878ceaa00e2db349f3fa67f8e3ec5e88",
+      "headRefOid": "67c3c0634af0857311d5290cde89658e19c5ed4f",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc59p5mh",
+          "commit": {
+            "abbreviatedOid": "27c221e"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "I cleaned up the wording a bit; I would consider merging this more organically with the rest of Section 3, but refrained from doing so in this PR.",
+          "createdAt": "2024-06-10T15:32:43Z",
+          "updatedAt": "2024-06-10T16:10:26Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Nit: I think this would be better as a subsection under Section 3 (# Guidelines about authors)",
+              "createdAt": "2024-06-10T15:32:44Z",
+              "updatedAt": "2024-06-10T16:10:26Z"
+            },
+            {
+              "originalPosition": 6,
+              "body": "```suggestion\r\nThis document does not specify specific methods, short of internet-scale deployment and measurement, to test the criteria described below. There are multiple possible approaches to evaluation. Each has a role, and the most appropriate approach depends on the criteria being evaluated and the maturity of the specification.\r\n```",
+              "createdAt": "2024-06-10T16:06:04Z",
+              "updatedAt": "2024-06-10T16:10:26Z"
+            },
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\nFor many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse their stability and safety across a wide range of conditions, including overload.  For example, {{?RFC8869}} describes evaluation test cases for interactive real-time media over wireless networks. Such results could also be published or discussed in the IRTF (such as ICCRG and MAPRG).\r\n```",
+              "createdAt": "2024-06-10T16:07:31Z",
+              "updatedAt": "2024-06-10T16:10:26Z"
+            },
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\nAn independent evaluation by multiple teams helps provide assurance that the design meets the evaluation criteria, and can assess typical interactions with other traffic.\r\n```",
+              "createdAt": "2024-06-10T16:07:54Z",
+              "updatedAt": "2024-06-10T16:10:26Z"
+            },
+            {
+              "originalPosition": 10,
+              "body": "```suggestion\r\nBefore a proposed congestion control algorithm is published as an Experimental or Standards Track RFC, the community SHOULD gain practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.\r\n```",
+              "createdAt": "2024-06-10T16:09:02Z",
+              "updatedAt": "2024-06-10T16:10:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc59sIMb",
+          "commit": {
+            "abbreviatedOid": "67c3c06"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Just one little nit, but it looks good.",
+          "createdAt": "2024-06-10T20:45:00Z",
+          "updatedAt": "2024-06-10T20:45:42Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "Maybe \"discussed in IRTF research groups such as ICCRG and MAPRG.\" ? ",
+              "createdAt": "2024-06-10T20:45:00Z",
+              "updatedAt": "2024-06-10T20:45:42Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
