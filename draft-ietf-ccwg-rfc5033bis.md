@@ -233,7 +233,7 @@ when, and only when, they appear in all capitals, as shown here.
 
 This document does not specify specific evaluation methods, short of internet-scale deployment and measurement, to test the criteria described below. There are multiple possible approaches to evaluation. Each has a role, and the most appropriate approach depends on the criteria being evaluated and the maturity of the specification.
 
-For many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse their stability and safety across a wide range of conditions, including overload.  For example, {{?RFC8869}} describes evaluation test cases for interactive real-time media over wireless networks. Such results could also be published or discussed in the IRTF (such as ICCRG and MAPRG).
+For many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse their stability and safety across a wide range of conditions, including overload.  For example, {{?RFC8869}} describes evaluation test cases for interactive real-time media over wireless networks. Such results could also be published or discussed in IRTF research groups, such as ICCRG and MAPRG.
 
 Before a proposed congestion control algorithm is published as an Experimental or Standards Track RFC, the community SHOULD gain practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.
 An independent evaluation by multiple teams helps provide assurance that the design meets the evaluation criteria, and can assess typical interactions with other traffic.
