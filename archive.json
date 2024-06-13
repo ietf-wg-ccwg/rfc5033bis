@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-11T00:39:51.820339+00:00",
+  "timestamp": "2024-06-13T00:39:51.295311+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -2002,7 +2002,7 @@
       "id": "I_kwDOI7aIXc6KNTM1",
       "title": "Unclarity about the evaluation environment",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/126",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -2011,8 +2011,8 @@
       ],
       "body": "While section 5 expects to do well-round of evaluations, it does not specify where or how to do the evaluation. Does the congestion control proposals provide the evaluation results in a simulator or in a real lab setup or in a controlled part of the Internet or over the Internet? While it is understandable that an accurate description on the evaluation environment is tough to define but the specification should at least mention what is good enough environment to evaluation on, or state it does not really matter.\r\n\r\n\r\n\r\n  ",
       "createdAt": "2024-05-27T09:49:51Z",
-      "updatedAt": "2024-06-04T10:07:27Z",
-      "closedAt": null,
+      "updatedAt": "2024-06-12T06:40:53Z",
+      "closedAt": "2024-06-12T06:40:53Z",
       "comments": [
         {
           "author": "gorryfair",
@@ -8827,25 +8827,42 @@
       "id": "PR_kwDOI7aIXc5xxtPe",
       "title": "A final piece of text on \"how\" to do this",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/130",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This responds to an AD question in review. The text is proposed to shed some light on how to go about evaluating a new CC algorithm, and when to use different approaches. It could be enough, or it could be improved, please think about how best to say this.",
       "createdAt": "2024-06-07T09:53:34Z",
-      "updatedAt": "2024-06-10T20:45:42Z",
+      "updatedAt": "2024-06-12T19:20:46Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "da49cae97a6436c29380cfc97471ee6c0dcb1420",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-24",
-      "headRefOid": "67c3c0634af0857311d5290cde89658e19c5ed4f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "headRefOid": "6d9cf4459fd92ed2d1c6536000f0ceed50c101b9",
+      "closedAt": "2024-06-12T06:40:52Z",
+      "mergedAt": "2024-06-12T06:40:52Z",
+      "mergedBy": "gorryfair",
+      "mergeCommit": {
+        "oid": "000101097753dd188dee84e5a575c6a23d653dee"
+      },
+      "comments": [
+        {
+          "author": "zaheduzzaman",
+          "authorAssociation": "NONE",
+          "body": "Thanks for this.. this looks like very good expression of the expectations on how one can think of evaluating the candidate congestion control algorithms without going into lengthy details.\r\n\r\nFor the sake of clarity, it seems like the word \"overload\" (in the  quoted  sentence below) needs some explanation on what exactly we mean here - I am assuming we are referring to typical congestion scenarios on the path due to packet inflow and out flow mismatch in a bottleneck network node.\r\n\r\n >>\"For many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse their stability and safety across a wide range of conditions, including overload\".\r\n\r\n\r\n\r\n ",
+          "createdAt": "2024-06-12T10:20:36Z",
+          "updatedAt": "2024-06-12T10:20:36Z"
+        },
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "overload,  aka a lot more traffic than the path can handle... rather than typical congestion.  Martin may have suggested wording...",
+          "createdAt": "2024-06-12T19:20:44Z",
+          "updatedAt": "2024-06-12T19:20:44Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOI7aIXc59p5mh",
@@ -8910,6 +8927,19 @@
               "updatedAt": "2024-06-10T20:45:42Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc5907vK",
+          "commit": {
+            "abbreviatedOid": "6d9cf44"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "I am not 100% sure this is necessary but given the AD review I'm happy to include it now.",
+          "createdAt": "2024-06-11T17:12:52Z",
+          "updatedAt": "2024-06-11T17:12:52Z",
+          "comments": []
         }
       ]
     }
