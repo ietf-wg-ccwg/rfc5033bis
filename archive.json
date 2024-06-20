@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-18T00:40:40.676970+00:00",
+  "timestamp": "2024-06-20T00:39:11.601650+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -672,7 +672,7 @@
       "title": "Add high-level motivation and intention for revising",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/16",
       "state": "CLOSED",
-      "author": "theri",
+      "author": "renghardt",
       "authorAssociation": "NONE",
       "assignees": [
         "martinduke"
@@ -693,7 +693,7 @@
       "author": "huitema",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
-        "theri"
+        "renghardt"
       ],
       "labels": [],
       "body": "I just entered a couple of PR, and the final github action fails. I suspect this is an issue of rights and privileges for github actions writing to gh-pages, but only an admin has the rights to check that.",
@@ -702,7 +702,7 @@
       "closedAt": "2023-10-16T15:23:20Z",
       "comments": [
         {
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "body": "I just changed the Workflow permissions to \"Read and Write\" according to [this page](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#configuring-the-default-github_token-permissions) on the organization level.\r\nAccording to the [Deploy to Github pages tutorial](https://github.com/marketplace/actions/deploy-to-github-pages), this is a necessary step to get it to work.\r\n\r\nIs it working now?",
           "createdAt": "2023-09-18T19:31:20Z",
@@ -1007,7 +1007,7 @@
           "updatedAt": "2023-12-13T18:55:09Z"
         },
         {
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "body": "Sorry, just reading through these changes now --\u202fWhy does a PR on multi**path** close an issue on multi**cast**? Am I missing something here?",
           "createdAt": "2023-12-21T15:31:42Z",
@@ -1398,10 +1398,10 @@
       "title": "Add motivation for specifying congestion control algorithms to Introduction?",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/84",
       "state": "CLOSED",
-      "author": "theri",
+      "author": "renghardt",
       "authorAssociation": "NONE",
       "assignees": [
-        "theri"
+        "renghardt"
       ],
       "labels": [],
       "body": "The Introduction correctly points out the following:\r\n> We cannot say now whether the original authors of [[RFC5033](https://github.com/ietf-wg-ccwg/rfc5033bis/issues/new#RFC5033)] expected that developers would be somehow waiting for IETF review before widely deploying a congestion control algorithm over the Internet, but the examples of Cubic and BBR teach us that deployment of new algorithms is not in fact gated by publication of the algorithm as an RFC. Nevertheless, guidelines are important, if only to remind potential inventors and developers of the multiple facets of the congestion control problem.\r\n\r\nThe above text says guidelines for specifications are important, but such guidelines only make sense if there is a specification in the first place.\r\nSo I wonder if it's worth saying a few words here about why it's useful to specify/standardize congestion control algorithms.\r\n\r\nA few thoughts on the benefits of specifying congestion control algorithms:\r\n- Help get a shared understanding between implementers, operators, and other interested parties of how the algorithm works and how it is expected to behave (or explicit discussion of parameters and such which can lead to differences in behavior)\r\n- As a result of the shared understanding:\u202fMake it easier for anyone, not just the initial proponents or main implementers, to point out current issues/limitations or suggest improvements  of a spec that is still in development, and make it easier to converge such changes to a consensus behavior\r\n\r\nThere may be more benefits. \r\nThough I wonder how to best capture the nuance of \"Some documentation or artifacts are better than nothing, but an actual spec is better than just a snapshot for documentation or artifacts\".\r\n\r\nDo people think it'll be useful to add something along these lines to the document?",
@@ -1438,7 +1438,7 @@
       "title": "Required statement in the abstract",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/85",
       "state": "CLOSED",
-      "author": "theri",
+      "author": "renghardt",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
@@ -1462,7 +1462,7 @@
           "updatedAt": "2024-01-31T18:54:28Z"
         },
         {
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "body": "Ok, fine with me.",
           "createdAt": "2024-01-31T19:06:09Z",
@@ -1476,7 +1476,7 @@
       "title": "Flows sharing a bottleneck under Single Algorithm Behavior?",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/86",
       "state": "CLOSED",
-      "author": "theri",
+      "author": "renghardt",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
@@ -1493,7 +1493,7 @@
           "updatedAt": "2024-01-26T08:17:33Z"
         },
         {
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "body": "Sorry, I don't follow, Gorry.\r\nMy question was: Why is text about \"differing algorithms\" under Section 3.1 \"Single Algorithm Behavior\"? And should this text be under Section 3.2 \"Mixed Algorithm Behavior\" instead?",
           "createdAt": "2024-01-26T16:56:35Z",
@@ -5253,7 +5253,7 @@
       "title": "Fix compile issue: *** {{?RFC3168}: unmatched braces \"}\"",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/74",
       "state": "MERGED",
-      "author": "theri",
+      "author": "renghardt",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
@@ -5761,7 +5761,7 @@
           "commit": {
             "abbreviatedOid": "ef37ae9"
           },
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "state": "COMMENTED",
           "body": "",
@@ -5781,7 +5781,7 @@
           "commit": {
             "abbreviatedOid": "ef37ae9"
           },
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "state": "COMMENTED",
           "body": "",
@@ -5801,7 +5801,7 @@
           "commit": {
             "abbreviatedOid": "ef37ae9"
           },
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "state": "COMMENTED",
           "body": "",
@@ -6029,7 +6029,7 @@
       "title": "Add motivation for specifying congestion control algorithms",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/87",
       "state": "MERGED",
-      "author": "theri",
+      "author": "renghardt",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
@@ -6098,7 +6098,7 @@
       "mergeCommit": null,
       "comments": [
         {
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "body": "This makes sense to me, thanks!\r\nOne small point: Should we require that (or mention that it's good if) the new algorithm compete \"fairly\" with itself? That's the only nuance I don't see explicitly mentioned in the text post deletion.",
           "createdAt": "2024-01-31T19:33:45Z",
@@ -6112,7 +6112,7 @@
           "updatedAt": "2024-01-31T19:38:28Z"
         },
         {
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "body": "Oh, right, thanks. Nevermind my question then.",
           "createdAt": "2024-01-31T19:40:08Z",
@@ -6308,7 +6308,7 @@
           "updatedAt": "2024-03-11T15:31:26Z"
         },
         {
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "body": "> Michael originated the PR (via email), so \"yes\". He may have more comments, but I do not know of any.\r\n\r\nAh. Going back to Michael's email titled \"Review of RFC5033bis\" sent on 23. Feb, I see comments on whether to mention DCCP, a suggestion to link to a different reference for Bufferbloat, and a bit about Section 5 having potentially colliding MUSTs and MAYs. I didn't see any discussion of these comments, so that's why I asked.",
           "createdAt": "2024-03-11T15:38:52Z",
@@ -6334,7 +6334,7 @@
           "commit": {
             "abbreviatedOid": "d3d9e25"
           },
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "state": "APPROVED",
           "body": "Thank you for these changes, they look good to me.\r\nDo you consider this PR to completely address all of Michael Welzl's comments?",
@@ -8660,7 +8660,7 @@
           "commit": {
             "abbreviatedOid": "2d16edb"
           },
-          "author": "theri",
+          "author": "renghardt",
           "authorAssociation": "NONE",
           "state": "APPROVED",
           "body": "Thank you, these changes look good to me.",
