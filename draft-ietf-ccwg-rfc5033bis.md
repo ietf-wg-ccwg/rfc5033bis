@@ -613,7 +613,7 @@ Note that evaluation of AQM techniques -- as opposed to their impact on a
 specific proposed congestion control algorithm -- is out of scope of this
 document. {{?RFC7567}} describes design considerations for AQMs.
 
-### Operation with the Envelope set by Network Circuit Breakers {#circuit-breakers}
+## Operation with the Envelope set by Network Circuit Breakers {#circuit-breakers}
 
 Some equipment in the network uses an automatic mechanism to continuously
 monitor the use of resources by a flow or aggregate set of flows {{!RFC8084}}.
@@ -707,7 +707,7 @@ mobility are discussed in more detail in Section 16 of {{Tools}}.
 As an example from an Experimental RFC, response to transient events is
 discussed in {{Section 9.2 of ?RFC4782}}.
 
-### Sudden changes in the Path
+## Sudden changes in the Path
 
 An IETF transport is not tied to a specific Internet path or type of path. The
 set of routers that form a path can and do change with time. This will cause the
