@@ -237,7 +237,7 @@ For many algorithms, an initial evaluation will consider individual protocol mec
 
 Before a proposed congestion control algorithm is published as an Experimental or Standards Track RFC, the community SHOULD gain practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.
 An independent evaluation by multiple teams helps provide assurance that the design meets the evaluation criteria, and can assess typical interactions with other traffic.
-This evaluation could use an emulated laboratory environment or a controlled experiment (within a limited domain or at Internet-scale). 
+This evaluation could use an emulated laboratory environment or a controlled experiment (within a limited domain or at Internet-scale).
 Evidence of results is normally considered by the working group in deciding if a specification is ready for publication and ought to be documented in any request for the working group to publish the specification.
 
 ## Guidelines for Authors about Document Status
