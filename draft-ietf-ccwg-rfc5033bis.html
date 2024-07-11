@@ -17,23 +17,22 @@ provide guidance for considering standardization of a proposed congestion
 control algorithm at the IETF. It obsoletes RFC5033 to reflect changes in the
 congestion control landscape. 
     " name="description">
-<meta content="xml2rfc 3.21.0" name="generator">
+<meta content="xml2rfc 3.22.0" name="generator">
 <meta content="Internet-Draft" name="keyword">
 <meta content="draft-ietf-ccwg-rfc5033bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.21.0
-    Python 3.11.9
+  xml2rfc 3.22.0
+    Python 3.12.3
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
     intervaltree 3.1.0
-    Jinja2 3.1.2
-    lxml 4.9.3
-    platformdirs 4.2.1
+    Jinja2 3.1.4
+    lxml 4.9.4
+    platformdirs 4.2.2
     pycountry 22.3.5
     PyYAML 6.0.1
-    requests 2.31.0
-    setuptools 68.2.2
-    six 1.16.0
+    requests 2.32.3
+    setuptools 69.5.1
     wcwidth 0.2.13
 -->
 <link href="draft-ietf-ccwg-rfc5033bis.xml" rel="alternate" type="application/rfc+xml">
@@ -1033,11 +1032,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">New CC Algorithms</td>
-<td class="right">May 2024</td>
+<td class="right">July 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Duke &amp; Fairhurst</td>
-<td class="center">Expires 30 November 2024</td>
+<td class="center">Expires 12 January 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1053,12 +1052,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5033" class="eref">5033</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-05-29" class="published">29 May 2024</time>
+<time datetime="2024-07-11" class="published">11 July 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Best Current Practice</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-11-30">30 November 2024</time></dd>
+<dd class="expires"><time datetime="2025-01-12">12 January 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1120,7 +1119,7 @@ congestion control landscape.<a href="#section-abstract-1" class="pilcrow">¶</a
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 30 November 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 12 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1156,7 +1155,15 @@ congestion control landscape.<a href="#section-abstract-1" class="pilcrow">¶</a
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-specification-of-requiremen" class="internal xref">Specification of Requirements</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-guidelines-for-authors-abou" class="internal xref">Guidelines for Authors about Document Status</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-guidelines-for-authors" class="internal xref">Guidelines for Authors</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-guidelines-for-authors-abou" class="internal xref">Guidelines for Authors about Evaluation</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-guidelines-for-authors-about" class="internal xref">Guidelines for Authors about Document Status</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-specifying-algorithms-for-u" class="internal xref">Specifying Algorithms for Use in Controlled Environments</a></p>
@@ -1233,40 +1240,36 @@ congestion control landscape.<a href="#section-abstract-1" class="pilcrow">¶</a
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
                 <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-active-queue-management-aqm" class="internal xref">Active Queue Management (AQM)</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1.2.1">
-                    <p id="section-toc.1-1.7.2.1.2.1.1"><a href="#section-7.1.1" class="auto internal xref">7.1.1</a>.  <a href="#name-operation-with-the-envelope" class="internal xref">Operation with the Envelope set by Network Circuit Breakers</a></p>
-</li>
-                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
-                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-paths-with-varying-delay" class="internal xref">Paths with Varying Delay</a></p>
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-operation-with-the-envelope" class="internal xref">Operation with the Envelope set by Network Circuit Breakers</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3">
-                <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-internet-of-things" class="internal xref">Internet of Things</a></p>
+                <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-paths-with-varying-delay" class="internal xref">Paths with Varying Delay</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.4">
-                <p id="section-toc.1-1.7.2.4.1"><a href="#section-7.4" class="auto internal xref">7.4</a>.  <a href="#name-paths-with-high-delay" class="internal xref">Paths with High Delay</a></p>
+                <p id="section-toc.1-1.7.2.4.1"><a href="#section-7.4" class="auto internal xref">7.4</a>.  <a href="#name-internet-of-things" class="internal xref">Internet of Things</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5">
-                <p id="section-toc.1-1.7.2.5.1"><a href="#section-7.5" class="auto internal xref">7.5</a>.  <a href="#name-misbehaving-nodes" class="internal xref">Misbehaving Nodes</a></p>
+                <p id="section-toc.1-1.7.2.5.1"><a href="#section-7.5" class="auto internal xref">7.5</a>.  <a href="#name-paths-with-high-delay" class="internal xref">Paths with High Delay</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.6">
-                <p id="section-toc.1-1.7.2.6.1"><a href="#section-7.6" class="auto internal xref">7.6</a>.  <a href="#name-extreme-packet-reordering" class="internal xref">Extreme Packet Reordering</a></p>
+                <p id="section-toc.1-1.7.2.6.1"><a href="#section-7.6" class="auto internal xref">7.6</a>.  <a href="#name-misbehaving-nodes" class="internal xref">Misbehaving Nodes</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.7">
-                <p id="section-toc.1-1.7.2.7.1"><a href="#section-7.7" class="auto internal xref">7.7</a>.  <a href="#name-transient-events" class="internal xref">Transient Events</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.7.2.1">
-                    <p id="section-toc.1-1.7.2.7.2.1.1"><a href="#section-7.7.1" class="auto internal xref">7.7.1</a>.  <a href="#name-sudden-changes-in-the-path" class="internal xref">Sudden changes in the Path</a></p>
-</li>
-                </ul>
+                <p id="section-toc.1-1.7.2.7.1"><a href="#section-7.7" class="auto internal xref">7.7</a>.  <a href="#name-extreme-packet-reordering" class="internal xref">Extreme Packet Reordering</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.8">
-                <p id="section-toc.1-1.7.2.8.1"><a href="#section-7.8" class="auto internal xref">7.8</a>.  <a href="#name-multipath-transport" class="internal xref">Multipath Transport</a></p>
+                <p id="section-toc.1-1.7.2.8.1"><a href="#section-7.8" class="auto internal xref">7.8</a>.  <a href="#name-transient-events" class="internal xref">Transient Events</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.9">
-                <p id="section-toc.1-1.7.2.9.1"><a href="#section-7.9" class="auto internal xref">7.9</a>.  <a href="#name-data-centers" class="internal xref">Data Centers</a></p>
+                <p id="section-toc.1-1.7.2.9.1"><a href="#section-7.9" class="auto internal xref">7.9</a>.  <a href="#name-sudden-changes-in-the-path" class="internal xref">Sudden changes in the Path</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.10">
+                <p id="section-toc.1-1.7.2.10.1"><a href="#section-7.10" class="auto internal xref">7.10</a>. <a href="#name-multipath-transport" class="internal xref">Multipath Transport</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.11">
+                <p id="section-toc.1-1.7.2.11.1"><a href="#section-7.11" class="auto internal xref">7.11</a>. <a href="#name-data-centers" class="internal xref">Data Centers</a></p>
 </li>
             </ul>
 </li>
@@ -1446,34 +1449,52 @@ document are to be interpreted as described in BCP 14 <span>[<a href="#RFC2119" 
 when, and only when, they appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="guidelines-for-authors-about-document-status">
+<div id="guidelines-for-authors">
 <section id="section-3">
-      <h2 id="name-guidelines-for-authors-abou">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-guidelines-for-authors-abou" class="section-name selfRef">Guidelines for Authors about Document Status</a>
+      <h2 id="name-guidelines-for-authors">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-guidelines-for-authors" class="section-name selfRef">Guidelines for Authors</a>
       </h2>
-<p id="section-3-1">This document applies to proposals for congestion control algorithms that
+<div id="guidelines-for-authors-about-evaluation">
+<section id="section-3.1">
+        <h3 id="name-guidelines-for-authors-abou">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-guidelines-for-authors-abou" class="section-name selfRef">Guidelines for Authors about Evaluation</a>
+        </h3>
+<p id="section-3.1-1">This document does not specify specific evaluation methods, short of internet-scale deployment and measurement, to test the criteria described below. There are multiple possible approaches to evaluation. Each has a role, and the most appropriate approach depends on the criteria being evaluated and the maturity of the specification.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-2">For many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse their stability and safety across a wide range of conditions, including overload.  For example, <span>[<a href="#RFC8869" class="cite xref">RFC8869</a>]</span> describes evaluation test cases for interactive real-time media over wireless networks. Such results could also be published or discussed in IRTF research groups, such as ICCRG and MAPRG.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
+<p id="section-3.1-3">Before a proposed congestion control algorithm is published as an Experimental or Standards Track RFC, the community SHOULD gain practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.
+An independent evaluation by multiple teams helps provide assurance that the design meets the evaluation criteria, and can assess typical interactions with other traffic.
+This evaluation could use an emulated laboratory environment or a controlled experiment (within a limited domain or at Internet-scale).
+Evidence of results is normally considered by the working group in deciding if a specification is ready for publication and ought to be documented in any request for the working group to publish the specification.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="guidelines-for-authors-about-document-status">
+<section id="section-3.2">
+        <h3 id="name-guidelines-for-authors-about">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-guidelines-for-authors-about" class="section-name selfRef">Guidelines for Authors about Document Status</a>
+        </h3>
+<p id="section-3.2-1">This document applies to proposals for congestion control algorithms that
 seek Experimental or Standards Track status. Evaluation of both cases involves
 the same questions, but with different expectations for both the answers and the
-degree of certainty of those answers.<a href="#section-3-1" class="pilcrow">¶</a></p>
-<p id="section-3-2">Congestion control algorithms without empirical evidence of Internet-scale
-deployment SHOULD seek Experimental status.<a href="#section-3-2" class="pilcrow">¶</a></p>
-<p id="section-3-3">Congestion control algorithms with a
+degree of certainty of those answers.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">Congestion control algorithms without empirical evidence of Internet-scale
+deployment SHOULD seek Experimental status.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.2-3">Congestion control algorithms with a
 record of measured Internet-scale deployment MAY directly seek the Standards
 Track if there is solid data that reflects that it is safe, and the design is
 stable, guided by the considerations in <a href="#general-use" class="auto internal xref">Section 6</a>. However, the existence
-of this data does not waive the other considerations in this document.<a href="#section-3-3" class="pilcrow">¶</a></p>
-<p id="section-3-4">Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
+of this data does not waive the other considerations in this document.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
+<p id="section-3.2-4">Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
 only be deployed in situations where they are being actively measured, and where
-it is possible to deactivate them if there are signs of pathological behavior.<a href="#section-3-4" class="pilcrow">¶</a></p>
-<p id="section-3-5">Each published congestion control algorithm is REQUIRED to include a statement
+it is possible to deactivate them if there are signs of pathological behavior.<a href="#section-3.2-4" class="pilcrow">¶</a></p>
+<p id="section-3.2-5">Each published congestion control algorithm is REQUIRED to include a statement
 in the abstract indicating whether or not there is IETF consensus that the
 proposed congestion control algorithm is considered safe for use on the
 Internet. Each published algorithm is also required to include a statement in
 the abstract describing environments where the protocol is not recommended for
 deployment. There can be environments where the congestion control algorithm is
 deemed safe for use, but it is still is not recommended for use because it
-does not perform well for the user.<a href="#section-3-5" class="pilcrow">¶</a></p>
-<p id="section-3-6">As examples of such statements, <span>[<a href="#RFC3649" class="cite xref">RFC3649</a>]</span> specifies HighSpeed TCP and
+does not perform well for the user.<a href="#section-3.2-5" class="pilcrow">¶</a></p>
+<p id="section-3.2-6">As examples of such statements, <span>[<a href="#RFC3649" class="cite xref">RFC3649</a>]</span> specifies HighSpeed TCP and
 includes a statement in the abstract stating that the proposed congestion
 control algorithm is Experimental, but may be deployed in the Internet. In
 contrast, the Quick-Start document <span>[<a href="#RFC4782" class="cite xref">RFC4782</a>]</span> includes a paragraph in the
@@ -1486,14 +1507,16 @@ Quick-Start request could be dropped in the network; in such an environment,
 Quick-Start would not be unsafe to deploy, but deployment is not recommended
 because it could lead to unnecessary delays for the connections attempting to
 use Quick-Start. The Quick-Start method is discussed as an example in
-<span>[<a href="#RFC9049" class="cite xref">RFC9049</a>]</span>.<a href="#section-3-6" class="pilcrow">¶</a></p>
-<p id="section-3-7">Although out of the scope of this document, proponents of a new algorithm could
+<span>[<a href="#RFC9049" class="cite xref">RFC9049</a>]</span>.<a href="#section-3.2-6" class="pilcrow">¶</a></p>
+<p id="section-3.2-7">Although out of the scope of this document, proponents of a new algorithm could
 alternatively seek publication as an Informational or Experimental RFC via the
 Internet Research Task Force (IRTF). In general, these algorithms are expected
 to be less mature than ones that follow the procedures in this document. Authors
 documenting deployed congestion control algorithms that cannot be changed by
 IETF or IRTF review are invited to publish as an Informational RFC via the
-Independent Stream Editor (ISE).<a href="#section-3-7" class="pilcrow">¶</a></p>
+Independent Stream Editor (ISE).<a href="#section-3.2-7" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="controlled-environments">
@@ -1709,7 +1732,7 @@ can be conducted where possible.<a href="#section-5.2.2-4" class="pilcrow">¶</a
 Code Points (DSCP) or other mechanisms, which can substantially reduce the
 interplay with other traffic. However, a proposal targeting general Internet use
 can not assume this is always the case.<a href="#section-5.2.2-5" class="pilcrow">¶</a></p>
-<p id="section-5.2.2-6"><a href="#circuit-breakers" class="auto internal xref">Section 7.1.1</a> describes the impact of network transport circuit breaker
+<p id="section-5.2.2-6"><a href="#circuit-breakers" class="auto internal xref">Section 7.2</a> describes the impact of network transport circuit breaker
 algorithms. <span>[<a href="#RFC8083" class="cite xref">RFC8083</a>]</span> also defines a minimal set of RTP circuit breakers that
 operate end-to-end across a path. This identifies conditions under which a sender needs to
 stop transmitting media data to protect the network from excessive congestion.
@@ -1876,33 +1899,33 @@ algorithm conforms with the requirements of the ECT codepoint that was used.<a h
 <p id="section-7.1-4">Note that evaluation of AQM techniques -- as opposed to their impact on a
 specific proposed congestion control algorithm -- is out of scope of this
 document. <span>[<a href="#RFC7567" class="cite xref">RFC7567</a>]</span> describes design considerations for AQMs.<a href="#section-7.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
 <div id="circuit-breakers">
-<section id="section-7.1.1">
-          <h4 id="name-operation-with-the-envelope">
-<a href="#section-7.1.1" class="section-number selfRef">7.1.1. </a><a href="#name-operation-with-the-envelope" class="section-name selfRef">Operation with the Envelope set by Network Circuit Breakers</a>
-          </h4>
-<p id="section-7.1.1-1">Some equipment in the network uses an automatic mechanism to continuously
+<section id="section-7.2">
+        <h3 id="name-operation-with-the-envelope">
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-operation-with-the-envelope" class="section-name selfRef">Operation with the Envelope set by Network Circuit Breakers</a>
+        </h3>
+<p id="section-7.2-1">Some equipment in the network uses an automatic mechanism to continuously
 monitor the use of resources by a flow or aggregate set of flows <span>[<a href="#RFC8084" class="cite xref">RFC8084</a>]</span>.
 Such a network transport circuit breaker can automatically detect excessive
 congestion, and when detected, it can terminate (or significantly reduce the
 rate of) the flow(s). A well-designed congestion control algorithm ought to
 react before the flow uses excessive resources, and therefore will operate
-within the envelope set by network transport circuit breaker algorithms.<a href="#section-7.1.1-1" class="pilcrow">¶</a></p>
-</section>
-</div>
+within the envelope set by network transport circuit breaker algorithms.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="delay">
-<section id="section-7.2">
+<section id="section-7.3">
         <h3 id="name-paths-with-varying-delay">
-<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-paths-with-varying-delay" class="section-name selfRef">Paths with Varying Delay</a>
+<a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-paths-with-varying-delay" class="section-name selfRef">Paths with Varying Delay</a>
         </h3>
-<p id="section-7.2-1">An Internet Path can include simple links, where the minimum delay is the
+<p id="section-7.3-1">An Internet Path can include simple links, where the minimum delay is the
 propagation delay, and any additional delay can be attributed to link buffering.
 This cannot be assumed. An Internet Path can also include complex subnetworks
 where the minimum delay changes over various time scales, resulting in a non-
-stationary minimum delay.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
-<p id="section-7.2-2">This occurs when a subnet changes the forwarding path to optimise capacity,
+stationary minimum delay.<a href="#section-7.3-1" class="pilcrow">¶</a></p>
+<p id="section-7.3-2">This occurs when a subnet changes the forwarding path to optimise capacity,
 resilience, etc. It could also arise when a subnet uses a capacity management
 method where the available resource is periodically distributed among the active
 nodes. A node might then have to buffer data until an assigned transmission
@@ -1913,110 +1936,110 @@ transmission of traffic with a lower class. In these cases, the delay varies as
 a function of external factors, and attempting to infer congestion from an
 increase in the delay results in reduced throughput. This variation in the
 delay over short timescales (jitter) might not be distinguishable from jitter
-that results from other effects.<a href="#section-7.2-2" class="pilcrow">¶</a></p>
-<p id="section-7.2-3">A proposed congestion control algorithm SHOULD be evaluated to ensure its
-operation is robust when there is a significant change in the minimum delay.<a href="#section-7.2-3" class="pilcrow">¶</a></p>
+that results from other effects.<a href="#section-7.3-2" class="pilcrow">¶</a></p>
+<p id="section-7.3-3">A proposed congestion control algorithm SHOULD be evaluated to ensure its
+operation is robust when there is a significant change in the minimum delay.<a href="#section-7.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="internet-of-things">
-<section id="section-7.3">
+<section id="section-7.4">
         <h3 id="name-internet-of-things">
-<a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-internet-of-things" class="section-name selfRef">Internet of Things</a>
+<a href="#section-7.4" class="section-number selfRef">7.4. </a><a href="#name-internet-of-things" class="section-name selfRef">Internet of Things</a>
         </h3>
-<p id="section-7.3-1">The "Internet of Things" (IoT) is a broad concept, but when evaluating a
+<p id="section-7.4-1">The "Internet of Things" (IoT) is a broad concept, but when evaluating a
 proposed congestion control algorithm, it is often associated with unique
 characteristics:
 IoT nodes might be more constrained in power, CPU, or other parameters than
 conventional Internet hosts. This might place limits on the complexity of any
 given algorithm. These power and radio constraints might make the volume of
-control packets in a given algorithm a key evaluation metric.<a href="#section-7.3-1" class="pilcrow">¶</a></p>
-<p id="section-7.3-2">Extremely low-power links can lead to very low throughput and a low bandwidth-
-delay product, well below the standard operating range of most Internet flows.<a href="#section-7.3-2" class="pilcrow">¶</a></p>
-<p id="section-7.3-3">Furthermore, many IoT applications do not a have a human in the loop, and
+control packets in a given algorithm a key evaluation metric.<a href="#section-7.4-1" class="pilcrow">¶</a></p>
+<p id="section-7.4-2">Extremely low-power links can lead to very low throughput and a low bandwidth-
+delay product, well below the standard operating range of most Internet flows.<a href="#section-7.4-2" class="pilcrow">¶</a></p>
+<p id="section-7.4-3">Furthermore, many IoT applications do not a have a human in the loop, and
 therefore can have weaker latency constraints because they do not relate to a
 user experience. Congestion control algorithm can still need to share the
-path with other flows with different constraints.<a href="#section-7.3-3" class="pilcrow">¶</a></p>
+path with other flows with different constraints.<a href="#section-7.4-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="paths-with-high-delay">
-<section id="section-7.4">
+<section id="section-7.5">
         <h3 id="name-paths-with-high-delay">
-<a href="#section-7.4" class="section-number selfRef">7.4. </a><a href="#name-paths-with-high-delay" class="section-name selfRef">Paths with High Delay</a>
+<a href="#section-7.5" class="section-number selfRef">7.5. </a><a href="#name-paths-with-high-delay" class="section-name selfRef">Paths with High Delay</a>
         </h3>
-<p id="section-7.4-1">A proposed congestion control algorithm ought not to presume that all general
+<p id="section-7.5-1">A proposed congestion control algorithm ought not to presume that all general
 Internet paths have a low delay. Some paths include links that contribute much
 more delay than for a typical Internet path. Satellite links often have delays
 longer than typical for wired paths <span>[<a href="#RFC2488" class="cite xref">RFC2488</a>]</span> and high delay bandwidth
-products <span>[<a href="#RFC3649" class="cite xref">RFC3649</a>]</span>.<a href="#section-7.4-1" class="pilcrow">¶</a></p>
-<p id="section-7.4-2">Paths can also present a variable delay as described in <a href="#delay" class="auto internal xref">Section 7.2</a>.<a href="#section-7.4-2" class="pilcrow">¶</a></p>
+products <span>[<a href="#RFC3649" class="cite xref">RFC3649</a>]</span>.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
+<p id="section-7.5-2">Paths can also present a variable delay as described in <a href="#delay" class="auto internal xref">Section 7.3</a>.<a href="#section-7.5-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="misbehaving-nodes">
-<section id="section-7.5">
+<section id="section-7.6">
         <h3 id="name-misbehaving-nodes">
-<a href="#section-7.5" class="section-number selfRef">7.5. </a><a href="#name-misbehaving-nodes" class="section-name selfRef">Misbehaving Nodes</a>
+<a href="#section-7.6" class="section-number selfRef">7.6. </a><a href="#name-misbehaving-nodes" class="section-name selfRef">Misbehaving Nodes</a>
         </h3>
-<p id="section-7.5-1">A proposed congestion control algorithm SHOULD explore how the algorithm
+<p id="section-7.6-1">A proposed congestion control algorithm SHOULD explore how the algorithm
 performs with non-compliant senders, receivers, or routers.  In addition, the
 proposal should explore how a proposed congestion control algorithm performs
 with outside attackers.  This can be particularly important for proposed
 congestion control algorithms that involve explicit feedback from routers along
-the path.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
-<p id="section-7.5-2">As an example from an Experimental RFC, performance with misbehaving nodes and
+the path.<a href="#section-7.6-1" class="pilcrow">¶</a></p>
+<p id="section-7.6-2">As an example from an Experimental RFC, performance with misbehaving nodes and
 outside attackers is discussed in Sections 9.4, 9.5, and 9.6 of <span>[<a href="#RFC4782" class="cite xref">RFC4782</a>]</span>.
 This includes discussion of misbehaving senders and receivers; collusion between
 misbehaving routers; misbehaving middleboxes; and the potential use of Quick-
-Start to attack routers or to tie up available Quick-Start bandwidth.<a href="#section-7.5-2" class="pilcrow">¶</a></p>
+Start to attack routers or to tie up available Quick-Start bandwidth.<a href="#section-7.6-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="extreme-packet-reordering">
-<section id="section-7.6">
+<section id="section-7.7">
         <h3 id="name-extreme-packet-reordering">
-<a href="#section-7.6" class="section-number selfRef">7.6. </a><a href="#name-extreme-packet-reordering" class="section-name selfRef">Extreme Packet Reordering</a>
+<a href="#section-7.7" class="section-number selfRef">7.7. </a><a href="#name-extreme-packet-reordering" class="section-name selfRef">Extreme Packet Reordering</a>
         </h3>
-<p id="section-7.6-1">A proposed congestion control algorithm ought not to presume that all general
+<p id="section-7.7-1">A proposed congestion control algorithm ought not to presume that all general
 Internet paths reliably deliver packets in order. <span>[<a href="#RFC4653" class="cite xref">RFC4653</a>]</span> discusses the
-effect of extreme packet reordering.<a href="#section-7.6-1" class="pilcrow">¶</a></p>
+effect of extreme packet reordering.<a href="#section-7.7-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="transient-events">
-<section id="section-7.7">
+<section id="section-7.8">
         <h3 id="name-transient-events">
-<a href="#section-7.7" class="section-number selfRef">7.7. </a><a href="#name-transient-events" class="section-name selfRef">Transient Events</a>
+<a href="#section-7.8" class="section-number selfRef">7.8. </a><a href="#name-transient-events" class="section-name selfRef">Transient Events</a>
         </h3>
-<p id="section-7.7-1">A proposed congestion control algorithm SHOULD consider how the proposed
+<p id="section-7.8-1">A proposed congestion control algorithm SHOULD consider how the proposed
 congestion control algorithm would perform in the presence of transient events
 such as sudden onset of congestion, a routing change, or a mobility event.
 Routing changes, link disconnections, intermittent link connectivity, and
-mobility are discussed in more detail in Section 16 of <span>[<a href="#Tools" class="cite xref">Tools</a>]</span>.<a href="#section-7.7-1" class="pilcrow">¶</a></p>
-<p id="section-7.7-2">As an example from an Experimental RFC, response to transient events is
-discussed in <span><a href="https://rfc-editor.org/rfc/rfc4782#section-9.2" class="relref">Section 9.2</a> of [<a href="#RFC4782" class="cite xref">RFC4782</a>]</span>.<a href="#section-7.7-2" class="pilcrow">¶</a></p>
+mobility are discussed in more detail in Section 16 of <span>[<a href="#Tools" class="cite xref">Tools</a>]</span>.<a href="#section-7.8-1" class="pilcrow">¶</a></p>
+<p id="section-7.8-2">As an example from an Experimental RFC, response to transient events is
+discussed in <span><a href="https://rfc-editor.org/rfc/rfc4782#section-9.2" class="relref">Section 9.2</a> of [<a href="#RFC4782" class="cite xref">RFC4782</a>]</span>.<a href="#section-7.8-2" class="pilcrow">¶</a></p>
+</section>
+</div>
 <div id="sudden-changes-in-the-path">
-<section id="section-7.7.1">
-          <h4 id="name-sudden-changes-in-the-path">
-<a href="#section-7.7.1" class="section-number selfRef">7.7.1. </a><a href="#name-sudden-changes-in-the-path" class="section-name selfRef">Sudden changes in the Path</a>
-          </h4>
-<p id="section-7.7.1-1">An IETF transport is not tied to a specific Internet path or type of path. The
+<section id="section-7.9">
+        <h3 id="name-sudden-changes-in-the-path">
+<a href="#section-7.9" class="section-number selfRef">7.9. </a><a href="#name-sudden-changes-in-the-path" class="section-name selfRef">Sudden changes in the Path</a>
+        </h3>
+<p id="section-7.9-1">An IETF transport is not tied to a specific Internet path or type of path. The
 set of routers that form a path can and do change with time. This will cause the
 properties of the path to change with respect to time. A proposed congestion
 control algorithm MUST evaluate the impact of changes in the path, and be robust
 to changes in path characteristics on the interval of common Internet re-routing
-intervals.<a href="#section-7.7.1-1" class="pilcrow">¶</a></p>
-</section>
-</div>
+intervals.<a href="#section-7.9-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="multipath-transport">
-<section id="section-7.8">
+<section id="section-7.10">
         <h3 id="name-multipath-transport">
-<a href="#section-7.8" class="section-number selfRef">7.8. </a><a href="#name-multipath-transport" class="section-name selfRef">Multipath Transport</a>
+<a href="#section-7.10" class="section-number selfRef">7.10. </a><a href="#name-multipath-transport" class="section-name selfRef">Multipath Transport</a>
         </h3>
-<p id="section-7.8-1">Multipath transport protocols permit more than one path to be differentiated and
+<p id="section-7.10-1">Multipath transport protocols permit more than one path to be differentiated and
 used by a single connection at the sender. A multipath sender can schedule which
 packets travel on which of its active paths. This enables a tradeoff in
 timeliness and reliability. There are various ways that multipath techniques can
-be used.<a href="#section-7.8-1" class="pilcrow">¶</a></p>
-<p id="section-7.8-2">One example use is to provide fail-over from one path to another when the
+be used.<a href="#section-7.10-1" class="pilcrow">¶</a></p>
+<p id="section-7.10-2">One example use is to provide fail-over from one path to another when the
 original path is no longer viable, or provides inferior performance.  Designs
 need to independently track the congestion state of each path, and demonstrate
 independent congestion control for each path being used. Authors of a proposed
@@ -2024,8 +2047,8 @@ multipath congestion control algorithm that implements path fail-over MUST
 evaluate the harm resulting from a change in the path, and show that this does
 not result in flow starvation. Synchronisation of failover (e.g., where multiple
 flows change their path on similar timeframes) can also contribute to harm
-and/or reduce fairness. These effects also ought to be evaluated.<a href="#section-7.8-2" class="pilcrow">¶</a></p>
-<p id="section-7.8-3">Another example use is concurrent multipath, where the transport protocol
+and/or reduce fairness. These effects also ought to be evaluated.<a href="#section-7.10-2" class="pilcrow">¶</a></p>
+<p id="section-7.10-3">Another example use is concurrent multipath, where the transport protocol
 simultaneously schedules a flow to aggregate the capacity across multiple paths.
 The Internet provides no guarantee that different paths (e.g., using different
 endpoint addresses) are disjoint. This introduces additional implications: A congestion
@@ -2035,28 +2058,28 @@ are coupled between different paths, such as an overall capacity limit). A propo
 SHOULD consider the potential for harm to other flows. Synchronisation of
 congestion control mechanisms (e.g., where multiple flows change their behaviour
 on similar timeframes) can also contribute to harm and/or reduce fairness. These
-effects also ought to be evaluated.<a href="#section-7.8-3" class="pilcrow">¶</a></p>
-<p id="section-7.8-4">At the time of writing (2024), there are currently no Standards Track RFCs for
+effects also ought to be evaluated.<a href="#section-7.10-3" class="pilcrow">¶</a></p>
+<p id="section-7.10-4">At the time of writing (2024), there are currently no Standards Track RFCs for
 concurrent multipath, but there is an Experimental RFC <span>[<a href="#RFC6356" class="cite xref">RFC6356</a>]</span> that
 specifies a concurrent multipath congestion control algorithm for MPTCP
-<span>[<a href="#RFC8684" class="cite xref">RFC8684</a>]</span>.<a href="#section-7.8-4" class="pilcrow">¶</a></p>
+<span>[<a href="#RFC8684" class="cite xref">RFC8684</a>]</span>.<a href="#section-7.10-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="data-centers">
-<section id="section-7.9">
+<section id="section-7.11">
         <h3 id="name-data-centers">
-<a href="#section-7.9" class="section-number selfRef">7.9. </a><a href="#name-data-centers" class="section-name selfRef">Data Centers</a>
+<a href="#section-7.11" class="section-number selfRef">7.11. </a><a href="#name-data-centers" class="section-name selfRef">Data Centers</a>
         </h3>
-<p id="section-7.9-1">Data centers are characterized by very low latencies (&lt; 2 ms). Many workloads
+<p id="section-7.11-1">Data centers are characterized by very low latencies (&lt; 2 ms). Many workloads
 involve bursty traffic where many nodes complete a task at the same time. As a
 controlled environment, data centers often deploy fabrics that employ rich
 signalling from switches to endpoints. Furthermore, the operator can often limit
-the number of operating congestion control algorithms.<a href="#section-7.9-1" class="pilcrow">¶</a></p>
-<p id="section-7.9-2">For these reasons, data center congestion controls are often distinct from those
+the number of operating congestion control algorithms.<a href="#section-7.11-1" class="pilcrow">¶</a></p>
+<p id="section-7.11-2">For these reasons, data center congestion controls are often distinct from those
 running elsewhere on the Internet (see <a href="#controlled-environments" class="auto internal xref">Section 4</a>.  A proposed
 congestion control need not coexist well with all other algorithms if it is
 intended for data centers, but the proposal SHOULD indicate which are expected
-to safely coexist with it.<a href="#section-7.9-2" class="pilcrow">¶</a></p>
+to safely coexist with it.<a href="#section-7.11-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2262,6 +2285,10 @@ issues that may arise.<a href="#section-8-2" class="pilcrow">¶</a></p>
 <dt id="RFC8868">[RFC8868]</dt>
         <dd>
 <span class="refAuthor">Singh, V.</span>, <span class="refAuthor">Ott, J.</span>, and <span class="refAuthor">S. Holmer</span>, <span class="refTitle">"Evaluating Congestion Control for Interactive Real-Time Media"</span>, <span class="seriesInfo">RFC 8868</span>, <span class="seriesInfo">DOI 10.17487/RFC8868</span>, <time datetime="2021-01" class="refDate">January 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8868">https://www.rfc-editor.org/rfc/rfc8868</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8869">[RFC8869]</dt>
+        <dd>
+<span class="refAuthor">Sarker, Z.</span>, <span class="refAuthor">Zhu, X.</span>, and <span class="refAuthor">J. Fu</span>, <span class="refTitle">"Evaluation Test Cases for Interactive Real-Time Media over Wireless Networks"</span>, <span class="seriesInfo">RFC 8869</span>, <span class="seriesInfo">DOI 10.17487/RFC8869</span>, <time datetime="2021-01" class="refDate">January 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8869">https://www.rfc-editor.org/rfc/rfc8869</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9000">[RFC9000]</dt>
         <dd>

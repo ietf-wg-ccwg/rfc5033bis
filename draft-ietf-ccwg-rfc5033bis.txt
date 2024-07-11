@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 30 November 2024                                    29 May 2024
+Expires: 12 January 2025                                    11 July 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 November 2024.
+   This Internet-Draft will expire on 12 January 2025.
 
 Copyright Notice
 
@@ -75,7 +75,9 @@ Table of Contents
 
    1.  Introduction
    2.  Specification of Requirements
-   3.  Guidelines for Authors about Document Status
+   3.  Guidelines for Authors
+     3.1.  Guidelines for Authors about Evaluation
+     3.2.  Guidelines for Authors about Document Status
    4.  Specifying Algorithms for Use in Controlled Environments
    5.  Evaluation Criteria
      5.1.  Single Algorithm Behavior
@@ -99,17 +101,16 @@ Table of Contents
      6.4.  Wireless Paths
    7.  Special Cases
      7.1.  Active Queue Management (AQM)
-       7.1.1.  Operation with the Envelope set by Network Circuit
-               Breakers
-     7.2.  Paths with Varying Delay
-     7.3.  Internet of Things
-     7.4.  Paths with High Delay
-     7.5.  Misbehaving Nodes
-     7.6.  Extreme Packet Reordering
-     7.7.  Transient Events
-       7.7.1.  Sudden changes in the Path
-     7.8.  Multipath Transport
-     7.9.  Data Centers
+     7.2.  Operation with the Envelope set by Network Circuit Breakers
+     7.3.  Paths with Varying Delay
+     7.4.  Internet of Things
+     7.5.  Paths with High Delay
+     7.6.  Misbehaving Nodes
+     7.7.  Extreme Packet Reordering
+     7.8.  Transient Events
+     7.9.  Sudden changes in the Path
+     7.10. Multipath Transport
+     7.11. Data Centers
    8.  Security Considerations
    9.  IANA Considerations
    10. References
@@ -263,7 +264,41 @@ Table of Contents
    14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-3.  Guidelines for Authors about Document Status
+3.  Guidelines for Authors
+
+3.1.  Guidelines for Authors about Evaluation
+
+   This document does not specify specific evaluation methods, short of
+   internet-scale deployment and measurement, to test the criteria
+   described below.  There are multiple possible approaches to
+   evaluation.  Each has a role, and the most appropriate approach
+   depends on the criteria being evaluated and the maturity of the
+   specification.
+
+   For many algorithms, an initial evaluation will consider individual
+   protocol mechanisms in a simulator to analyse their stability and
+   safety across a wide range of conditions, including overload.  For
+   example, [RFC8869] describes evaluation test cases for interactive
+   real-time media over wireless networks.  Such results could also be
+   published or discussed in IRTF research groups, such as ICCRG and
+   MAPRG.
+
+   Before a proposed congestion control algorithm is published as an
+   Experimental or Standards Track RFC, the community SHOULD gain
+   practical experience with implementation and experience using the
+   algorithm.  Where there is implementation by independent teams, this
+   can help provide assurance that a specification has avoided
+   assumptions or ambiguity.  An independent evaluation by multiple
+   teams helps provide assurance that the design meets the evaluation
+   criteria, and can assess typical interactions with other traffic.
+   This evaluation could use an emulated laboratory environment or a
+   controlled experiment (within a limited domain or at Internet-scale).
+   Evidence of results is normally considered by the working group in
+   deciding if a specification is ready for publication and ought to be
+   documented in any request for the working group to publish the
+   specification.
+
+3.2.  Guidelines for Authors about Document Status
 
    This document applies to proposals for congestion control algorithms
    that seek Experimental or Standards Track status.  Evaluation of both
@@ -529,12 +564,12 @@ Table of Contents
    a proposal targeting general Internet use can not assume this is
    always the case.
 
-   Section 7.1.1 describes the impact of network transport circuit
-   breaker algorithms.  [RFC8083] also defines a minimal set of RTP
-   circuit breakers that operate end-to-end across a path.  This
-   identifies conditions under which a sender needs to stop transmitting
-   media data to protect the network from excessive congestion.  It is
-   expected that, in the absence of long-lived excessive congestion, RTP
+   Section 7.2 describes the impact of network transport circuit breaker
+   algorithms.  [RFC8083] also defines a minimal set of RTP circuit
+   breakers that operate end-to-end across a path.  This identifies
+   conditions under which a sender needs to stop transmitting media data
+   to protect the network from excessive congestion.  It is expected
+   that, in the absence of long-lived excessive congestion, RTP
    applications running on best-effort IP networks will be able to
    operate without triggering these circuit breakers.
 
@@ -669,7 +704,7 @@ Table of Contents
    scope of this document.  [RFC7567] describes design considerations
    for AQMs.
 
-7.1.1.  Operation with the Envelope set by Network Circuit Breakers
+7.2.  Operation with the Envelope set by Network Circuit Breakers
 
    Some equipment in the network uses an automatic mechanism to
    continuously monitor the use of resources by a flow or aggregate set
@@ -680,7 +715,7 @@ Table of Contents
    uses excessive resources, and therefore will operate within the
    envelope set by network transport circuit breaker algorithms.
 
-7.2.  Paths with Varying Delay
+7.3.  Paths with Varying Delay
 
    An Internet Path can include simple links, where the minimum delay is
    the propagation delay, and any additional delay can be attributed to
@@ -707,7 +742,7 @@ Table of Contents
    its operation is robust when there is a significant change in the
    minimum delay.
 
-7.3.  Internet of Things
+7.4.  Internet of Things
 
    The "Internet of Things" (IoT) is a broad concept, but when
    evaluating a proposed congestion control algorithm, it is often
@@ -727,7 +762,7 @@ Table of Contents
    relate to a user experience.  Congestion control algorithm can still
    need to share the path with other flows with different constraints.
 
-7.4.  Paths with High Delay
+7.5.  Paths with High Delay
 
    A proposed congestion control algorithm ought not to presume that all
    general Internet paths have a low delay.  Some paths include links
@@ -735,9 +770,9 @@ Table of Contents
    Satellite links often have delays longer than typical for wired paths
    [RFC2488] and high delay bandwidth products [RFC3649].
 
-   Paths can also present a variable delay as described in Section 7.2.
+   Paths can also present a variable delay as described in Section 7.3.
 
-7.5.  Misbehaving Nodes
+7.6.  Misbehaving Nodes
 
    A proposed congestion control algorithm SHOULD explore how the
    algorithm performs with non-compliant senders, receivers, or routers.
@@ -753,13 +788,13 @@ Table of Contents
    middleboxes; and the potential use of Quick- Start to attack routers
    or to tie up available Quick-Start bandwidth.
 
-7.6.  Extreme Packet Reordering
+7.7.  Extreme Packet Reordering
 
    A proposed congestion control algorithm ought not to presume that all
    general Internet paths reliably deliver packets in order.  [RFC4653]
    discusses the effect of extreme packet reordering.
 
-7.7.  Transient Events
+7.8.  Transient Events
 
    A proposed congestion control algorithm SHOULD consider how the
    proposed congestion control algorithm would perform in the presence
@@ -771,7 +806,7 @@ Table of Contents
    As an example from an Experimental RFC, response to transient events
    is discussed in Section 9.2 of [RFC4782].
 
-7.7.1.  Sudden changes in the Path
+7.9.  Sudden changes in the Path
 
    An IETF transport is not tied to a specific Internet path or type of
    path.  The set of routers that form a path can and do change with
@@ -781,7 +816,7 @@ Table of Contents
    in path characteristics on the interval of common Internet re-routing
    intervals.
 
-7.8.  Multipath Transport
+7.10.  Multipath Transport
 
    Multipath transport protocols permit more than one path to be
    differentiated and used by a single connection at the sender.  A
@@ -820,7 +855,7 @@ Table of Contents
    [RFC6356] that specifies a concurrent multipath congestion control
    algorithm for MPTCP [RFC8684].
 
-7.9.  Data Centers
+7.11.  Data Centers
 
    Data centers are characterized by very low latencies (< 2 ms).  Many
    workloads involve bursty traffic where many nodes complete a task at
@@ -1057,6 +1092,11 @@ Table of Contents
               Control for Interactive Real-Time Media", RFC 8868,
               DOI 10.17487/RFC8868, January 2021,
               <https://www.rfc-editor.org/rfc/rfc8868>.
+
+   [RFC8869]  Sarker, Z., Zhu, X., and J. Fu, "Evaluation Test Cases for
+              Interactive Real-Time Media over Wireless Networks",
+              RFC 8869, DOI 10.17487/RFC8869, January 2021,
+              <https://www.rfc-editor.org/rfc/rfc8869>.
 
    [RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
               Multiplexed and Secure Transport", RFC 9000,
