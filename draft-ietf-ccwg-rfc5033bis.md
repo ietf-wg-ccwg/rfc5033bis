@@ -237,7 +237,7 @@ For many algorithms, an initial evaluation will consider individual protocol mec
 
 Before a proposed congestion control algorithm is published as an Experimental or Standards Track RFC, the community SHOULD gain practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.
 An independent evaluation by multiple teams helps provide assurance that the design meets the evaluation criteria, and can assess typical interactions with other traffic.
-This evaluation could use an emulated laboratory environment or a controlled experiment (within a limited domain or at Internet-scale). 
+This evaluation could use an emulated laboratory environment or a controlled experiment (within a limited domain or at Internet-scale).
 Evidence of results is normally considered by the working group in deciding if a specification is ready for publication and ought to be documented in any request for the working group to publish the specification.
 
 ## Guidelines for Authors about Document Status
@@ -613,7 +613,7 @@ Note that evaluation of AQM techniques -- as opposed to their impact on a
 specific proposed congestion control algorithm -- is out of scope of this
 document. {{?RFC7567}} describes design considerations for AQMs.
 
-### Operation with the Envelope set by Network Circuit Breakers {#circuit-breakers}
+## Operation with the Envelope set by Network Circuit Breakers {#circuit-breakers}
 
 Some equipment in the network uses an automatic mechanism to continuously
 monitor the use of resources by a flow or aggregate set of flows {{!RFC8084}}.
@@ -707,7 +707,7 @@ mobility are discussed in more detail in Section 16 of {{Tools}}.
 As an example from an Experimental RFC, response to transient events is
 discussed in {{Section 9.2 of ?RFC4782}}.
 
-### Sudden changes in the Path
+## Sudden changes in the Path
 
 An IETF transport is not tied to a specific Internet path or type of path. The
 set of routers that form a path can and do change with time. This will cause the
