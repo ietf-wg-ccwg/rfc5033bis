@@ -284,6 +284,11 @@ because it could lead to unnecessary delays for the connections attempting to
 use Quick-Start. The Quick-Start method is discussed as an example in
 {{?RFC9049}}.
 
+Strictly speaking, Informational RFCs in the IETF stream need not meet all of
+the criteria in this document, as they do not carry a formal recommendation
+from the community. Instead, the community judges the publication of
+Informational RFCs based on the value of their addition to the RFC series.
+
 Although out of the scope of this document, proponents of a new algorithm could
 alternatively seek publication as an Informational or Experimental RFC via the
 Internet Research Task Force (IRTF). In general, these algorithms are expected
@@ -384,8 +389,9 @@ sending rate, and reduce its sending rate if experiencing high packet loss.
 The first version of the BBR algorithm {{BBRv1-draft}} failed this requirement.
 Experimental evaluation {{BBRv1-Evaluation}} showed that it caused a sustained
 rate of packet loss when multiple BBRv1 flows shared a bottleneck and the buffer
-size was less than roughly one and a half BDP. This was unsatisfactory, and
-indeed further versions have fixed this aspect of BBR {{BBR-draft}}.
+size was less than roughly one and a half times the Bandwidth Delay Product
+(BDP). This was unsatisfactory, and indeed further versions have fixed this
+aspect of BBR {{BBR-draft}}.
 
 This requirement does not imply that the algorithm should react to packet losses
 in exactly the same way as current standards-track congestion control algorithms
@@ -505,13 +511,12 @@ explanation of any deviations from {{!RFC2914}} and {{!RFC7141}}.
 
 ### Incremental Deployment
 
-The proposed congestion control algorithm ought to discuss whether it allows for
+A congestion control algorithm proposal MUST discuss whether it allows for
 incremental deployment in the targeted environment. For a mechanism targeted for
-deployment in the current Internet, it would be helpful for the proposal to
-discuss what is known (if anything) about the correct operation of the
-mechanisms with some of the equipment in the current Internet, e.g., routers,
-transparent proxies, WAN optimizers, intrusion detection systems, home routers,
-and the like.
+deployment in the current Internet, the proposal SHOULD discuss what is known
+(if anything) about the correct operation of the mechanisms with some of the
+equipment in the current Internet, e.g., routers, transparent proxies, WAN
+optimizers, intrusion detection systems, home routers, and the like.
 
 Similarly, if the proposed congestion control algorithm is intended only for
 specific environments (and not the global Internet), the proposal SHOULD
@@ -527,8 +532,9 @@ Sections 10.3 and 10.4 of {{?RFC4782}} (Quick-Start).
 
 The criteria in {{evaluation-criteria}} will be evaluated in the following
 scenarios. Unless a proposed congestion control specification explicitly forbids
-use on the public Internet, the community MUST find that it meets the criteria
-in these scenarios for the proposed congestion control algorithm to progress.
+use on the public Internet, the community MUST reach consensus that it meets the
+criteria in these scenarios for the proposed congestion control algorithm to
+ progress.
 
 The evaluation in each scenario SHOULD occur over a representative range of
 bandwidths, delays, and queue depths. Of course, the set of parameters
@@ -760,7 +766,7 @@ signalling from switches to endpoints. Furthermore, the operator can often limit
 the number of operating congestion control algorithms.
 
 For these reasons, data center congestion controls are often distinct from those
-running elsewhere on the Internet (see {{controlled-environments}}.  A proposed
+running elsewhere on the Internet (see {{controlled-environments}}).  A proposed
 congestion control need not coexist well with all other algorithms if it is
 intended for data centers, but the proposal SHOULD indicate which are expected
 to safely coexist with it.
@@ -793,8 +799,9 @@ Thanks to Richard Scheffenegger for helping to get this revision process
 started.
 
 The editors would like to thank Mohamed Boucadair, Neal Cardwell, Reese
-Enghardt, Jonathan Lennox, Matt Mathis, Dave Taht, Michael Welzl, Magnus
-Westerlund, and Greg White for suggesting improvements to this document.
+Enghardt, Jonathan Lennox, Matt Mathis, Zahed Sarker, Juergen Schoenwaelder,
+Dave Taht, Sean Turner, Michael Welzl, Magnus Westerlund, and Greg White for
+suggesting improvements to this document.
 
 Discussions with Lars Eggert and Aaron Falk seeded the original RFC5033. Bob
 Briscoe, Gorry Fairhurst, Doug Leith, Jitendra Padhye, Colin Perkins, Pekka
@@ -804,6 +811,11 @@ from {{?RFC5166}}.
 
 # Evolution of RFC5033bis
 {:numbered="false"}
+
+## Since draft-ietf-ccwg-rfc5033bis-06
+{:numbered="false"}
+- OPSDIR review
+- ARTART review
 
 ## Since draft-ietf-ccwg-rfc5033bis-05
 {:numbered="false"}
