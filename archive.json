@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-11T00:41:41.518579+00:00",
+  "timestamp": "2024-07-14T00:45:38.856628+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -2077,15 +2077,15 @@
       "id": "I_kwDOI7aIXc6PI--H",
       "title": "ARTART review",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/131",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Thanks Sean Turner:\r\n\r\nQuestions:\r\n\r\ns3.2: This section includes the following:\r\n\r\n This document applies to proposals for congestion control algorithms\r\n that seek Experimental or Standards Track status.\r\n\r\nSo ... if I get an Informational RFC I can do whatever I want? Wondering why\r\nInformational isn't listed here.\r\n\r\ns5.3.2: The 1st para invokes some [RFC 6919](https://datatracker.ietf.org/doc/rfc6919/) like requirements language like\r\n\"ought to\" and \"it would be helpful\". Any reason there isn't BCP 1 4language\r\nused in this para?\r\n\r\ns6: Is \"MUST find\" another way of saying there must be coommunity consensus? \r\nIf so maybe:\r\n\r\nOLD:\r\n\r\n Unless a proposed congestion control specification\r\n explicitly forbids use on the public Internet, the community MUST\r\n find that it meets the criteria in these scenarios for the proposed\r\n congestion control algorithm to progress.\r\n\r\nNEW:\r\n\r\n Unless a proposed congestion control specification\r\n explicitly forbids use on the public Internet, the community MUST\r\n reach consensus that it meets the criteria in these scenarios for the proposed\r\n congestion control algorithm to progress.\r\n\r\nNits:\r\n\r\ns5.1.3, 2nd para: expand BDP.\r\n\r\ns7.9, lastt para: s/(see Section 4./(see Section 4).",
       "createdAt": "2024-07-10T19:27:51Z",
-      "updatedAt": "2024-07-10T19:27:51Z",
-      "closedAt": null,
+      "updatedAt": "2024-07-11T13:35:45Z",
+      "closedAt": "2024-07-11T13:35:45Z",
       "comments": []
     },
     {
@@ -2093,15 +2093,15 @@
       "id": "I_kwDOI7aIXc6PI_34",
       "title": "OPSDIR Review",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/issues/132",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "From Juergen Schoenwaelder:\r\n\r\nThe document provides guidelines for the IETF when evaluating new\r\nproposed congestion control algorithms. While important, this document\r\nis not directly influencing network operations.\r\n\r\nThis update grows the document from 10 pages ([RFC 5033](https://datatracker.ietf.org/doc/rfc5033/)) to 25 pages. I\r\nfound the draft well structured and easy to read and all content\r\nappears to be well justified. The draft provides helpful advice to\r\neverybody involved in the development and evaluation of congestion\r\ncontrol algorithms.\r\n\r\n- I am wondering whether section 7.1.1 really should be a sub-section\r\n  of 7.1, which implies that a network circuit breaker are viewed as a\r\n  special kind of an active queue management technique. Keeping the\r\n  sub-sections a flat list of special cases may simplify things. I\r\n  also found the title of section 7.1.1 a bit longish compared to the\r\n  other section titles. Perhaps turning 7.1.1 into \"7.2 Interaction\r\n  with Network Transport Circuit Breakers\" or just \"7.2 Network\r\n  Transport Circuit Breakers\" leads to a simpler structure.\r\n\r\n- Similarly, I wonder whether sub-section 7.7.1 should be lifted up as\r\n  well. Path changes are not necessarily a transient event. Perhaps\r\n  7.7.1 should become \"7.X Changes in the Path\" (dropping sudden as\r\n  well). The point made in the text is that paths are not static, they\r\n  may change.\r\n\r\nPerhaps\tthe above two comments make no sense, then just\tignore them.\r\nI just thought I share them since they came up during my first time\r\nread of the document.",
       "createdAt": "2024-07-10T19:30:13Z",
-      "updatedAt": "2024-07-10T20:16:23Z",
-      "closedAt": null,
+      "updatedAt": "2024-07-11T13:33:46Z",
+      "closedAt": "2024-07-11T13:33:46Z",
       "comments": [
         {
           "author": "gorryfair",
@@ -9002,52 +9002,92 @@
       "id": "PR_kwDOI7aIXc51BM6D",
       "title": "ARTART comments",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/133",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Fixes #131 ",
       "createdAt": "2024-07-10T20:57:05Z",
-      "updatedAt": "2024-07-10T20:59:08Z",
+      "updatedAt": "2024-07-11T13:35:44Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "000101097753dd188dee84e5a575c6a23d653dee",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "artart",
       "headRefOid": "4cee6e6d5fef14c614f7e35fe804127d4e81784b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "closedAt": "2024-07-11T13:35:44Z",
+      "mergedAt": "2024-07-11T13:35:44Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "7d603eca6ff8676c149f0e6c127851cf28885ded"
+      },
+      "comments": [
+        {
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> I think this could be read as endorsing the change to BBR - but that isn't the case, maybe: /fixed/addressed/ or something similar, to show the intent.\r\n\r\nAll I did in that sentence is expand BDP. If you would like to change its content, please file a different PR.",
+          "createdAt": "2024-07-11T13:35:39Z",
+          "updatedAt": "2024-07-11T13:35:39Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6Bao1X",
+          "commit": {
+            "abbreviatedOid": "4cee6e6"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "I think this could be read as endorsing the change to BBR - but that isn't the case, maybe: /fixed/addressed/ or something similar, to show the intent.",
+          "createdAt": "2024-07-11T08:23:40Z",
+          "updatedAt": "2024-07-11T08:23:40Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 134,
       "id": "PR_kwDOI7aIXc51BWJI",
       "title": "Change subsection level",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/134",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Fixes #132",
       "createdAt": "2024-07-10T21:23:21Z",
-      "updatedAt": "2024-07-10T21:25:17Z",
+      "updatedAt": "2024-07-11T13:33:45Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "000101097753dd188dee84e5a575c6a23d653dee",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "opsdir",
       "headRefOid": "44f89f31d225b44846f3c0826dc8f36f8d444125",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-07-11T13:33:45Z",
+      "mergedAt": "2024-07-11T13:33:45Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "fe4a97bf500b04b339f7ef714aaa88ae7b959ce1"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6BamD-",
+          "commit": {
+            "abbreviatedOid": "44f89f3"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-11T08:18:29Z",
+          "updatedAt": "2024-07-11T08:18:29Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
