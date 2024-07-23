@@ -390,7 +390,7 @@ The first version of the BBR algorithm {{BBRv1-draft}} failed this requirement.
 Experimental evaluation {{BBRv1-Evaluation}} showed that it caused a sustained
 rate of packet loss when multiple BBRv1 flows shared a bottleneck and the buffer
 size was less than roughly one and a half times the Bandwidth Delay Product
-(BDP). This was unsatisfactory, and indeed further versions have fixed this
+(BDP). This was unsatisfactory, and indeed further versions provided a fix for this
 aspect of BBR {{BBR-draft}}.
 
 This requirement does not imply that the algorithm should react to packet losses
@@ -574,7 +574,7 @@ Internet.
 ## Wireless Paths
 
 While the early Internet was dominated by wired links, the properties of
-wireless links have become extremely important to Internet performance. In
+wireless links have become important to Internet performance. In
 particular, a proposed congestion control algorithm should be evaluated in
 situations where some packet losses are due to radio effects, rather than router
 queue drops; the link capacity varies over time due to changing link conditions;
@@ -637,7 +637,7 @@ This cannot be assumed. An Internet Path can also include complex subnetworks
 where the minimum delay changes over various time scales, resulting in a non-
 stationary minimum delay.
 
-This occurs when a subnet changes the forwarding path to optimise capacity,
+Varying delay occurs when a subnet changes the forwarding path to optimise capacity,
 resilience, etc. It could also arise when a subnet uses a capacity management
 method where the available resource is periodically distributed among the active
 nodes. A node might then have to buffer data until an assigned transmission
