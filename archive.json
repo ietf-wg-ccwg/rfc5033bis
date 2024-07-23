@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-21T00:45:25.438250+00:00",
+  "timestamp": "2024-07-23T00:41:51.388762+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -9085,6 +9085,48 @@
           "body": "",
           "createdAt": "2024-07-11T08:18:29Z",
           "updatedAt": "2024-07-11T08:18:29Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 135,
+      "id": "PR_kwDOI7aIXc52Ju3D",
+      "title": "Update draft-ietf-ccwg-rfc5033bis.md",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/135",
+      "state": "MERGED",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Suggested final edits.\r\n- do not infer that BBR is \"fixed\", but rather say that it contains a \"fix\" for this.\r\n- don't overstate the importance:-)\r\n- fix to start by saying what the para is about (i.e. the section title).",
+      "createdAt": "2024-07-23T00:15:34Z",
+      "updatedAt": "2024-07-23T00:31:06Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "7d603eca6ff8676c149f0e6c127851cf28885ded",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-25",
+      "headRefOid": "f418882bfb5ef350d3b170b310cf0c6db28baceb",
+      "closedAt": "2024-07-23T00:31:05Z",
+      "mergedAt": "2024-07-23T00:31:05Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "423666f87283d8875e1913713be6e3e40b5e8151"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6CsuNX",
+          "commit": {
+            "abbreviatedOid": "f418882"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-23T00:30:59Z",
+          "updatedAt": "2024-07-23T00:30:59Z",
           "comments": []
         }
       ]
