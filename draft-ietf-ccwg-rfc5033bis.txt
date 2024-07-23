@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 12 January 2025                                    11 July 2024
+Expires: 24 January 2025                                    23 July 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 January 2025.
+   This Internet-Draft will expire on 24 January 2025.
 
 Copyright Notice
 
@@ -464,8 +464,8 @@ Table of Contents
    it caused a sustained rate of packet loss when multiple BBRv1 flows
    shared a bottleneck and the buffer size was less than roughly one and
    a half times the Bandwidth Delay Product (BDP).  This was
-   unsatisfactory, and indeed further versions have fixed this aspect of
-   BBR [BBR-draft].
+   unsatisfactory, and indeed further versions provided a fix for this
+   aspect of BBR [BBR-draft].
 
    This requirement does not imply that the algorithm should react to
    packet losses in exactly the same way as current standards-track
@@ -662,14 +662,14 @@ Table of Contents
 6.4.  Wireless Paths
 
    While the early Internet was dominated by wired links, the properties
-   of wireless links have become extremely important to Internet
-   performance.  In particular, a proposed congestion control algorithm
-   should be evaluated in situations where some packet losses are due to
-   radio effects, rather than router queue drops; the link capacity
-   varies over time due to changing link conditions; and media access
-   delays and link-layer retransmission lead to increased jitter in
-   round-trip times.  See [RFC3819] and Section 16 of [Tools] for
-   further discussion of wireless properties.
+   of wireless links have become important to Internet performance.  In
+   particular, a proposed congestion control algorithm should be
+   evaluated in situations where some packet losses are due to radio
+   effects, rather than router queue drops; the link capacity varies
+   over time due to changing link conditions; and media access delays
+   and link-layer retransmission lead to increased jitter in round-trip
+   times.  See [RFC3819] and Section 16 of [Tools] for further
+   discussion of wireless properties.
 
 7.  Special Cases
 
@@ -730,20 +730,20 @@ Table of Contents
    include complex subnetworks where the minimum delay changes over
    various time scales, resulting in a non- stationary minimum delay.
 
-   This occurs when a subnet changes the forwarding path to optimise
-   capacity, resilience, etc.  It could also arise when a subnet uses a
-   capacity management method where the available resource is
-   periodically distributed among the active nodes.  A node might then
-   have to buffer data until an assigned transmission opportunity or
-   until the physical path changes (e.g., when the length of a wireless
-   path changes, or the physical layer changes its mode of operation).
-   Variation also arises when traffic with a higher priority DSCP pre-
-   empts transmission of traffic with a lower class.  In these cases,
-   the delay varies as a function of external factors, and attempting to
-   infer congestion from an increase in the delay results in reduced
-   throughput.  This variation in the delay over short timescales
-   (jitter) might not be distinguishable from jitter that results from
-   other effects.
+   Varying delay occurs when a subnet changes the forwarding path to
+   optimise capacity, resilience, etc.  It could also arise when a
+   subnet uses a capacity management method where the available resource
+   is periodically distributed among the active nodes.  A node might
+   then have to buffer data until an assigned transmission opportunity
+   or until the physical path changes (e.g., when the length of a
+   wireless path changes, or the physical layer changes its mode of
+   operation).  Variation also arises when traffic with a higher
+   priority DSCP pre-empts transmission of traffic with a lower class.
+   In these cases, the delay varies as a function of external factors,
+   and attempting to infer congestion from an increase in the delay
+   results in reduced throughput.  This variation in the delay over
+   short timescales (jitter) might not be distinguishable from jitter
+   that results from other effects.
 
    A proposed congestion control algorithm SHOULD be evaluated to ensure
    its operation is robust when there is a significant change in the

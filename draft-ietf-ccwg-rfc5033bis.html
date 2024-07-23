@@ -1036,7 +1036,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Duke &amp; Fairhurst</td>
-<td class="center">Expires 12 January 2025</td>
+<td class="center">Expires 24 January 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1052,12 +1052,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5033" class="eref">5033</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-07-11" class="published">11 July 2024</time>
+<time datetime="2024-07-23" class="published">23 July 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Best Current Practice</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-01-12">12 January 2025</time></dd>
+<dd class="expires"><time datetime="2025-01-24">24 January 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1119,7 +1119,7 @@ congestion control landscape.<a href="#section-abstract-1" class="pilcrow">¶</a
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 12 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 24 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1631,7 +1631,7 @@ sending rate, and reduce its sending rate if experiencing high packet loss.<a hr
 Experimental evaluation <span>[<a href="#BBRv1-Evaluation" class="cite xref">BBRv1-Evaluation</a>]</span> showed that it caused a sustained
 rate of packet loss when multiple BBRv1 flows shared a bottleneck and the buffer
 size was less than roughly one and a half times the Bandwidth Delay Product
-(BDP). This was unsatisfactory, and indeed further versions have fixed this
+(BDP). This was unsatisfactory, and indeed further versions provided a fix for this
 aspect of BBR <span>[<a href="#BBR-draft" class="cite xref">BBR-draft</a>]</span>.<a href="#section-5.1.3-2" class="pilcrow">¶</a></p>
 <p id="section-5.1.3-3">This requirement does not imply that the algorithm should react to packet losses
 in exactly the same way as current standards-track congestion control algorithms
@@ -1859,7 +1859,7 @@ Internet.<a href="#section-6.3-1" class="pilcrow">¶</a></p>
 <a href="#section-6.4" class="section-number selfRef">6.4. </a><a href="#name-wireless-paths" class="section-name selfRef">Wireless Paths</a>
         </h3>
 <p id="section-6.4-1">While the early Internet was dominated by wired links, the properties of
-wireless links have become extremely important to Internet performance. In
+wireless links have become important to Internet performance. In
 particular, a proposed congestion control algorithm should be evaluated in
 situations where some packet losses are due to radio effects, rather than router
 queue drops; the link capacity varies over time due to changing link conditions;
@@ -1933,7 +1933,7 @@ propagation delay, and any additional delay can be attributed to link buffering.
 This cannot be assumed. An Internet Path can also include complex subnetworks
 where the minimum delay changes over various time scales, resulting in a non-
 stationary minimum delay.<a href="#section-7.3-1" class="pilcrow">¶</a></p>
-<p id="section-7.3-2">This occurs when a subnet changes the forwarding path to optimise capacity,
+<p id="section-7.3-2">Varying delay occurs when a subnet changes the forwarding path to optimise capacity,
 resilience, etc. It could also arise when a subnet uses a capacity management
 method where the available resource is periodically distributed among the active
 nodes. A node might then have to buffer data until an assigned transmission
@@ -2115,6 +2115,7 @@ issues that may arise.<a href="#section-8-2" class="pilcrow">¶</a></p>
 <p id="section-9-1">This document has no IANA actions.<a href="#section-9-1" class="pilcrow">¶</a></p>
 </section>
 </div>
+<div id="sec-combined-references">
 <section id="section-10">
       <h2 id="name-references">
 <a href="#section-10" class="section-number selfRef">10. </a><a href="#name-references" class="section-name selfRef">References</a>
@@ -2330,6 +2331,7 @@ issues that may arise.<a href="#section-8-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
+</div>
 <div id="acknowledgments">
 <section id="appendix-A">
       <h2 id="name-acknowledgments">
