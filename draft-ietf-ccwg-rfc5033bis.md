@@ -502,8 +502,6 @@ can not assume this is always the case.
 
 {{circuit-breakers}} describes the impact of network transport circuit breaker
 algorithms. {{!RFC8083}} also defines a minimal set of RTP circuit breakers that
-is able to review the proposed new algorithm and whether there is sufficient
-experience to understand any dependent functions.
 operate end-to-end across a path. This identifies conditions under which a sender needs to
 stop transmitting media data to protect the network from excessive congestion.
 It is expected that, in the absence of long-lived excessive congestion, RTP
