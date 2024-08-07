@@ -263,7 +263,7 @@ it is possible to deactivate them if there are signs of pathological behavior.
 Each published congestion control algorithm is REQUIRED to include a statement
 in the abstract indicating whether or not there is IETF consensus that the
 proposed congestion control algorithm is considered safe for use on the
-Internet. Each published algorithm is also required to include a statement in
+Internet. Each published algorithm is also REQUIRED to include a statement in
 the abstract describing environments where the protocol is not recommended for
 deployment. There can be environments where the congestion control algorithm is
 deemed safe for use, but it is still is not recommended for use because it
