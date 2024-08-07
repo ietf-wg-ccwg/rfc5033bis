@@ -251,9 +251,9 @@ Congestion control algorithms without empirical evidence of Internet-scale
 deployment SHOULD seek Experimental status.
 Specifications published as Experimental ought to explain the reason for
 the status and what further information would be required to progress to
-standards track. For example, section 12 of RFC6928 provides
+standards track. For example, section 12 of {{?RFC6928}} provides
 “Usage and Deployment Recommendations” that describe the experiments
-expected by the TCPM working group. Section 4 of RFC4614 provides other
+expected by the TCPM working group. Section 4 of {{?RFC4614}} provides other
 examples of extensions that were considered experimental
 when the specification was published.
 
