@@ -281,7 +281,7 @@ includes a statement in the abstract stating that the proposed congestion
 control algorithm is Experimental, but may be deployed in the Internet. In
 contrast, the Quick-Start document {{?RFC4782}} includes a paragraph in the
 abstract stating that the mechanism is only being proposed for use in
-controlled environments. The abstract specifies environments where the 
+controlled environments. The abstract specifies environments where the
 Quick-Start request could give false positives (and therefore would be unsafe for
 incremental deployment where some routers forward, but do not process the
 option). The abstract also specifies environments where packets containing the
