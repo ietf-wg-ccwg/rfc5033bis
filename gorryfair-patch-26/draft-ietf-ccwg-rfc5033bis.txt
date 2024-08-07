@@ -310,9 +310,9 @@ Table of Contents
    scale deployment SHOULD seek Experimental status.  Specifications
    published as Experimental ought to explain the reason for the status
    and what further information would be required to progress to
-   standards track.  For example, section 12 of RFC6928 provides “Usage
-   and Deployment Recommendations” that describe the experiments
-   expected by the TCPM working group.  Section 4 of RFC4614 provides
+   standards track.  For example, section 12 of [RFC6928] provides
+   “Usage and Deployment Recommendations” that describe the experiments
+   expected by the TCPM working group.  Section 4 of [RFC4614] provides
    other examples of extensions that were considered experimental when
    the specification was published.
 
@@ -1026,6 +1026,8 @@ Table of Contents
               DOI 10.17487/RFC4340, March 2006,
               <https://www.rfc-editor.org/rfc/rfc4340>.
 
+   [RFC4614]  "*** BROKEN REFERENCE ***".
+
    [RFC4653]  Bhandarkar, S., Reddy, A. L. N., Allman, M., and E.
               Blanton, "Improving the Robustness of TCP to Non-
               Congestion Events", RFC 4653, DOI 10.17487/RFC4653, August
@@ -1053,6 +1055,11 @@ Table of Contents
               Congestion Control for Multipath Transport Protocols",
               RFC 6356, DOI 10.17487/RFC6356, October 2011,
               <https://www.rfc-editor.org/rfc/rfc6356>.
+
+   [RFC6928]  Chu, J., Dukkipati, N., Cheng, Y., and M. Mathis,
+              "Increasing TCP's Initial Window", RFC 6928,
+              DOI 10.17487/RFC6928, April 2013,
+              <https://www.rfc-editor.org/rfc/rfc6928>.
 
    [RFC7567]  Baker, F., Ed. and G. Fairhurst, Ed., "IETF
               Recommendations Regarding Active Queue Management",
