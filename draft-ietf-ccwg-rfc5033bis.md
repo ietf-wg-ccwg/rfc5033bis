@@ -98,14 +98,14 @@ informative:
 
 --- abstract
 
-Introducing new or modified congestion control algorithms in the global Internet
-has possible ramifications to both the flows using the proposed congestion
-control algorithms and to flows using a standardized congestion control
-algorithm. Therefore, the IETF must proceed with caution when evaluating
-proposals for alternate congestion control. The goal of this document is to
-provide guidance for considering standardization of a proposed congestion
-control algorithm at the IETF. It obsoletes RFC5033 to reflect changes in the
-congestion control landscape.
+This document revises and updates RFC 5033, which discusses the principles and
+guidelines for standardzing new congestion control algorithms. The aim is to
+ensure that proposed congestion control algorithms operate fairly and
+efficiently alongside other algorithms in the global Internet. It emphasizes the
+need for comprehensive testing and validation to prevent adverse interactions
+with existing flows. This document provides a framework for the development and
+assessment of congestion control mechanisms, promoting stability across diverse
+network environments.
 
 --- middle
 
@@ -119,8 +119,8 @@ evaluating whether a proposal is appropriate for publication in the RFC series
 and for deployment in the Internet.
 
 This document obsoletes {{?RFC5033}}, which was published in 2007 as a Best
-Current Practice to evaluate proposed congestion control algorithms as
-Experimental or Proposed Standard RFCs.
+Current Practice for evaluating proposed congestion control algorithms as
+Experimental or Proposed Standard RFCs. 
 
 The IETF specifies standard Internet congestion control algorithms in the RFC-series.
 These congestion control algorithms can suffer performance challenges when used in
@@ -128,25 +128,22 @@ various environments (e.g., high-speed networks, cellular and WiFi wireless
 technologies, and long distance satellite links), and also when flows carry
 specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
-When {{?RFC5033}} was published in 2007, TCP {{?RFC9293}} was the dominant
-consumer of IETF congestion control work,
-and proposals were typically discussed in the Internet
-Congestion Control Research Group (ICCRG). Around the same time,
-the Datagram Congestion Control
-Protocol (DCCP) {{?RFC4340}} was developed as a method for defining new
-congestion control algorithms for datagram traffic.
-The Stream Control Transmission Protocol (SCTP)
-{{?RFC9260}} re-used TCP congestion control algorithms.
+When [RFC5033] was published in 2007, TCP [RFC9293] was the primary focus of
+IETF congestion control efforts, with proposals typically discussed within the
+Internet Congestion Control Research Group (ICCRG). Concurrently, the Datagram
+Congestion Control Protocol (DCCP) [RFC4340] was developed to define new
+congestion control algorithms for datagram traffic, while the Stream Control
+Transmission Protocol (SCTP) [RFC9260] reused TCP congestion control algorithms.
 
-Since then, many conditions have changed. The set of protocols using congestion control
-algorithms has grown to include QUIC {{?RFC9000}}, RTP Media Congestion
-Avoidance Techniques (RMCAT) (e.g., {{?RFC8836}}) and beyond.
-Some proponents of alternative congestion control algorithms now have the
-opportunity to test and deploy at scale without IETF review. There is more
-interest in specialized use cases, such as data centers (e.g., {{?RFC8257}}),
-and in support for a variety of upper layer protocols/applications, e.g.,
-real-time protocols. Finally, the community has gained much more experience
-with indications of congestion beyond packet loss.
+Since then, several changes have occurred. The range of protocols utilizing
+congestion control algorithms has expanded to include QUIC [RFC9000] and RTP
+Media Congestion Avoidance Techniques (RMCAT) (e.g., [RFC8836]. Additionally,
+some alternative congestion control algorithms have beene tested and deployed
+at scale without full IETF review. There is increased interest in specialized
+use cases, such as data centers (e.g., [RFC8257], and in supporting a variety of
+upper layer protocols and applications, such as real-time protocols. Moreover,
+the community has gained significant experience with congestion indications
+beyond packet loss.
 
 Multicast congestion control is a considerably less mature field of study and
 is not in the scope of this document. However, {{Section 4 of ?RFC8085}} provides
@@ -338,11 +335,12 @@ criteria in the remainder of this document might not apply.
 
 # Evaluation Criteria {#evaluation-criteria}
 
-As noted above, authors are expected to do a well-rounded evaluation of the pros
-and cons of congestion control algorithms that are brought to the IETF. The
-following guidelines are designed to help authors and the IETF community.
-Concerns that fall outside the scope of these guidelines are certainly possible;
-these guidelines should not be considered an all-encompassing check-list.
+As previously noted, authors are expected to conduct a comprehensive evaluation
+of the advantages and disadvantages of congestion control algorithms presented
+to the IETF. The following guidelines are intended to assist authors and the
+IETF community in this endeavor. While these guidelines provide a helpful
+framework, they should not be regarded as an exhaustive checklist, as concerns
+beyond the scope of these guidelines may also arise.
 
 When considering a proposed congestion control algorithm, the community MUST
 consider the following criteria. These criteria will be evaluated in various
@@ -504,6 +502,8 @@ can not assume this is always the case.
 
 {{circuit-breakers}} describes the impact of network transport circuit breaker
 algorithms. {{!RFC8083}} also defines a minimal set of RTP circuit breakers that
+is able to review the proposed new algorithm and whether there is sufficient
+experience to understand any dependent functions.
 operate end-to-end across a path. This identifies conditions under which a sender needs to
 stop transmitting media data to protect the network from excessive congestion.
 It is expected that, in the absence of long-lived excessive congestion, RTP
