@@ -294,8 +294,8 @@ alternatively seek publication as an Informational or Experimental RFC via the
 Internet Research Task Force (IRTF). In general, these algorithms are expected
 to be less mature than ones that follow the procedures in this document. Authors
 documenting deployed congestion control algorithms that cannot be changed by
-IETF or IRTF review are invited to publish as an Informational RFC via the
-Independent Stream Editor (ISE).
+IETF or IRTF review are invited to seek publication as an Informational RFC via
+the Independent Stream Editor (ISE).
 
 # Specifying Algorithms for Use in Controlled Environments {#controlled-environments}
 
@@ -310,9 +310,9 @@ fabrics with rich signalling from switches to endpoints.
 Algorithms that
 rely on specific functions or configurations in the network need to provide a
 reference or specification for these functions (an RFC or another stable
-specification). The IETF will need to assess whether the relevant working group
-is able to review the proposed new algorithm and whether there is sufficient
-experience to understand any dependent functions.
+specification). For publication to proceed, The IETF will need to assess whether
+a working group exists that can properly assess the network-layer aspects and
+their interaction with the congestion control.
 
 In evaluating a new proposal for use in a controlled environment, the IETF needs
 to understand the usage, e.g., how the usage is scoped to the controlled
@@ -334,6 +334,19 @@ these guidelines should not be considered an all-encompassing check-list.
 When considering a proposed congestion control algorithm, the community MUST
 consider the following criteria. These criteria will be evaluated in various
 domains (see {{general-use}} and {{special-cases}}).
+
+Some criteria below will use the keyword SHOULD for some or all of their
+content, generally because there are practical limitations on carrying out an
+evaluation. In these cases, the SHOULD supersedes the MUST above.
+
+The requirement that the community consider a criterion does not imply that the
+result must be described in any resulting RFC. There is no formal requirement
+to document the results, although normal IETF policies for archiving proceedings
+will provide a record.
+
+This document, except where otherwise noted, does not provide normative guidance
+on the acceptable thresholds for any of these criteria. Instead, the community
+will holistically assess the overall performance of the proposed algorithm.
 
 ## Single Algorithm Behavior
 
@@ -436,7 +449,7 @@ retransmission time out) results in backoff.
 
 ### Existing General-Purpose Congestion Control
 
-A proposed congestion control algorithm SHOULD be evaluated when competing using
+A proposed congestion control algorithm MUST be evaluated when competing against
 standard IETF congestion controls, e.g. {{!RFC5681}}, {{!RFC9002}},
 {{!RFC9438}}. A proposed congestion control algorithm that has a significantly
 negative impact on flows using standard congestion control might be suspect, and
@@ -506,8 +519,8 @@ control algorithms MUST be evaluated, as in {{short-flows}}.
 
 ### Differences with Congestion Control Principles
 
-A proposed congestion control algorithm SHOULD include a clear
-explanation of any deviations from {{!RFC2914}} and {{!RFC7141}}.
+A proposed congestion control algorithm MUST clearly explain any deviations from
+{{!RFC2914}} and {{!RFC7141}}.
 
 ### Incremental Deployment
 
@@ -532,7 +545,7 @@ Sections 10.3 and 10.4 of {{?RFC4782}} (Quick-Start).
 
 The criteria in {{evaluation-criteria}} will be evaluated in the following
 scenarios. Unless a proposed congestion control specification explicitly forbids
-use on the public Internet, the community MUST reach consensus that it meets the
+use on the public Internet, there MUST be IETF consensus that it meets the
 criteria in these scenarios for the proposed congestion control algorithm to
  progress.
 
@@ -778,10 +791,8 @@ suite and therefore does not directly impact Internet security.  The
 implementation of various facets of the Internet's current congestion control
 algorithms do have security implications (e.g., as outlined in {{!RFC5681}}).
 
-The IETF process that results in publication needs to ensure that these security
-implications are considered. Proposed congestion control algorithms therefore
-ought to be mindful of pitfalls, and SHOULD examine any potential security
-issues that may arise.
+Proposed congestion control algorithms MUST examine any potential security or
+privacy issues that may arise from their design.
 
 # IANA Considerations
 
