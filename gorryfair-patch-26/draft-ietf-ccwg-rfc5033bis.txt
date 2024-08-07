@@ -400,8 +400,8 @@ Table of Contents
 
    Authors are expected to evaluate the congestion control algorithms
    that they bring to the IETF.  A well-rounded evaluation of the pros
-   and cons of an algorithm is expected before a working group submits
-   the specification for publication by the IETF.
+   and cons of an algorithm is expected by a working group before it
+   submits the specification for publication by the IETF.
 
    The following guidelines are designed to help authors and the IETF
    community.  Concerns that fall outside the scope of these guidelines
