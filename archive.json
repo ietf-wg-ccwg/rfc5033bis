@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-08-06T00:42:06.753669+00:00",
+  "timestamp": "2024-08-08T00:42:22.502802+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -9130,6 +9130,309 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 136,
+      "id": "PR_kwDOI7aIXc53rEv2",
+      "title": "Attempt to address comments from Warren Kumari",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/136",
+      "state": "OPEN",
+      "author": "gorryfair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Proposed resolutions",
+      "createdAt": "2024-08-07T07:08:37Z",
+      "updatedAt": "2024-08-07T18:51:45Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
+      "headRepository": "ietf-wg-ccwg/rfc5033bis",
+      "headRefName": "gorryfair-patch-26",
+      "headRefOid": "893ba1599731644f5068884bd240b5175389a79a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6EpIEt",
+          "commit": {
+            "abbreviatedOid": "34ceecd"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2024-08-07T14:27:03Z",
+          "updatedAt": "2024-08-07T14:39:36Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "```suggestion\r\nstandards track. For example, section 12 of RFC6928 provides\r\n```",
+              "createdAt": "2024-08-07T14:27:03Z",
+              "updatedAt": "2024-08-07T14:39:36Z"
+            },
+            {
+              "originalPosition": 15,
+              "body": "Should this be an informational reference?",
+              "createdAt": "2024-08-07T14:27:42Z",
+              "updatedAt": "2024-08-07T14:39:36Z"
+            },
+            {
+              "originalPosition": 17,
+              "body": "4614 has been obsoleted by 7414, but the later document is not as careful about formal Experimental status as the earlier one, so maybe your choice to reference 4614 is right.\r\n\r\nBut maybe this should be a reference?",
+              "createdAt": "2024-08-07T14:34:02Z",
+              "updatedAt": "2024-08-07T14:39:36Z"
+            },
+            {
+              "originalPosition": 56,
+              "body": "IMO this paragraph pins too much on the authors. \"Authors are expected to evaluate...\" and then the second sentence uses the passive voice. I would prefer a paragraph like so:\r\n\r\n\"Publication of a specification by the IETF requires a well-rounded evaluation of the pros and cons of an algorithm. Both the document authors and participants in an IETF Working Group can conduct parts of this evaluation.\"\r\n\r\nThat's all we need to say, but I wouldn't object to further advice saying that the more work the authors do, the more likely it is to progress.",
+              "createdAt": "2024-08-07T14:39:19Z",
+              "updatedAt": "2024-08-07T14:39:36Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6ErEDs",
+          "commit": {
+            "abbreviatedOid": "34ceecd"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-07T18:20:02Z",
+          "updatedAt": "2024-08-07T18:20:02Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Yeah - I saw that, I think a REF to 4614 is a good example.",
+              "createdAt": "2024-08-07T18:20:02Z",
+              "updatedAt": "2024-08-07T18:20:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6ErEx6",
+          "commit": {
+            "abbreviatedOid": "34ceecd"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-07T18:21:49Z",
+          "updatedAt": "2024-08-07T18:21:49Z",
+          "comments": [
+            {
+              "originalPosition": 56,
+              "body": "That was what I hoped for: bringing it to the IETF in a reasonable state is the big ask - getting the WG to finish isn't the same ask.",
+              "createdAt": "2024-08-07T18:21:49Z",
+              "updatedAt": "2024-08-07T18:21:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6ErVuf",
+          "commit": {
+            "abbreviatedOid": "893ba15"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-08-07T18:51:45Z",
+          "updatedAt": "2024-08-07T18:51:45Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 137,
+      "id": "PR_kwDOI7aIXc53w0MU",
+      "title": "Roman DISCUSS",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/137",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "A few clarifying nits, as resolving the tension between a global \"MUST evaluate\" and some local \"SHOULD evaluate\"s.",
+      "createdAt": "2024-08-07T21:43:16Z",
+      "updatedAt": "2024-08-07T23:51:54Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "roman1",
+      "headRefOid": "320d8fe05f9d3c83c0c129518f621dfd62ad87f6",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6Esym9",
+          "commit": {
+            "abbreviatedOid": "320d8fe"
+          },
+          "author": "ekinnear",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-07T23:08:38Z",
+          "updatedAt": "2024-08-07T23:08:39Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "Do we really say \"SHOULD supersedes the MUST\"? i.e. is there no other way to formulate this -- if the community goes to evaluate some criteria and decides there's a practical limitation on doing so, does that not count as having considered it along the lines of \"MUST consider the following criteria\"?\r\n\r\nJust curious if there's a better way to structure this so that we don't have the potential for confusion about a SHOULD being stronger than a MUST.",
+              "createdAt": "2024-08-07T23:08:38Z",
+              "updatedAt": "2024-08-07T23:08:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6Es8y4",
+          "commit": {
+            "abbreviatedOid": "320d8fe"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-07T23:51:54Z",
+          "updatedAt": "2024-08-07T23:51:54Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "I don't want to wade too deeply into semantics, but what I'm thinking about is those undocumented RT CCs. If we quickly decide to do nothing, have we \"considered\" it? I suppose that weakens the MUST if that counts as considering.\r\n\r\nThat said, I'm not married to this wording and am happy to take an alternative, including the original wording!",
+              "createdAt": "2024-08-07T23:51:54Z",
+              "updatedAt": "2024-08-07T23:51:54Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 138,
+      "id": "PR_kwDOI7aIXc53w1gx",
+      "title": "Erik Kline comment",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/138",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "required -> REQUIRED",
+      "createdAt": "2024-08-07T21:48:59Z",
+      "updatedAt": "2024-08-07T21:49:03Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "kline",
+      "headRefOid": "e899695f62645aeb63ebbef2128d9b27bbaac280",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 139,
+      "id": "PR_kwDOI7aIXc53xKpK",
+      "title": "Gunter",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/139",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-08-07T23:27:08Z",
+      "updatedAt": "2024-08-07T23:27:08Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "gunter",
+      "headRefOid": "9211c66cdb7b558847d72cb11961cdcd2dafd51e",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 140,
+      "id": "PR_kwDOI7aIXc53xOKk",
+      "title": "Orie's comments",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/140",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-08-07T23:44:55Z",
+      "updatedAt": "2024-08-07T23:47:34Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "orie",
+      "headRefOid": "9ece2ac8df2346e62abb1b0376df6be89372c3c2",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6Es7R_",
+          "commit": {
+            "abbreviatedOid": "9ece2ac"
+          },
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-08-07T23:47:34Z",
+          "updatedAt": "2024-08-07T23:47:34Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 141,
+      "id": "PR_kwDOI7aIXc53xO9X",
+      "title": "Eric V review",
+      "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/141",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-08-07T23:48:18Z",
+      "updatedAt": "2024-08-07T23:48:18Z",
+      "baseRepository": "ietf-wg-ccwg/rfc5033bis",
+      "baseRefName": "main",
+      "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
+      "headRepository": "martinduke/rfc5033bis",
+      "headRefName": "vyncke",
+      "headRefOid": "2308c1f2225a7088e88c339e7adbb0f75e291040",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
