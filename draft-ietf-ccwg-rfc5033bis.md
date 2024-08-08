@@ -666,7 +666,7 @@ that results from other effects.
 A proposed congestion control algorithm SHOULD be evaluated to ensure its
 operation is robust when there is a significant change in the minimum delay.
 
-## Internet of Things
+## Internet of Things and Constrained Nodes
 
 The "Internet of Things" (IoT) is a broad concept, but when evaluating a
 proposed congestion control algorithm, it is often associated with unique
@@ -680,7 +680,7 @@ Extremely low-power links can lead to very low throughput and a low bandwidth-
 delay product, well below the standard operating range of most Internet flows.
 
 Furthermore, many IoT applications do not a have a human in the loop, and
-therefore can have weaker latency constraints because they do not relate to a
+therefore might have weaker latency constraints because they do not relate to a
 user experience. Congestion control algorithm can still need to share the
 path with other flows with different constraints.
 
