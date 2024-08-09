@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 8 February 2025                                   7 August 2024
+Expires: 10 February 2025                                  9 August 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 February 2025.
+   This Internet-Draft will expire on 10 February 2025.
 
 Copyright Notice
 
@@ -399,9 +399,10 @@ Table of Contents
 5.  Evaluation Criteria
 
    Authors are expected to evaluate the congestion control algorithms
-   that they bring to the IETF.  A well-rounded evaluation of the pros
-   and cons of an algorithm is expected by a working group before it
-   submits the specification for publication by the IETF.
+   that they bring to the IETF.  The working group is expecteed to
+   complete a well-rounded evaluation of the pros and cons of an
+   algorithm before it submits the specification for publication by the
+   IETF.
 
    The following guidelines are designed to help authors and the IETF
    community.  Concerns that fall outside the scope of these guidelines
@@ -1026,7 +1027,10 @@ Table of Contents
               DOI 10.17487/RFC4340, March 2006,
               <https://www.rfc-editor.org/rfc/rfc4340>.
 
-   [RFC4614]  "*** BROKEN REFERENCE ***".
+   [RFC4614]  Duke, M., Braden, R., Eddy, W., and E. Blanton, "A Roadmap
+              for Transmission Control Protocol (TCP) Specification
+              Documents", RFC 4614, DOI 10.17487/RFC4614, September
+              2006, <https://www.rfc-editor.org/rfc/rfc4614>.
 
    [RFC4653]  Bhandarkar, S., Reddy, A. L. N., Allman, M., and E.
               Blanton, "Improving the Robustness of TCP to Non-
