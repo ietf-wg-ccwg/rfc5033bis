@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-08-08T00:42:22.502802+00:00",
+  "timestamp": "2024-08-11T00:46:45.409610+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -9143,18 +9143,26 @@
       "labels": [],
       "body": "Proposed resolutions",
       "createdAt": "2024-08-07T07:08:37Z",
-      "updatedAt": "2024-08-07T18:51:45Z",
+      "updatedAt": "2024-08-09T08:12:23Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-26",
-      "headRefOid": "893ba1599731644f5068884bd240b5175389a79a",
+      "headRefOid": "c05dfce5d3a3b5b138163dadbace22d02cb8b27a",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Appears ready to merge - but has conflicts I do not know how to resolve.",
+          "createdAt": "2024-08-09T08:12:22Z",
+          "updatedAt": "2024-08-09T08:12:22Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOI7aIXc6EpIEt",
@@ -9246,6 +9254,26 @@
           "createdAt": "2024-08-07T18:51:45Z",
           "updatedAt": "2024-08-07T18:51:45Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6Euh5i",
+          "commit": {
+            "abbreviatedOid": "893ba15"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "You could merge it as is, but I don't like the remaining passive form too much.",
+          "createdAt": "2024-08-08T03:21:39Z",
+          "updatedAt": "2024-08-08T03:22:25Z",
+          "comments": [
+            {
+              "originalPosition": 59,
+              "body": "You made sure to use the active form in the previous sentence, and now we are back to passive. How about:\r\n\r\nA working group is expected to perform a well-rounded evaluation of the pros and cons of an algorithm\r\nbefore it submits the specification for publication by the IETF.",
+              "createdAt": "2024-08-08T03:21:39Z",
+              "updatedAt": "2024-08-08T03:22:25Z"
+            }
+          ]
         }
       ]
     },
@@ -9261,7 +9289,7 @@
       "labels": [],
       "body": "A few clarifying nits, as resolving the tension between a global \"MUST evaluate\" and some local \"SHOULD evaluate\"s.",
       "createdAt": "2024-08-07T21:43:16Z",
-      "updatedAt": "2024-08-07T23:51:54Z",
+      "updatedAt": "2024-08-08T03:34:37Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
@@ -9313,6 +9341,32 @@
               "updatedAt": "2024-08-07T23:51:54Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6EuiqX",
+          "commit": {
+            "abbreviatedOid": "320d8fe"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "Comments on style, mostly.",
+          "createdAt": "2024-08-08T03:26:23Z",
+          "updatedAt": "2024-08-08T03:34:37Z",
+          "comments": [
+            {
+              "originalPosition": 21,
+              "body": "Nit: \"For publication to proceed, ~T~the IETF\"",
+              "createdAt": "2024-08-08T03:26:23Z",
+              "updatedAt": "2024-08-08T03:34:37Z"
+            },
+            {
+              "originalPosition": 30,
+              "body": "I really dislike using MUST and SHOULD as nouns. That's jargon. How about:\r\n\r\nSome of the sections below will list criteria that SHOULD be met. It may happen that\r\nthese criteria are not in fact met by the proposal. In such cases, the community\r\nMUST document whether not meeting the criteria is acceptable, for example\r\nbecause there are practical limitations on carrying out an evaluation of the criteria.\r\n\r\nThat is, specify that proposals may well not meet a criteria, and that it is the working group responsibility to assess whether that's OK before forwarding the document for publication.",
+              "createdAt": "2024-08-08T03:33:34Z",
+              "updatedAt": "2024-08-08T03:34:37Z"
+            }
+          ]
         }
       ]
     },
@@ -9354,7 +9408,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2024-08-07T23:27:08Z",
-      "updatedAt": "2024-08-07T23:27:08Z",
+      "updatedAt": "2024-08-08T18:58:48Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
@@ -9366,31 +9420,66 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6E1kw5",
+          "commit": {
+            "abbreviatedOid": "9211c66"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2024-08-08T18:55:23Z",
+          "updatedAt": "2024-08-08T18:58:48Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "/fairly/ isn't a great choice of words, can we use the formulation for without harm, as we mention later?",
+              "createdAt": "2024-08-08T18:55:23Z",
+              "updatedAt": "2024-08-08T18:58:49Z"
+            },
+            {
+              "originalPosition": 20,
+              "body": "Shouldn't we include the last sentence... I think we ought say it obsoletes and why.",
+              "createdAt": "2024-08-08T18:56:02Z",
+              "updatedAt": "2024-08-08T18:58:49Z"
+            },
+            {
+              "originalPosition": 68,
+              "body": "/beene/been/",
+              "createdAt": "2024-08-08T18:56:33Z",
+              "updatedAt": "2024-08-08T18:58:49Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 140,
       "id": "PR_kwDOI7aIXc53xOKk",
       "title": "Orie's comments",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/140",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-08-07T23:44:55Z",
-      "updatedAt": "2024-08-07T23:47:34Z",
+      "updatedAt": "2024-08-08T19:28:31Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "orie",
       "headRefOid": "9ece2ac8df2346e62abb1b0376df6be89372c3c2",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-08-08T19:28:30Z",
+      "mergedAt": "2024-08-08T19:28:30Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "c07361c2480439bb0bcad0774bea047c7cc35417"
+      },
       "comments": [],
       "reviews": [
         {
@@ -9405,6 +9494,19 @@
           "createdAt": "2024-08-07T23:47:34Z",
           "updatedAt": "2024-08-07T23:47:34Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6E1kCB",
+          "commit": {
+            "abbreviatedOid": "9ece2ac"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-08-08T18:53:32Z",
+          "updatedAt": "2024-08-08T18:53:32Z",
+          "comments": []
         }
       ]
     },
@@ -9413,26 +9515,42 @@
       "id": "PR_kwDOI7aIXc53xO9X",
       "title": "Eric V review",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/141",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-08-07T23:48:18Z",
-      "updatedAt": "2024-08-07T23:48:18Z",
+      "updatedAt": "2024-08-08T19:28:45Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "vyncke",
       "headRefOid": "2308c1f2225a7088e88c339e7adbb0f75e291040",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-08-08T19:28:45Z",
+      "mergedAt": "2024-08-08T19:28:45Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "ec9f11997432c33058977a07734c9207ec4e613c"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6E1jUu",
+          "commit": {
+            "abbreviatedOid": "2308c1f"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-08-08T18:51:44Z",
+          "updatedAt": "2024-08-08T18:51:44Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
