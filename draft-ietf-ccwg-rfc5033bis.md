@@ -310,7 +310,7 @@ fabrics with rich signalling from switches to endpoints.
 Algorithms that
 rely on specific functions or configurations in the network need to provide a
 reference or specification for these functions (an RFC or another stable
-specification). For publication to proceed, The IETF will need to assess whether
+specification). For publication to proceed, the IETF will need to assess whether
 a working group exists that can properly assess the network-layer aspects and
 their interaction with the congestion control.
 
@@ -340,7 +340,7 @@ content, generally because there are practical limitations on carrying out an
 evaluation. In these cases, the SHOULD supersedes the MUST above.
 
 The requirement that the community consider a criterion does not imply that the
-result must be described in any resulting RFC. There is no formal requirement
+result needs to be described in any resulting RFC. There is no formal requirement
 to document the results, although normal IETF policies for archiving proceedings
 will provide a record.
 
