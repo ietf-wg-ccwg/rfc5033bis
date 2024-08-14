@@ -235,10 +235,22 @@ This document does not specify specific evaluation methods, short of internet-sc
 
 For many algorithms, an initial evaluation will consider individual protocol mechanisms in a simulator to analyse their stability and safety across a wide range of conditions, including overload.  For example, {{?RFC8869}} describes evaluation test cases for interactive real-time media over wireless networks. Such results could also be published or discussed in IRTF research groups, such as ICCRG and MAPRG.
 
-Before a proposed congestion control algorithm is published as an Experimental or Standards Track RFC, the community SHOULD gain practical experience with implementation and experience using the algorithm. Where there is implementation by independent teams, this can help provide assurance that a specification has avoided assumptions or ambiguity.
-An independent evaluation by multiple teams helps provide assurance that the design meets the evaluation criteria, and can assess typical interactions with other traffic.
-This evaluation could use an emulated laboratory environment or a controlled experiment (within a limited domain or at Internet-scale).
-Evidence of results is normally considered by the working group in deciding if a specification is ready for publication and ought to be documented in any request for the working group to publish the specification.
+Before a proposed congestion control algorithm is published as an Experimental
+or Standards Track RFC, the community SHOULD gain practical experience with
+implementation and experience using the algorithm. Where there is implementation
+by independent teams, this can help provide assurance that a specification has
+avoided assumptions or ambiguity. An independent evaluation by multiple teams
+helps provide assurance that the design meets the evaluation criteria, and can
+assess typical interactions with other traffic. This evaluation could use an
+emulated laboratory environment or a controlled experiment (within a limited
+domain or at Internet-scale). Evidence of results is normally considered by the
+working group in deciding if a specification is ready for publication and ought
+to be documented in any request for the working group to publish the
+specification.
+
+Publication might occur without multiple implementations if a single
+implementation is widely used, open source, and shown to have positive impact on
+the Internet, particularly if the target status is Experimental.
 
 ## Guidelines for Authors about Document Status
 
@@ -248,7 +260,9 @@ the same questions, but with different expectations for both the answers and the
 degree of certainty of those answers.
 
 Congestion control algorithms without empirical evidence of Internet-scale
-deployment SHOULD seek Experimental status.
+deployment MUST seek Experimental status, unless they are not targeted at
+general use.
+
 Specifications published as Experimental ought to explain the reason for
 the status and what further information would be required to progress to
 standards track. For example, section 12 of {{?RFC6928}} provides
@@ -665,7 +679,7 @@ that results from other effects.
 A proposed congestion control algorithm SHOULD be evaluated to ensure its
 operation is robust when there is a significant change in the minimum delay.
 
-## Internet of Things
+## Internet of Things and Constrained Nodes
 
 The "Internet of Things" (IoT) is a broad concept, but when evaluating a
 proposed congestion control algorithm, it is often associated with unique
@@ -679,7 +693,7 @@ Extremely low-power links can lead to very low throughput and a low bandwidth-
 delay product, well below the standard operating range of most Internet flows.
 
 Furthermore, many IoT applications do not a have a human in the loop, and
-therefore can have weaker latency constraints because they do not relate to a
+therefore might have weaker latency constraints because they do not relate to a
 user experience. Congestion control algorithm can still need to share the
 path with other flows with different constraints.
 
@@ -747,7 +761,7 @@ original path is no longer viable, or provides inferior performance.  Designs
 need to independently track the congestion state of each path, and demonstrate
 independent congestion control for each path being used. Authors of a proposed
 multipath congestion control algorithm that implements path fail-over MUST
-evaluate the harm resulting from a change in the path, and show that this does
+evaluate the harm to performance resulting from a change in the path, and show that this does
 not result in flow starvation. Synchronisation of failover (e.g., where multiple
 flows change their path on similar timeframes) can also contribute to harm
 and/or reduce fairness. These effects also ought to be evaluated.
