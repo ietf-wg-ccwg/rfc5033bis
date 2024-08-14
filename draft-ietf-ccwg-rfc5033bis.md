@@ -100,12 +100,13 @@ informative:
 
 This document revises and updates RFC 5033, which discusses the principles and
 guidelines for standardzing new congestion control algorithms. The aim is to
-ensure that proposed congestion control algorithms operate fairly and
+ensure that proposed congestion control algorithms operate without harm and
 efficiently alongside other algorithms in the global Internet. It emphasizes the
 need for comprehensive testing and validation to prevent adverse interactions
 with existing flows. This document provides a framework for the development and
 assessment of congestion control mechanisms, promoting stability across diverse
-network environments.
+network environments. It obsoletes RFC5033 to reflect changes in the congestion
+control landscape.
 
 --- middle
 
@@ -138,7 +139,7 @@ Transmission Protocol (SCTP) [RFC9260] reused TCP congestion control algorithms.
 Since then, several changes have occurred. The range of protocols utilizing
 congestion control algorithms has expanded to include QUIC [RFC9000] and RTP
 Media Congestion Avoidance Techniques (RMCAT) (e.g., [RFC8836]. Additionally,
-some alternative congestion control algorithms have beene tested and deployed
+some alternative congestion control algorithms have been tested and deployed
 at scale without full IETF review. There is increased interest in specialized
 use cases, such as data centers (e.g., [RFC8257], and in supporting a variety of
 upper layer protocols and applications, such as real-time protocols. Moreover,
