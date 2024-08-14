@@ -121,7 +121,7 @@ and for deployment in the Internet.
 
 This document obsoletes {{?RFC5033}}, which was published in 2007 as a Best
 Current Practice for evaluating proposed congestion control algorithms as
-Experimental or Proposed Standard RFCs. 
+Experimental or Proposed Standard RFCs.
 
 The IETF specifies standard Internet congestion control algorithms in the RFC-series.
 These congestion control algorithms can suffer performance challenges when used in
