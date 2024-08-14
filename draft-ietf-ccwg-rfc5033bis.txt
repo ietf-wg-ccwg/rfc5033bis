@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 9 February 2025                                   8 August 2024
+Expires: 15 February 2025                                 14 August 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 February 2025.
+   This Internet-Draft will expire on 15 February 2025.
 
 Copyright Notice
 
@@ -146,9 +146,9 @@ Table of Contents
 
    The IETF specifies standard Internet congestion control algorithms in
    the RFC-series.  These congestion control algorithms can suffer
-   performance challenges when used in various environments (e.g., high-
-   speed networks, cellular and WiFi wireless technologies, and long
-   distance satellite links), and also when flows carry specific
+   performance challenges when used in differing environments (e.g.,
+   high-speed networks, cellular and WiFi wireless technologies, and
+   long distance satellite links), and also when flows carry specific
    workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
    When [RFC5033] was published in 2007, TCP [RFC9293] was the dominant
@@ -315,16 +315,24 @@ Table of Contents
    scale deployment MUST seek Experimental status, unless they are not
    targeted at general use.
 
-   Congestion control algorithms with a record of measured Internet-
-   scale deployment MAY directly seek the Standards Track if there is
-   solid data that reflects that it is safe, and the design is stable,
-   guided by the considerations in Section 6.  However, the existence of
-   this data does not waive the other considerations in this document.
+   Specifications published as Experimental ought to explain the reason
+   for the status and what further information would be required to
+   progress to standards track.  For example, section 12 of [RFC6928]
+   provides “Usage and Deployment Recommendations” that describe the
+   experiments expected by the TCPM working group.  Section 4 of
+   [RFC4614] provides other examples of extensions that were considered
+   experimental when the specification was published.
 
    Experimental specifications SHOULD NOT be deployed as a default.
    They SHOULD only be deployed in situations where they are being
    actively measured, and where it is possible to deactivate them if
    there are signs of pathological behavior.
+
+   Congestion control algorithms with a record of measured Internet-
+   scale deployment MAY directly seek the Standards Track if there is
+   solid data that reflects that it is safe, and the design is stable,
+   guided by the considerations in Section 6.  However, the existence of
+   this data does not waive the other considerations in this document.
 
    Each published congestion control algorithm is REQUIRED to include a
    statement in the abstract indicating whether or not there is IETF
@@ -342,15 +350,15 @@ Table of Contents
    the Internet.  In contrast, the Quick-Start document [RFC4782]
    includes a paragraph in the abstract stating that the mechanism is
    only being proposed for use in controlled environments.  The abstract
-   specifies environments where the Quick- Start request could give
-   false positives (and therefore would be unsafe for incremental
-   deployment where some routers forward, but do not process the
-   option).  The abstract also specifies environments where packets
-   containing the Quick-Start request could be dropped in the network;
-   in such an environment, Quick-Start would not be unsafe to deploy,
-   but deployment is not recommended because it could lead to
-   unnecessary delays for the connections attempting to use Quick-Start.
-   The Quick-Start method is discussed as an example in [RFC9049].
+   specifies environments where the Quick-Start request could give false
+   positives (and therefore would be unsafe for incremental deployment
+   where some routers forward, but do not process the option).  The
+   abstract also specifies environments where packets containing the
+   Quick-Start request could be dropped in the network; in such an
+   environment, Quick-Start would not be unsafe to deploy, but
+   deployment is not recommended because it could lead to unnecessary
+   delays for the connections attempting to use Quick-Start.  The Quick-
+   Start method is discussed as an example in [RFC9049].
 
    Strictly speaking, Informational RFCs in the IETF stream need not
    meet all of the criteria in this document, as they do not carry a
@@ -397,12 +405,16 @@ Table of Contents
 
 5.  Evaluation Criteria
 
-   As noted above, authors are expected to do a well-rounded evaluation
-   of the pros and cons of congestion control algorithms that are
-   brought to the IETF.  The following guidelines are designed to help
-   authors and the IETF community.  Concerns that fall outside the scope
-   of these guidelines are certainly possible; these guidelines should
-   not be considered an all-encompassing check-list.
+   Authors are expected to evaluate the congestion control algorithms
+   that they bring to the IETF.  The working group is expecteed to
+   complete a well-rounded evaluation of the pros and cons of an
+   algorithm before it submits the specification for publication by the
+   IETF.
+
+   The following guidelines are designed to help authors and the IETF
+   community.  Concerns that fall outside the scope of these guidelines
+   are certainly possible; these guidelines should not be considered an
+   all-encompassing check-list.
 
    When considering a proposed congestion control algorithm, the
    community MUST consider the following criteria.  These criteria will
@@ -1023,6 +1035,11 @@ Table of Contents
               DOI 10.17487/RFC4340, March 2006,
               <https://www.rfc-editor.org/rfc/rfc4340>.
 
+   [RFC4614]  Duke, M., Braden, R., Eddy, W., and E. Blanton, "A Roadmap
+              for Transmission Control Protocol (TCP) Specification
+              Documents", RFC 4614, DOI 10.17487/RFC4614, September
+              2006, <https://www.rfc-editor.org/rfc/rfc4614>.
+
    [RFC4653]  Bhandarkar, S., Reddy, A. L. N., Allman, M., and E.
               Blanton, "Improving the Robustness of TCP to Non-
               Congestion Events", RFC 4653, DOI 10.17487/RFC4653, August
@@ -1050,6 +1067,11 @@ Table of Contents
               Congestion Control for Multipath Transport Protocols",
               RFC 6356, DOI 10.17487/RFC6356, October 2011,
               <https://www.rfc-editor.org/rfc/rfc6356>.
+
+   [RFC6928]  Chu, J., Dukkipati, N., Cheng, Y., and M. Mathis,
+              "Increasing TCP's Initial Window", RFC 6928,
+              DOI 10.17487/RFC6928, April 2013,
+              <https://www.rfc-editor.org/rfc/rfc6928>.
 
    [RFC7567]  Baker, F., Ed. and G. Fairhurst, Ed., "IETF
               Recommendations Regarding Active Queue Management",
