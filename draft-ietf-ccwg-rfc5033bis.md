@@ -124,7 +124,7 @@ Experimental or Proposed Standard RFCs.
 
 The IETF specifies standard Internet congestion control algorithms in the RFC-series.
 These congestion control algorithms can suffer performance challenges when used in
-various environments (e.g., high-speed networks, cellular and WiFi wireless
+differing environments (e.g., high-speed networks, cellular and WiFi wireless
 technologies, and long distance satellite links), and also when flows carry
 specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
@@ -263,15 +263,23 @@ Congestion control algorithms without empirical evidence of Internet-scale
 deployment MUST seek Experimental status, unless they are not targeted at
 general use.
 
+Specifications published as Experimental ought to explain the reason for
+the status and what further information would be required to progress to
+standards track. For example, section 12 of {{?RFC6928}} provides
+“Usage and Deployment Recommendations” that describe the experiments
+expected by the TCPM working group. Section 4 of {{?RFC4614}} provides other
+examples of extensions that were considered experimental
+when the specification was published.
+
+Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
+only be deployed in situations where they are being actively measured, and where
+it is possible to deactivate them if there are signs of pathological behavior.
+
 Congestion control algorithms with a
 record of measured Internet-scale deployment MAY directly seek the Standards
 Track if there is solid data that reflects that it is safe, and the design is
 stable, guided by the considerations in {{general-use}}. However, the existence
 of this data does not waive the other considerations in this document.
-
-Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
-only be deployed in situations where they are being actively measured, and where
-it is possible to deactivate them if there are signs of pathological behavior.
 
 Each published congestion control algorithm is REQUIRED to include a statement
 in the abstract indicating whether or not there is IETF consensus that the
@@ -287,8 +295,8 @@ includes a statement in the abstract stating that the proposed congestion
 control algorithm is Experimental, but may be deployed in the Internet. In
 contrast, the Quick-Start document {{?RFC4782}} includes a paragraph in the
 abstract stating that the mechanism is only being proposed for use in
-controlled environments. The abstract specifies environments where the Quick-
-Start request could give false positives (and therefore would be unsafe for
+controlled environments. The abstract specifies environments where the
+Quick-Start request could give false positives (and therefore would be unsafe for
 incremental deployment where some routers forward, but do not process the
 option). The abstract also specifies environments where packets containing the
 Quick-Start request could be dropped in the network; in such an environment,
@@ -338,8 +346,13 @@ criteria in the remainder of this document might not apply.
 
 # Evaluation Criteria {#evaluation-criteria}
 
-As noted above, authors are expected to do a well-rounded evaluation of the pros
-and cons of congestion control algorithms that are brought to the IETF. The
+Authors are expected to evaluate the congestion control algorithms that
+they bring to the IETF.
+The working group is expecteed to complete a well-rounded evaluation of the
+pros and cons of an algorithm before it submits the specification
+for publication by the IETF.
+
+The
 following guidelines are designed to help authors and the IETF community.
 Concerns that fall outside the scope of these guidelines are certainly possible;
 these guidelines should not be considered an all-encompassing check-list.
