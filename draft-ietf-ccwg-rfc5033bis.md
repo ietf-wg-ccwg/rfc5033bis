@@ -335,9 +335,11 @@ When considering a proposed congestion control algorithm, the community MUST
 consider the following criteria. These criteria will be evaluated in various
 domains (see {{general-use}} and {{special-cases}}).
 
-Some criteria below will use the keyword SHOULD for some or all of their
-content, generally because there are practical limitations on carrying out an
-evaluation. In these cases, the SHOULD supersedes the MUST above.
+Some of the sections below will list criteria that SHOULD be met. It may happen
+that these criteria are not in fact met by the proposal. In such cases, the
+community MUST document whether not meeting the criteria is acceptable, for
+example because there are practical limitations on carrying out an evaluation of
+the criteria.
 
 The requirement that the community consider a criterion does not imply that the
 result needs to be described in any resulting RFC. There is no formal requirement
