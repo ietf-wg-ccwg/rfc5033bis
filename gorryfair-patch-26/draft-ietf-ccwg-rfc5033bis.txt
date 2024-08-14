@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 10 February 2025                                  9 August 2024
+Expires: 15 February 2025                                 14 August 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 February 2025.
+   This Internet-Draft will expire on 15 February 2025.
 
 Copyright Notice
 
@@ -103,7 +103,7 @@ Table of Contents
      7.1.  Active Queue Management (AQM)
      7.2.  Operation with the Envelope set by Network Circuit Breakers
      7.3.  Paths with Varying Delay
-     7.4.  Internet of Things
+     7.4.  Internet of Things and Constrained Nodes
      7.5.  Paths with High Delay
      7.6.  Misbehaving Nodes
      7.7.  Extreme Packet Reordering
@@ -299,6 +299,11 @@ Table of Contents
    documented in any request for the working group to publish the
    specification.
 
+   Publication might occur without multiple implementations if a single
+   implementation is widely used, open source, and shown to have
+   positive impact on the Internet, particularly if the target status is
+   Experimental.
+
 3.2.  Guidelines for Authors about Document Status
 
    This document applies to proposals for congestion control algorithms
@@ -307,14 +312,16 @@ Table of Contents
    for both the answers and the degree of certainty of those answers.
 
    Congestion control algorithms without empirical evidence of Internet-
-   scale deployment SHOULD seek Experimental status.  Specifications
-   published as Experimental ought to explain the reason for the status
-   and what further information would be required to progress to
-   standards track.  For example, section 12 of [RFC6928] provides
-   “Usage and Deployment Recommendations” that describe the experiments
-   expected by the TCPM working group.  Section 4 of [RFC4614] provides
-   other examples of extensions that were considered experimental when
-   the specification was published.
+   scale deployment MUST seek Experimental status, unless they are not
+   targeted at general use.
+
+   Specifications published as Experimental ought to explain the reason
+   for the status and what further information would be required to
+   progress to standards track.  For example, section 12 of [RFC6928]
+   provides “Usage and Deployment Recommendations” that describe the
+   experiments expected by the TCPM working group.  Section 4 of
+   [RFC4614] provides other examples of extensions that were considered
+   experimental when the specification was published.
 
    Experimental specifications SHOULD NOT be deployed as a default.
    They SHOULD only be deployed in situations where they are being
@@ -760,7 +767,7 @@ Table of Contents
    its operation is robust when there is a significant change in the
    minimum delay.
 
-7.4.  Internet of Things
+7.4.  Internet of Things and Constrained Nodes
 
    The "Internet of Things" (IoT) is a broad concept, but when
    evaluating a proposed congestion control algorithm, it is often
@@ -776,9 +783,10 @@ Table of Contents
    most Internet flows.
 
    Furthermore, many IoT applications do not a have a human in the loop,
-   and therefore can have weaker latency constraints because they do not
-   relate to a user experience.  Congestion control algorithm can still
-   need to share the path with other flows with different constraints.
+   and therefore might have weaker latency constraints because they do
+   not relate to a user experience.  Congestion control algorithm can
+   still need to share the path with other flows with different
+   constraints.
 
 7.5.  Paths with High Delay
 
@@ -848,11 +856,11 @@ Table of Contents
    state of each path, and demonstrate independent congestion control
    for each path being used.  Authors of a proposed multipath congestion
    control algorithm that implements path fail-over MUST evaluate the
-   harm resulting from a change in the path, and show that this does not
-   result in flow starvation.  Synchronisation of failover (e.g., where
-   multiple flows change their path on similar timeframes) can also
-   contribute to harm and/or reduce fairness.  These effects also ought
-   to be evaluated.
+   harm to performance resulting from a change in the path, and show
+   that this does not result in flow starvation.  Synchronisation of
+   failover (e.g., where multiple flows change their path on similar
+   timeframes) can also contribute to harm and/or reduce fairness.
+   These effects also ought to be evaluated.
 
    Another example use is concurrent multipath, where the transport
    protocol simultaneously schedules a flow to aggregate the capacity
