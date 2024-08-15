@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-08-13T00:43:30.422227+00:00",
+  "timestamp": "2024-08-15T00:40:48.952996+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -9136,24 +9136,26 @@
       "id": "PR_kwDOI7aIXc53rEv2",
       "title": "Attempt to address comments from Warren Kumari",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/136",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gorryfair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Proposed resolutions",
       "createdAt": "2024-08-07T07:08:37Z",
-      "updatedAt": "2024-08-09T08:12:23Z",
+      "updatedAt": "2024-08-14T20:42:48Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
-      "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
+      "baseRefOid": "ec9f11997432c33058977a07734c9207ec4e613c",
       "headRepository": "ietf-wg-ccwg/rfc5033bis",
       "headRefName": "gorryfair-patch-26",
-      "headRefOid": "c05dfce5d3a3b5b138163dadbace22d02cb8b27a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "ee14036f9624c295f54bd5f6418c00fe665b20d3",
+      "closedAt": "2024-08-14T20:42:48Z",
+      "mergedAt": "2024-08-14T20:42:48Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "94e694224e67e86d32cff754fc2d2411ff3e0bbf"
+      },
       "comments": [
         {
           "author": "gorryfair",
@@ -9289,13 +9291,13 @@
       "labels": [],
       "body": "A few clarifying nits, as resolving the tension between a global \"MUST evaluate\" and some local \"SHOULD evaluate\"s.",
       "createdAt": "2024-08-07T21:43:16Z",
-      "updatedAt": "2024-08-08T03:34:37Z",
+      "updatedAt": "2024-08-14T20:41:49Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "roman1",
-      "headRefOid": "320d8fe05f9d3c83c0c129518f621dfd62ad87f6",
+      "headRefOid": "e426969f9c58eb25eb039eee1c0b792625f6c238",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -9367,6 +9369,19 @@
               "updatedAt": "2024-08-08T03:34:37Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6FNJYV",
+          "commit": {
+            "abbreviatedOid": "320d8fe"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "These all seem good to me, I think when all edits are applied a final quick check for consistency might again be needed, but let's land all PRs.",
+          "createdAt": "2024-08-13T08:01:16Z",
+          "updatedAt": "2024-08-13T08:01:16Z",
+          "comments": []
         }
       ]
     },
@@ -9408,13 +9423,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2024-08-07T23:27:08Z",
-      "updatedAt": "2024-08-08T18:58:48Z",
+      "updatedAt": "2024-08-14T20:24:04Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
-      "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
+      "baseRefOid": "ec9f11997432c33058977a07734c9207ec4e613c",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "gunter",
-      "headRefOid": "9211c66cdb7b558847d72cb11961cdcd2dafd51e",
+      "headRefOid": "83923dc86d3990fd81683c46563362d690374c6b",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
