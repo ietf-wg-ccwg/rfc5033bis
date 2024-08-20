@@ -1539,8 +1539,8 @@ alternatively seek publication as an Informational or Experimental RFC via the
 Internet Research Task Force (IRTF). In general, these algorithms are expected
 to be less mature than ones that follow the procedures in this document. Authors
 documenting deployed congestion control algorithms that cannot be changed by
-IETF or IRTF review are invited to publish as an Informational RFC via the
-Independent Stream Editor (ISE).<a href="#section-3.2-9" class="pilcrow">¶</a></p>
+IETF or IRTF review are invited to seek publication as an Informational RFC via
+the Independent Stream Editor (ISE).<a href="#section-3.2-9" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1560,9 +1560,9 @@ fabrics with rich signalling from switches to endpoints.<a href="#section-4-1" c
 <p id="section-4-2">Algorithms that
 rely on specific functions or configurations in the network need to provide a
 reference or specification for these functions (an RFC or another stable
-specification). The IETF will need to assess whether the relevant working group
-is able to review the proposed new algorithm and whether there is sufficient
-experience to understand any dependent functions.<a href="#section-4-2" class="pilcrow">¶</a></p>
+specification). For publication to proceed, the IETF will need to assess whether
+a working group exists that can properly assess the network-layer aspects and
+their interaction with the congestion control.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <p id="section-4-3">In evaluating a new proposal for use in a controlled environment, the IETF needs
 to understand the usage, e.g., how the usage is scoped to the controlled
 environment, whether the algorithm will share resources with Internet traffic,
@@ -1590,6 +1590,19 @@ these guidelines should not be considered an all-encompassing check-list.<a href
 <p id="section-5-3">When considering a proposed congestion control algorithm, the community MUST
 consider the following criteria. These criteria will be evaluated in various
 domains (see <a href="#general-use" class="auto internal xref">Section 6</a> and <a href="#special-cases" class="auto internal xref">Section 7</a>).<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-5-4">Some of the sections below will list criteria that SHOULD be met. It could
+happen that these criteria are not in fact met by the proposal. In such cases,
+the community MUST document whether not meeting the criteria is acceptable, for
+example because there are practical limitations on carrying out an evaluation of
+the criteria.<a href="#section-5-4" class="pilcrow">¶</a></p>
+<p id="section-5-5">The requirement that the community consider a criterion does not imply that the
+result needs to be described in a resulting RFC. There is no formal requirement
+to document the results, although normal IETF policies for archiving proceedings
+will provide a record.<a href="#section-5-5" class="pilcrow">¶</a></p>
+<p id="section-5-6">This document, except where otherwise noted, does not provide normative guidance
+on the acceptable thresholds for any of these criteria. Instead, the community
+will use these evaluations as an input when considering whether to progress the
+proposed algorithm.<a href="#section-5-6" class="pilcrow">¶</a></p>
 <div id="single-algorithm-behavior">
 <section id="section-5.1">
         <h3 id="name-single-algorithm-behavior">
@@ -1713,7 +1726,7 @@ retransmission time out) results in backoff.<a href="#section-5.2-2" class="pilc
           <h4 id="name-existing-general-purpose-co">
 <a href="#section-5.2.1" class="section-number selfRef">5.2.1. </a><a href="#name-existing-general-purpose-co" class="section-name selfRef">Existing General-Purpose Congestion Control</a>
           </h4>
-<p id="section-5.2.1-1">A proposed congestion control algorithm SHOULD be evaluated when competing using
+<p id="section-5.2.1-1">A proposed congestion control algorithm MUST be evaluated when competing against
 standard IETF congestion controls, e.g. <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span>, <span>[<a href="#RFC9002" class="cite xref">RFC9002</a>]</span>,
 <span>[<a href="#RFC9438" class="cite xref">RFC9438</a>]</span>. A proposed congestion control algorithm that has a significantly
 negative impact on flows using standard congestion control might be suspect, and
@@ -1793,8 +1806,8 @@ control algorithms MUST be evaluated, as in <a href="#short-flows" class="auto i
           <h4 id="name-differences-with-congestion">
 <a href="#section-5.3.1" class="section-number selfRef">5.3.1. </a><a href="#name-differences-with-congestion" class="section-name selfRef">Differences with Congestion Control Principles</a>
           </h4>
-<p id="section-5.3.1-1">A proposed congestion control algorithm SHOULD include a clear
-explanation of any deviations from <span>[<a href="#RFC2914" class="cite xref">RFC2914</a>]</span> and <span>[<a href="#RFC7141" class="cite xref">RFC7141</a>]</span>.<a href="#section-5.3.1-1" class="pilcrow">¶</a></p>
+<p id="section-5.3.1-1">A proposed congestion control algorithm MUST clearly explain any deviations from
+<span>[<a href="#RFC2914" class="cite xref">RFC2914</a>]</span> and <span>[<a href="#RFC7141" class="cite xref">RFC7141</a>]</span>.<a href="#section-5.3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="incremental-deployment">
@@ -1829,7 +1842,7 @@ Sections 10.3 and 10.4 of <span>[<a href="#RFC4782" class="cite xref">RFC4782</a
       </h2>
 <p id="section-6-1">The criteria in <a href="#evaluation-criteria" class="auto internal xref">Section 5</a> will be evaluated in the following
 scenarios. Unless a proposed congestion control specification explicitly forbids
-use on the public Internet, the community MUST reach consensus that it meets the
+use on the public Internet, there MUST be IETF consensus that it meets the
 criteria in these scenarios for the proposed congestion control algorithm to
  progress.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2">The evaluation in each scenario SHOULD occur over a representative range of
@@ -2124,10 +2137,8 @@ to safely coexist with it.<a href="#section-7.11-2" class="pilcrow">¶</a></p>
 suite and therefore does not directly impact Internet security.  The
 implementation of various facets of the Internet's current congestion control
 algorithms do have security implications (e.g., as outlined in <span>[<a href="#RFC5681" class="cite xref">RFC5681</a>]</span>).<a href="#section-8-1" class="pilcrow">¶</a></p>
-<p id="section-8-2">The IETF process that results in publication needs to ensure that these security
-implications are considered. Proposed congestion control algorithms therefore
-ought to be mindful of pitfalls, and SHOULD examine any potential security
-issues that may arise.<a href="#section-8-2" class="pilcrow">¶</a></p>
+<p id="section-8-2">Proposed congestion control algorithms MUST examine any potential security or
+privacy issues that may arise from their design.<a href="#section-8-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
