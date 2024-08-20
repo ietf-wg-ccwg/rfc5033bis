@@ -125,7 +125,7 @@ Experimental or Proposed Standard RFCs.
 
 The IETF specifies standard Internet congestion control algorithms in the RFC-series.
 These congestion control algorithms can suffer performance challenges when used in
-various environments (e.g., high-speed networks, cellular and WiFi wireless
+differing environments (e.g., high-speed networks, cellular and WiFi wireless
 technologies, and long distance satellite links), and also when flows carry
 specific workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
@@ -261,20 +261,28 @@ Congestion control algorithms without empirical evidence of Internet-scale
 deployment MUST seek Experimental status, unless they are not targeted at
 general use.
 
+Specifications published as Experimental ought to explain the reason for
+the status and what further information would be required to progress to
+standards track. For example, section 12 of {{?RFC6928}} provides
+“Usage and Deployment Recommendations” that describe the experiments
+expected by the TCPM working group. Section 4 of {{?RFC4614}} provides other
+examples of extensions that were considered experimental
+when the specification was published.
+
+Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
+only be deployed in situations where they are being actively measured, and where
+it is possible to deactivate them if there are signs of pathological behavior.
+
 Congestion control algorithms with a
 record of measured Internet-scale deployment MAY directly seek the Standards
 Track if there is solid data that reflects that it is safe, and the design is
 stable, guided by the considerations in {{general-use}}. However, the existence
 of this data does not waive the other considerations in this document.
 
-Experimental specifications SHOULD NOT be deployed as a default. They SHOULD
-only be deployed in situations where they are being actively measured, and where
-it is possible to deactivate them if there are signs of pathological behavior.
-
 Each published congestion control algorithm is REQUIRED to include a statement
 in the abstract indicating whether or not there is IETF consensus that the
 proposed congestion control algorithm is considered safe for use on the
-Internet. Each published algorithm is also required to include a statement in
+Internet. Each published algorithm is also REQUIRED to include a statement in
 the abstract describing environments where the protocol is not recommended for
 deployment. There can be environments where the congestion control algorithm is
 deemed safe for use, but it is still is not recommended for use because it
@@ -285,8 +293,8 @@ includes a statement in the abstract stating that the proposed congestion
 control algorithm is Experimental, but may be deployed in the Internet. In
 contrast, the Quick-Start document {{?RFC4782}} includes a paragraph in the
 abstract stating that the mechanism is only being proposed for use in
-controlled environments. The abstract specifies environments where the Quick-
-Start request could give false positives (and therefore would be unsafe for
+controlled environments. The abstract specifies environments where the
+Quick-Start request could give false positives (and therefore would be unsafe for
 incremental deployment where some routers forward, but do not process the
 option). The abstract also specifies environments where packets containing the
 Quick-Start request could be dropped in the network; in such an environment,
@@ -305,8 +313,8 @@ alternatively seek publication as an Informational or Experimental RFC via the
 Internet Research Task Force (IRTF). In general, these algorithms are expected
 to be less mature than ones that follow the procedures in this document. Authors
 documenting deployed congestion control algorithms that cannot be changed by
-IETF or IRTF review are invited to publish as an Informational RFC via the
-Independent Stream Editor (ISE).
+IETF or IRTF review are invited to seek publication as an Informational RFC via
+the Independent Stream Editor (ISE).
 
 # Specifying Algorithms for Use in Controlled Environments {#controlled-environments}
 
@@ -321,9 +329,9 @@ fabrics with rich signalling from switches to endpoints.
 Algorithms that
 rely on specific functions or configurations in the network need to provide a
 reference or specification for these functions (an RFC or another stable
-specification). The IETF will need to assess whether the relevant working group
-is able to review the proposed new algorithm and whether there is sufficient
-experience to understand any dependent functions.
+specification). For publication to proceed, the IETF will need to assess whether
+a working group exists that can properly assess the network-layer aspects and
+their interaction with the congestion control.
 
 In evaluating a new proposal for use in a controlled environment, the IETF needs
 to understand the usage, e.g., how the usage is scoped to the controlled
@@ -346,6 +354,22 @@ beyond the scope of these guidelines may also arise.
 When considering a proposed congestion control algorithm, the community MUST
 consider the following criteria. These criteria will be evaluated in various
 domains (see {{general-use}} and {{special-cases}}).
+
+Some of the sections below will list criteria that SHOULD be met. It could
+happen that these criteria are not in fact met by the proposal. In such cases,
+the community MUST document whether not meeting the criteria is acceptable, for
+example because there are practical limitations on carrying out an evaluation of
+the criteria.
+
+The requirement that the community consider a criterion does not imply that the
+result needs to be described in a resulting RFC. There is no formal requirement
+to document the results, although normal IETF policies for archiving proceedings
+will provide a record.
+
+This document, except where otherwise noted, does not provide normative guidance
+on the acceptable thresholds for any of these criteria. Instead, the community
+will use these evaluations as an input when considering whether to progress the
+proposed algorithm.
 
 ## Single Algorithm Behavior
 
@@ -448,7 +472,7 @@ retransmission time out) results in backoff.
 
 ### Existing General-Purpose Congestion Control
 
-A proposed congestion control algorithm SHOULD be evaluated when competing using
+A proposed congestion control algorithm MUST be evaluated when competing against
 standard IETF congestion controls, e.g. {{!RFC5681}}, {{!RFC9002}},
 {{!RFC9438}}. A proposed congestion control algorithm that has a significantly
 negative impact on flows using standard congestion control might be suspect, and
@@ -518,8 +542,8 @@ control algorithms MUST be evaluated, as in {{short-flows}}.
 
 ### Differences with Congestion Control Principles
 
-A proposed congestion control algorithm SHOULD include a clear
-explanation of any deviations from {{!RFC2914}} and {{!RFC7141}}.
+A proposed congestion control algorithm MUST clearly explain any deviations from
+{{!RFC2914}} and {{!RFC7141}}.
 
 ### Incremental Deployment
 
@@ -544,7 +568,7 @@ Sections 10.3 and 10.4 of {{?RFC4782}} (Quick-Start).
 
 The criteria in {{evaluation-criteria}} will be evaluated in the following
 scenarios. Unless a proposed congestion control specification explicitly forbids
-use on the public Internet, the community MUST reach consensus that it meets the
+use on the public Internet, there MUST be IETF consensus that it meets the
 criteria in these scenarios for the proposed congestion control algorithm to
  progress.
 
@@ -790,10 +814,8 @@ suite and therefore does not directly impact Internet security.  The
 implementation of various facets of the Internet's current congestion control
 algorithms do have security implications (e.g., as outlined in {{!RFC5681}}).
 
-The IETF process that results in publication needs to ensure that these security
-implications are considered. Proposed congestion control algorithms therefore
-ought to be mindful of pitfalls, and SHOULD examine any potential security
-issues that may arise.
+Proposed congestion control algorithms MUST examine any potential security or
+privacy issues that may arise from their design.
 
 # IANA Considerations
 
