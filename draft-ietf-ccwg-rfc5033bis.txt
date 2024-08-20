@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 15 February 2025                                 14 August 2024
+Expires: 21 February 2025                                 20 August 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 February 2025.
+   This Internet-Draft will expire on 21 February 2025.
 
 Copyright Notice
 
@@ -338,7 +338,7 @@ Table of Contents
    statement in the abstract indicating whether or not there is IETF
    consensus that the proposed congestion control algorithm is
    considered safe for use on the Internet.  Each published algorithm is
-   also required to include a statement in the abstract describing
+   also REQUIRED to include a statement in the abstract describing
    environments where the protocol is not recommended for deployment.
    There can be environments where the congestion control algorithm is
    deemed safe for use, but it is still is not recommended for use
