@@ -98,8 +98,8 @@ informative:
 
 --- abstract
 
-This document revises and updates RFC 5033, which discusses the principles and
-guidelines for standardzing new congestion control algorithms. The aim is to
+This document replaces RFC 5033, which discusses the principles and
+guidelines for standardzing new congestion control algorithms. It seeks to
 ensure that proposed congestion control algorithms operate without harm and
 efficiently alongside other algorithms in the global Internet. It emphasizes the
 need for comprehensive testing and validation to prevent adverse interactions
