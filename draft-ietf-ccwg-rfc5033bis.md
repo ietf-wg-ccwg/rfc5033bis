@@ -335,20 +335,21 @@ When considering a proposed congestion control algorithm, the community MUST
 consider the following criteria. These criteria will be evaluated in various
 domains (see {{general-use}} and {{special-cases}}).
 
-Some of the sections below will list criteria that SHOULD be met. It may happen
-that these criteria are not in fact met by the proposal. In such cases, the
-community MUST document whether not meeting the criteria is acceptable, for
+Some of the sections below will list criteria that SHOULD be met. It could 
+happen that these criteria are not in fact met by the proposal. In such cases,
+the community MUST document whether not meeting the criteria is acceptable, for
 example because there are practical limitations on carrying out an evaluation of
 the criteria.
 
 The requirement that the community consider a criterion does not imply that the
-result needs to be described in any resulting RFC. There is no formal requirement
+result needs to be described in a resulting RFC. There is no formal requirement
 to document the results, although normal IETF policies for archiving proceedings
 will provide a record.
 
 This document, except where otherwise noted, does not provide normative guidance
 on the acceptable thresholds for any of these criteria. Instead, the community
-will holistically assess the overall performance of the proposed algorithm.
+will use these evaluations as an input when considering whether to progress the
+proposed algorithm.
 
 ## Single Algorithm Behavior
 
