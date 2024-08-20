@@ -335,7 +335,7 @@ When considering a proposed congestion control algorithm, the community MUST
 consider the following criteria. These criteria will be evaluated in various
 domains (see {{general-use}} and {{special-cases}}).
 
-Some of the sections below will list criteria that SHOULD be met. It could 
+Some of the sections below will list criteria that SHOULD be met. It could
 happen that these criteria are not in fact met by the proposal. In such cases,
 the community MUST document whether not meeting the criteria is acceptable, for
 example because there are practical limitations on carrying out an evaluation of
