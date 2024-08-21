@@ -6,7 +6,7 @@ CCWG                                                        M. Duke, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 5033 (if approved)                          G. Fairhurst, Ed.
 Intended status: Best Current Practice            University of Aberdeen
-Expires: 21 February 2025                                 20 August 2024
+Expires: 22 February 2025                                 21 August 2024
 
 
               Specifying New Congestion Control Algorithms
@@ -14,15 +14,16 @@ Expires: 21 February 2025                                 20 August 2024
 
 Abstract
 
-   Introducing new or modified congestion control algorithms in the
-   global Internet has possible ramifications to both the flows using
-   the proposed congestion control algorithms and to flows using a
-   standardized congestion control algorithm.  Therefore, the IETF must
-   proceed with caution when evaluating proposals for alternate
-   congestion control.  The goal of this document is to provide guidance
-   for considering standardization of a proposed congestion control
-   algorithm at the IETF.  It obsoletes RFC5033 to reflect changes in
-   the congestion control landscape.
+   This document replaces RFC 5033, which discusses the principles and
+   guidelines for standardzing new congestion control algorithms.  It
+   seeks to ensure that proposed congestion control algorithms operate
+   without harm and efficiently alongside other algorithms in the global
+   Internet.  It emphasizes the need for comprehensive testing and
+   validation to prevent adverse interactions with existing flows.  This
+   document provides a framework for the development and assessment of
+   congestion control mechanisms, promoting stability across diverse
+   network environments.  It obsoletes RFC5033 to reflect changes in the
+   congestion control landscape.
 
 About This Document
 
@@ -55,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 February 2025.
+   This Internet-Draft will expire on 22 February 2025.
 
 Copyright Notice
 
@@ -141,7 +142,7 @@ Table of Contents
    deployment in the Internet.
 
    This document obsoletes [RFC5033], which was published in 2007 as a
-   Best Current Practice to evaluate proposed congestion control
+   Best Current Practice for evaluating proposed congestion control
    algorithms as Experimental or Proposed Standard RFCs.
 
    The IETF specifies standard Internet congestion control algorithms in
@@ -151,25 +152,25 @@ Table of Contents
    long distance satellite links), and also when flows carry specific
    workloads (Voice over IP (VoIP), gaming, and videoconferencing).
 
-   When [RFC5033] was published in 2007, TCP [RFC9293] was the dominant
-   consumer of IETF congestion control work, and proposals were
-   typically discussed in the Internet Congestion Control Research Group
-   (ICCRG).  Around the same time, the Datagram Congestion Control
-   Protocol (DCCP) [RFC4340] was developed as a method for defining new
-   congestion control algorithms for datagram traffic.  The Stream
-   Control Transmission Protocol (SCTP) [RFC9260] re-used TCP congestion
-   control algorithms.
+   When [RFC5033] was published in 2007, TCP [RFC9293] was the primary
+   focus of IETF congestion control efforts, with proposals typically
+   discussed within the Internet Congestion Control Research Group
+   (ICCRG).  Concurrently, the Datagram Congestion Control Protocol
+   (DCCP) [RFC4340] was developed to define new congestion control
+   algorithms for datagram traffic, while the Stream Control
+   Transmission Protocol (SCTP) [RFC9260] reused TCP congestion control
+   algorithms.
 
-   Since then, many conditions have changed.  The set of protocols using
-   congestion control algorithms has grown to include QUIC [RFC9000],
-   RTP Media Congestion Avoidance Techniques (RMCAT) (e.g., [RFC8836])
-   and beyond.  Some proponents of alternative congestion control
-   algorithms now have the opportunity to test and deploy at scale
-   without IETF review.  There is more interest in specialized use
-   cases, such as data centers (e.g., [RFC8257]), and in support for a
-   variety of upper layer protocols/applications, e.g., real-time
-   protocols.  Finally, the community has gained much more experience
-   with indications of congestion beyond packet loss.
+   Since then, several changes have occurred.  The range of protocols
+   utilizing congestion control algorithms has expanded to include QUIC
+   [RFC9000] and RTP Media Congestion Avoidance Techniques (RMCAT)
+   (e.g., [RFC8836].  Additionally, some alternative congestion control
+   algorithms have been tested and deployed at scale without full IETF
+   review.  There is increased interest in specialized use cases, such
+   as data centers (e.g., [RFC8257], and in supporting a variety of
+   upper layer protocols and applications, such as real-time protocols.
+   Moreover, the community has gained significant experience with
+   congestion indications beyond packet loss.
 
    Multicast congestion control is a considerably less mature field of
    study and is not in the scope of this document.  However, Section 4
@@ -405,16 +406,13 @@ Table of Contents
 
 5.  Evaluation Criteria
 
-   Authors are expected to evaluate the congestion control algorithms
-   that they bring to the IETF.  The working group is expecteed to
-   complete a well-rounded evaluation of the pros and cons of an
-   algorithm before it submits the specification for publication by the
-   IETF.
-
-   The following guidelines are designed to help authors and the IETF
-   community.  Concerns that fall outside the scope of these guidelines
-   are certainly possible; these guidelines should not be considered an
-   all-encompassing check-list.
+   As previously noted, authors are expected to conduct a comprehensive
+   evaluation of the advantages and disadvantages of congestion control
+   algorithms presented to the IETF.  The following guidelines are
+   intended to assist authors and the IETF community in this endeavor.
+   While these guidelines provide a helpful framework, they should not
+   be regarded as an exhaustive checklist, as concerns beyond the scope
+   of these guidelines may also arise.
 
    When considering a proposed congestion control algorithm, the
    community MUST consider the following criteria.  These criteria will
@@ -1044,11 +1042,6 @@ Table of Contents
               RFC 3819, DOI 10.17487/RFC3819, July 2004,
               <https://www.rfc-editor.org/rfc/rfc3819>.
 
-   [RFC4340]  Kohler, E., Handley, M., and S. Floyd, "Datagram
-              Congestion Control Protocol (DCCP)", RFC 4340,
-              DOI 10.17487/RFC4340, March 2006,
-              <https://www.rfc-editor.org/rfc/rfc4340>.
-
    [RFC4614]  Duke, M., Braden, R., Eddy, W., and E. Blanton, "A Roadmap
               for Transmission Control Protocol (TCP) Specification
               Documents", RFC 4614, DOI 10.17487/RFC4614, September
@@ -1103,11 +1096,6 @@ Table of Contents
               DOI 10.17487/RFC8087, March 2017,
               <https://www.rfc-editor.org/rfc/rfc8087>.
 
-   [RFC8257]  Bensley, S., Thaler, D., Balasubramanian, P., Eggert, L.,
-              and G. Judd, "Data Center TCP (DCTCP): TCP Congestion
-              Control for Data Centers", RFC 8257, DOI 10.17487/RFC8257,
-              October 2017, <https://www.rfc-editor.org/rfc/rfc8257>.
-
    [RFC8290]  Hoeiland-Joergensen, T., McKenney, P., Taht, D., Gettys,
               J., and E. Dumazet, "The Flow Queue CoDel Packet Scheduler
               and Active Queue Management Algorithm", RFC 8290,
@@ -1148,23 +1136,10 @@ Table of Contents
               RFC 8869, DOI 10.17487/RFC8869, January 2021,
               <https://www.rfc-editor.org/rfc/rfc8869>.
 
-   [RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
-              Multiplexed and Secure Transport", RFC 9000,
-              DOI 10.17487/RFC9000, May 2021,
-              <https://www.rfc-editor.org/rfc/rfc9000>.
-
    [RFC9049]  Dawkins, S., Ed., "Path Aware Networking: Obstacles to
               Deployment (A Bestiary of Roads Not Taken)", RFC 9049,
               DOI 10.17487/RFC9049, June 2021,
               <https://www.rfc-editor.org/rfc/rfc9049>.
-
-   [RFC9260]  Stewart, R., Tüxen, M., and K. Nielsen, "Stream Control
-              Transmission Protocol", RFC 9260, DOI 10.17487/RFC9260,
-              June 2022, <https://www.rfc-editor.org/rfc/rfc9260>.
-
-   [RFC9293]  Eddy, W., Ed., "Transmission Control Protocol (TCP)",
-              STD 7, RFC 9293, DOI 10.17487/RFC9293, August 2022,
-              <https://www.rfc-editor.org/rfc/rfc9293>.
 
    [RFC9332]  De Schepper, K., Briscoe, B., Ed., and G. White, "Dual-
               Queue Coupled Active Queue Management (AQM) for Low
