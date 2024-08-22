@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-08-20T00:42:21.553776+00:00",
+  "timestamp": "2024-08-22T00:43:28.638378+00:00",
   "repo": "ietf-wg-ccwg/rfc5033bis",
   "labels": [
     {
@@ -9284,24 +9284,26 @@
       "id": "PR_kwDOI7aIXc53w0MU",
       "title": "Roman DISCUSS",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/137",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "A few clarifying nits, as resolving the tension between a global \"MUST evaluate\" and some local \"SHOULD evaluate\"s.",
       "createdAt": "2024-08-07T21:43:16Z",
-      "updatedAt": "2024-08-14T20:41:49Z",
+      "updatedAt": "2024-08-20T16:58:29Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "roman1",
-      "headRefOid": "e426969f9c58eb25eb039eee1c0b792625f6c238",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "e46e4793a7955666a8ffc190873ed51784b64d8a",
+      "closedAt": "2024-08-20T16:58:29Z",
+      "mergedAt": "2024-08-20T16:58:29Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "086b4144277f708e86715861c2737a96e49701a1"
+      },
       "comments": [],
       "reviews": [
         {
@@ -9382,6 +9384,91 @@
           "createdAt": "2024-08-13T08:01:16Z",
           "updatedAt": "2024-08-13T08:01:16Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6F_7mx",
+          "commit": {
+            "abbreviatedOid": "e426969"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "I think this is near, but could be usefully improved.",
+          "createdAt": "2024-08-20T14:10:05Z",
+          "updatedAt": "2024-08-20T14:16:43Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "/may/could/ ?",
+              "createdAt": "2024-08-20T14:10:05Z",
+              "updatedAt": "2024-08-20T14:16:43Z"
+            },
+            {
+              "originalPosition": 36,
+              "body": "/any/a/ ?",
+              "createdAt": "2024-08-20T14:10:54Z",
+              "updatedAt": "2024-08-20T14:16:43Z"
+            },
+            {
+              "originalPosition": 42,
+              "body": "/Instead, the community\r\n will holistically assess the overall performance of the proposed algorithm./ ... I'm not won-over by this formulation, but could live with it - I'd prefer\r\n/Instead, the community will use these evaluations as an input when considering whether to progress the proposed algorithm./",
+              "createdAt": "2024-08-20T14:16:20Z",
+              "updatedAt": "2024-08-20T14:16:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6GATWp",
+          "commit": {
+            "abbreviatedOid": "e426969"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-20T14:43:54Z",
+          "updatedAt": "2024-08-20T14:43:54Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "Sure.",
+              "createdAt": "2024-08-20T14:43:54Z",
+              "updatedAt": "2024-08-20T14:43:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6GAT9D",
+          "commit": {
+            "abbreviatedOid": "e426969"
+          },
+          "author": "huitema",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-20T14:44:48Z",
+          "updatedAt": "2024-08-20T14:44:48Z",
+          "comments": [
+            {
+              "originalPosition": 42,
+              "body": "+1",
+              "createdAt": "2024-08-20T14:44:48Z",
+              "updatedAt": "2024-08-20T14:44:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6GBlRF",
+          "commit": {
+            "abbreviatedOid": "e46e479"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Merge!",
+          "createdAt": "2024-08-20T16:56:19Z",
+          "updatedAt": "2024-08-20T16:56:19Z",
+          "comments": []
         }
       ]
     },
@@ -9390,50 +9477,68 @@
       "id": "PR_kwDOI7aIXc53w1gx",
       "title": "Erik Kline comment",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/138",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "required -> REQUIRED",
       "createdAt": "2024-08-07T21:48:59Z",
-      "updatedAt": "2024-08-07T21:49:03Z",
+      "updatedAt": "2024-08-20T13:59:55Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
       "baseRefOid": "423666f87283d8875e1913713be6e3e40b5e8151",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "kline",
       "headRefOid": "e899695f62645aeb63ebbef2128d9b27bbaac280",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-08-20T13:59:55Z",
+      "mergedAt": "2024-08-20T13:59:55Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "a19532df8d97b56e00ed38170f61c43e231815bd"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI7aIXc6F_SfM",
+          "commit": {
+            "abbreviatedOid": "e899695"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "I agree with this change. The use of REQUIRED/RECOMMENDED for process rather than SHOULD/MUST for protocol, is not entirely consistent, but I think it is fine and unambiguous. Please do merge",
+          "createdAt": "2024-08-20T13:12:32Z",
+          "updatedAt": "2024-08-20T13:12:32Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 139,
       "id": "PR_kwDOI7aIXc53xKpK",
       "title": "Gunter",
       "url": "https://github.com/ietf-wg-ccwg/rfc5033bis/pull/139",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinduke",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-08-07T23:27:08Z",
-      "updatedAt": "2024-08-14T20:24:04Z",
+      "updatedAt": "2024-08-21T15:17:22Z",
       "baseRepository": "ietf-wg-ccwg/rfc5033bis",
       "baseRefName": "main",
-      "baseRefOid": "ec9f11997432c33058977a07734c9207ec4e613c",
+      "baseRefOid": "086b4144277f708e86715861c2737a96e49701a1",
       "headRepository": "martinduke/rfc5033bis",
       "headRefName": "gunter",
-      "headRefOid": "83923dc86d3990fd81683c46563362d690374c6b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "96a640f04961143c52803564d8455391528e05dc",
+      "closedAt": "2024-08-21T15:17:22Z",
+      "mergedAt": "2024-08-21T15:17:21Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "edbe64b994c75d4a01a1e26656ca9565529bedb6"
+      },
       "comments": [],
       "reviews": [
         {
@@ -9467,6 +9572,45 @@
               "updatedAt": "2024-08-08T18:58:49Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6GCNPx",
+          "commit": {
+            "abbreviatedOid": "83923dc"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Looks ready, please consider the comments and decide, for me you can then merge.",
+          "createdAt": "2024-08-20T18:19:27Z",
+          "updatedAt": "2024-08-20T18:22:40Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "We should be careful. It revises the recommendations in RFC 5033 ... and replaces it. ",
+              "createdAt": "2024-08-20T18:19:27Z",
+              "updatedAt": "2024-08-20T18:22:40Z"
+            },
+            {
+              "originalPosition": 14,
+              "body": "I'd be ok with an aim, but I'd prefer \"seeks to\"",
+              "createdAt": "2024-08-20T18:20:02Z",
+              "updatedAt": "2024-08-20T18:22:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI7aIXc6GK7Xr",
+          "commit": {
+            "abbreviatedOid": "96a640f"
+          },
+          "author": "gorryfair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": ":-)",
+          "createdAt": "2024-08-21T14:40:33Z",
+          "updatedAt": "2024-08-21T14:40:33Z",
+          "comments": []
         }
       ]
     },
